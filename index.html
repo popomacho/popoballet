@@ -1,0 +1,4128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>POPO Ballet | バレエアパレルブランド</title>
+<meta name="description" content="POPO Ballet（ポポバレエ）のアパレル・雑貨コレクション。Tシャツ、ジップパーカー、ジャージジップパーカー、トートバッグなど、バレエの美しさと強さを日常に。" />
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+background: #fcf8f7;
+color: #222;
+line-height: 1.7;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+.container {
+width: 100%;
+max-width: 760px;
+margin: 0 auto;
+background: #fff;
+min-height: 100vh;
+box-shadow: 0 0 20px rgba(0,0,0,0.03);
+}
+
+.section {
+padding: 24px 16px;
+}
+
+.hero {
+background:
+radial-gradient(circle at 20% 20%, rgba(255,255,255,0.75) 0, rgba(255,255,255,0) 28%),
+radial-gradient(circle at 80% 25%, rgba(255,255,255,0.55) 0, rgba(255,255,255,0) 24%),
+radial-gradient(circle at 50% 75%, rgba(255,255,255,0.35) 0, rgba(255,255,255,0) 30%),
+linear-gradient(to bottom, #f6dede, #fff7f7 55%, #ffffff 100%);
+text-align: center;
+padding: 18px 16px 30px;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+content: "";
+position: absolute;
+border-radius: 999px;
+opacity: 0.22;
+pointer-events: none;
+}
+
+.hero::before {
+width: 180px;
+height: 180px;
+background: rgba(255,255,255,0.55);
+top: -40px;
+right: -50px;
+}
+
+.hero::after {
+width: 130px;
+height: 130px;
+background: rgba(255,255,255,0.45);
+left: -30px;
+bottom: 40px;
+}
+
+.top-mini-logo {
+position: absolute;
+top: 14px;
+left: 14px;
+width: 62px;
+height: 62px;
+border-radius: 16px;
+background: rgba(255,255,255,0.72);
+border: 1px solid rgba(234, 217, 217, 0.9);
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+backdrop-filter: blur(4px);
+box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+z-index: 2;
+}
+
+.top-mini-logo img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+.hero-logo-panel {
+margin: 52px auto 18px;
+width: 100%;
+max-width: 420px;
+padding: 22px 16px 18px;
+border-radius: 24px;
+background:
+linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.35)),
+url("images/top.jpg") center/cover no-repeat;
+border: 1px solid rgba(255,255,255,0.65);
+backdrop-filter: blur(6px);
+box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+position: relative;
+z-index: 1;
+overflow: hidden;
+min-height: 180px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.hero-logo-panel::before {
+content: "";
+position: absolute;
+inset: 0;
+background:
+linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+opacity: 0.7;
+pointer-events: none;
+}
+
+.hero-logo-panel::after {
+content: "";
+position: absolute;
+inset: 12px;
+border-radius: 18px;
+border: 1px dashed rgba(200,150,150,0.4);
+pointer-events: none;
+}
+
+.hero-logo-text {
+font-size: 31px;
+font-weight: 900;
+letter-spacing: 1px;
+margin-bottom: 4px;
+position: relative;
+z-index: 1;
+text-shadow: 0 2px 10px rgba(255,255,255,0.55);
+}
+
+.hero-logo-sub {
+font-size: 12px;
+color: #8a6f6f;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+position: relative;
+z-index: 1;
+text-shadow: 0 2px 10px rgba(255,255,255,0.55);
+}
+
+.hero-gallery-4 {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+margin-bottom: 18px;
+position: relative;
+z-index: 1;
+}
+
+.hero-column {
+display: grid;
+grid-template-rows: 1fr 1fr;
+gap: 10px;
+}
+
+.hero-image {
+width: 100%;
+aspect-ratio: 4 / 5;
+border-radius: 16px;
+object-fit: cover;
+background: #eee;
+border: 1px solid #eee;
+box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
+
+.hero h1 {
+font-size: 26px;
+margin-bottom: 10px;
+font-weight: 800;
+position: relative;
+z-index: 1;
+}
+
+.hero p {
+font-size: 15px;
+color: #555;
+margin-bottom: 0;
+position: relative;
+z-index: 1;
+}
+
+.btn {
+display: inline-block;
+background: #222;
+color: #fff;
+padding: 12px 20px;
+border-radius: 999px;
+font-size: 14px;
+font-weight: 700;
+border: none;
+cursor: pointer;
+text-align: center;
+}
+
+.btn-secondary {
+background: #d8b7b7;
+color: #fff;
+}
+
+.btn-line {
+background: #06c755;
+color: #fff;
+}
+
+.btn-mail {
+background: #444;
+color: #fff;
+}
+
+.btn-insta {
+background: linear-gradient(45deg, #fd5949, #d6249f, #285AEB);
+color: #fff;
+}
+
+.section-title {
+font-size: 22px;
+margin-bottom: 14px;
+font-weight: 800;
+}
+
+.section-subtitle {
+font-size: 13px;
+color: #8a6f6f;
+margin-bottom: 12px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.featured-box {
+background: linear-gradient(to bottom, #fff8f8, #ffffff);
+border: 1px solid #f1dfdf;
+border-radius: 18px;
+padding: 16px;
+box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.featured-badge {
+display: inline-block;
+font-size: 11px;
+font-weight: 800;
+color: #fff;
+background: #d8b7b7;
+border-radius: 999px;
+padding: 5px 10px;
+margin-bottom: 10px;
+letter-spacing: 0.8px;
+}
+
+.featured-split {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 14px;
+margin-top: 6px;
+}
+
+.featured-card {
+background: linear-gradient(to bottom, #fffdfd, #fff7f7);
+border: 1px solid #f0e2e2;
+border-radius: 18px;
+padding: 14px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+.featured-chip-row {
+display: flex;
+justify-content: center;
+margin-bottom: 12px;
+}
+
+.featured-chip {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-width: 88px;
+height: 34px;
+padding: 0 18px;
+border-radius: 999px;
+font-size: 12px;
+font-weight: 800;
+letter-spacing: 0.8px;
+border: 1px solid rgba(255,255,255,0.8);
+box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.featured-chip.men {
+background: linear-gradient(135deg, #cfcfcf 0%, #efefef 55%, #ffffff 100%);
+color: #555;
+}
+
+.featured-chip.women {
+background: linear-gradient(135deg, #f3a9c4 0%, #ffd5e4 58%, #ffffff 100%);
+color: #a14f73;
+}
+
+.featured-main-image {
+width: 100%;
+aspect-ratio: 1 / 1.08;
+object-fit: contain;
+border-radius: 16px;
+background: #efefef;
+border: 1px solid #eee;
+margin-bottom: 10px;
+cursor: default;
+}
+
+.featured-sub-image-wrap {
+display: flex;
+justify-content: center;
+margin-bottom: 12px;
+}
+
+.featured-sub-image {
+width: 42%;
+min-width: 110px;
+max-width: 150px;
+aspect-ratio: 1 / 1;
+object-fit: contain;
+border-radius: 14px;
+background: #f4f4f4;
+border: 1px solid #eee;
+cursor: pointer;
+box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.featured-name {
+font-size: 18px;
+font-weight: 800;
+margin-bottom: 4px;
+}
+
+.featured-desc {
+font-size: 14px;
+color: #555;
+margin-bottom: 10px;
+}
+
+.featured-price {
+font-size: 16px;
+font-weight: 800;
+margin-bottom: 14px;
+}
+
+.story-box {
+background: #fff8f8;
+border-radius: 14px;
+padding: 16px;
+margin-bottom: 16px;
+}
+
+.story-box p {
+font-size: 14px;
+color: #333;
+white-space: pre-line;
+text-align: center;
+}
+
+.category-list {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+margin-top: 12px;
+}
+
+.category-item {
+background: #f8f5f4;
+border-radius: 12px;
+padding: 12px 10px;
+font-size: 13px;
+text-align: center;
+border: 1px solid #f0e3e3;
+font-weight: 600;
+}
+
+.category-item.link-item:hover {
+background: #f3e5e5;
+}
+
+.category-item-series {
+background: linear-gradient(135deg, #d9ecff 0%, #eef7ff 100%);
+border: 1px solid #c7def5;
+color: #2f5f8f;
+font-weight: 800;
+}
+
+.category-item-series:hover {
+background: linear-gradient(135deg, #cfe6ff 0%, #e6f3ff 100%);
+}
+
+.gallery-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 16px;
+margin-top: 14px;
+}
+
+.color-switch-card {
+background: #fff;
+border-radius: 14px;
+overflow: hidden;
+border: 1px solid #eee;
+box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+.color-switch-images {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0;
+}
+
+.color-switch-images img {
+width: 100%;
+aspect-ratio: 1 / 1.05;
+object-fit: contain;
+background: #efefef;
+cursor: default;
+border-bottom: 1px solid #eee;
+}
+
+.color-switch-images.single-image {
+grid-template-columns: 1fr 1fr;
+}
+
+.color-switch-images.single-image img {
+grid-column: 1 / 2;
+width: 100%;
+max-width: 50%;
+margin: 0 auto;
+}
+
+.color-switch-info {
+padding: 12px;
+}
+
+.product-name {
+font-size: 16px;
+font-weight: 800;
+margin-bottom: 4px;
+}
+
+.product-desc {
+font-size: 13px;
+color: #666;
+margin-bottom: 6px;
+}
+
+.product-price {
+font-size: 15px;
+font-weight: 800;
+color: #222;
+}
+
+.color-chip-row {
+display: flex;
+align-items: center;
+gap: 8px;
+margin-bottom: 10px;
+flex-wrap: wrap;
+}
+
+.color-chip-btn {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 4px 8px;
+border: 1px solid #eadede;
+border-radius: 999px;
+background: #fff;
+cursor: pointer;
+transition: all 0.2s ease;
+font-size: 12px;
+color: #666;
+}
+
+.color-chip-btn.active {
+background: #fff5f5;
+border-color: #d8b7b7;
+color: #333;
+}
+
+.color-chip-btn:hover,
+.series-color-btn:hover,
+.silhouette-select-btn:hover {
+transform: scale(1.04);
+}
+
+.color-chip {
+width: 14px;
+height: 14px;
+border-radius: 999px;
+border: 1px solid rgba(0,0,0,0.12);
+box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+
+.color-chip-split {
+display: inline-flex;
+width: 28px;
+height: 14px;
+border-radius: 999px;
+overflow: hidden;
+border: 1px solid rgba(0,0,0,0.12);
+box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+
+.color-chip-half {
+width: 50%;
+height: 100%;
+display: block;
+}
+
+.summary-back-wrap {
+margin-top: 12px;
+}
+
+.summary-back-btn {
+width: 100%;
+}
+
+
+.tshirt-suboption-title {
+font-size: 13px;
+font-weight: 800;
+color: #444;
+margin: 10px 0 8px;
+}
+
+.logo-color-link-wrap {
+margin-top: 8px;
+}
+
+.logo-color-link {
+font-size: 12px;
+font-weight: 700;
+color: #8a6f6f;
+text-decoration: underline;
+}
+
+.suboption-note {
+font-size: 12px;
+color: #777;
+line-height: 1.6;
+margin-top: 6px;
+}
+
+.color-chip-btn.is-hidden {
+display: none;
+}
+
+.color-chip-btn:disabled {
+opacity: 0.45;
+cursor: not-allowed;
+transform: none !important;
+}
+
+.spec-box {
+background: #fff8f8;
+border: 1px solid #f0e3e3;
+border-radius: 14px;
+padding: 14px;
+margin-top: 16px;
+}
+
+.spec-box h4 {
+font-size: 15px;
+font-weight: 800;
+margin-bottom: 10px;
+color: #444;
+}
+
+.spec-box p {
+font-size: 13px;
+color: #555;
+margin-bottom: 8px;
+white-space: pre-line;
+}
+
+.spec-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.spec-item {
+background: #fff;
+border: 1px solid #f0e3e3;
+border-radius: 12px;
+padding: 10px 12px;
+}
+
+.spec-item strong {
+display: block;
+font-size: 14px;
+color: #333;
+margin-bottom: 4px;
+}
+
+.spec-note {
+font-size: 12px;
+color: #777;
+margin-top: 8px;
+}
+
+.notes {
+margin-top: 10px;
+font-size: 12px;
+color: #777;
+}
+
+.silhouette-section {
+margin-top: 8px;
+}
+
+.silhouette-group-title {
+font-size: 15px;
+font-weight: 800;
+color: #444;
+margin-bottom: 10px;
+}
+
+.silhouette-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+}
+
+.silhouette-card {
+background: #111;
+border-radius: 14px;
+overflow: hidden;
+border: 1px solid #222;
+box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.silhouette-card img {
+width: 100%;
+aspect-ratio: 1 / 1.12;
+object-fit: contain;
+background: #000;
+cursor: pointer;
+padding: 10px;
+}
+
+.silhouette-name {
+text-align: center;
+font-size: 12px;
+font-weight: 700;
+color: #fff;
+padding: 8px 6px 10px;
+background: #111;
+}
+
+.silhouette-select-box {
+background: #fffaf9;
+border: 1px solid #f0e3e3;
+border-radius: 14px;
+padding: 12px;
+margin-top: 14px;
+}
+
+.silhouette-select-title {
+font-size: 14px;
+font-weight: 800;
+margin-bottom: 10px;
+color: #444;
+}
+
+.silhouette-select-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 8px;
+}
+
+.silhouette-select-btn {
+border: 1px solid #eadede;
+background: #fff;
+border-radius: 10px;
+padding: 8px 6px;
+font-size: 12px;
+font-weight: 700;
+cursor: pointer;
+color: #555;
+}
+
+.silhouette-select-btn.active {
+background: #fff1f4;
+border-color: #d8b7b7;
+color: #333;
+}
+
+.back-preview-wrap {
+position: relative;
+width: 100%;
+aspect-ratio: 1 / 1.05;
+overflow: hidden;
+background: #efefef;
+border-bottom: 1px solid #eee;
+}
+
+.back-preview-wrap .back-image {
+position: relative;
+z-index: 1;
+width: 100%;
+height: 100%;
+display: block;
+object-fit: contain;
+background: transparent;
+}
+
+
+.back-preview-wrap .back-image {
+position: relative;
+z-index: 1;
+}
+
+.tshirt-silhouette-overlay {
+position: absolute;
+top: 20%;
+left: 50%;
+transform: translateX(-50%);
+width: 38%;
+max-width: 180px;
+z-index: 2;
+pointer-events: none;
+display: none;
+object-fit: contain;
+background: transparent !important;
+mix-blend-mode: normal;
+opacity: 1;
+}
+
+.tshirt-text-overlay {
+position: absolute;
+top: 65%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 65%;
+max-width: 220px;
+z-index: 3;
+pointer-events: none;
+display: none;
+object-fit: contain;
+background: transparent !important;
+}
+
+
+.series-intro {
+font-size: 14px;
+color: #555;
+margin-bottom: 14px;
+line-height: 1.9;
+}
+
+.series-top-actions {
+display: flex;
+justify-content: center;
+margin: 12px 0 6px;
+}
+
+.series-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 14px;
+margin-top: 16px;
+}
+
+.series-card {
+background: #fff;
+border-radius: 14px;
+overflow: hidden;
+border: 1px solid #eee;
+box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+.series-card.is-hidden {
+display: none;
+}
+
+.series-macho {
+grid-column: 1 / -1;
+}
+
+.series-macho .series-image-stack {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.series-macho .series-sub-label {
+grid-column: 1 / -1;
+}
+
+.series-image-stack {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8px;
+padding: 10px 10px 0;
+}
+
+.series-main-image,
+.series-sub-image {
+width: 100%;
+aspect-ratio: 1 / 1.05;
+object-fit: contain;
+background: #efefef;
+border-radius: 12px;
+cursor: pointer;
+}
+
+.series-sub-image {
+background: #f5f5f5;
+}
+
+.series-sub-label {
+grid-column: 1 / -1;
+font-size: 11px;
+color: #777;
+text-align: center;
+margin-top: 2px;
+}
+
+.series-info {
+padding: 12px;
+}
+
+.series-name {
+font-size: 15px;
+font-weight: 800;
+margin-bottom: 4px;
+}
+
+.series-desc {
+font-size: 12px;
+color: #666;
+line-height: 1.7;
+margin-bottom: 8px;
+}
+
+.series-color-row {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+margin-bottom: 10px;
+}
+
+.series-color-btn {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 4px 8px;
+border: 1px solid #eadede;
+border-radius: 999px;
+background: #fff;
+cursor: pointer;
+font-size: 11px;
+color: #666;
+transition: all 0.2s ease;
+}
+
+.series-color-btn.active {
+background: #fff5f5;
+border-color: #d8b7b7;
+color: #333;
+}
+
+.series-color-dot {
+width: 12px;
+height: 12px;
+border-radius: 999px;
+border: 1px solid rgba(0,0,0,0.12);
+box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+}
+
+.show-more-wrap {
+text-align: center;
+margin-top: 18px;
+}
+
+.logo-guide-box {
+background: #fff8f8;
+border: 1px solid #f0e3e3;
+border-radius: 14px;
+padding: 14px;
+margin: 14px 0 0;
+}
+
+.logo-guide-box h3 {
+font-size: 15px;
+font-weight: 800;
+margin-bottom: 8px;
+color: #444;
+}
+
+.logo-guide-box p {
+font-size: 13px;
+color: #555;
+margin-bottom: 8px;
+line-height: 1.7;
+}
+
+.logo-guide-box ul {
+margin-left: 18px;
+color: #555;
+}
+
+.logo-guide-box li {
+font-size: 13px;
+margin-bottom: 6px;
+}
+
+.form-box {
+background: #fff8f8;
+border-radius: 16px;
+padding: 18px 14px;
+border: 1px solid #f0e3e3;
+margin-top: 12px;
+}
+
+.form-group {
+margin-bottom: 12px;
+}
+
+.form-label {
+display: block;
+font-size: 13px;
+font-weight: 700;
+margin-bottom: 6px;
+color: #444;
+}
+
+.form-control {
+width: 100%;
+padding: 12px;
+border-radius: 10px;
+border: 1px solid #ddd;
+font-size: 14px;
+background: #fff;
+}
+
+textarea.form-control {
+resize: vertical;
+min-height: 120px;
+}
+
+.narrow-wrap {
+width: 100%;
+max-width: 760px;
+margin: 0 auto;
+}
+
+.narrow-wrap .form-box,
+.narrow-wrap .logo-guide-box {
+width: 100%;
+max-width: 760px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.narrow-wrap .form-control,
+.narrow-wrap .btn,
+.narrow-wrap button[type="submit"] {
+width: 100%;
+}
+
+.contact-box {
+background: #fff5f5;
+border-radius: 16px;
+text-align: center;
+padding: 20px 16px;
+max-width: 760px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.contact-box p {
+font-size: 14px;
+color: #555;
+margin: 10px 0 16px;
+}
+
+.contact-buttons {
+display: grid;
+gap: 10px;
+max-width: 760px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.bottom-logo-wrap {
+text-align: center;
+padding: 14px 16px 0;
+}
+
+.bottom-logo-box {
+width: 90px;
+height: 90px;
+margin: 0 auto 8px;
+border-radius: 16px;
+background: #f2e7e7;
+border: 1px solid #ead9d9;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.bottom-logo-box img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+footer {
+text-align: center;
+padding: 18px 16px 30px;
+font-size: 12px;
+color: #888;
+}
+
+.modal {
+display: none;
+position: fixed;
+z-index: 9999;
+inset: 0;
+background: rgba(0,0,0,0.86);
+padding: 20px;
+align-items: center;
+justify-content: center;
+}
+
+.modal.active {
+display: flex;
+}
+.modal-content.single-view {
+width: min(92vw, 560px);
+max-height: 88vh;
+border-radius: 14px;
+overflow: auto;
+background: #fff;
+padding: 8px;
+}
+
+.modal-content.single-view .modal-image-grid {
+grid-template-columns: 1fr;
+}
+
+.modal-content.single-view #modalBackBox {
+display: none !important;
+}
+
+.modal-content.single-view .modal-image-box {
+padding: 2px;
+background: transparent;
+}
+
+.modal-content.single-view .modal-image-box img {
+max-height: 82vh;
+background: transparent;
+}
+
+
+.modal-content.double-view {
+width: min(96vw, 980px);
+max-height: 88vh;
+border-radius: 14px;
+overflow: auto;
+background: #fff;
+padding: 14px;
+}
+
+.modal-image-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+}
+
+.modal-image-box {
+background: #f8f8f8;
+border-radius: 12px;
+padding: 6px;
+}
+
+.modal-image-box img {
+width: 100%;
+height: auto;
+max-height: 65vh;
+object-fit: contain;
+background: #fff;
+}
+
+.modal-back-wrap {
+position: relative;
+}
+
+#modalBackBase {
+position: relative;
+z-index: 1;
+}
+
+#modalBackOverlay {
+position: absolute;
+top: 22%;
+left: 50%;
+transform: translateX(-50%);
+width: 38%;
+z-index: 2;
+pointer-events: none;
+display: none;
+background: transparent;
+}
+
+#modalBackText {
+position: absolute;
+top: 60%;
+left: 50%;
+transform: translateX(-50%);
+width: 44%;
+z-index: 3;
+pointer-events: none;
+display: none;
+background: transparent;
+}
+
+.modal-image-caption {
+text-align: center;
+font-size: 12px;
+color: #666;
+margin-top: 8px;
+}
+
+.modal-close {
+position: fixed;
+top: 14px;
+right: 16px;
+font-size: 28px;
+color: #fff;
+cursor: pointer;
+font-weight: bold;
+line-height: 1;
+}
+
+.category-title {
+font-size: 18px;
+font-weight: 800;
+margin-bottom: 10px;
+padding: 8px 12px;
+background: linear-gradient(to right, #f6dede, #fff);
+border-radius: 10px;
+border-left: 4px solid #d8b7b7;
+}
+
+.price-table-wrap {
+background: #fff8f8;
+border-radius: 14px;
+overflow-x: auto;
+border: 1px solid #f0e3e3;
+margin-top: 12px;
+}
+
+table {
+width: 100%;
+min-width: 900px;
+border-collapse: collapse;
+}
+
+th, td {
+font-size: 11px;
+padding: 12px 10px;
+border-bottom: 1px solid #f0e3e3;
+text-align: left;
+vertical-align: top;
+white-space: normal;
+line-height: 1.5;
+}
+
+th {
+background: #f9eded;
+font-weight: 800;
+}
+
+.shipping-box {
+background: #faf7f6;
+border-radius: 12px;
+padding: 14px;
+margin-top: 14px;
+font-size: 14px;
+color: #444;
+}
+
+.shipping-box strong {
+display: block;
+margin-bottom: 6px;
+font-size: 15px;
+}
+
+.order-cta {
+margin-top: 16px;
+text-align: center;
+}
+
+@media (max-width: 560px) {
+.featured-split {
+grid-template-columns: 1fr;
+}
+
+.silhouette-grid {
+grid-template-columns: repeat(4, 1fr);
+}
+
+.silhouette-select-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.series-grid {
+grid-template-columns: 1fr;
+}
+
+.modal-image-grid {
+grid-template-columns: 1fr;
+}
+}
+
+@media (min-width: 768px) {
+.container {
+max-width: 980px;
+}
+
+.hero {
+padding: 24px 28px 40px;
+}
+
+.section {
+padding: 28px;
+}
+
+.category-list {
+grid-template-columns: repeat(4, 1fr);
+}
+
+.featured-split {
+grid-template-columns: 1fr 1fr;
+}
+
+.silhouette-grid {
+grid-template-columns: repeat(4, 1fr);
+}
+
+.series-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+
+.bag-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+margin-top: 14px;
+}
+
+.bag-card .color-switch-images.single-image {
+grid-template-columns: 1fr;
+}
+
+.bag-card .color-switch-images.single-image img {
+grid-column: auto;
+max-width: 100%;
+width: 100%;
+margin: 0;
+aspect-ratio: 1 / 1.05;
+object-fit: contain;
+}
+
+.image-spacer {
+display: none;
+}
+
+.text-select-box {
+background: #fffaf9;
+border: 1px solid #f0e3e3;
+border-radius: 14px;
+padding: 12px;
+margin-top: 12px;
+}
+
+.text-select-title {
+font-size: 14px;
+font-weight: 800;
+margin-bottom: 10px;
+color: #444;
+}
+
+.text-select-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
+}
+
+.text-select-btn {
+border: 1px solid #eadede;
+background: #fff;
+border-radius: 10px;
+padding: 8px 6px;
+font-size: 12px;
+font-weight: 700;
+cursor: pointer;
+color: #555;
+}
+
+.text-select-btn.active {
+background: #fff1f4;
+border-color: #d8b7b7;
+color: #333;
+}
+
+.total-price-box {
+width: 100%;
+padding: 12px;
+border-radius: 10px;
+border: 1px solid #ddd;
+font-size: 18px;
+font-weight: 800;
+background: #fff;
+color: #222;
+}
+
+.price-note {
+font-size: 12px;
+color: #777;
+margin-top: 6px;
+}
+
+#totebag-section .color-switch-images img,
+#kinchaku-m-section .color-switch-images img,
+#kinchaku-s-section .color-switch-images img {
+cursor: pointer;
+}
+
+#tshirt-section .color-switch-images img,
+#ziphoodie-section .color-switch-images img,
+#jerseyzip-section .color-switch-images img {
+cursor: default;
+}
+
+
+#tshirt-section,
+#ziphoodie-section,
+#jerseyzip-section,
+#totebag-section,
+#kinchaku-m-section,
+#kinchaku-s-section {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 760px) {
+.bag-grid {
+grid-template-columns: 1fr;
+}
+.text-select-grid {
+grid-template-columns: 1fr;
+}
+}
+
+
+.reflect-order-btn {
+width: 100%;
+margin-top: 12px;
+}
+
+.option-preview-box {
+background: #fff8f8;
+border: 1px solid #f0e3e3;
+border-radius: 14px;
+padding: 12px;
+margin-bottom: 14px;
+}
+
+.option-preview-title {
+font-size: 14px;
+font-weight: 800;
+color: #444;
+margin-bottom: 10px;
+}
+
+.option-preview-note {
+font-size: 12px;
+color: #777;
+margin-top: 8px;
+line-height: 1.6;
+}
+
+.final-silhouette-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+}
+
+.final-silhouette-card {
+border: 1px solid #eadede;
+border-radius: 12px;
+background: #fff;
+padding: 8px;
+cursor: pointer;
+transition: all 0.2s ease;
+text-align: center;
+}
+
+.final-silhouette-card.active {
+border-color: #d8b7b7;
+background: #fff1f4;
+box-shadow: 0 0 0 2px rgba(216,183,183,0.18);
+}
+
+.final-silhouette-card img {
+width: 100%;
+aspect-ratio: 1 / 1.12;
+object-fit: contain;
+background: #111;
+border-radius: 10px;
+padding: 6px;
+margin-bottom: 6px;
+}
+
+.final-silhouette-card span {
+display: block;
+font-size: 11px;
+font-weight: 700;
+color: #555;
+}
+
+.final-text-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
+}
+
+.final-text-btn {
+border: 1px solid #eadede;
+background: #fff;
+border-radius: 10px;
+padding: 10px 8px;
+font-size: 12px;
+font-weight: 700;
+cursor: pointer;
+color: #555;
+transition: all 0.2s ease;
+}
+
+.final-text-btn.active {
+background: #fff1f4;
+border-color: #d8b7b7;
+color: #333;
+}
+
+.order-summary-box {
+margin-top: 18px;
+background: #fff8f8;
+border: 1px solid #f0e3e3;
+border-radius: 14px;
+padding: 14px;
+}
+
+.order-summary-title {
+font-size: 16px;
+font-weight: 800;
+margin-bottom: 12px;
+color: #333;
+}
+
+.order-summary-row {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 12px;
+padding: 8px 0;
+border-bottom: 1px solid #f0e3e3;
+font-size: 14px;
+}
+
+.order-summary-row span {
+color: #666;
+}
+
+.order-summary-row strong {
+color: #222;
+text-align: right;
+}
+
+.order-summary-row.total {
+border-bottom: none;
+padding-top: 12px;
+font-size: 16px;
+}
+
+.order-summary-row.total strong {
+font-size: 18px;
+}
+
+.order-summary-note {
+margin-top: 10px;
+font-size: 12px;
+color: #777;
+line-height: 1.6;
+}
+
+.order-summary-preview {
+margin-top: 12px;
+display: grid;
+grid-template-columns: 120px 1fr;
+gap: 12px;
+align-items: start;
+}
+
+.order-summary-preview img {
+width: 100%;
+border-radius: 12px;
+background: #efefef;
+border: 1px solid #eee;
+object-fit: contain;
+aspect-ratio: 1 / 1.05;
+}
+
+.order-summary-preview-text {
+font-size: 12px;
+color: #666;
+line-height: 1.7;
+}
+
+.summary-preview-split {
+grid-template-columns: repeat(3, 1fr);
+}
+
+.macho-gender-label {
+font-size: 12px;
+font-weight: 800;
+color: #555;
+margin: 6px 0 4px;
+}
+
+@media (max-width: 760px) {
+.final-silhouette-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+.final-text-grid {
+grid-template-columns: 1fr;
+}
+.order-summary-preview {
+grid-template-columns: 1fr;
+}
+.summary-preview-split {
+  grid-template-columns: 1fr;
+}
+}
+
+
+.featured-grid-6 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:10px;
+}
+.featured-grid-6 img {
+  width:100%;
+  aspect-ratio:1 / 1.12;
+  object-fit:contain;
+  border-radius:14px;
+  background:#f4f4f4;
+  border:1px solid #eee;
+  cursor:pointer;
+}
+.back-design-link-wrap {
+  margin-top:10px;
+}
+.back-design-link {
+  font-size:12px;
+  font-weight:700;
+  color:#8a6f6f;
+  text-decoration:underline;
+}
+.back-design-sample-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:12px;
+}
+.back-design-card {
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.04);
+}
+.back-design-card img {
+  width:100%;
+  aspect-ratio:1 / 1.05;
+  object-fit:contain;
+  background:#f4f4f4;
+  cursor:pointer;
+}
+.back-design-card .back-design-caption {
+  padding:8px;
+  font-size:11px;
+  font-weight:700;
+  color:#555;
+  text-align:center;
+}
+@media (max-width:760px){
+  .featured-grid-6,.back-design-sample-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<section class="hero">
+<div class="top-mini-logo">
+<img src="images/logo.jpg" alt="POPO Ballet ロゴ">
+</div>
+
+<div class="hero-logo-panel">
+<div class="hero-logo-text">POPO Ballet</div>
+<div class="hero-logo-sub">Ballet Apparel Collection</div>
+</div>
+
+<div class="hero-gallery-4">
+<div class="hero-column">
+<img src="images/shoa.jpg" alt="POPO Ballet 実物写真 左上" class="hero-image" />
+<img src="images/shoa10.jpg" alt="POPO Ballet シルエット 左下" class="hero-image" />
+</div>
+<div class="hero-column">
+<img src="images/koa.jpg" alt="POPO Ballet 実物写真 右上" class="hero-image" />
+<img src="images/koa10.jpg" alt="POPO Ballet シルエット 右下" class="hero-image" />
+</div>
+</div>
+
+<h1>バレエの美しさを、日常に。</h1>
+<p>
+舞台の上でも、日常でも。<br>
+強さとやさしさを身にまとう、POPO Ballet のアパレルコレクション。
+</p>
+</section>
+
+<section class="section" id="featured-item">
+<div class="section-subtitle">Featured Item</div>
+<h2 class="section-title">おすすめTシャツ</h2>
+
+<div class="featured-box">
+<div class="featured-badge">FLAGSHIP ITEM</div>
+<div class="featured-grid-6">
+  <img src="images/featured-1.jpg" alt="POPO Ballet おすすめTシャツ 1" onclick="openSimpleModal(this.src, this.alt)">
+  <img src="images/featured-2.jpg" alt="POPO Ballet おすすめTシャツ 2" onclick="openSimpleModal(this.src, this.alt)">
+  <img src="images/featured-3.jpg" alt="POPO Ballet おすすめTシャツ 3" onclick="openSimpleModal(this.src, this.alt)">
+  <img src="images/featured-4.jpg" alt="POPO Ballet おすすめTシャツ 4" onclick="openSimpleModal(this.src, this.alt)">
+  <img src="images/featured-5.jpg" alt="POPO Ballet おすすめTシャツ 5" onclick="openSimpleModal(this.src, this.alt)">
+  <img src="images/featured-6.jpg" alt="POPO Ballet おすすめTシャツ 6" onclick="openSimpleModal(this.src, this.alt)">
+</div>
+<div style="margin-top:14px; text-align:center;">
+<a href="#categories" class="btn">商品を見る</a>
+</div>
+</div>
+
+</section>
+
+<section class="section" id="categories">
+<div class="section-subtitle">Categories</div>
+<h2 class="section-title">商品カテゴリー</h2>
+
+<div class="category-list">
+<a href="#tshirt-section" class="category-item link-item">Tシャツ</a>
+<a href="#ziphoodie-section" class="category-item link-item">ジップパーカー</a>
+<a href="#jerseyzip-section" class="category-item link-item">ジャージジップパーカー</a>
+<a href="#totebag-section" class="category-item link-item">トートバッグ</a>
+<div class="category-item">ポロシャツ</div>
+<div class="category-item">スウェット</div>
+<div class="category-item">スウェットパンツ</div>
+<div class="category-item">スウェットハーフパンツ</div>
+<div class="category-item">タオル</div>
+<div class="category-item">エコバッグ</div>
+<div class="category-item">コットン巾着</div>
+<div class="category-item">iPhoneケース</div>
+<div class="category-item">Androidスマホケース</div>
+<div class="category-item">手帳型スマホケース</div>
+<div class="category-item">タブレットケース</div>
+<div class="category-item">マグカップ</div>
+<div class="category-item">キーホルダー</div>
+<div class="category-item">ネイルチップ</div>
+<a href="#other-series" class="category-item category-item-series">他ジャンルTシャツ</a>
+</div>
+</section>
+
+
+<section class="section" id="gallery">
+<div class="section-subtitle">Collection Samples</div>
+<h2 class="section-title">サンプルギャラリー</h2>
+<p style="font-size:14px; color:#555;">
+気になるデザインは、画像をタップすると大きく表示できます。<br>
+色チップをタップすると、カラーごとの画像に切り替わります。
+</p>
+
+<!-- Tシャツ -->
+<div style="margin-top:20px;">
+<h3 class="category-title">Tシャツ</h3>
+<div class="gallery-grid">
+<div class="color-switch-card" id="tshirt-section" data-product-key="tshirt" data-product-label="Tシャツ">
+<div class="color-switch-images">
+<img src="images/T1.jpg" alt="POPO Ballet Tシャツ ブラック 前" class="front-image">
+
+<div class="back-preview-wrap">
+<img src="images/tshirt-men-1-white.jpg" alt="POPO Ballet Tシャツ 背面シルエット" class="back-image" id="tshirtBackImage">
+</div>
+</div>
+
+<div class="color-switch-info">
+<div class="tshirt-suboption-title">Tシャツ色選択</div>
+<div class="color-chip-row tshirt-color-row">
+<button type="button" class="color-chip-btn active" data-color-label="ブラック" data-color-value="black" data-front-white="images/T1.jpg" data-front-gold="images/T1-gold.jpg" data-front-pink="images/T1-pink.jpg" data-back-src="images/T10.jpg" data-product-name="Tシャツ（ブラック）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="color-chip-btn" data-color-label="ホワイト" data-color-value="white" data-front-white="images/T7.jpg" data-front-gold="images/T7-gold.jpg" data-front-pink="images/T7-pink.jpg" data-back-src="images/T70.jpg" data-product-name="Tシャツ（ホワイト）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-color-label="ピンク" data-color-value="pink" data-front-white="images/T2.jpg" data-front-gold="images/T2-gold.jpg" data-front-pink="images/T2-pink.jpg" data-back-src="images/T20.jpg" data-product-name="Tシャツ（ピンク）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+<button type="button" class="color-chip-btn" data-color-label="ライトブルー" data-color-value="light_blue" data-front-white="images/T3.jpg" data-front-gold="images/T3-gold.jpg" data-front-pink="images/T3-pink.jpg" data-back-src="images/T30.jpg" data-product-name="Tシャツ（ライトブルー）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="color-chip-btn" data-color-label="レッド" data-color-value="red" data-front-white="images/T4.jpg" data-front-gold="images/T4-gold.jpg" data-front-pink="images/T4-pink.jpg" data-back-src="images/T40.jpg" data-product-name="Tシャツ（レッド）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="color-chip-btn" data-color-label="ネイビー" data-color-value="navy" data-front-white="images/T5.jpg" data-front-gold="images/T5-gold.jpg" data-front-pink="images/T5-pink.jpg" data-back-src="images/T50.jpg" data-product-name="Tシャツ（ネイビー）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="color-chip-btn" data-color-label="ブルー" data-color-value="blue" data-front-white="images/T6.jpg" data-front-gold="images/T6-gold.jpg" data-front-pink="images/T6-pink.jpg" data-back-src="images/T60.jpg" data-product-name="Tシャツ（ブルー）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="tshirt-suboption-title">ロゴ色選択</div>
+<div class="color-chip-row tshirt-logo-row">
+<button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
+<button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+</div>
+<div class="suboption-note">※ ロゴ色を選ぶと、背面シルエット・背面文字も同色で仕上がります。</div>
+<div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプル一覧を見る</a></div>
+
+<div class="silhouette-select-box">
+<div class="silhouette-select-title">背面シルエット選択</div>
+<div class="silhouette-select-grid">
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-1.jpg','MEN 1')">MEN 1</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-2.jpg','MEN 2')">MEN 2</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-3.jpg','MEN 3')">MEN 3</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-4.jpg','MEN 4')">MEN 4</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-women-1.jpg','WOMEN 1')">WOMEN 1</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-women-2.jpg','WOMEN 2')">WOMEN 2</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-women-3.jpg','WOMEN 3')">WOMEN 3</button>
+<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-women-4.jpg','WOMEN 4')">WOMEN 4</button>
+</div>
+<div style="margin-top:8px;">
+<button type="button" class="silhouette-select-btn" onclick="clearTshirtSilhouette()">選択をクリア</button>
+</div>
+</div>
+
+<div class="text-select-box">
+  <div class="text-select-title">背面文字選択</div>
+  <div class="text-select-grid">
+
+    <button type="button" class="text-select-btn active"
+      onclick="selectTshirtText('none')" data-text="none">
+      文字なし
+    </button>
+
+    <button type="button" class="text-select-btn"
+      onclick="selectTshirtText('art')" data-text="art">
+      Ballet is Art
+    </button>
+
+    <button type="button" class="text-select-btn"
+      onclick="selectTshirtText('fr')" data-text="fr">
+      L'AMOUR DU BALLET
+    </button>
+  </div>
+</div>
+
+<div class="product-name">Tシャツ（ブラック）</div>
+<div class="product-desc">前面と背面のサンプル画像</div>
+<div class="product-price">¥〇〇〇〇</div>
+<button type="button" class="btn btn-secondary reflect-order-btn" onclick="reflectCurrentProductToOrder('tshirt')">このTシャツ内容を注文に反映</button>
+</div>
+</div>
+</div>
+
+<div class="spec-box">
+  <h4>Tシャツ サイズ・素材</h4>
+
+  <div class="spec-list">
+
+    <div class="spec-item"><strong>120</strong>
+      身丈48 / 身幅35 / 肩幅31 / 袖丈14<br>
+      身長目安：118cm
+    </div>
+
+    <div class="spec-item"><strong>130</strong>
+      身丈52 / 身幅37 / 肩幅33 / 袖丈15<br>
+      身長目安：130cm
+    </div>
+
+    <div class="spec-item"><strong>140</strong>
+      身丈56 / 身幅40 / 肩幅35 / 袖丈16<br>
+      身長目安：140cm
+    </div>
+
+    <div class="spec-item"><strong>150</strong>
+      身丈60 / 身幅43 / 肩幅38 / 袖丈17<br>
+      身長目安：150cm
+    </div>
+
+    <div class="spec-item"><strong>XS</strong>
+      身丈63 / 身幅46 / 肩幅41 / 袖丈18<br>
+      身長目安：162cm
+    </div>
+
+    <div class="spec-item"><strong>S</strong>
+      身丈66 / 身幅49 / 肩幅44 / 袖丈19 / 身長目安 163cm
+    </div>
+
+    <div class="spec-item"><strong>M</strong>
+      身丈72 / 身幅52 / 肩幅47 / 袖丈20 / 身長目安 170cm
+    </div>
+
+    <div class="spec-item"><strong>L</strong>
+      身丈74 / 身幅55 / 肩幅50 / 袖丈22 / 身長目安 179cm
+    </div>
+
+    <div class="spec-item"><strong>XL</strong>
+      身丈78 / 身幅58 / 肩幅53 / 袖丈24 / 身長目安 181cm
+    </div>
+
+  </div>
+
+  <p>素材：190g/㎡・5.6オンス・17/-天竺</p>
+  <p>グレー：綿80% / ポリエステル20%</p>
+  <p>その他カラー：綿100%</p>
+  <p class="spec-note">※ サイズ表記の単位はcmです。</p>
+</div>
+
+<!-- 背面シルエット一覧 -->
+<div style="margin-top:32px;">
+<h3 class="category-title">背面シルエット一覧</h3>
+<p style="font-size:14px; color:#555; margin-bottom:12px;">
+メンズ用・ウィメンズ用の背面シルエットデザイン一覧です。<br>
+気になるシルエットはタップで拡大表示できます。
+</p>
+
+<div class="silhouette-section">
+<div class="silhouette-group">
+<h4 class="silhouette-group-title">MEN シルエット</h4>
+<div class="silhouette-grid">
+<div class="silhouette-card"><img src="images/tshirt-men-10.png" alt="MEN 1" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">MEN 1</div></div>
+<div class="silhouette-card"><img src="images/tshirt-men-20.jpg" alt="MEN 2" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">MEN 2</div></div>
+<div class="silhouette-card"><img src="images/tshirt-men-30.jpg" alt="MEN 3" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">MEN 3</div></div>
+<div class="silhouette-card"><img src="images/tshirt-men-40.png" alt="MEN 4" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">MEN 4</div></div>
+</div>
+</div>
+
+<div class="silhouette-group" style="margin-top:20px;">
+<h4 class="silhouette-group-title">WOMEN シルエット</h4>
+<div class="silhouette-grid">
+<div class="silhouette-card"><img src="images/tshirt-women-10.png" alt="WOMEN 1" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">WOMEN 1</div></div>
+<div class="silhouette-card"><img src="images/tshirt-women-20.png" alt="WOMEN 2" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">WOMEN 2</div></div>
+<div class="silhouette-card"><img src="images/tshirt-women-30.png" alt="WOMEN 3" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">WOMEN 3</div></div>
+<div class="silhouette-card"><img src="images/tshirt-women-40.png" alt="WOMEN 4" onclick="openSimpleModal(this.src, this.alt)"><div class="silhouette-name">WOMEN 4</div></div>
+</div>
+</div>
+</div>
+
+<p class="spec-note" style="margin-top:12px;">※ シルエットデザインは今後追加・更新していく予定です。</p>
+</div>
+
+<!-- ジップパーカー -->
+<div style="margin-top:28px;">
+<h3 class="category-title">ジップパーカー</h3>
+<div class="gallery-grid">
+<div class="color-switch-card" id="ziphoodie-section">
+<div class="color-switch-images">
+<img src="images/Z1.jpg" alt="POPO Ballet ジップパーカー ブラック 前" class="front-image">
+<img src="images/tshirt-men-1-white.jpg" alt="POPO Ballet ジップパーカー 背面シルエット" class="back-image" id="zipBackImage">
+</div>
+<div class="color-switch-info">
+<div class="color-chip-row">
+<button type="button" class="color-chip-btn active" onclick="switchColor(this,'images/Z1.jpg','images/Z10.jpg','ジップパーカー（ブラック）','POPO Ballet ジップパーカー ブラック 前','POPO Ballet ジップパーカー ブラック 後ろ')"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z2.jpg','images/Z20.jpg','ジップパーカー（ライトピンク）','POPO Ballet ジップパーカー ライトピンク 前','POPO Ballet ジップパーカー ライトピンク 後ろ')"><span class="color-chip" style="background:#f7c6d8;"></span>ライトピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z3.jpg','images/Z30.jpg','ジップパーカー（ライトブルー）','POPO Ballet ジップパーカー ライトブルー 前','POPO Ballet ジップパーカー ライトブルー 後ろ')"><span class="color-chip" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z4.jpg','images/Z40.jpg','ジップパーカー（レッド）','POPO Ballet ジップパーカー レッド 前','POPO Ballet ジップパーカー レッド 後ろ')"><span class="color-chip" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z5.jpg','images/Z50.jpg','ジップパーカー（ブルー）','POPO Ballet ジップパーカー ブルー 前','POPO Ballet ジップパーカー ブルー 後ろ')"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z6.jpg','images/Z60.jpg','ジップパーカー（グレー）','POPO Ballet ジップパーカー グレー 前','POPO Ballet ジップパーカー グレー 後ろ')"><span class="color-chip" style="background:#bdbdbd;"></span>グレー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z7.jpg','images/Z70.jpg','ジップパーカー（ネイビー）','POPO Ballet ジップパーカー ネイビー 前','POPO Ballet ジップパーカー ネイビー 後ろ')"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
+</div>
+<div class="tshirt-suboption-title">ロゴ色選択</div>
+<div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
+<button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+</div>
+<div class="suboption-note">※ ブラック / ライトピンクのみゴールド対応。その他カラーはホワイトのみです。</div>
+<div class="silhouette-select-box">
+<div class="silhouette-select-title">背面シルエット選択</div>
+<div class="silhouette-select-grid">
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-1.jpg','MEN 1')">MEN 1</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-2.jpg','MEN 2')">MEN 2</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-3.jpg','MEN 3')">MEN 3</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-4.jpg','MEN 4')">MEN 4</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-1.jpg','WOMEN 1')">WOMEN 1</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-2.jpg','WOMEN 2')">WOMEN 2</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-3.jpg','WOMEN 3')">WOMEN 3</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-4.jpg','WOMEN 4')">WOMEN 4</button>
+</div>
+</div>
+<div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプル一覧を見る</a></div>
+<div class="product-name">ジップパーカー（ブラック）</div>
+<div class="product-desc">前面と背面のサンプル画像</div>
+<div class="product-price">¥〇〇〇〇</div>
+<button type="button" class="btn btn-secondary reflect-order-btn" onclick="reflectCurrentProductToOrder('zip_hoodie')">このジップパーカー内容を注文に反映</button>
+</div>
+</div>
+</div>
+
+<div class="spec-box">
+<h4>ジップパーカー サイズ・素材</h4>
+<p><strong>ライトピンク / ライトブルー</strong></p>
+<div class="spec-list">
+<div class="spec-item"><strong>150</strong>
+      身丈60 / 身幅47 / 肩幅42 / 袖丈56
+    </div>
+<div class="spec-item"><strong>S</strong>身丈 64 / 身幅 50 / 肩幅 44 / 袖丈 59</div>
+<div class="spec-item"><strong>M</strong>身丈 67 / 身幅 53 / 肩幅 47 / 袖丈 62</div>
+<div class="spec-item"><strong>L</strong>身丈 70 / 身幅 56 / 肩幅 50 / 袖丈 63</div>
+<div class="spec-item"><strong>XL</strong>身丈 73 / 身幅 59 / 肩幅 53 / 袖丈 63</div>
+</div>
+<p>素材：330g/㎡・9.7オンス・裏毛（裏パイル）</p>
+<p>グレー：綿60% / ポリエステル40%</p>
+<p>その他カラー：綿100%</p>
+<p style="margin-top:14px;"><strong>ブラック / レッド / ブルー / グレー / ネイビー</strong></p>
+<div class="spec-list">
+<div class="spec-item"><strong>110</strong>
+      身丈43 / 身幅34 / 肩幅29 / 袖丈38
+    </div>
+<div class="spec-item"><strong>130</strong>
+      身丈50 / 身幅38 / 肩幅33 / 袖丈47
+    </div>
+<div class="spec-item"><strong>150</strong>
+      身丈56 / 身幅43 / 肩幅37 / 袖丈55
+    </div>
+<div class="spec-item"><strong>S</strong>身丈 64 / 身幅 47 / 肩幅 41 / 袖丈 61</div>
+<div class="spec-item"><strong>M</strong>身丈 67 / 身幅 50 / 肩幅 44 / 袖丈 62</div>
+<div class="spec-item"><strong>L</strong>身丈 70 / 身幅 53 / 肩幅 47 / 袖丈 63</div>
+<div class="spec-item"><strong>XL</strong>身丈 73 / 身幅 56 / 肩幅 50 / 袖丈 63</div>
+</div>
+<p>素材：285g/㎡・8.4オンス・裏毛</p>
+<p>グレー：綿90% / ポリエステル10%</p>
+<p>その他カラー：綿100%</p>
+<p class="spec-note">※ サイズ表記の単位はcmです。</p>
+</div>
+</div>
+
+<!-- ジャージジップパーカー -->
+<div style="margin-top:28px;">
+<h3 class="category-title">ジャージジップパーカー</h3>
+<div class="gallery-grid">
+<div class="color-switch-card" id="jerseyzip-section">
+<div class="color-switch-images">
+<img src="images/J1.jpg" alt="POPO Ballet ジャージジップパーカー ブラック 前" class="front-image">
+<img src="images/tshirt-men-1-white.jpg" alt="POPO Ballet ジャージジップパーカー 背面シルエット" class="back-image" id="jerseyBackImage">
+</div>
+<div class="color-switch-info">
+<div class="color-chip-row">
+<button type="button" class="color-chip-btn active" onclick="switchColor(this,'images/J1.jpg','images/J10.jpg','ジャージジップパーカー（ブラック）','POPO Ballet ジャージジップパーカー ブラック 前','POPO Ballet ジャージジップパーカー ブラック 後ろ')"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/J2.jpg','images/J20.jpg','ジャージジップパーカー（ピンク）','POPO Ballet ジャージジップパーカー ピンク 前','POPO Ballet ジャージジップパーカー ピンク 後ろ')"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/J3.jpg','images/J30.jpg','ジャージジップパーカー（グレー）','POPO Ballet ジャージジップパーカー グレー 前','POPO Ballet ジャージジップパーカー グレー 後ろ')"><span class="color-chip" style="background:#bdbdbd;"></span>グレー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/J4.jpg','images/J40.jpg','ジャージジップパーカー（ネイビー）','POPO Ballet ジャージジップパーカー ネイビー 前','POPO Ballet ジャージジップパーカー ネイビー 後ろ')"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
+</div>
+<div class="tshirt-suboption-title">ロゴ色選択</div>
+<div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
+<button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+</div>
+<div class="suboption-note">※ ブラックはホワイト / ゴールド / ピンク、ピンクはホワイト / ゴールド、その他はホワイトのみです。</div>
+<div class="silhouette-select-box">
+<div class="silhouette-select-title">背面シルエット選択</div>
+<div class="silhouette-select-grid">
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-1.jpg','MEN 1')">MEN 1</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-2.jpg','MEN 2')">MEN 2</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-3.jpg','MEN 3')">MEN 3</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-4.jpg','MEN 4')">MEN 4</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-1.jpg','WOMEN 1')">WOMEN 1</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-2.jpg','WOMEN 2')">WOMEN 2</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-3.jpg','WOMEN 3')">WOMEN 3</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-4.jpg','WOMEN 4')">WOMEN 4</button>
+</div>
+</div>
+<div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプル一覧を見る</a></div>
+<div class="product-name">ジャージジップパーカー（ブラック）</div>
+<div class="product-desc">前面と背面のサンプル画像</div>
+<div class="product-price">¥〇〇〇〇</div>
+<button type="button" class="btn btn-secondary reflect-order-btn" onclick="reflectCurrentProductToOrder('jersey_zip')">このジャージ内容を注文に反映</button>
+</div>
+</div>
+</div>
+
+<div class="spec-box">
+<h4>ジャージジップパーカー サイズ・素材</h4>
+<div class="spec-list">
+<div class="spec-item"><strong>XS</strong>
+      身丈61 / 身幅42 / 肩幅36 / 袖丈61
+    </div>
+<div class="spec-item"><strong>S</strong>身丈 65 / 身幅 46 / 肩幅 41 / 袖丈 62</div>
+<div class="spec-item"><strong>M</strong>身丈 68 / 身幅 48 / 肩幅 42 / 袖丈 63</div>
+<div class="spec-item"><strong>L</strong>身丈 71 / 身幅 50 / 肩幅 44 / 袖丈 64</div>
+<div class="spec-item"><strong>XL</strong>身丈 74 / 身幅 52 / 肩幅 46 / 袖丈 65</div>
+</div>
+<p>素材：綿100%</p>
+<p class="spec-note">※ サイズ表記の単位はcmです。</p>
+</div>
+</div>
+
+<!-- バッグ -->
+<div style="margin-top:28px;">
+<h3 class="category-title">バッグ</h3>
+<div class="bag-grid">
+<div class="color-switch-card bag-card" id="totebag-section" data-product-key="bag" data-product-label="バッグ">
+<div class="color-switch-images single-image">
+<img src="images/b1.jpg" alt="POPO Ballet バッグ ブラック" class="front-image" onclick="openProductModal(this.closest('.color-switch-card'))">
+</div>
+<div class="color-switch-info">
+<div class="color-chip-row">
+<button type="button" class="color-chip-btn active" onclick="switchColor(this,'images/b1.jpg','','バッグ（ブラック）','POPO Ballet バッグ ブラック','',true)"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/b2.jpg','','バッグ（ライトピンク）','POPO Ballet バッグ ライトピンク','',true)"><span class="color-chip" style="background:#f7c6d8;"></span>ライトピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/b3.jpg','','バッグ（ブルー）','POPO Ballet バッグ ブルー','',true)"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/b4.jpg','','バッグ（ホットピンク）','POPO Ballet バッグ ホットピンク','',true)"><span class="color-chip" style="background:#ff4fa3;"></span>ホットピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/b5.jpg','','バッグ（ネイビー）','POPO Ballet バッグ ネイビー','',true)"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
+</div>
+<div class="tshirt-suboption-title">ロゴ色選択</div>
+<div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
+<button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+</div>
+<div class="suboption-note">※ ブラック / ライトピンクはホワイト / ゴールド、その他カラーはホワイトのみです。</div>
+<div class="product-name">バッグ（ブラック）</div>
+<div class="product-desc">バッグのサンプル画像</div>
+<div class="product-price">¥〇〇〇〇</div>
+<button type="button" class="btn btn-secondary reflect-order-btn" onclick="reflectCurrentProductToOrder('bag')">このバッグ内容を注文に反映</button>
+</div>
+</div>
+
+<div class="color-switch-card bag-card" id="kinchaku-m-section" data-product-key="kinchaku_m" data-product-label="巾着M">
+<div class="color-switch-images single-image">
+<img src="images/km1.jpg" alt="POPO Ballet 巾着M ブラック" class="front-image" onclick="openProductModal(this.closest('.color-switch-card'))">
+</div>
+<div class="color-switch-info">
+<div class="color-chip-row">
+<button type="button" class="color-chip-btn active" onclick="switchColor(this,'images/km1.jpg','','巾着M（ブラック）','POPO Ballet 巾着M ブラック','',true)"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/km2.jpg','','巾着M（ライトピンク）','POPO Ballet 巾着M ライトピンク','',true)"><span class="color-chip" style="background:#f7c6d8;"></span>ライトピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/km3.jpg','','巾着M（ブルー）','POPO Ballet 巾着M ブルー','',true)"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/km4.jpg','','巾着M（ホットピンク）','POPO Ballet 巾着M ホットピンク','',true)"><span class="color-chip" style="background:#ff4fa3;"></span>ホットピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/km5.jpg','','巾着M（ネイビー）','POPO Ballet 巾着M ネイビー','',true)"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
+</div>
+<div class="tshirt-suboption-title">ロゴ色選択</div>
+<div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
+<button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+</div>
+<div class="suboption-note">※ ブラック / ライトピンクはホワイト / ゴールド、その他カラーはホワイトのみです。</div>
+<div class="product-name">巾着M（ブラック）</div>
+<div class="product-desc">巾着Mのサンプル画像</div>
+<div class="product-price">¥〇〇〇〇</div>
+<button type="button" class="btn btn-secondary reflect-order-btn" onclick="reflectCurrentProductToOrder('kinchaku_m')">この巾着M内容を注文に反映</button>
+</div>
+</div>
+
+<div class="color-switch-card bag-card" id="kinchaku-s-section" data-product-key="kinchaku_s" data-product-label="巾着S">
+<div class="color-switch-images single-image">
+<img src="images/ks1.jpg" alt="POPO Ballet 巾着S ブラック" class="front-image" onclick="openProductModal(this.closest('.color-switch-card'))">
+</div>
+<div class="color-switch-info">
+<div class="color-chip-row">
+<button type="button" class="color-chip-btn active" onclick="switchColor(this,'images/ks1.jpg','','巾着S（ブラック）','POPO Ballet 巾着S ブラック','',true)"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/ks2.jpg','','巾着S（ライトピンク）','POPO Ballet 巾着S ライトピンク','',true)"><span class="color-chip" style="background:#f7c6d8;"></span>ライトピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/ks3.jpg','','巾着S（ブルー）','POPO Ballet 巾着S ブルー','',true)"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/ks4.jpg','','巾着S（ホットピンク）','POPO Ballet 巾着S ホットピンク','',true)"><span class="color-chip" style="background:#ff4fa3;"></span>ホットピンク</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/ks5.jpg','','巾着S（ネイビー）','POPO Ballet 巾着S ネイビー','',true)"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
+</div>
+<div class="tshirt-suboption-title">ロゴ色選択</div>
+<div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
+<button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+</div>
+<div class="suboption-note">※ ブラック / ライトピンクはホワイト / ゴールド、その他カラーはホワイトのみです。</div>
+<div class="product-name">巾着S（ブラック）</div>
+<div class="product-desc">巾着Sのサンプル画像</div>
+<div class="product-price">¥〇〇〇〇</div>
+<button type="button" class="btn btn-secondary reflect-order-btn" onclick="reflectCurrentProductToOrder('kinchaku_s')">この巾着S内容を注文に反映</button>
+</div>
+</div>
+</div>
+
+<div class="spec-box">
+<h4>バッグ・巾着 サイズ・素材</h4>
+<p>バッグ・巾着M・巾着S のサイズや素材は、後から実寸に合わせて更新してください。</p>
+<p class="spec-note">※ 画像名は後で実データに合わせて変更できます。（例: km1.jpg / ks1.jpg など）</p>
+</div>
+</div>
+
+<p class="notes">
+※ 画像は後から差し替えできます。imagesフォルダ内の画像名を合わせてください。
+</p>
+</section>
+
+<div id="back-design-samples" style="margin-top:36px;">
+<h3 class="category-title">背面デザインサンプル一覧</h3>
+<p style="font-size:13px; color:#666; margin-bottom:10px;">今まで作成した背面デザインのサンプルです。タップすると大きく表示できます。</p>
+<h4 class="silhouette-group-title">Tシャツ</h4>
+<div class="back-design-sample-grid">
+  <div class="back-design-card"><img src="images/back-sample-t1.jpg" alt="Tシャツ 背面サンプル 1" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 1</div></div>
+  <div class="back-design-card"><img src="images/back-sample-t2.jpg" alt="Tシャツ 背面サンプル 2" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 2</div></div>
+  <div class="back-design-card"><img src="images/back-sample-t3.jpg" alt="Tシャツ 背面サンプル 3" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 3</div></div>
+  <div class="back-design-card"><img src="images/back-sample-t4.jpg" alt="Tシャツ 背面サンプル 4" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 4</div></div>
+  <div class="back-design-card"><img src="images/back-sample-t5.jpg" alt="Tシャツ 背面サンプル 5" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 5</div></div>
+  <div class="back-design-card"><img src="images/back-sample-t6.jpg" alt="Tシャツ 背面サンプル 6" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 6</div></div>
+</div>
+<h4 class="silhouette-group-title" style="margin-top:18px;">ジップパーカー</h4>
+<div class="back-design-sample-grid">
+  <div class="back-design-card"><img src="images/back-sample-z1.jpg" alt="ジップパーカー 背面サンプル 1" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">ジップ 1</div></div>
+  <div class="back-design-card"><img src="images/back-sample-z2.jpg" alt="ジップパーカー 背面サンプル 2" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">ジップ 2</div></div>
+  <div class="back-design-card"><img src="images/back-sample-z3.jpg" alt="ジップパーカー 背面サンプル 3" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">ジップ 3</div></div>
+</div>
+<h4 class="silhouette-group-title" style="margin-top:18px;">ジャージジップパーカー</h4>
+<div class="back-design-sample-grid">
+  <div class="back-design-card"><img src="images/back-sample-j1.jpg" alt="ジャージ 背面サンプル 1" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">ジャージ 1</div></div>
+  <div class="back-design-card"><img src="images/back-sample-j2.jpg" alt="ジャージ 背面サンプル 2" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">ジャージ 2</div></div>
+  <div class="back-design-card"><img src="images/back-sample-j3.jpg" alt="ジャージ 背面サンプル 3" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">ジャージ 3</div></div>
+</div>
+</div>
+
+<section class="section" id="other-series">
+<div class="section-subtitle">Other Sports / Other Stories</div>
+<h2 class="section-title">スポーツや思い出を、かたちに。</h2>
+
+<p class="series-intro">
+一瞬一瞬の積み重ねが、かけがえのない思い出になる。<br>
+POPOは、バレエだけでなく、さまざまなスポーツや趣味、家族の時間を
+ロゴやシルエットとして形にしていきます。<br>
+それぞれのジャンルに合わせたPOPOシリーズも、少しずつ広がっています。
+</p>
+
+<div class="series-top-actions">
+<a href="#other-series" class="btn btn-secondary">POPOシリーズを見る</a>
+</div>
+
+<div class="series-grid">
+<div class="series-macho">
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-macho-black-front.jpg" alt="POPO Macho ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-macho-black-back.jpg" alt="POPO Macho ブラック 背面" class="series-sub-image" onclick="event.preventDefault(); event.stopPropagation(); openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-macho-women-black.jpg" alt="POPO Macho レディース ブラック 背面" class="series-sub-image" onclick="openSimpleModal(this.src, this.alt)">
+<div class="series-sub-label">前面 / メンズ背面 / レディース背面</div>
+</div>
+<div class="series-info">
+<div class="macho-gender-label">メンズ</div>
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-black-front.jpg','images/popo-macho-black-back.jpg')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-white-front.jpg','images/popo-macho-white-back.jpg')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-pink-front.jpg','images/popo-macho-pink-back.jpg')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-lightblue-front.jpg','images/popo-macho-lightblue-back.jpg')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-red-front.jpg','images/popo-macho-red-back.jpg')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-navy-front.jpg','images/popo-macho-navy-back.jpg')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-blue-front.jpg','images/popo-macho-blue-back.jpg')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="macho-gender-label">ウィメン</div>
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-black-front.jpg','images/popo-macho-women-black.jpg')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-white-front.jpg','images/popo-macho-women-white.jpg')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-pink-front.jpg','images/popo-macho-women-pink.jpg')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-lightblue-front.jpg','images/popo-macho-women-lightblue.jpg')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-red-front.jpg','images/popo-macho-women-red.jpg')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-navy-front.jpg','images/popo-macho-women-navy.jpg')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoWomen(this,'images/popo-macho-blue-front.jpg','images/popo-macho-women-blue.jpg')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Macho</div>
+<div class="series-desc">パーソナルジム・筋トレブランド。前面ロゴと男女別の背面デザインを見比べられます。</div>
+<a href="https://popomacho.github.io/" class="btn btn-secondary" target="_blank" style="margin-top:8px; display:inline-block;">POPO Machoのページへ</a>
+</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-baseball-black-front.jpg" alt="POPO Baseball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-baseball-black-back.jpg" alt="POPO Baseball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-baseball-black-front.jpg','images/popo-baseball-black-back.jpg','POPO Baseball ブラック 前面','POPO Baseball ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','images/popo-baseball-white-back.jpg','POPO Baseball ホワイト 前面','POPO Baseball ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','images/popo-baseball-pink-back.jpg','POPO Baseball ピンク 前面','POPO Baseball ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','images/popo-baseball-lightblue-back.jpg','POPO Baseball ライトブルー 前面','POPO Baseball ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','images/popo-baseball-red-back.jpg','POPO Baseball レッド 前面','POPO Baseball レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','images/popo-baseball-navy-back.jpg','POPO Baseball ネイビー 前面','POPO Baseball ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','images/popo-baseball-blue-back.jpg','POPO Baseball ブルー 前面','POPO Baseball ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Baseball</div>
+<div class="series-desc">野球の情熱や思い出を、POPOらしいロゴデザインで表現。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-golf-black-front.jpg" alt="POPO Golf ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-golf-black-back.jpg" alt="POPO Golf ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-golf-black-front.jpg','images/popo-golf-black-back.jpg','POPO Golf ブラック 前面','POPO Golf ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-white-front.jpg','images/popo-golf-white-back.jpg','POPO Golf ホワイト 前面','POPO Golf ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-pink-front.jpg','images/popo-golf-pink-back.jpg','POPO Golf ピンク 前面','POPO Golf ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-lightblue-front.jpg','images/popo-golf-lightblue-back.jpg','POPO Golf ライトブルー 前面','POPO Golf ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-red-front.jpg','images/popo-golf-red-back.jpg','POPO Golf レッド 前面','POPO Golf レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-navy-front.jpg','images/popo-golf-navy-back.jpg','POPO Golf ネイビー 前面','POPO Golf ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-blue-front.jpg','images/popo-golf-blue-back.jpg','POPO Golf ブルー 前面','POPO Golf ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Golf</div>
+<div class="series-desc">静かな集中と洗練を感じる、ゴルフ向けロゴシリーズ。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-soccer-black-front.jpg" alt="POPO Soccer ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-soccer-black-back.jpg" alt="POPO Soccer ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-soccer-black-front.jpg','images/popo-soccer-black-back.jpg','POPO Soccer ブラック 前面','POPO Soccer ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-white-front.jpg','images/popo-soccer-white-back.jpg','POPO Soccer ホワイト 前面','POPO Soccer ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-pink-front.jpg','images/popo-soccer-pink-back.jpg','POPO Soccer ピンク 前面','POPO Soccer ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-lightblue-front.jpg','images/popo-soccer-lightblue-back.jpg','POPO Soccer ライトブルー 前面','POPO Soccer ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-red-front.jpg','images/popo-soccer-red-back.jpg','POPO Soccer レッド 前面','POPO Soccer レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-navy-front.jpg','images/popo-soccer-navy-back.jpg','POPO Soccer ネイビー 前面','POPO Soccer ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-blue-front.jpg','images/popo-soccer-blue-back.jpg','POPO Soccer ブルー 前面','POPO Soccer ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Soccer</div>
+<div class="series-desc">躍動感とスピード感をイメージしたサッカーデザイン。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-rugby-black-front.jpg" alt="POPO Rugby ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-rugby-black-back.jpg" alt="POPO Rugby ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-rugby-black-front.jpg','images/popo-rugby-black-back.jpg','POPO Rugby ブラック 前面','POPO Rugby ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-white-front.jpg','images/popo-rugby-white-back.jpg','POPO Rugby ホワイト 前面','POPO Rugby ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-pink-front.jpg','images/popo-rugby-pink-back.jpg','POPO Rugby ピンク 前面','POPO Rugby ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-lightblue-front.jpg','images/popo-rugby-lightblue-back.jpg','POPO Rugby ライトブルー 前面','POPO Rugby ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-red-front.jpg','images/popo-rugby-red-back.jpg','POPO Rugby レッド 前面','POPO Rugby レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-navy-front.jpg','images/popo-rugby-navy-back.jpg','POPO Rugby ネイビー 前面','POPO Rugby ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-blue-front.jpg','images/popo-rugby-blue-back.jpg','POPO Rugby ブルー 前面','POPO Rugby ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Rugby</div>
+<div class="series-desc">力強さとチームスピリットを表現したラグビーデザイン。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-surfing-black-front.jpg" alt="POPO Surfing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-surfing-black-back.jpg" alt="POPO Surfing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-surfing-black-front.jpg','images/popo-surfing-black-back.jpg','POPO Surfing ブラック 前面','POPO Surfing ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-white-front.jpg','images/popo-surfing-white-back.jpg','POPO Surfing ホワイト 前面','POPO Surfing ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-pink-front.jpg','images/popo-surfing-pink-back.jpg','POPO Surfing ピンク 前面','POPO Surfing ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-lightblue-front.jpg','images/popo-surfing-lightblue-back.jpg','POPO Surfing ライトブルー 前面','POPO Surfing ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-red-front.jpg','images/popo-surfing-red-back.jpg','POPO Surfing レッド 前面','POPO Surfing レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-navy-front.jpg','images/popo-surfing-navy-back.jpg','POPO Surfing ネイビー 前面','POPO Surfing ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-blue-front.jpg','images/popo-surfing-blue-back.jpg','POPO Surfing ブルー 前面','POPO Surfing ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Surfing</div>
+<div class="series-desc">風と波の自由さを感じるサーフィンロゴ。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-family-black-front.jpg" alt="POPO Family ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-family-black-back.jpg" alt="POPO Family ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-family-black-front.jpg','images/popo-family-black-back.jpg','POPO Family ブラック 前面','POPO Family ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-white-front.jpg','images/popo-family-white-back.jpg','POPO Family ホワイト 前面','POPO Family ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-pink-front.jpg','images/popo-family-pink-back.jpg','POPO Family ピンク 前面','POPO Family ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-lightblue-front.jpg','images/popo-family-lightblue-back.jpg','POPO Family ライトブルー 前面','POPO Family ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-red-front.jpg','images/popo-family-red-back.jpg','POPO Family レッド 前面','POPO Family レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-navy-front.jpg','images/popo-family-navy-back.jpg','POPO Family ネイビー 前面','POPO Family ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-blue-front.jpg','images/popo-family-blue-back.jpg','POPO Family ブルー 前面','POPO Family ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Family</div>
+<div class="series-desc">家族の思い出や絆をやさしく残せるシリーズ。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-car-black-front.jpg" alt="POPO Car ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-car-black-back.jpg" alt="POPO Car ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-car-black-front.jpg','images/popo-car-black-back.jpg','POPO Car ブラック 前面','POPO Car ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-white-front.jpg','images/popo-car-white-back.jpg','POPO Car ホワイト 前面','POPO Car ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-pink-front.jpg','images/popo-car-pink-back.jpg','POPO Car ピンク 前面','POPO Car ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-lightblue-front.jpg','images/popo-car-lightblue-back.jpg','POPO Car ライトブルー 前面','POPO Car ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-red-front.jpg','images/popo-car-red-back.jpg','POPO Car レッド 前面','POPO Car レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-navy-front.jpg','images/popo-car-navy-back.jpg','POPO Car ネイビー 前面','POPO Car ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-blue-front.jpg','images/popo-car-blue-back.jpg','POPO Car ブルー 前面','POPO Car ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Car</div>
+<div class="series-desc">愛車との時間や思い出を形にするカーシリーズ。</div>
+</div>
+</div>
+<div class="series-card">
+<div class="series-image-stack">
+<img src="images/popo-shodo-black-front.jpg" alt="POPO Shodo ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-shodo-black-back.jpg" alt="POPO Shodo ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-shodo-black-front.jpg','images/popo-shodo-black-back.jpg','POPO Shodo ブラック 前面','POPO Shodo ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-white-front.jpg','images/popo-shodo-white-back.jpg','POPO Shodo ホワイト 前面','POPO Shodo ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-pink-front.jpg','images/popo-shodo-pink-back.jpg','POPO Shodo ピンク 前面','POPO Shodo ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-lightblue-front.jpg','images/popo-shodo-lightblue-back.jpg','POPO Shodo ライトブルー 前面','POPO Shodo ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-red-front.jpg','images/popo-shodo-red-back.jpg','POPO Shodo レッド 前面','POPO Shodo レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-navy-front.jpg','images/popo-shodo-navy-back.jpg','POPO Shodo ネイビー 前面','POPO Shodo ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-blue-front.jpg','images/popo-shodo-blue-back.jpg','POPO Shodo ブルー 前面','POPO Shodo ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Shodo</div>
+<div class="series-desc">筆の美しさと静かな存在感を表現した書道シリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-tennis-black-front.jpg" alt="POPO Tennis ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-tennis-black-back.jpg" alt="POPO Tennis ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-tennis-black-front.jpg','images/popo-tennis-black-back.jpg','POPO Tennis ブラック 前面','POPO Tennis ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-white-front.jpg','images/popo-tennis-white-back.jpg','POPO Tennis ホワイト 前面','POPO Tennis ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-pink-front.jpg','images/popo-tennis-pink-back.jpg','POPO Tennis ピンク 前面','POPO Tennis ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-lightblue-front.jpg','images/popo-tennis-lightblue-back.jpg','POPO Tennis ライトブルー 前面','POPO Tennis ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-red-front.jpg','images/popo-tennis-red-back.jpg','POPO Tennis レッド 前面','POPO Tennis レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-navy-front.jpg','images/popo-tennis-navy-back.jpg','POPO Tennis ネイビー 前面','POPO Tennis ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-blue-front.jpg','images/popo-tennis-blue-back.jpg','POPO Tennis ブルー 前面','POPO Tennis ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Tennis</div>
+<div class="series-desc">しなやかさとスピード感を表現したテニスデザイン。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-camping-black-front.jpg" alt="POPO Camping ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-camping-black-back.jpg" alt="POPO Camping ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-camping-black-front.jpg','images/popo-camping-black-back.jpg','POPO Camping ブラック 前面','POPO Camping ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-white-front.jpg','images/popo-camping-white-back.jpg','POPO Camping ホワイト 前面','POPO Camping ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-pink-front.jpg','images/popo-camping-pink-back.jpg','POPO Camping ピンク 前面','POPO Camping ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-lightblue-front.jpg','images/popo-camping-lightblue-back.jpg','POPO Camping ライトブルー 前面','POPO Camping ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-red-front.jpg','images/popo-camping-red-back.jpg','POPO Camping レッド 前面','POPO Camping レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-navy-front.jpg','images/popo-camping-navy-back.jpg','POPO Camping ネイビー 前面','POPO Camping ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-blue-front.jpg','images/popo-camping-blue-back.jpg','POPO Camping ブルー 前面','POPO Camping ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Camping</div>
+<div class="series-desc">自然の中の時間や冒険心を表現するキャンピングシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-bike-black-front.jpg" alt="POPO Bike ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-bike-black-back.jpg" alt="POPO Bike ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-bike-black-front.jpg','images/popo-bike-black-back.jpg','POPO Bike ブラック 前面','POPO Bike ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-white-front.jpg','images/popo-bike-white-back.jpg','POPO Bike ホワイト 前面','POPO Bike ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-pink-front.jpg','images/popo-bike-pink-back.jpg','POPO Bike ピンク 前面','POPO Bike ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-lightblue-front.jpg','images/popo-bike-lightblue-back.jpg','POPO Bike ライトブルー 前面','POPO Bike ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-red-front.jpg','images/popo-bike-red-back.jpg','POPO Bike レッド 前面','POPO Bike レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-navy-front.jpg','images/popo-bike-navy-back.jpg','POPO Bike ネイビー 前面','POPO Bike ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-blue-front.jpg','images/popo-bike-blue-back.jpg','POPO Bike ブルー 前面','POPO Bike ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Bike</div>
+<div class="series-desc">風を切って走る楽しさを表現したバイクデザイン。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-fishing-black-front.jpg" alt="POPO Fishing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-fishing-black-back.jpg" alt="POPO Fishing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-fishing-black-front.jpg','images/popo-fishing-black-back.jpg','POPO Fishing ブラック 前面','POPO Fishing ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-white-front.jpg','images/popo-fishing-white-back.jpg','POPO Fishing ホワイト 前面','POPO Fishing ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-pink-front.jpg','images/popo-fishing-pink-back.jpg','POPO Fishing ピンク 前面','POPO Fishing ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-lightblue-front.jpg','images/popo-fishing-lightblue-back.jpg','POPO Fishing ライトブルー 前面','POPO Fishing ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-red-front.jpg','images/popo-fishing-red-back.jpg','POPO Fishing レッド 前面','POPO Fishing レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-navy-front.jpg','images/popo-fishing-navy-back.jpg','POPO Fishing ネイビー 前面','POPO Fishing ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-blue-front.jpg','images/popo-fishing-blue-back.jpg','POPO Fishing ブルー 前面','POPO Fishing ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Fishing</div>
+<div class="series-desc">静かな時間と大物を狙う高揚感を形にしたフィッシングシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-horse-riding-black-front.jpg" alt="POPO Horse Riding ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-horse-riding-black-back.jpg" alt="POPO Horse Riding ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-black-front.jpg','images/popo-horse-riding-black-back.jpg','POPO Horse Riding ブラック 前面','POPO Horse Riding ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-white-front.jpg','images/popo-horse-riding-white-back.jpg','POPO Horse Riding ホワイト 前面','POPO Horse Riding ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-pink-front.jpg','images/popo-horse-riding-pink-back.jpg','POPO Horse Riding ピンク 前面','POPO Horse Riding ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-lightblue-front.jpg','images/popo-horse-riding-lightblue-back.jpg','POPO Horse Riding ライトブルー 前面','POPO Horse Riding ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-red-front.jpg','images/popo-horse-riding-red-back.jpg','POPO Horse Riding レッド 前面','POPO Horse Riding レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-navy-front.jpg','images/popo-horse-riding-navy-back.jpg','POPO Horse Riding ネイビー 前面','POPO Horse Riding ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-blue-front.jpg','images/popo-horse-riding-blue-back.jpg','POPO Horse Riding ブルー 前面','POPO Horse Riding ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Horse Riding</div>
+<div class="series-desc">優雅さと信頼感を感じるホースライディングデザイン。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-music-black-front.jpg" alt="POPO Music ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-music-black-back.jpg" alt="POPO Music ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-music-black-front.jpg','images/popo-music-black-back.jpg','POPO Music ブラック 前面','POPO Music ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-white-front.jpg','images/popo-music-white-back.jpg','POPO Music ホワイト 前面','POPO Music ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-pink-front.jpg','images/popo-music-pink-back.jpg','POPO Music ピンク 前面','POPO Music ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-lightblue-front.jpg','images/popo-music-lightblue-back.jpg','POPO Music ライトブルー 前面','POPO Music ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-red-front.jpg','images/popo-music-red-back.jpg','POPO Music レッド 前面','POPO Music レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-navy-front.jpg','images/popo-music-navy-back.jpg','POPO Music ネイビー 前面','POPO Music ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-blue-front.jpg','images/popo-music-blue-back.jpg','POPO Music ブルー 前面','POPO Music ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Music</div>
+<div class="series-desc">音楽の楽しさや感性を形にしたロゴシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-boxing-black-front.jpg" alt="POPO Boxing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-boxing-black-back.jpg" alt="POPO Boxing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-boxing-black-front.jpg','images/popo-boxing-black-back.jpg','POPO Boxing ブラック 前面','POPO Boxing ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-white-front.jpg','images/popo-boxing-white-back.jpg','POPO Boxing ホワイト 前面','POPO Boxing ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-pink-front.jpg','images/popo-boxing-pink-back.jpg','POPO Boxing ピンク 前面','POPO Boxing ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-lightblue-front.jpg','images/popo-boxing-lightblue-back.jpg','POPO Boxing ライトブルー 前面','POPO Boxing ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-red-front.jpg','images/popo-boxing-red-back.jpg','POPO Boxing レッド 前面','POPO Boxing レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-navy-front.jpg','images/popo-boxing-navy-back.jpg','POPO Boxing ネイビー 前面','POPO Boxing ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-blue-front.jpg','images/popo-boxing-blue-back.jpg','POPO Boxing ブルー 前面','POPO Boxing ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Boxing</div>
+<div class="series-desc">強さと集中力をイメージしたボクシングシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-bowling-black-front.jpg" alt="POPO Bowling ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-bowling-black-back.jpg" alt="POPO Bowling ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-bowling-black-front.jpg','images/popo-bowling-black-back.jpg','POPO Bowling ブラック 前面','POPO Bowling ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-white-front.jpg','images/popo-bowling-white-back.jpg','POPO Bowling ホワイト 前面','POPO Bowling ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-pink-front.jpg','images/popo-bowling-pink-back.jpg','POPO Bowling ピンク 前面','POPO Bowling ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-lightblue-front.jpg','images/popo-bowling-lightblue-back.jpg','POPO Bowling ライトブルー 前面','POPO Bowling ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-red-front.jpg','images/popo-bowling-red-back.jpg','POPO Bowling レッド 前面','POPO Bowling レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-navy-front.jpg','images/popo-bowling-navy-back.jpg','POPO Bowling ネイビー 前面','POPO Bowling ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-blue-front.jpg','images/popo-bowling-blue-back.jpg','POPO Bowling ブルー 前面','POPO Bowling ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Bowling</div>
+<div class="series-desc">仲間との楽しい時間を表現したボウリングシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-basketball-black-front.jpg" alt="POPO Basketball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-basketball-black-back.jpg" alt="POPO Basketball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-basketball-black-front.jpg','images/popo-basketball-black-back.jpg','POPO Basketball ブラック 前面','POPO Basketball ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-white-front.jpg','images/popo-basketball-white-back.jpg','POPO Basketball ホワイト 前面','POPO Basketball ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-pink-front.jpg','images/popo-basketball-pink-back.jpg','POPO Basketball ピンク 前面','POPO Basketball ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-lightblue-front.jpg','images/popo-basketball-lightblue-back.jpg','POPO Basketball ライトブルー 前面','POPO Basketball ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-red-front.jpg','images/popo-basketball-red-back.jpg','POPO Basketball レッド 前面','POPO Basketball レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-navy-front.jpg','images/popo-basketball-navy-back.jpg','POPO Basketball ネイビー 前面','POPO Basketball ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-blue-front.jpg','images/popo-basketball-blue-back.jpg','POPO Basketball ブルー 前面','POPO Basketball ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Basketball</div>
+<div class="series-desc">躍動感と高さを感じるバスケットボールデザイン。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-karate-black-front.jpg" alt="POPO Karate ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-karate-black-back.jpg" alt="POPO Karate ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-karate-black-front.jpg','images/popo-karate-black-back.jpg','POPO Karate ブラック 前面','POPO Karate ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-white-front.jpg','images/popo-karate-white-back.jpg','POPO Karate ホワイト 前面','POPO Karate ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-pink-front.jpg','images/popo-karate-pink-back.jpg','POPO Karate ピンク 前面','POPO Karate ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-lightblue-front.jpg','images/popo-karate-lightblue-back.jpg','POPO Karate ライトブルー 前面','POPO Karate ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-red-front.jpg','images/popo-karate-red-back.jpg','POPO Karate レッド 前面','POPO Karate レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-navy-front.jpg','images/popo-karate-navy-back.jpg','POPO Karate ネイビー 前面','POPO Karate ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-blue-front.jpg','images/popo-karate-blue-back.jpg','POPO Karate ブルー 前面','POPO Karate ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Karate</div>
+<div class="series-desc">芯の強さと礼節を感じる空手デザイン。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-ski-black-front.jpg" alt="POPO Ski ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-ski-black-back.jpg" alt="POPO Ski ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-ski-black-front.jpg','images/popo-ski-black-back.jpg','POPO Ski ブラック 前面','POPO Ski ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-white-front.jpg','images/popo-ski-white-back.jpg','POPO Ski ホワイト 前面','POPO Ski ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-pink-front.jpg','images/popo-ski-pink-back.jpg','POPO Ski ピンク 前面','POPO Ski ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-lightblue-front.jpg','images/popo-ski-lightblue-back.jpg','POPO Ski ライトブルー 前面','POPO Ski ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-red-front.jpg','images/popo-ski-red-back.jpg','POPO Ski レッド 前面','POPO Ski レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-navy-front.jpg','images/popo-ski-navy-back.jpg','POPO Ski ネイビー 前面','POPO Ski ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-blue-front.jpg','images/popo-ski-blue-back.jpg','POPO Ski ブルー 前面','POPO Ski ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Ski</div>
+<div class="series-desc">雪山を駆け抜ける爽快感を形にしたスキーシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-snowboarding-black-front.jpg" alt="POPO Snowboarding ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-snowboarding-black-back.jpg" alt="POPO Snowboarding ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-black-front.jpg','images/popo-snowboarding-black-back.jpg','POPO Snowboarding ブラック 前面','POPO Snowboarding ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-white-front.jpg','images/popo-snowboarding-white-back.jpg','POPO Snowboarding ホワイト 前面','POPO Snowboarding ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-pink-front.jpg','images/popo-snowboarding-pink-back.jpg','POPO Snowboarding ピンク 前面','POPO Snowboarding ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-lightblue-front.jpg','images/popo-snowboarding-lightblue-back.jpg','POPO Snowboarding ライトブルー 前面','POPO Snowboarding ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-red-front.jpg','images/popo-snowboarding-red-back.jpg','POPO Snowboarding レッド 前面','POPO Snowboarding レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-navy-front.jpg','images/popo-snowboarding-navy-back.jpg','POPO Snowboarding ネイビー 前面','POPO Snowboarding ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-blue-front.jpg','images/popo-snowboarding-blue-back.jpg','POPO Snowboarding ブルー 前面','POPO Snowboarding ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Snowboarding</div>
+<div class="series-desc">自由なスタイルとスピード感を表現したスノーボードシリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-volleyball-black-front.jpg" alt="POPO Volleyball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-volleyball-black-back.jpg" alt="POPO Volleyball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-black-front.jpg','images/popo-volleyball-black-back.jpg','POPO Volleyball ブラック 前面','POPO Volleyball ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-white-front.jpg','images/popo-volleyball-white-back.jpg','POPO Volleyball ホワイト 前面','POPO Volleyball ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-pink-front.jpg','images/popo-volleyball-pink-back.jpg','POPO Volleyball ピンク 前面','POPO Volleyball ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-lightblue-front.jpg','images/popo-volleyball-lightblue-back.jpg','POPO Volleyball ライトブルー 前面','POPO Volleyball ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-red-front.jpg','images/popo-volleyball-red-back.jpg','POPO Volleyball レッド 前面','POPO Volleyball レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-navy-front.jpg','images/popo-volleyball-navy-back.jpg','POPO Volleyball ネイビー 前面','POPO Volleyball ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-blue-front.jpg','images/popo-volleyball-blue-back.jpg','POPO Volleyball ブルー 前面','POPO Volleyball ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Volleyball</div>
+<div class="series-desc">チームワークと跳躍感をイメージしたバレーボールデザイン。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-kendo-black-front.jpg" alt="POPO Kendo ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-kendo-black-back.jpg" alt="POPO Kendo ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-kendo-black-front.jpg','images/popo-kendo-black-back.jpg','POPO Kendo ブラック 前面','POPO Kendo ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-white-front.jpg','images/popo-kendo-white-back.jpg','POPO Kendo ホワイト 前面','POPO Kendo ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-pink-front.jpg','images/popo-kendo-pink-back.jpg','POPO Kendo ピンク 前面','POPO Kendo ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-lightblue-front.jpg','images/popo-kendo-lightblue-back.jpg','POPO Kendo ライトブルー 前面','POPO Kendo ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-red-front.jpg','images/popo-kendo-red-back.jpg','POPO Kendo レッド 前面','POPO Kendo レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-navy-front.jpg','images/popo-kendo-navy-back.jpg','POPO Kendo ネイビー 前面','POPO Kendo ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-blue-front.jpg','images/popo-kendo-blue-back.jpg','POPO Kendo ブルー 前面','POPO Kendo ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO Kendo</div>
+<div class="series-desc">凛とした強さと礼節を表現した剣道シリーズ。</div>
+</div>
+</div>
+<div class="series-card is-hidden">
+<div class="series-image-stack">
+<img src="images/popo-american-football-black-front.jpg" alt="POPO American Football ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-american-football-black-back.jpg" alt="POPO American Football ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-sub-label">前面 / 背面</div>
+</div>
+<div class="series-info">
+<div class="series-color-row">
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-american-football-black-front.jpg','images/popo-american-football-black-back.jpg','POPO American Football ブラック 前面','POPO American Football ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-white-front.jpg','images/popo-american-football-white-back.jpg','POPO American Football ホワイト 前面','POPO American Football ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-pink-front.jpg','images/popo-american-football-pink-back.jpg','POPO American Football ピンク 前面','POPO American Football ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-lightblue-front.jpg','images/popo-american-football-lightblue-back.jpg','POPO American Football ライトブルー 前面','POPO American Football ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-red-front.jpg','images/popo-american-football-red-back.jpg','POPO American Football レッド 前面','POPO American Football レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-navy-front.jpg','images/popo-american-football-navy-back.jpg','POPO American Football ネイビー 前面','POPO American Football ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-blue-front.jpg','images/popo-american-football-blue-back.jpg','POPO American Football ブルー 前面','POPO American Football ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+</div>
+<div class="series-name">POPO American Football</div>
+<div class="series-desc">迫力と戦略性を感じるアメリカンフットボールデザイン。</div>
+</div>
+</div>
+<div class="show-more-wrap">
+<button type="button" class="btn btn-secondary" data-open="false" onclick="toggleMoreSeries(this)">もっと見る</button>
+</div>
+
+<p class="notes">
+※ バレエ以外のスポーツや趣味、家族写真をもとにしたデザイン展開も対応予定です。<br>
+※ シリーズやカラーは今後さらに追加していきます。
+</p>
+</section>
+
+<section class="section" id="story">
+<div class="section-subtitle">Brand Story</div>
+<h2 class="section-title">ブランドストーリー</h2>
+
+<div class="story-box">
+<p>Popo Ballet（ポポバレー）は、
+10年以上バレエを続ける2人の息子と、
+その成長をそばで見守ってきた家族から生まれました。
+
+バレエは、ただ「美しい」だけのものではありません。
+毎日の鍛錬、怪我への恐怖、思うように跳べない日、
+それでも続ける強さがあります。
+
+POPOは、家族の一員である小さなワンちゃんのパピヨン。
+練習に向かう日も、舞台の前も、
+いつも変わらずそこにいました。
+
+POPO Balletは、
+踊る人すべてを応援するバレエブランドです。
+
+男子も、女子も。
+プロも、これからの人も。
+舞台の上でも、日常でも。
+
+「強さ」と「やさしさ」を、身にまとう。</p>
+</div>
+
+<div class="story-box">
+<p>POPO Ballet was born from a family where ballet is part of everyday life.
+
+Two sons who have danced ballet for over ten years,
+and a small dog named Popo who always stayed close —
+during training, before performances, and through every challenge.
+
+Ballet is not only about beauty.
+It is discipline.
+It is strength.
+It is continuing even when it’s hard.
+
+POPO Ballet is a brand that supports all dancers —
+boys and girls, beginners and professionals.
+
+On stage.
+And in daily life.
+
+Soft outside. Strong inside.</p>
+</div>
+</section>
+
+<section class="section" id="price-list">
+<div class="section-subtitle">Price List</div>
+<h2 class="section-title">価格表</h2>
+<p style="font-size:14px; color:#555;">
+デザイン内容によって価格が異なります。ご希望に近い項目をご確認ください。
+</p>
+
+<div class="price-table-wrap">
+<table>
+<tr>
+<th>商品</th>
+<th>POPOロゴのみ / ロゴなし / 持ち込みロゴのみ</th>
+<th>POPOロゴ・背面シルエットあり</th>
+<th>持ち込みロゴ・背面シルエットあり</th>
+<th>お写真からシルエット作成</th>
+</tr>
+<tr>
+<td>Tシャツ</td>
+<td>¥3,000</td>
+<td>¥4,500</td>
+<td>¥4,500</td>
+<td>仮設定</td>
+</tr>
+<tr>
+<td>ジップパーカー</td>
+<td>¥4,550</td>
+<td>¥6,950</td>
+<td>¥6,950</td>
+<td>仮設定</td>
+</tr>
+<tr>
+<td>ジャージジップパーカー</td>
+<td>¥4,950</td>
+<td>¥6,750</td>
+<td>¥6,750</td>
+<td>仮設定</td>
+</tr>
+<tr>
+<td>バッグ・巾着類</td>
+<td>価格調整中</td>
+<td>価格調整中</td>
+<td>価格調整中</td>
+<td>価格調整中</td>
+</tr>
+</table>
+</div>
+
+<div class="shipping-box">
+<strong>送料</strong>
+Tシャツは現在、商品代金に送料を含めた想定で計算しています。<br>
+その他の商品は、コード内の <strong>FREE_SHIPPING_THRESHOLD</strong> と <strong>SHIPPING_TABLE</strong> を変更すると自動計算を調整できます。<br>
+現在は <strong>7,000円以上で送料無料</strong> の仮設定です。
+</div>
+
+<div class="order-cta">
+<a href="#order-form" class="btn">注文フォームを見る</a>
+</div>
+</section>
+
+
+<section class="section" id="order-form">
+<div class="section-subtitle">Order Form</div>
+<h2 class="section-title">簡易注文フォーム</h2>
+
+<div class="narrow-wrap">
+<p style="font-size:14px; color:#555;">
+商品・サイズ・お届け先などを入力してご連絡ください。
+</p>
+
+<div class="logo-guide-box">
+<h3>ロゴ指定について</h3>
+<p>
+ご希望に応じて、POPO Balletロゴ入り・ロゴなし・持ち込みロゴでの制作に対応しています。
+</p>
+<ul>
+<li><strong>POPO Balletなどロゴあり</strong>：ブランドロゴ入りで制作します。</li>
+<li><strong>POPO Balletなどロゴなし</strong>：シルエットやデザインのみで、ロゴなしの仕上がりです。</li>
+<li><strong>持ち込みロゴ希望</strong>：お客様ご自身のロゴや文字入れをご希望の場合はこちらをお選びください。</li>
+</ul>
+<p class="spec-note">※ 下の PRICE_TABLE を編集すると自動計算の金額を変更できます。</p>
+</div>
+
+<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="/thanks.html" data-netlify="true">
+<input type="hidden" name="form-name" value="popo-ballet-order">
+<input type="hidden" name="selected_silhouette" id="selectedSilhouetteInput" value="">
+<input type="hidden" name="selected_back_text" id="selectedBackTextInput" value="なし">
+<input type="hidden" name="selected_product_label" id="selectedProductLabelInput" value="">
+<input type="hidden" name="selected_color_label" id="selectedColorLabelInput" value="">
+<input type="hidden" name="selected_preview_image" id="selectedPreviewImageInput" value="">
+<input type="hidden" name="selected_front_preview_image" id="selectedFrontPreviewImageInput" value="">
+<input type="hidden" name="selected_silhouette_preview_image" id="selectedSilhouettePreviewImageInput" value="">
+<input type="hidden" name="total_price" id="totalPriceInput" value="0">
+
+<div class="form-group">
+<label class="form-label" for="brandSelect">ブランド選択</label>
+<select id="brandSelect" name="brand" class="form-control" required onchange="updateProductOptions(); calculateTotalPrice();">
+<option value="">ブランドを選択してください</option>
+<option value="popo_ballet">POPO Ballet（バレエ）</option>
+<option value="popo_series">POPOシリーズ</option>
+</select>
+</div>
+
+<div class="form-group" id="productGroup" style="display:none;">
+<label class="form-label" for="productSelect">ご希望の商品</label>
+<select id="productSelect" name="product" class="form-control" onchange="calculateTotalPrice()">
+<option value="">先にブランドを選択してください</option>
+</select>
+</div>
+
+<div class="form-group" id="colorGroup" style="display:none;">
+<label class="form-label" for="colorSelect">カラー</label>
+<select id="colorSelect" name="color" class="form-control" onchange="calculateTotalPrice()">
+<option value="">カラーを選択してください</option>
+</select>
+<div class="price-note">※ ジップパーカーのライトピンク / ライトブルーは、ここを選んだときに別価格へ切り替えられる構造にしています。現在は仮価格です。</div>
+</div>
+
+<div class="form-group" id="logoColorGroup">
+<label class="form-label" for="logoColorSelect">ロゴ色</label>
+<select id="logoColorSelect" name="logo_color" class="form-control" onchange="syncSilhouetteColorFromLogo(); calculateTotalPrice()">
+<option value="white">ホワイト</option>
+<option value="gold">ゴールド</option>
+<option value="pink">ピンク</option>
+</select>
+</div>
+
+<div class="form-group" id="silhouetteColorGroup">
+<label class="form-label" for="silhouetteColorSelect">背面シルエット色</label>
+<select id="silhouetteColorSelect" name="silhouette_color" class="form-control" onchange="calculateTotalPrice()" disabled>
+<option value="white">ホワイト</option>
+<option value="gold">ゴールド</option>
+<option value="pink">ピンク</option>
+</select>
+<div class="price-note">※ ロゴ色を選ぶと、背面シルエット・背面文字も同色で仕上がります。</div>
+</div>
+
+<div class="form-group">
+<a href="https://あなたのポポマッチョLPのURL" target="_blank" class="btn">
+POPO Macho パーソナルジムはこちら
+</a>
+</div>
+
+<div class="form-group">
+<label class="form-label" for="logoTypeSelect">ロゴ指定</label>
+<select id="logoTypeSelect" name="logo_type" class="form-control" required onchange="calculateTotalPrice()">
+<option value="">ロゴの種類を選択してください</option>
+<option value="logo_only">POPO Balletなどロゴあり</option>
+<option value="logo_none">POPO Balletなどロゴなし</option>
+<option value="custom_logo">持ち込みロゴ希望</option>
+</select>
+</div>
+
+<div class="form-group">
+<label class="form-label" for="designTypeSelect">デザイン内容</label>
+<select id="designTypeSelect" name="design_type" class="form-control" onchange="calculateTotalPrice()">
+<option value="">デザイン内容を選択してください</option>
+<option value="none">デザインなし</option>
+<option value="silhouette_only">シルエットのみ</option>
+<option value="silhouette_text">シルエット＋文字</option>
+<option value="custom_photo">持ち込み画像からシルエット作成希望</option>
+</select>
+</div>
+
+
+<div class="option-preview-box">
+<div class="option-preview-title">上で選んだ内容を注文に反映</div>
+<p style="font-size:13px; color:#555; line-height:1.7;">
+サンプルギャラリー内で色などを選んだあと、各商品の「この内容を注文に反映」ボタンを押すと、下の注文内容へ自動反映されます。
+</p>
+<div class="option-preview-note">※ 比較のために色を見るだけでもOKです。注文したい内容が決まったら反映してください。</div>
+</div>
+
+<div class="form-group">
+<label class="form-label">背面シルエット最終選択</label>
+<div class="final-silhouette-grid" id="finalSilhouetteGrid">
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 1" data-image="images/tshirt-men-1.jpg" onclick="selectFinalSilhouette(this, 'MEN 1', 'images/tshirt-men-1.jpg')"><img src="images/tshirt-men-10.png" alt="MEN 1"><span>MEN 1</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 2" data-image="images/tshirt-men-2.jpg" onclick="selectFinalSilhouette(this, 'MEN 2', 'images/tshirt-men-2.jpg')"><img src="images/tshirt-men-20.jpg" alt="MEN 2"><span>MEN 2</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 3" data-image="images/tshirt-men-3.jpg" onclick="selectFinalSilhouette(this, 'MEN 3', 'images/tshirt-men-3.jpg')"><img src="images/tshirt-men-30.jpg" alt="MEN 3"><span>MEN 3</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 4" data-image="images/tshirt-men-4.jpg" onclick="selectFinalSilhouette(this, 'MEN 4', 'images/tshirt-men-4.jpg')"><img src="images/tshirt-men-40.png" alt="MEN 4"><span>MEN 4</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 1" data-image="images/tshirt-women-1.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 1', 'images/tshirt-women-1.jpg')"><img src="images/tshirt-women-10.png" alt="WOMEN 1"><span>WOMEN 1</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 2" data-image="images/tshirt-women-2.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 2', 'images/tshirt-women-2.jpg')"><img src="images/tshirt-women-20.png" alt="WOMEN 2"><span>WOMEN 2</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 3" data-image="images/tshirt-women-3.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 3', 'images/tshirt-women-3.jpg')"><img src="images/tshirt-women-30.png" alt="WOMEN 3"><span>WOMEN 3</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 4" data-image="images/tshirt-women-4.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 4', 'images/tshirt-women-4.jpg')"><img src="images/tshirt-women-40.png" alt="WOMEN 4"><span>WOMEN 4</span></button>
+</div>
+<div class="price-note">※ 面番号だけで迷わないよう、ここでも画像付きで選べます。</div>
+</div>
+
+<div class="form-group">
+<label class="form-label">背面文字最終選択</label>
+<div class="final-text-grid" id="finalTextGrid">
+  <button type="button" class="final-text-btn active" data-back-text="none" onclick="selectFinalBackText(this, 'none')">文字なし</button>
+  <button type="button" class="final-text-btn" data-back-text="art" onclick="selectFinalBackText(this, 'art')">Ballet is Art</button>
+  <button type="button" class="final-text-btn" data-back-text="fr" onclick="selectFinalBackText(this, 'fr')">L'AMOUR DU BALLET</button>
+</div>
+</div>
+
+<div class="form-group">
+<label class="form-label">ご注文内容の確認</label>
+<div class="order-summary-box">
+  <div class="order-summary-title">最終確認</div>
+  <div class="order-summary-row"><span>ブランド</span><strong id="summaryBrand">未選択</strong></div>
+  <div class="order-summary-row"><span>商品</span><strong id="summaryProduct">未選択</strong></div>
+  <div class="order-summary-row"><span>Tシャツカラー / 本体カラー</span><strong id="summaryColor">未選択</strong></div>
+  <div class="order-summary-row"><span>ロゴ色</span><strong id="summaryLogoColor">ホワイト</strong></div>
+  <div class="order-summary-row"><span>背面シルエット色</span><strong id="summarySilhouetteColor">ホワイト</strong></div>
+  <div class="order-summary-row"><span>サイズ</span><strong id="summarySize">未選択</strong></div>
+  <div class="order-summary-row"><span>背面シルエット</span><strong id="summarySilhouette">未選択</strong></div>
+  <div class="order-summary-row"><span>背面文字</span><strong id="summaryBackText">なし</strong></div>
+  <div class="order-summary-row"><span>数量</span><strong id="summaryQuantity">1枚</strong></div>
+  <div class="order-summary-row"><span>商品小計</span><strong id="summarySubtotal">¥0</strong></div>
+  <div class="order-summary-row"><span>送料</span><strong id="summaryShipping">¥0</strong></div>
+  <div class="order-summary-row total"><span>合計</span><strong id="summaryTotal">¥0</strong></div>
+  <div class="order-summary-preview summary-preview-split">
+    <div>
+      <div class="option-preview-title">前面カラー確認</div>
+      <img id="summaryFrontPreviewImage" src="images/T1.jpg" alt="前面カラー確認">
+    </div>
+    <div>
+      <div class="option-preview-title">背面シルエット確認</div>
+      <img id="summarySilhouettePreviewImage" src="images/tshirt-men-10.png" alt="背面シルエット確認">
+    </div>
+    <div>
+      <div class="option-preview-title">背面文字確認</div>
+      <div class="order-summary-preview-text" id="summaryPreviewText">商品選択後、ここに最終内容が表示されます。</div>
+    </div>
+  </div>
+  <p class="order-summary-note">※ 上の商品欄で選んだあとに「注文に反映」を押すと、ここへ内容が入ります。</p>
+  <div class="summary-back-wrap">
+    <a href="#categories" class="btn btn-secondary summary-back-btn">商品カテゴリーに戻る</a>
+  </div>
+</div>
+</div>
+
+<div class="form-group">
+<label class="form-label" for="sizeSelect">サイズ</label>
+<select id="sizeSelect" name="size" class="form-control" onchange="calculateTotalPrice()">
+<option value="">サイズを選択してください</option>
+<option value="XS">XS</option>
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+<option value="BAG_ONE">バッグ（ワンサイズ）</option>
+</select>
+</div>
+
+<div class="form-group">
+<label class="form-label" for="quantityInput">数量</label>
+<input type="number" id="quantityInput" name="quantity" class="form-control" min="1" value="1" onchange="calculateTotalPrice()">
+</div>
+
+<div class="form-group">
+<label class="form-label">送料を含めた合計金額</label>
+<div id="totalPriceBox" class="total-price-box">¥0</div>
+<div class="price-note">※ 送料ルールや価格は、コード内の設定を後から変更できます。</div>
+</div>
+
+<div class="form-group">
+<label class="form-label">お名前</label>
+<input type="text" id="customerNameInput" name="name" class="form-control" placeholder="お名前" required>
+</div>
+
+<div class="form-group">
+<label class="form-label">メールアドレス</label>
+<input type="email" id="customerEmailInput" name="email" class="form-control" placeholder="メールアドレス" required>
+</div>
+
+<div class="form-group">
+<label class="form-label">ご住所</label>
+<textarea name="address" class="form-control" placeholder="郵便番号・住所・マンション名など"></textarea>
+</div>
+
+<div class="form-group">
+<label class="form-label">お支払い方法</label>
+<select name="payment" class="form-control" required>
+<option value="">支払い方法を選択してください</option>
+<option value="クレジットカード">クレジットカード</option>
+<option value="銀行振込">銀行振込</option>
+<option value="PayPay">PayPay</option>
+</select>
+</div>
+
+<div class="form-group">
+<label class="form-label">備考・ご質問</label>
+<textarea id="messageInput" name="message" class="form-control" placeholder="カラー希望、質問など"></textarea>
+</div>
+
+<button type="submit" class="btn">注文内容を送信する</button>
+<div class="form-group" style="margin-top:10px;">
+<button type="button" class="btn btn-line" onclick="sendOrderToLine()">LINEに注文内容を送る</button>
+</div>
+</form>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="contact-box">
+<h2 class="section-title">お問い合わせ</h2>
+<p>
+ご質問やご相談は、メール・LINE・Instagramからご連絡ください。<br>
+着用写真はこちら
+</p>
+
+<div class="contact-buttons">
+<a href="mailto:martin09172000@gmail.com?subject=POPO%20Ballet%E3%81%B8%E3%81%AE%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="btn btn-mail">
+メールで問い合わせる
+</a>
+
+<a href="https://page.line.me/" target="_blank" class="btn btn-line">
+LINEで問い合わせる
+</a>
+
+<a href="https://instagram.com/" target="_blank" class="btn btn-insta">
+Instagramを見る
+</a>
+</div>
+</div>
+</section>
+
+<div class="bottom-logo-wrap">
+<div class="bottom-logo-box">
+<img src="images/logo.jpg" alt="POPO Ballet ロゴ">
+</div>
+</div>
+
+<footer>
+© POPO Ballet All Rights Reserved.
+</footer>
+</div>
+
+
+<div class="modal" id="imageModal" onclick="closeModal()">
+<div class="modal-close">&times;</div>
+<div class="modal-content double-view" onclick="event.stopPropagation()">
+<div class="modal-image-grid">
+<div class="modal-image-box">
+<img id="modalImageFront" src="" alt="">
+<div class="modal-image-caption" id="modalCaptionFront">前面</div>
+</div>
+<div class="modal-image-box modal-back-wrap" id="modalBackBox">
+<img id="modalBackBase" src="" alt="">
+<img id="modalBackOverlay" src="" alt="">
+<img id="modalBackText" src="" alt="">
+<div class="modal-image-caption" id="modalCaptionBack">背面</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+const PRICE_TABLE = {
+  tshirt: { logo_only: 3000, logo_none: 3000, custom_logo: 3000, silhouette_only: 4500, silhouette_text: 4500, custom_photo: 4500 },
+  zip_hoodie: { logo_only: 4550, logo_none: 4550, custom_logo: 4550, silhouette_only: 6950, silhouette_text: 6950, custom_photo: 6950 },
+  zip_hoodie_light: { logo_only: 4550, logo_none: 4550, custom_logo: 4550, silhouette_only: 6950, silhouette_text: 6950, custom_photo: 6950 },
+  jersey_zip: { logo_only: 4950, logo_none: 4950, custom_logo: 4950, silhouette_only: 6750, silhouette_text: 6750, custom_photo: 6750 },
+  bag: { logo_only: 0, logo_none: 0, custom_logo: 0, silhouette_only: 0, silhouette_text: 0, custom_photo: 0 },
+  kinchaku_m: { logo_only: 0, logo_none: 0, custom_logo: 0, silhouette_only: 0, silhouette_text: 0, custom_photo: 0 },
+  kinchaku_s: { logo_only: 0, logo_none: 0, custom_logo: 0, silhouette_only: 0, silhouette_text: 0, custom_photo: 0 }
+};
+
+const FREE_SHIPPING_THRESHOLD = 7000; // ここを 8000 などに変更可
+const SHIPPING_TABLE = {
+  tshirt: 0,
+  zip_hoodie: 700,
+  jersey_zip: 700,
+  bag: 300,
+  kinchaku_m: 300,
+  kinchaku_s: 300
+};
+
+function openSimpleModal(src, alt = '') {
+  const modal = document.getElementById('imageModal');
+  const content = modal ? modal.querySelector('.modal-content') : null;
+  const front = document.getElementById('modalImageFront');
+  const backBox = document.getElementById('modalBackBox');
+  const frontCap = document.getElementById('modalCaptionFront');
+  if (!modal || !content || !front) return;
+
+  content.classList.remove('double-view');
+  content.classList.add('single-view');
+  if (backBox) backBox.style.display = 'none';
+
+  front.src = src || '';
+  front.alt = alt || '';
+  if (frontCap) frontCap.textContent = alt || '画像';
+
+  modal.classList.add('active');
+}
+
+function openModal(frontSrc, frontAlt, backSrc = '', backAlt = '', overlaySrc = '', overlayAlt = '', textSrc = '', textAlt = '') {
+  const modal = document.getElementById('imageModal');
+  const content = modal ? modal.querySelector('.modal-content') : null;
+  const front = document.getElementById('modalImageFront');
+  const backBase = document.getElementById('modalBackBase');
+  const backOverlay = document.getElementById('modalBackOverlay');
+  const backText = document.getElementById('modalBackText');
+  const backBox = document.getElementById('modalBackBox');
+  const frontCap = document.getElementById('modalCaptionFront');
+  const backCap = document.getElementById('modalCaptionBack');
+  if (!modal || !content || !front || !backBase || !backBox) return;
+
+  content.classList.remove('single-view');
+  content.classList.add('double-view');
+  backBox.style.display = '';
+
+  front.src = frontSrc || '';
+  front.alt = frontAlt || '';
+  if (frontCap) frontCap.textContent = frontAlt || '前面';
+
+  backBase.src = backSrc || '';
+  backBase.alt = backAlt || '';
+  if (backCap) backCap.textContent = backAlt || '背面';
+
+  if (backOverlay) {
+    if (overlaySrc) {
+      backOverlay.src = overlaySrc;
+      backOverlay.alt = overlayAlt || '';
+      backOverlay.style.display = 'block';
+    } else {
+      backOverlay.src = '';
+      backOverlay.alt = '';
+      backOverlay.style.display = 'none';
+    }
+  }
+
+  if (backText) {
+    if (textSrc) {
+      backText.src = textSrc;
+      backText.alt = textAlt || '';
+      backText.style.display = 'block';
+    } else {
+      backText.src = '';
+      backText.alt = '';
+      backText.style.display = 'none';
+    }
+  }
+
+  modal.classList.add('active');
+}
+
+function closeModal() {
+  const modal = document.getElementById('imageModal');
+  if (modal) modal.classList.remove('active');
+}
+
+function openProductModal(card) {
+  if (!card) return;
+  const frontImg = card.querySelector('.front-image');
+  const backImg = card.querySelector('.back-image');
+  openModal(
+    frontImg ? frontImg.src : '',
+    frontImg ? frontImg.alt : '',
+    backImg ? backImg.src : '',
+    backImg ? backImg.alt : ''
+  );
+}
+
+function cardAllowsModal(card) {
+  if (!card) return false;
+  return ['totebag-section', 'kinchaku-m-section', 'kinchaku-s-section'].includes(card.id);
+}
+
+function getActiveTshirtColorButton() {
+  return document.querySelector('#tshirt-section .tshirt-color-row .color-chip-btn.active');
+}
+
+function getActiveTshirtLogoButton() {
+  return document.querySelector('#tshirt-section .tshirt-logo-row .color-chip-btn.active');
+}
+
+
+const COLOR_VALUE_MAP = {
+  'ブラック':'black','ホワイト':'white','ピンク':'pink','ライトブルー':'light_blue','ライトピンク':'light_pink',
+  'レッド':'red','ネイビー':'navy','ブルー':'blue','グレー':'gray','ホットピンク':'hot_pink'
+};
+
+function getAllowedLogoValuesForSection(sectionId, colorValue) {
+  if (sectionId === 'tshirt-section') {
+    if (colorValue === 'black') return ['white','gold','pink'];
+    if (colorValue === 'white') return ['gold','pink'];
+    if (colorValue === 'pink') return ['white','gold'];
+    return ['white'];
+  }
+  if (sectionId === 'ziphoodie-section') {
+    if (['black','light_pink'].includes(colorValue)) return ['white','gold'];
+    return ['white'];
+  }
+  if (sectionId === 'jerseyzip-section') {
+    if (colorValue === 'black') return ['white','gold','pink'];
+    if (colorValue === 'pink') return ['white','gold'];
+    return ['white'];
+  }
+  if (['totebag-section','kinchaku-m-section','kinchaku-s-section'].includes(sectionId)) {
+    if (['black','light_pink'].includes(colorValue)) return ['white','gold'];
+    return ['white'];
+  }
+  return ['white'];
+}
+
+function getActiveColorButtonForCard(card) {
+  if (!card) return null;
+  const row = card.querySelector('.tshirt-color-row') || card.querySelector('.color-chip-row');
+  return row ? row.querySelector('.color-chip-btn.active') : null;
+}
+
+function updateLogoButtonsForCard(card) {
+  if (!card) return;
+  const logoRow = card.querySelector('.tshirt-logo-row') || card.querySelector('.product-logo-row');
+  if (!logoRow) return;
+  const activeColorBtn = getActiveColorButtonForCard(card);
+  const colorLabel = activeColorBtn ? (activeColorBtn.dataset.colorLabel || activeColorBtn.textContent.trim()) : '';
+  const colorValue = activeColorBtn?.dataset.colorValue || COLOR_VALUE_MAP[colorLabel] || '';
+  const allowed = getAllowedLogoValuesForSection(card.id, colorValue);
+  let activeLogoBtn = logoRow.querySelector('.color-chip-btn.active');
+  logoRow.querySelectorAll('.color-chip-btn').forEach(btn => {
+    const allowedHere = allowed.includes(btn.dataset.logoValue);
+    btn.classList.toggle('is-hidden', !allowedHere);
+    btn.disabled = !allowedHere;
+    if (!allowedHere) btn.classList.remove('active');
+  });
+  activeLogoBtn = logoRow.querySelector('.color-chip-btn.active');
+  if (!activeLogoBtn || activeLogoBtn.disabled) {
+    const firstAllowed = Array.from(logoRow.querySelectorAll('.color-chip-btn')).find(btn => !btn.disabled);
+    if (firstAllowed) {
+      firstAllowed.classList.add('active');
+      activeLogoBtn = firstAllowed;
+    }
+  }
+  if (card.id === 'tshirt-section') {
+    applyTshirtFrontBySelections();
+  } else {
+    syncCurrentSelectionsFromCard(card);
+  }
+}
+
+function switchProductLogoColor(button) {
+  if (!button || button.disabled) return;
+  const row = button.closest('.product-logo-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  const card = button.closest('.color-switch-card');
+  if (card) syncCurrentSelectionsFromCard(card);
+}
+
+function syncSilhouetteColorFromLogo() {
+  const logoColorSelect = document.getElementById('logoColorSelect');
+  const silhouetteColorSelect = document.getElementById('silhouetteColorSelect');
+  if (logoColorSelect && silhouetteColorSelect) {
+    silhouetteColorSelect.value = logoColorSelect.value || 'white';
+  }
+}
+
+function updateLogoSelectOptions() {
+  const product = document.getElementById('productSelect')?.value || '';
+  const color = document.getElementById('colorSelect')?.value || '';
+  const logoColorSelect = document.getElementById('logoColorSelect');
+  if (!logoColorSelect) return;
+  let allowed = ['white'];
+  if (product === 'tshirt') {
+    if (color === 'black') allowed = ['white','gold','pink'];
+    else if (color === 'white') allowed = ['gold','pink'];
+    else if (color === 'pink') allowed = ['white','gold'];
+    else allowed = ['white'];
+  } else if (product === 'zip_hoodie') {
+    allowed = ['black','light_pink'].includes(color) ? ['white','gold'] : ['white'];
+  } else if (product === 'jersey_zip') {
+    if (color === 'black') allowed = ['white','gold','pink'];
+    else if (color === 'pink') allowed = ['white','gold'];
+    else allowed = ['white'];
+  } else if (['bag','kinchaku_m','kinchaku_s'].includes(product)) {
+    allowed = ['black','light_pink'].includes(color) ? ['white','gold'] : ['white'];
+  } else {
+    allowed = ['white','gold','pink'];
+  }
+  const labels = {white:'ホワイト', gold:'ゴールド', pink:'ピンク'};
+  const current = logoColorSelect.value;
+  logoColorSelect.innerHTML = allowed.map(v => `<option value="${v}">${labels[v]}</option>`).join('');
+  logoColorSelect.value = allowed.includes(current) ? current : allowed[0];
+  syncSilhouetteColorFromLogo();
+}
+
+function applyTshirtFrontBySelections() {
+  const card = document.getElementById('tshirt-section');
+  if (!card) return;
+  const colorBtn = getActiveTshirtColorButton();
+  const logoBtn = getActiveTshirtLogoButton();
+  if (!colorBtn) return;
+  const frontImg = card.querySelector('.front-image');
+  const nameEl = card.querySelector('.product-name');
+  const logoValue = logoBtn?.dataset.logoValue || 'white';
+  const src = colorBtn.dataset[`front${logoValue.charAt(0).toUpperCase()+logoValue.slice(1)}`] || colorBtn.dataset.frontWhite || colorBtn.dataset.frontSrc || '';
+  if (frontImg && src) {
+    frontImg.src = src;
+    frontImg.alt = `POPO Ballet ${colorBtn.dataset.productName || 'Tシャツ'} 前`;
+  }
+  if (nameEl) nameEl.textContent = colorBtn.dataset.productName || 'Tシャツ';
+  const logoColorSelect = document.getElementById('logoColorSelect');
+  if (logoColorSelect && logoBtn?.dataset.logoValue) logoColorSelect.value = logoBtn.dataset.logoValue;
+  syncCurrentSelectionsFromSection('tshirt');
+  calculateTotalPrice();
+}
+
+function switchTshirtColor(button) {
+  const card = document.getElementById('tshirt-section');
+  if (!card) return;
+  const backImg = card.querySelector('.back-image');
+  const row = button.closest('.tshirt-color-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  if (backImg && button.dataset.backSrc) {
+    backImg.src = button.dataset.backSrc;
+    backImg.alt = (button.dataset.productName || 'Tシャツ') + ' 後ろ';
+  }
+  updateLogoButtonsForCard(card);
+}
+
+function switchTshirtLogoColor(button) {
+  if (!button || button.disabled) return;
+  const row = button.closest('.tshirt-logo-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  applyTshirtFrontBySelections();
+}
+
+function switchTshirtFrontOnly(button, frontSrc, productName, altFront) {
+  const card = document.getElementById('tshirt-section');
+  if (!card) return;
+  const frontImg = card.querySelector('.front-image');
+  const nameEl = card.querySelector('.product-name');
+  const row = button.closest('.color-chip-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  if (frontImg) {
+    frontImg.src = frontSrc;
+    frontImg.alt = altFront || productName + ' 前';
+  }
+  if (nameEl) nameEl.textContent = productName;
+  syncCurrentSelectionsFromSection('tshirt');
+}
+
+function switchColor(button, frontSrc, backSrc, productName, altFront, altBack, isSingle = false) {
+  const card = button.closest('.color-switch-card');
+  if (!card) return;
+  const frontImg = card.querySelector('.front-image');
+  const backImg = card.querySelector('.back-image');
+  const nameEl = card.querySelector('.product-name');
+
+  const row = button.closest('.color-chip-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+
+  if (frontImg) {
+    frontImg.src = frontSrc;
+    frontImg.alt = altFront || productName + ' 前';
+    frontImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
+  }
+
+  if (backImg && !isSingle) {
+    if (card.id !== 'tshirt-section') {
+      backImg.src = backSrc;
+      backImg.alt = altBack || productName + ' 後ろ';
+    }
+    backImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
+  }
+
+  if (nameEl) nameEl.textContent = productName;
+  updateLogoButtonsForCard(card);
+  syncCurrentSelectionsFromCard(card);
+}
+
+function setTshirtBackFullImage(src, alt) {
+  const backImg = document.querySelector('#tshirt-section .back-image');
+  if (!backImg) return;
+  backImg.src = src;
+  backImg.alt = alt || 'POPO Ballet Tシャツ 背面';
+  const selectedSilhouetteInput = document.getElementById('selectedSilhouetteInput');
+  if (selectedSilhouetteInput) selectedSilhouetteInput.value = alt || '';
+  syncCurrentSelectionsFromSection('tshirt');
+}
+
+function selectTshirtSilhouette(button, src, label) {
+  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
+  if (button) button.classList.add('active');
+  setTshirtBackFullImage(src, label || 'POPO Ballet Tシャツ 背面');
+}
+
+function clearTshirtSilhouette() {
+  setTshirtBackFullImage('images/T10.jpg', 'POPO Ballet Tシャツ ブラック 後ろ');
+  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
+  const selectedSilhouetteInput = document.getElementById('selectedSilhouetteInput');
+  if (selectedSilhouetteInput) selectedSilhouetteInput.value = '';
+}
+
+function selectTshirtText(type) {
+  document.querySelectorAll('#tshirt-section .text-select-btn').forEach(btn => btn.classList.remove('active'));
+  let src = 'images/tshirt-men-2.jpg';
+  let label = 'MEN 2';
+  if (type === 'art') {
+    src = 'images/tshirt-men-1.jpg';
+    label = 'MEN 1';
+  } else if (type === 'fr') {
+    src = 'images/tshirt-women-1.jpg';
+    label = 'WOMEN 1';
+  }
+  setTshirtBackFullImage(src, label);
+  const selectedBackTextInput = document.getElementById('selectedBackTextInput');
+  if (selectedBackTextInput) {
+    selectedBackTextInput.value = type === 'none' ? 'なし' : (type === 'art' ? 'Ballet is Art' : "L'AMOUR DU BALLET");
+  }
+  const activeBtn = document.querySelector(`#tshirt-section .text-select-btn[data-text="${type}"]`);
+  if (activeBtn) activeBtn.classList.add('active');
+}
+
+function switchSeriesFrontBack(button, frontSrc, backSrc, altFront, altBack) {
+  const card = button.closest('.series-card');
+  if (!card) return;
+  const frontImg = card.querySelector('.series-main-image');
+  const backImg = card.querySelector('.series-sub-image');
+  card.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  if (frontImg) {
+    frontImg.src = frontSrc;
+    frontImg.alt = altFront || '前面';
+    frontImg.onclick = () => openSeriesModal(card);
+  }
+  if (backImg) {
+    backImg.src = backSrc;
+    backImg.alt = altBack || '背面';
+    backImg.onclick = () => openSeriesModal(card);
+  }
+}
+
+function switchMachoMen(button, frontSrc, menBackSrc) {
+  const card = button.closest('.series-card');
+  if (!card) return;
+  const frontImg = card.querySelector('.series-main-image');
+  const subImgs = card.querySelectorAll('.series-sub-image');
+  if (frontImg) frontImg.src = frontSrc;
+  if (subImgs[0]) subImgs[0].src = menBackSrc;
+  const row = button.closest('.series-color-row');
+  if (row) row.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+}
+
+function switchMachoWomen(button, frontSrc, womenBackSrc) {
+  const card = button.closest('.series-card');
+  if (!card) return;
+  const frontImg = card.querySelector('.series-main-image');
+  const subImgs = card.querySelectorAll('.series-sub-image');
+  if (frontImg) frontImg.src = frontSrc;
+  if (subImgs[1]) subImgs[1].src = womenBackSrc;
+  const row = button.closest('.series-color-row');
+  if (row) row.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+}
+
+function openSeriesModal(card) {
+  const frontImg = card.querySelector('.series-main-image');
+  const backImg = card.querySelector('.series-sub-image');
+  openModal(frontImg ? frontImg.src : '', frontImg ? frontImg.alt : '', backImg ? backImg.src : '', backImg ? backImg.alt : '');
+}
+
+function toggleMoreSeries(button) {
+  const hiddenCards = document.querySelectorAll('#other-series .series-card.is-hidden');
+  const isOpen = button.getAttribute('data-open') === 'true';
+  hiddenCards.forEach(card => { card.style.display = isOpen ? 'none' : 'block'; });
+  button.setAttribute('data-open', isOpen ? 'false' : 'true');
+  button.textContent = isOpen ? 'もっと見る' : '表示を閉じる';
+}
+
+
+function getCurrentSelectionFromCard(card) {
+  if (!card) return null;
+  const productMap = {
+    'tshirt-section': { brand: 'popo_ballet', product: 'tshirt', productLabel: 'Tシャツ' },
+    'ziphoodie-section': { brand: 'popo_ballet', product: 'zip_hoodie', productLabel: 'ジップパーカー' },
+    'jerseyzip-section': { brand: 'popo_ballet', product: 'jersey_zip', productLabel: 'ジャージジップパーカー' },
+    'totebag-section': { brand: 'popo_ballet', product: 'bag', productLabel: 'バッグ' },
+    'kinchaku-m-section': { brand: 'popo_ballet', product: 'kinchaku_m', productLabel: '巾着M' },
+    'kinchaku-s-section': { brand: 'popo_ballet', product: 'kinchaku_s', productLabel: '巾着S' }
+  };
+  const base = productMap[card.id];
+  if (!base) return null;
+
+  const activeColorBtn = card.querySelector('.tshirt-color-row .color-chip-btn.active') || card.querySelector('.color-chip-btn.active');
+  const colorLabel = activeColorBtn ? (activeColorBtn.dataset.colorLabel || activeColorBtn.textContent.trim()) : '';
+  const colorValueMap = {
+    'ブラック':'black','ホワイト':'white',
+    'ピンク':'pink','ライトブルー':'light_blue','ライトピンク':'light_pink',
+    'レッド':'red','ネイビー':'navy','ブルー':'blue','グレー':'gray','ホットピンク':'hot_pink'
+  };
+  const colorValue = activeColorBtn?.dataset.colorValue || colorValueMap[colorLabel] || '';
+
+  const frontImg = card.querySelector('.front-image');
+  const previewSrc = frontImg ? frontImg.src : '';
+  const silhouettePreviewSrc = document.getElementById('selectedSilhouettePreviewImageInput')?.value || '';
+  const activeLogoBtn = card.querySelector('.tshirt-logo-row .color-chip-btn.active') || card.querySelector('.product-logo-row .color-chip-btn.active');
+  const logoColorLabel = activeLogoBtn ? (activeLogoBtn.dataset.logoLabel || activeLogoBtn.textContent.trim()) : (document.getElementById('logoColorSelect')?.selectedOptions[0]?.textContent || '');
+  const logoColorValue = activeLogoBtn?.dataset.logoValue || (document.getElementById('logoColorSelect')?.value || '');
+
+  const silhouette = document.getElementById('selectedSilhouetteInput')?.value || '';
+  const backText = document.getElementById('selectedBackTextInput')?.value || 'なし';
+
+  return { ...base, colorLabel, colorValue, previewSrc, silhouettePreviewSrc, silhouette, backText, logoColorLabel, logoColorValue };
+}
+
+function syncCurrentSelectionsFromCard(card) {
+  const data = getCurrentSelectionFromCard(card);
+  if (!data) return;
+  window.currentPreviewSelection = data;
+}
+
+function syncCurrentSelectionsFromSection(sectionKey) {
+  const map = {
+    tshirt: document.getElementById('tshirt-section'),
+    zip_hoodie: document.getElementById('ziphoodie-section'),
+    jersey_zip: document.getElementById('jerseyzip-section'),
+    bag: document.getElementById('totebag-section'),
+    kinchaku_m: document.getElementById('kinchaku-m-section'),
+    kinchaku_s: document.getElementById('kinchaku-s-section')
+  };
+  const card = map[sectionKey];
+  if (card) syncCurrentSelectionsFromCard(card);
+}
+
+function setSelectValueByText(selectEl, text) {
+  if (!selectEl || !text) return;
+  const normalized = text.trim();
+  const option = Array.from(selectEl.options).find(opt => opt.textContent.trim() === normalized);
+  if (option) selectEl.value = option.value;
+}
+
+function reflectCurrentProductToOrder(sectionKey) {
+  syncCurrentSelectionsFromSection(sectionKey);
+  const data = window.currentPreviewSelection;
+  if (!data) return;
+
+  const brandSelect = document.getElementById('brandSelect');
+  const productSelect = document.getElementById('productSelect');
+  const colorSelect = document.getElementById('colorSelect');
+  const selectedProductLabelInput = document.getElementById('selectedProductLabelInput');
+  const selectedColorLabelInput = document.getElementById('selectedColorLabelInput');
+  const selectedPreviewImageInput = document.getElementById('selectedPreviewImageInput');
+  const selectedFrontPreviewImageInput = document.getElementById('selectedFrontPreviewImageInput');
+  const selectedSilhouettePreviewImageInput = document.getElementById('selectedSilhouettePreviewImageInput');
+
+  if (brandSelect) {
+    brandSelect.value = data.brand;
+    updateProductOptions();
+  }
+  if (productSelect) {
+    productSelect.value = data.product;
+    updateColorOptions();
+  }
+  if (colorSelect && data.colorValue) colorSelect.value = data.colorValue;
+
+  if (selectedProductLabelInput) selectedProductLabelInput.value = data.productLabel || '';
+  if (selectedColorLabelInput) selectedColorLabelInput.value = data.colorLabel || '';
+  if (selectedPreviewImageInput) selectedPreviewImageInput.value = data.previewSrc || '';
+  if (selectedFrontPreviewImageInput) selectedFrontPreviewImageInput.value = data.previewSrc || '';
+  if (selectedSilhouettePreviewImageInput && data.silhouettePreviewSrc) selectedSilhouettePreviewImageInput.value = data.silhouettePreviewSrc || '';
+
+  const logoColorSelect = document.getElementById('logoColorSelect');
+  if (logoColorSelect && data.logoColorValue) logoColorSelect.value = data.logoColorValue;
+  syncSilhouetteColorFromLogo();
+  if (sectionKey === 'tshirt') {
+    syncTshirtSelectionsToOrder();
+  }
+
+  calculateTotalPrice();
+  const orderForm = document.getElementById('order-form');
+  if (orderForm) orderForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function selectFinalSilhouette(button, label, imageSrc) {
+  document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
+  if (button) button.classList.add('active');
+  const selectedSilhouetteInput = document.getElementById('selectedSilhouetteInput');
+  if (selectedSilhouetteInput) selectedSilhouetteInput.value = label || '';
+  if (imageSrc) {
+    const selectedPreviewImageInput = document.getElementById('selectedPreviewImageInput');
+  const selectedFrontPreviewImageInput = document.getElementById('selectedFrontPreviewImageInput');
+  const selectedSilhouettePreviewImageInput = document.getElementById('selectedSilhouettePreviewImageInput');
+    if (selectedPreviewImageInput) selectedPreviewImageInput.value = imageSrc;
+  }
+
+  if (logoColorSelect && activeLogoBtn?.dataset.logoValue) logoColorSelect.value = activeLogoBtn.dataset.logoValue;
+
+  const designSelect = document.getElementById('designTypeSelect');
+  const backText = document.getElementById('selectedBackTextInput')?.value || 'なし';
+  if (designSelect && designSelect.value !== 'custom_photo') {
+    designSelect.value = backText === 'なし' ? 'silhouette_only' : 'silhouette_text';
+  }
+  calculateTotalPrice();
+}
+
+function selectFinalBackText(button, type) {
+  document.querySelectorAll('#finalTextGrid .final-text-btn').forEach(btn => btn.classList.remove('active'));
+  if (button) button.classList.add('active');
+
+  const selectedBackTextInput = document.getElementById('selectedBackTextInput');
+  const designSelect = document.getElementById('designTypeSelect');
+
+  let label = 'なし';
+  let imageSrc = document.getElementById('selectedSilhouettePreviewImageInput')?.value || '';
+
+  if (type === 'art') {
+    label = 'Ballet is Art';
+    imageSrc = 'images/tshirt-men-1.jpg';
+    const silInput = document.getElementById('selectedSilhouetteInput');
+    if (silInput) silInput.value = 'MEN 1';
+    const silBtn = document.querySelector('#finalSilhouetteGrid .final-silhouette-card[data-silhouette="MEN 1"]');
+    if (silBtn) {
+      document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
+      silBtn.classList.add('active');
+    }
+  } else if (type === 'fr') {
+    label = "L'AMOUR DU BALLET";
+    imageSrc = 'images/tshirt-women-1.jpg';
+    const silInput = document.getElementById('selectedSilhouetteInput');
+    if (silInput) silInput.value = 'WOMEN 1';
+    const silBtn = document.querySelector('#finalSilhouetteGrid .final-silhouette-card[data-silhouette="WOMEN 1"]');
+    if (silBtn) {
+      document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
+      silBtn.classList.add('active');
+    }
+  }
+
+  if (selectedBackTextInput) selectedBackTextInput.value = label;
+  const selectedPreviewImageInput = document.getElementById('selectedPreviewImageInput');
+  const selectedFrontPreviewImageInput = document.getElementById('selectedFrontPreviewImageInput');
+  const selectedSilhouettePreviewImageInput = document.getElementById('selectedSilhouettePreviewImageInput');
+  if (selectedPreviewImageInput && imageSrc) selectedPreviewImageInput.value = imageSrc;
+
+  if (designSelect && designSelect.value !== 'custom_photo') {
+    designSelect.value = type === 'none' ? 'silhouette_only' : 'silhouette_text';
+  }
+  calculateTotalPrice();
+}
+
+function syncTshirtSelectionsToOrder() {
+  const silInput = document.getElementById('selectedSilhouetteInput');
+  const backTextInput = document.getElementById('selectedBackTextInput');
+  const previewInput = document.getElementById('selectedPreviewImageInput');
+  const frontPreviewInput = document.getElementById('selectedFrontPreviewImageInput');
+  const silhouettePreviewInput = document.getElementById('selectedSilhouettePreviewImageInput');
+
+  const currentSil = silInput ? silInput.value : '';
+  const currentBackText = backTextInput ? backTextInput.value : 'なし';
+  const backImg = document.querySelector('#tshirt-section .back-image');
+  const frontImg = document.querySelector('#tshirt-section .front-image');
+  const activeLogoBtn = document.querySelector('#tshirt-section .tshirt-logo-row .color-chip-btn.active');
+  const logoColorSelect = document.getElementById('logoColorSelect');
+
+  if (activeLogoBtn && logoColorSelect) {
+    logoColorSelect.value = activeLogoBtn.dataset.logoValue || 'white';
+    syncSilhouetteColorFromLogo();
+  }
+  if (frontImg && frontPreviewInput) frontPreviewInput.value = frontImg.src || '';
+  if (backImg && silhouettePreviewInput) silhouettePreviewInput.value = backImg.src || '';
+  if (previewInput && frontImg) previewInput.value = frontImg.src || '';
+
+  if (currentSil) {
+    const silBtn = document.querySelector(`#finalSilhouetteGrid .final-silhouette-card[data-silhouette="${currentSil}"]`);
+    if (silBtn) {
+      document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
+      silBtn.classList.add('active');
+    }
+  }
+
+  const textType = currentBackText === 'Ballet is Art' ? 'art' : (currentBackText === "L'AMOUR DU BALLET" ? 'fr' : 'none');
+  const textBtn = document.querySelector(`#finalTextGrid .final-text-btn[data-back-text="${textType}"]`);
+  if (textBtn) {
+    document.querySelectorAll('#finalTextGrid .final-text-btn').forEach(btn => btn.classList.remove('active'));
+    textBtn.classList.add('active');
+  }
+
+  const designSelect = document.getElementById('designTypeSelect');
+  if (designSelect && designSelect.value !== 'custom_photo') {
+    designSelect.value = textType === 'none' ? 'silhouette_only' : 'silhouette_text';
+  }
+}
+
+function updateOrderSummary(subtotal = 0, shipping = 0, total = 0) {
+  const summaryBrand = document.getElementById('summaryBrand');
+  const summaryProduct = document.getElementById('summaryProduct');
+  const summaryColor = document.getElementById('summaryColor');
+  const summaryLogoColor = document.getElementById('summaryLogoColor');
+  const summarySilhouetteColor = document.getElementById('summarySilhouetteColor');
+  const summarySize = document.getElementById('summarySize');
+  const summarySilhouette = document.getElementById('summarySilhouette');
+  const summaryBackText = document.getElementById('summaryBackText');
+  const summaryQuantity = document.getElementById('summaryQuantity');
+  const summarySubtotal = document.getElementById('summarySubtotal');
+  const summaryShipping = document.getElementById('summaryShipping');
+  const summaryTotal = document.getElementById('summaryTotal');
+  const summaryFrontPreviewImage = document.getElementById('summaryFrontPreviewImage');
+  const summarySilhouettePreviewImage = document.getElementById('summarySilhouettePreviewImage');
+  const summaryPreviewText = document.getElementById('summaryPreviewText');
+
+  const brandLabel = document.getElementById('brandSelect')?.selectedOptions[0]?.textContent || '未選択';
+  const productLabel = document.getElementById('selectedProductLabelInput')?.value || document.getElementById('productSelect')?.selectedOptions[0]?.textContent || '未選択';
+  const colorLabel = document.getElementById('selectedColorLabelInput')?.value || document.getElementById('colorSelect')?.selectedOptions[0]?.textContent || '未選択';
+  const logoColorLabel = document.getElementById('logoColorSelect')?.selectedOptions[0]?.textContent || 'ホワイト';
+  const silhouetteColorLabel = document.getElementById('silhouetteColorSelect')?.selectedOptions[0]?.textContent || 'ホワイト';
+  const sizeLabel = document.getElementById('sizeSelect')?.value || '未選択';
+  const silhouetteLabel = document.getElementById('selectedSilhouetteInput')?.value || '未選択';
+  const backTextLabel = document.getElementById('selectedBackTextInput')?.value || 'なし';
+  const qty = document.getElementById('quantityInput')?.value || '1';
+  const frontPreviewSrc = document.getElementById('selectedFrontPreviewImageInput')?.value || 'images/T1.jpg';
+  const silhouettePreviewSrc = document.getElementById('selectedSilhouettePreviewImageInput')?.value || 'images/tshirt-men-10.png';
+
+  if (summaryBrand) summaryBrand.textContent = brandLabel;
+  if (summaryProduct) summaryProduct.textContent = productLabel;
+  if (summaryColor) summaryColor.textContent = colorLabel;
+  if (summaryLogoColor) summaryLogoColor.textContent = logoColorLabel;
+  if (summarySilhouetteColor) summarySilhouetteColor.textContent = silhouetteColorLabel;
+  if (summarySize) summarySize.textContent = sizeLabel;
+  if (summarySilhouette) summarySilhouette.textContent = silhouetteLabel;
+  if (summaryBackText) summaryBackText.textContent = backTextLabel;
+  if (summaryQuantity) summaryQuantity.textContent = qty + '枚';
+  if (summarySubtotal) summarySubtotal.textContent = '¥' + Number(subtotal).toLocaleString();
+  if (summaryShipping) summaryShipping.textContent = shipping === 0 ? '送料無料' : '¥' + Number(shipping).toLocaleString();
+  if (summaryTotal) summaryTotal.textContent = '¥' + Number(total).toLocaleString();
+  if (summaryFrontPreviewImage) summaryFrontPreviewImage.src = frontPreviewSrc;
+  if (summarySilhouettePreviewImage) summarySilhouettePreviewImage.src = silhouettePreviewSrc;
+  if (summaryPreviewText) summaryPreviewText.textContent = `背面文字：${backTextLabel} / ロゴ色：${logoColorLabel} / シルエット色：${silhouetteColorLabel}`;
+}
+
+
+function updateProductOptions() {
+  const brandSelect = document.getElementById('brandSelect');
+  const productSelect = document.getElementById('productSelect');
+  const productGroup = document.getElementById('productGroup');
+  if (!brandSelect || !productSelect || !productGroup) return;
+
+  const brand = brandSelect.value;
+  productSelect.innerHTML = '';
+  if (brand === 'popo_ballet') {
+    productGroup.style.display = 'block';
+    productSelect.required = true;
+    productSelect.innerHTML = `
+      <option value="">商品を選択してください</option>
+      <option value="tshirt">Tシャツ</option>
+      <option value="zip_hoodie">ジップパーカー</option>
+      <option value="jersey_zip">ジャージジップパーカー</option>
+      <option value="bag">バッグ</option>
+      <option value="kinchaku_m">巾着M</option>
+      <option value="kinchaku_s">巾着S</option>
+    `;
+  } else if (brand === 'popo_series') {
+    productGroup.style.display = 'block';
+    productSelect.required = true;
+    productSelect.innerHTML = `
+      <option value="">商品を選択してください</option>
+      <option value="tshirt">POPOシリーズTシャツ</option>
+    `;
+  } else {
+    productGroup.style.display = 'none';
+    productSelect.required = false;
+    productSelect.innerHTML = `<option value="">先にブランドを選択してください</option>`;
+  }
+  updateColorOptions();
+  calculateTotalPrice();
+}
+
+function updateColorOptions() {
+  const brand = document.getElementById('brandSelect')?.value || '';
+  const product = document.getElementById('productSelect')?.value || '';
+  const colorGroup = document.getElementById('colorGroup');
+  const colorSelect = document.getElementById('colorSelect');
+  if (!colorGroup || !colorSelect) return;
+
+  let options = [];
+  if (product === 'tshirt') {
+    options = [
+      ['black','ブラック'],['white','ホワイト'],['pink','ピンク'],['light_blue','ライトブルー'],['red','レッド'],['navy','ネイビー'],['blue','ブルー']
+    ];
+  } else if (product === 'zip_hoodie') {
+    options = [
+      ['black','ブラック'],['light_pink','ライトピンク'],['light_blue','ライトブルー'],['red','レッド'],['blue','ブルー'],['gray','グレー'],['navy','ネイビー']
+    ];
+  } else if (product === 'jersey_zip') {
+    options = [
+      ['black','ブラック'],['pink','ピンク'],['gray','グレー'],['navy','ネイビー']
+    ];
+  } else if (['bag','kinchaku_m','kinchaku_s'].includes(product)) {
+    options = [
+      ['black','ブラック'],['light_pink','ライトピンク'],['blue','ブルー'],['hot_pink','ホットピンク'],['navy','ネイビー']
+    ];
+  }
+
+  if (!brand || !product || options.length === 0) {
+    colorGroup.style.display = 'none';
+    colorSelect.innerHTML = '<option value="">カラーを選択してください</option>';
+    updateLogoSelectOptions();
+    return;
+  }
+
+  colorGroup.style.display = 'block';
+  colorSelect.innerHTML = '<option value="">カラーを選択してください</option>' + options.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
+  updateLogoSelectOptions();
+}
+
+function getSelectedPriceKey() {
+  const logoType = document.getElementById('logoTypeSelect')?.value || '';
+  const designType = document.getElementById('designTypeSelect')?.value || '';
+  if (designType === 'custom_photo') return 'custom_photo';
+  if (logoType === 'custom_logo' && (designType === 'silhouette_only' || designType === 'silhouette_text')) return 'silhouette_text';
+  if (logoType === 'custom_logo') return 'custom_logo';
+  if (designType === 'silhouette_only') return 'silhouette_only';
+  if (designType === 'silhouette_text') return 'silhouette_text';
+  if (logoType === 'logo_none') return 'logo_none';
+  return 'logo_only';
+}
+
+function calculateTotalPrice() {
+  updateLogoSelectOptions();
+  syncSilhouetteColorFromLogo();
+  const product = document.getElementById('productSelect')?.value || '';
+  const color = document.getElementById('colorSelect')?.value || '';
+  const quantity = parseInt(document.getElementById('quantityInput')?.value || '1', 10) || 1;
+  const totalBox = document.getElementById('totalPriceBox');
+  const totalInput = document.getElementById('totalPriceInput');
+
+  let priceTableKey = product;
+  if (product === 'zip_hoodie' && ['light_pink','light_blue'].includes(color)) {
+    priceTableKey = 'zip_hoodie_light';
+  }
+
+  const priceKey = getSelectedPriceKey();
+  const unit = (PRICE_TABLE[priceTableKey] && PRICE_TABLE[priceTableKey][priceKey]) ? PRICE_TABLE[priceTableKey][priceKey] : 0;
+  const subtotal = unit * quantity;
+  let shipping = SHIPPING_TABLE[product] || 0;
+
+  if (product === 'tshirt') {
+    shipping = 0;
+  } else if (subtotal >= FREE_SHIPPING_THRESHOLD) {
+    shipping = 0;
+  }
+
+  const grandTotal = subtotal + shipping;
+  if (totalBox) totalBox.textContent = grandTotal > 0 ? '¥' + grandTotal.toLocaleString() : '価格調整中';
+  if (totalInput) totalInput.value = String(grandTotal);
+  updateOrderSummary(subtotal, shipping, grandTotal);
+}
+
+function buildLineOrderMessage() {
+  const brand = document.getElementById('brandSelect')?.selectedOptions[0]?.textContent || '';
+  const product = document.getElementById('selectedProductLabelInput')?.value || document.getElementById('productSelect')?.selectedOptions[0]?.textContent || '';
+  const color = document.getElementById('selectedColorLabelInput')?.value || document.getElementById('colorSelect')?.selectedOptions[0]?.textContent || '';
+  const logoType = document.getElementById('logoTypeSelect')?.selectedOptions[0]?.textContent || '';
+  const logoColor = document.getElementById('logoColorSelect')?.selectedOptions[0]?.textContent || '';
+  const designType = document.getElementById('designTypeSelect')?.selectedOptions[0]?.textContent || '';
+  const silhouetteColor = document.getElementById('silhouetteColorSelect')?.selectedOptions[0]?.textContent || '';
+  const size = document.getElementById('sizeSelect')?.value || '';
+  const silhouette = document.getElementById('selectedSilhouetteInput')?.value || '';
+  const backText = document.getElementById('selectedBackTextInput')?.value || 'なし';
+  const qty = document.getElementById('quantityInput')?.value || '1';
+  const total = document.getElementById('totalPriceBox')?.textContent || '';
+  const name = document.getElementById('customerNameInput')?.value || '';
+  const email = document.getElementById('customerEmailInput')?.value || '';
+  const message = document.getElementById('messageInput')?.value || '';
+  return `POPO Ballet 注文相談
+ブランド：${brand}
+商品：${product}
+カラー：${color}
+ロゴ指定：${logoType}
+ロゴ色：${logoColor}
+デザイン内容：${designType}
+背面シルエット：${silhouette}
+背面シルエット色：${silhouetteColor}
+背面文字：${backText}
+サイズ：${size}
+数量：${qty}
+合計：${total}
+お名前：${name}
+メール：${email}
+備考：${message}`;
+}
+
+function sendOrderToLine() {
+  calculateTotalPrice();
+  const text = buildLineOrderMessage();
+  window.open('https://line.me/R/msg/text/?' + encodeURIComponent(text), '_blank');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.color-switch-card').forEach(card => {
+    const frontImg = card.querySelector('.front-image');
+    const backImg = card.querySelector('.back-image');
+    if (frontImg) frontImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
+    if (backImg) backImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
+  });
+  document.querySelectorAll('.series-card').forEach(card => {
+    const frontImg = card.querySelector('.series-main-image');
+    const backImg = card.querySelector('.series-sub-image');
+    if (frontImg) frontImg.onclick = () => openSeriesModal(card);
+    if (backImg) backImg.onclick = () => openSeriesModal(card);
+  });
+  updateProductOptions();
+  calculateTotalPrice();
+  applyTshirtFrontBySelections();
+  syncCurrentSelectionsFromSection('tshirt');
+  syncTshirtSelectionsToOrder();
+  updateOrderSummary();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  ['tshirt-section','ziphoodie-section','jerseyzip-section','totebag-section','kinchaku-m-section','kinchaku-s-section'].forEach(id => {
+    const card = document.getElementById(id);
+    if (card) updateLogoButtonsForCard(card);
+  });
+  updateLogoSelectOptions();
+  syncSilhouetteColorFromLogo();
+});
+
+
+function getCardLogoColor(card) {
+  const active = card.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active');
+  return active ? (active.dataset.logoValue || 'white') : 'white';
+}
+
+function buildVariantImage(baseSrc, color) {
+  if (!baseSrc) return '';
+  if (!color || color === 'white') return baseSrc;
+  return baseSrc.replace(/\.(png|jpg|jpeg|webp)$/i, '-' + color + '.$1');
+}
+
+function updateTshirtBackBySelections() {
+  const card = document.getElementById('tshirt-section');
+  if (!card) return;
+  const backImg = document.getElementById('tshirtBackImage') || card.querySelector('.back-image');
+  if (!backImg) return;
+  const activeSil = card.querySelector('.silhouette-select-btn.active');
+  const logoColor = getCardLogoColor(card);
+  let baseSrc = activeSil ? activeSil.dataset.baseSrc : 'images/tshirt-men-1.jpg';
+  let label = activeSil ? (activeSil.dataset.label || activeSil.textContent.trim()) : 'MEN 1';
+  const textBtn = card.querySelector('.text-select-btn.active');
+  if (textBtn) {
+    const t = textBtn.dataset.text || 'none';
+    if (t === 'art') { baseSrc = 'images/tshirt-men-1.jpg'; label = 'Ballet is Art'; }
+    else if (t === 'fr') { baseSrc = 'images/tshirt-women-1.jpg'; label = "L'AMOUR DU BALLET"; }
+  }
+  backImg.src = buildVariantImage(baseSrc, logoColor);
+  backImg.alt = label;
+  const silhouetteInput = document.getElementById('selectedSilhouetteInput');
+  if (silhouetteInput) silhouetteInput.value = label;
+  const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
+  if (previewInput) previewInput.value = backImg.src;
+  syncCurrentSelectionsFromSection('tshirt');
+}
+
+function switchTshirtColor(button) {
+  const card = document.getElementById('tshirt-section');
+  if (!card) return;
+  const row = button.closest('.tshirt-color-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  updateLogoButtonsForCard(card);
+  applyTshirtFrontBySelections();
+  updateTshirtBackBySelections();
+}
+
+function switchTshirtLogoColor(button) {
+  if (!button || button.disabled) return;
+  const row = button.closest('.tshirt-logo-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  applyTshirtFrontBySelections();
+  updateTshirtBackBySelections();
+}
+
+function selectTshirtSilhouette(button, src, label) {
+  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
+  if (button) {
+    button.classList.add('active');
+    button.dataset.baseSrc = src;
+    button.dataset.label = label || button.textContent.trim();
+  }
+  const noneBtn = document.querySelector('#tshirt-section .text-select-btn[data-text="none"]');
+  if (noneBtn) {
+    document.querySelectorAll('#tshirt-section .text-select-btn').forEach(btn => btn.classList.remove('active'));
+    noneBtn.classList.add('active');
+  }
+  updateTshirtBackBySelections();
+}
+
+function clearTshirtSilhouette() {
+  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
+  updateTshirtBackBySelections();
+}
+
+function selectTshirtText(type) {
+  document.querySelectorAll('#tshirt-section .text-select-btn').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.querySelector(`#tshirt-section .text-select-btn[data-text="${type}"]`);
+  if (activeBtn) activeBtn.classList.add('active');
+  const selectedBackTextInput = document.getElementById('selectedBackTextInput');
+  if (selectedBackTextInput) selectedBackTextInput.value = type === 'none' ? 'なし' : (type === 'art' ? 'Ballet is Art' : "L'AMOUR DU BALLET");
+  updateTshirtBackBySelections();
+}
+
+function selectProductSilhouette(sectionId, button, src, label) {
+  const card = document.getElementById(sectionId);
+  if (!card) return;
+  card.querySelectorAll('.silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
+  if (button) {
+    button.classList.add('active');
+    button.dataset.baseSrc = src;
+    button.dataset.label = label || button.textContent.trim();
+  }
+  const backImg = card.querySelector('.back-image');
+  if (backImg) {
+    backImg.src = buildVariantImage(src, getCardLogoColor(card));
+    backImg.alt = label || '';
+  }
+  const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
+  if (previewInput) previewInput.value = backImg ? backImg.src : '';
+  syncCurrentSelectionsFromCard(card);
+}
+
+function switchProductLogoColor(button) {
+  if (!button || button.disabled) return;
+  const row = button.closest('.product-logo-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  const card = button.closest('.color-switch-card');
+  if (card) {
+    const activeSil = card.querySelector('.silhouette-select-btn.active');
+    if (activeSil) {
+      const backImg = card.querySelector('.back-image');
+      if (backImg) backImg.src = buildVariantImage(activeSil.dataset.baseSrc || activeSil.getAttribute('data-base-src') || '', button.dataset.logoValue || 'white');
+      const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
+      if (previewInput && backImg) previewInput.value = backImg.src;
+    }
+    syncCurrentSelectionsFromCard(card);
+  }
+}
+
+function getCurrentSelectionFromCard(card) {
+  if (!card) return null;
+  const productMap = {
+    'tshirt-section': { brand: 'popo_ballet', product: 'tshirt', productLabel: 'Tシャツ' },
+    'ziphoodie-section': { brand: 'popo_ballet', product: 'zip_hoodie', productLabel: 'ジップパーカー' },
+    'jerseyzip-section': { brand: 'popo_ballet', product: 'jersey_zip', productLabel: 'ジャージジップパーカー' },
+    'totebag-section': { brand: 'popo_ballet', product: 'bag', productLabel: 'バッグ' },
+    'kinchaku-m-section': { brand: 'popo_ballet', product: 'kinchaku_m', productLabel: '巾着M' },
+    'kinchaku-s-section': { brand: 'popo_ballet', product: 'kinchaku_s', productLabel: '巾着S' }
+  };
+  const base = productMap[card.id];
+  if (!base) return null;
+  const activeColorBtn = card.querySelector('.tshirt-color-row .color-chip-btn.active') || card.querySelector('.color-chip-row .color-chip-btn.active');
+  const colorLabel = activeColorBtn ? (activeColorBtn.dataset.colorLabel || activeColorBtn.textContent.trim()) : '';
+  const colorValue = activeColorBtn?.dataset.colorValue || COLOR_VALUE_MAP[colorLabel] || '';
+  const frontImg = card.querySelector('.front-image');
+  const backImg = card.querySelector('.back-image');
+  const activeLogoBtn = card.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active');
+  const logoColorLabel = activeLogoBtn ? (activeLogoBtn.dataset.logoLabel || activeLogoBtn.textContent.trim()) : 'ホワイト';
+  const logoColorValue = activeLogoBtn?.dataset.logoValue || 'white';
+  return {
+    ...base,
+    colorLabel,
+    colorValue,
+    productName: card.querySelector('.product-name')?.textContent?.trim() || base.productLabel,
+    productLabel: base.productLabel,
+    previewSrc: frontImg?.src || '',
+    frontPreviewSrc: frontImg?.src || '',
+    silhouettePreviewSrc: backImg?.src || '',
+    silhouetteLabel: backImg?.alt || '',
+    backTextLabel: document.getElementById('selectedBackTextInput')?.value || '',
+    logoColorLabel,
+    logoColorValue
+  };
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => {
+    const onclick = btn.getAttribute('onclick') || '';
+    const m = onclick.match(/selectTshirtSilhouette\(this,'([^']+)','([^']+)'\)/);
+    if (m) { btn.dataset.baseSrc = m[1]; btn.dataset.label = m[2]; }
+  });
+  document.querySelectorAll('#ziphoodie-section .silhouette-select-btn, #jerseyzip-section .silhouette-select-btn').forEach(btn => {
+    const onclick = btn.getAttribute('onclick') || '';
+    const m = onclick.match(/selectProductSilhouette\('[^']+',this,'([^']+)','([^']+)'\)/);
+    if (m) { btn.dataset.baseSrc = m[1]; btn.dataset.label = m[2]; }
+  });
+  updateLogoButtonsForCard(document.getElementById('tshirt-section'));
+  updateLogoButtonsForCard(document.getElementById('ziphoodie-section'));
+  updateLogoButtonsForCard(document.getElementById('jerseyzip-section'));
+  updateLogoButtonsForCard(document.getElementById('totebag-section'));
+  updateLogoButtonsForCard(document.getElementById('kinchaku-m-section'));
+  updateLogoButtonsForCard(document.getElementById('kinchaku-s-section'));
+  updateTshirtBackBySelections();
+});
+
+</script>
+
+</body>
+</html>
