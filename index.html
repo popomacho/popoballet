@@ -1337,6 +1337,38 @@ border-color: #d8b7b7;
 color: #333;
 }
 
+.text-image-samples {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+margin-top: 12px;
+}
+
+.text-image-card {
+background: #fff;
+border: 1px solid #eee;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.text-image-card img {
+width: 100%;
+aspect-ratio: 1 / 0.52;
+object-fit: contain;
+background: #faf7f7;
+cursor: pointer;
+padding: 10px;
+}
+
+.text-image-caption {
+padding: 8px;
+font-size: 11px;
+font-weight: 700;
+color: #555;
+text-align: center;
+}
+
 .total-price-box {
 width: 100%;
 padding: 12px;
@@ -1628,9 +1660,55 @@ grid-template-columns: 1fr;
   color:#555;
   text-align:center;
 }
+
+.tshirt-preview-right{
+  display:grid;
+  grid-template-rows: minmax(0,3fr) minmax(72px,1fr);
+  gap:8px;
+  background:#efefef;
+  border-bottom:1px solid #eee;
+  padding:8px;
+}
+.tshirt-preview-right .back-preview-wrap{
+  border:1px solid #eee;
+  border-radius:12px;
+  background:#efefef;
+}
+.tshirt-back-text-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #eee;
+  border-radius:12px;
+  background:#faf7f7;
+  min-height:72px;
+  overflow:hidden;
+}
+.tshirt-back-text-box img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:transparent;
+}
 @media (max-width:760px){
   .featured-grid-6,.back-design-sample-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+
+#tshirt-section .color-switch-images{align-items:stretch;}
+#tshirt-section .front-image{height:100%;}
+#tshirt-section .tshirt-preview-right{height:100%;grid-template-rows:minmax(0,1fr) 72px;}
+#tshirt-section .tshirt-preview-right .back-preview-wrap{aspect-ratio:auto;height:100%;min-height:0;}
+#tshirt-section .tshirt-back-text-box{min-height:72px;height:72px;}
+
+
+
+/* v17 fixes */
+#tshirt-section .tshirt-preview-right{display:block;padding:0;background:transparent;border-bottom:1px solid #eee;}
+#tshirt-section .tshirt-back-text-box{display:none !important;}
+.product-text-preview-box{margin-top:12px;border:1px solid #eee;border-radius:12px;background:#faf7f7;min-height:84px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-text-preview-box img{width:100%;height:100%;object-fit:contain;padding:10px;background:transparent;}
+.shipping-progress-note{margin-top:6px;font-size:12px;color:#777;}
 
 </style>
 </head>
@@ -1729,9 +1807,8 @@ grid-template-columns: 1fr;
 <div class="color-switch-card" id="tshirt-section" data-product-key="tshirt" data-product-label="Tシャツ">
 <div class="color-switch-images">
 <img src="images/T1.jpg" alt="POPO Ballet Tシャツ ブラック 前" class="front-image">
-
 <div class="back-preview-wrap">
-<img src="images/tshirt-men-1-white.jpg" alt="POPO Ballet Tシャツ 背面シルエット" class="back-image" id="tshirtBackImage">
+  <img src="images/tshirt-men-10-white.png" alt="POPO Ballet Tシャツ 背面シルエット" class="back-image" id="tshirtBackImage">
 </div>
 </div>
 
@@ -1758,7 +1835,7 @@ grid-template-columns: 1fr;
 <div class="silhouette-select-box">
 <div class="silhouette-select-title">背面シルエット選択</div>
 <div class="silhouette-select-grid">
-<button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-10.png','MEN 1')">MEN 1</button>
+<button type="button" class="silhouette-select-btn active" data-base-src="images/tshirt-men-10.png" data-label="MEN 1" onclick="selectTshirtSilhouette(this,'images/tshirt-men-10.png','MEN 1')">MEN 1</button>
 <button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-20.png','MEN 2')">MEN 2</button>
 <button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-30.png','MEN 3')">MEN 3</button>
 <button type="button" class="silhouette-select-btn" onclick="selectTshirtSilhouette(this,'images/tshirt-men-40.png','MEN 4')">MEN 4</button>
@@ -1776,12 +1853,12 @@ grid-template-columns: 1fr;
   <div class="text-select-title">背面文字選択</div>
   <div class="text-select-grid">
 
-    <button type="button" class="text-select-btn active"
+    <button type="button" class="text-select-btn"
       onclick="selectTshirtText('none')" data-text="none">
       文字なし
     </button>
 
-    <button type="button" class="text-select-btn"
+    <button type="button" class="text-select-btn active"
       onclick="selectTshirtText('art')" data-text="art">
       Ballet is Art
     </button>
@@ -1792,6 +1869,7 @@ grid-template-columns: 1fr;
     </button>
   </div>
 </div>
+<div class="product-text-preview-box" id="tshirtTextPreviewBox"><img src="images/back-text-art-white.png" alt="Ballet is Art" id="tshirtBackTextPreview"></div>
 
 <div class="product-name">Tシャツ（ブラック）</div>
 <div class="product-desc">前面と背面のサンプル画像</div>
@@ -1895,14 +1973,14 @@ grid-template-columns: 1fr;
 <div class="color-switch-card" id="ziphoodie-section">
 <div class="color-switch-images">
 <img src="images/Z1.jpg" alt="POPO Ballet ジップパーカー ブラック 前" class="front-image">
-<img src="images/tshirt-men-10.png" alt="POPO Ballet ジップパーカー 背面シルエット" class="back-image" id="zipBackImage">
+<img src="images/tshirt-men-10-white.png" alt="POPO Ballet ジップパーカー 背面シルエット" class="back-image" id="zipBackImage">
 </div>
 <div class="color-switch-info">
 <div class="color-chip-row">
 <button type="button" class="color-chip-btn active" onclick="switchColor(this,'images/Z1.jpg','images/tshirt-men-20.png','ジップパーカー（ブラック）','POPO Ballet ジップパーカー ブラック 前','POPO Ballet ジップパーカー ブラック 後ろ')"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
 <button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z2.jpg','images/tshirt-men-30.png','ジップパーカー（ライトピンク）','POPO Ballet ジップパーカー ライトピンク 前','POPO Ballet ジップパーカー ライトピンク 後ろ')"><span class="color-chip" style="background:#f7c6d8;"></span>ライトピンク</button>
 <button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z3.jpg','images/tshirt-men-40.png','ジップパーカー（ライトブルー）','POPO Ballet ジップパーカー ライトブルー 前','POPO Ballet ジップパーカー ライトブルー 後ろ')"><span class="color-chip" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z4.jpg','images/tshirt-wwomen-10.png','ジップパーカー（レッド）','POPO Ballet ジップパーカー レッド 前','POPO Ballet ジップパーカー レッド 後ろ')"><span class="color-chip" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z4.jpg','images/tshirt-women-10.png','ジップパーカー（レッド）','POPO Ballet ジップパーカー レッド 前','POPO Ballet ジップパーカー レッド 後ろ')"><span class="color-chip" style="background:#d62828;"></span>レッド</button>
 <button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z5.jpg','images/tshirt-women-20.png','ジップパーカー（ブルー）','POPO Ballet ジップパーカー ブルー 前','POPO Ballet ジップパーカー ブルー 後ろ')"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
 <button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z6.jpg','images/tshirt-women-30.png','ジップパーカー（グレー）','POPO Ballet ジップパーカー グレー 前','POPO Ballet ジップパーカー グレー 後ろ')"><span class="color-chip" style="background:#bdbdbd;"></span>グレー</button>
 <button type="button" class="color-chip-btn" onclick="switchColor(this,'images/Z7.jpg','images/tshirt-women-40.png','ジップパーカー（ネイビー）','POPO Ballet ジップパーカー ネイビー 前','POPO Ballet ジップパーカー ネイビー 後ろ')"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
@@ -1917,16 +1995,34 @@ grid-template-columns: 1fr;
 <div class="silhouette-select-box">
 <div class="silhouette-select-title">背面シルエット選択</div>
 <div class="silhouette-select-grid">
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-10.jpg','MEN 1')">MEN 1</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-20.jpg','MEN 2')">MEN 2</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-30.jpg','MEN 3')">MEN 3</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-40.jpg','MEN 4')">MEN 4</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-10.jpg','WOMEN 1')">WOMEN 1</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-20.jpg','WOMEN 2')">WOMEN 2</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-30.jpg','WOMEN 3')">WOMEN 3</button>
-<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-40.jpg','WOMEN 4')">WOMEN 4</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn active" data-base-src="images/tshirt-men-10.png" data-label="MEN 1" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-10.png','MEN 1')">MEN 1</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-20.png','MEN 2')">MEN 2</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-30.png','MEN 3')">MEN 3</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-men-40.png','MEN 4')">MEN 4</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-10.png','WOMEN 1')">WOMEN 1</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-20.png','WOMEN 2')">WOMEN 2</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-30.png','WOMEN 3')">WOMEN 3</button>
+<button type="button" class="silhouette-select-btn zip-silhouette-btn" onclick="selectProductSilhouette('ziphoodie-section',this,'images/tshirt-women-40.png','WOMEN 4')">WOMEN 4</button>
 </div>
 </div>
+<div class="text-select-box">
+  <div class="text-select-title">背面文字選択</div>
+  <div class="text-select-grid">
+    <button type="button" class="text-select-btn" data-text="none" onclick="selectProductText('ziphoodie-section', this, 'none')">文字なし</button>
+    <button type="button" class="text-select-btn active" data-text="art" onclick="selectProductText('ziphoodie-section', this, 'art')">Ballet is Art</button>
+    <button type="button" class="text-select-btn" data-text="fr" onclick="selectProductText('ziphoodie-section', this, 'fr')">L'AMOUR DU BALLET</button>
+  </div>
+</div>
+<div class="product-text-preview-box" id="zipTextPreviewBox"><img src="images/back-text-art-white.png" alt="Ballet is Art" id="zipBackTextPreview"></div>
+<div class="text-select-box">
+  <div class="text-select-title">背面文字選択</div>
+  <div class="text-select-grid">
+    <button type="button" class="text-select-btn" data-text="none" onclick="selectProductText('jerseyzip-section', this, 'none')">文字なし</button>
+    <button type="button" class="text-select-btn active" data-text="art" onclick="selectProductText('jerseyzip-section', this, 'art')">Ballet is Art</button>
+    <button type="button" class="text-select-btn" data-text="fr" onclick="selectProductText('jerseyzip-section', this, 'fr')">L'AMOUR DU BALLET</button>
+  </div>
+</div>
+<div class="product-text-preview-box" id="jerseyTextPreviewBox"><img src="images/back-text-art-white.png" alt="Ballet is Art" id="jerseyBackTextPreview"></div>
 <div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプルを見る</a></div>
 <div class="product-name">ジップパーカー（ブラック）</div>
 <div class="product-desc">前面と背面のサンプル画像</div>
@@ -1981,7 +2077,7 @@ grid-template-columns: 1fr;
 <div class="color-switch-card" id="jerseyzip-section">
 <div class="color-switch-images">
 <img src="images/J1.jpg" alt="POPO Ballet ジャージジップパーカー ブラック 前" class="front-image">
-<img src="images/tshirt-men-1-white.jpg" alt="POPO Ballet ジャージジップパーカー 背面シルエット" class="back-image" id="jerseyBackImage">
+<img src="images/tshirt-men-10-white.png" alt="POPO Ballet ジャージジップパーカー 背面シルエット" class="back-image" id="jerseyBackImage">
 </div>
 <div class="color-switch-info">
 <div class="color-chip-row">
@@ -2000,14 +2096,14 @@ grid-template-columns: 1fr;
 <div class="silhouette-select-box">
 <div class="silhouette-select-title">背面シルエット選択</div>
 <div class="silhouette-select-grid">
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-1.jpg','MEN 1')">MEN 1</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-2.jpg','MEN 2')">MEN 2</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-3.jpg','MEN 3')">MEN 3</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-4.jpg','MEN 4')">MEN 4</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-1.jpg','WOMEN 1')">WOMEN 1</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-2.jpg','WOMEN 2')">WOMEN 2</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-3.jpg','WOMEN 3')">WOMEN 3</button>
-<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-4.jpg','WOMEN 4')">WOMEN 4</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn active" data-base-src="images/tshirt-men-10.png" data-label="MEN 1" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-10.png','MEN 1')">MEN 1</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-20.png','MEN 2')">MEN 2</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-30.png','MEN 3')">MEN 3</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-men-40.png','MEN 4')">MEN 4</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-10.png','WOMEN 1')">WOMEN 1</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-20.png','WOMEN 2')">WOMEN 2</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-30.png','WOMEN 3')">WOMEN 3</button>
+<button type="button" class="silhouette-select-btn jersey-silhouette-btn" onclick="selectProductSilhouette('jerseyzip-section',this,'images/tshirt-women-40.png','WOMEN 4')">WOMEN 4</button>
 </div>
 </div>
 <div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプルを見る</a></div>
@@ -2882,7 +2978,7 @@ POPO Macho パーソナルジムはこちら
 <label class="form-label" for="designTypeSelect">デザイン内容</label>
 <select id="designTypeSelect" name="design_type" class="form-control" onchange="calculateTotalPrice()">
 <option value="">デザイン内容を選択してください</option>
-<option value="none">デザインなし</option>
+<option value="none">背面デザインなし</option>
 <option value="silhouette_only">シルエットのみ</option>
 <option value="silhouette_text">シルエット＋文字</option>
 <option value="custom_photo">持ち込み画像からシルエット作成希望</option>
@@ -2902,13 +2998,13 @@ POPO Macho パーソナルジムはこちら
 <label class="form-label">背面シルエット最終選択</label>
 <div class="final-silhouette-grid" id="finalSilhouetteGrid">
   <button type="button" class="final-silhouette-card" data-silhouette="MEN 1" data-image="images/tshirt-men-1.jpg" onclick="selectFinalSilhouette(this, 'MEN 1', 'images/tshirt-men-1.jpg')"><img src="images/tshirt-men-10.png" alt="MEN 1"><span>MEN 1</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="MEN 2" data-image="images/tshirt-men-2.jpg" onclick="selectFinalSilhouette(this, 'MEN 2', 'images/tshirt-men-2.jpg')"><img src="images/tshirt-men-20.jpg" alt="MEN 2"><span>MEN 2</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="MEN 3" data-image="images/tshirt-men-3.jpg" onclick="selectFinalSilhouette(this, 'MEN 3', 'images/tshirt-men-3.jpg')"><img src="images/tshirt-men-30.jpg" alt="MEN 3"><span>MEN 3</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="MEN 4" data-image="images/tshirt-men-4.jpg" onclick="selectFinalSilhouette(this, 'MEN 4', 'images/tshirt-men-4.jpg')"><img src="images/tshirt-men-40.png" alt="MEN 4"><span>MEN 4</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 1" data-image="images/tshirt-women-1.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 1', 'images/tshirt-women-1.jpg')"><img src="images/tshirt-women-10.png" alt="WOMEN 1"><span>WOMEN 1</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 2" data-image="images/tshirt-women-2.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 2', 'images/tshirt-women-2.jpg')"><img src="images/tshirt-women-20.png" alt="WOMEN 2"><span>WOMEN 2</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 3" data-image="images/tshirt-women-3.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 3', 'images/tshirt-women-3.jpg')"><img src="images/tshirt-women-30.png" alt="WOMEN 3"><span>WOMEN 3</span></button>
-  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 4" data-image="images/tshirt-women-4.jpg" onclick="selectFinalSilhouette(this, 'WOMEN 4', 'images/tshirt-women-4.jpg')"><img src="images/tshirt-women-40.png" alt="WOMEN 4"><span>WOMEN 4</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 2" data-image="images/tshirt-men-20.png" onclick="selectFinalSilhouette(this, 'MEN 2', 'images/tshirt-men-20.png')"><img src="images/tshirt-men-20.png" alt="MEN 2"><span>MEN 2</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 3" data-image="images/tshirt-men-30.png" onclick="selectFinalSilhouette(this, 'MEN 3', 'images/tshirt-men-30.png')"><img src="images/tshirt-men-30.png" alt="MEN 3"><span>MEN 3</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="MEN 4" data-image="images/tshirt-men-40.png" onclick="selectFinalSilhouette(this, 'MEN 4', 'images/tshirt-men-40.png')"><img src="images/tshirt-men-40.png" alt="MEN 4"><span>MEN 4</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 1" data-image="images/tshirt-women-10.png" onclick="selectFinalSilhouette(this, 'WOMEN 1', 'images/tshirt-women-10.png')"><img src="images/tshirt-women-10.png" alt="WOMEN 1"><span>WOMEN 1</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 2" data-image="images/tshirt-women-20.png" onclick="selectFinalSilhouette(this, 'WOMEN 2', 'images/tshirt-women-20.png')"><img src="images/tshirt-women-20.png" alt="WOMEN 2"><span>WOMEN 2</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 3" data-image="images/tshirt-women-30.png" onclick="selectFinalSilhouette(this, 'WOMEN 3', 'images/tshirt-women-30.png')"><img src="images/tshirt-women-30.png" alt="WOMEN 3"><span>WOMEN 3</span></button>
+  <button type="button" class="final-silhouette-card" data-silhouette="WOMEN 4" data-image="images/tshirt-women-40.png" onclick="selectFinalSilhouette(this, 'WOMEN 4', 'images/tshirt-women-40.png')"><img src="images/tshirt-women-40.png" alt="WOMEN 4"><span>WOMEN 4</span></button>
 </div>
 <div class="price-note">※ 面番号だけで迷わないよう、ここでも画像付きで選べます。</div>
 </div>
@@ -2981,7 +3077,8 @@ POPO Macho パーソナルジムはこちら
 <div class="form-group">
 <label class="form-label">送料を含めた合計金額</label>
 <div id="totalPriceBox" class="total-price-box">¥0</div>
-<div class="price-note">※ 送料ルールや価格は、コード内の設定を後から変更できます。</div>
+<div class="price-note">※ 送料は自動計算されます。</div>
+<div class="shipping-progress-note" id="shippingProgressNote"></div>
 </div>
 
 <div class="form-group">
@@ -3270,797 +3367,19 @@ function switchProductLogoColor(button) {
   if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
   button.classList.add('active');
   const card = button.closest('.color-switch-card');
-  if (card) syncCurrentSelectionsFromCard(card);
-}
-
-function syncSilhouetteColorFromLogo() {
-  const logoColorSelect = document.getElementById('logoColorSelect');
-  const silhouetteColorSelect = document.getElementById('silhouetteColorSelect');
-  if (logoColorSelect && silhouetteColorSelect) {
-    silhouetteColorSelect.value = logoColorSelect.value || 'white';
-  }
-}
-
-function updateLogoSelectOptions() {
-  const product = document.getElementById('productSelect')?.value || '';
-  const color = document.getElementById('colorSelect')?.value || '';
-  const logoColorSelect = document.getElementById('logoColorSelect');
-  if (!logoColorSelect) return;
-  let allowed = ['white'];
-  if (product === 'tshirt') {
-    if (color === 'black') allowed = ['white','gold','pink'];
-    else if (color === 'white') allowed = ['gold','pink'];
-    else if (color === 'pink') allowed = ['white','gold'];
-    else allowed = ['white'];
-  } else if (product === 'zip_hoodie') {
-    allowed = ['black','light_pink'].includes(color) ? ['white','gold'] : ['white'];
-  } else if (product === 'jersey_zip') {
-    if (color === 'black') allowed = ['white','gold','pink'];
-    else if (color === 'pink') allowed = ['white','gold'];
-    else allowed = ['white'];
-  } else if (['bag','kinchaku_m','kinchaku_s'].includes(product)) {
-    allowed = ['black','light_pink'].includes(color) ? ['white','gold'] : ['white'];
-  } else {
-    allowed = ['white','gold','pink'];
-  }
-  const labels = {white:'ホワイト', gold:'ゴールド', pink:'ピンク'};
-  const current = logoColorSelect.value;
-  logoColorSelect.innerHTML = allowed.map(v => `<option value="${v}">${labels[v]}</option>`).join('');
-  logoColorSelect.value = allowed.includes(current) ? current : allowed[0];
-  syncSilhouetteColorFromLogo();
-}
-
-function applyTshirtFrontBySelections() {
-  const card = document.getElementById('tshirt-section');
-  if (!card) return;
-  const colorBtn = getActiveTshirtColorButton();
-  const logoBtn = getActiveTshirtLogoButton();
-  if (!colorBtn) return;
-  const frontImg = card.querySelector('.front-image');
-  const nameEl = card.querySelector('.product-name');
-  const logoValue = logoBtn?.dataset.logoValue || 'white';
-  const src = colorBtn.dataset[`front${logoValue.charAt(0).toUpperCase()+logoValue.slice(1)}`] || colorBtn.dataset.frontWhite || colorBtn.dataset.frontSrc || '';
-  if (frontImg && src) {
-    frontImg.src = src;
-    frontImg.alt = `POPO Ballet ${colorBtn.dataset.productName || 'Tシャツ'} 前`;
-  }
-  if (nameEl) nameEl.textContent = colorBtn.dataset.productName || 'Tシャツ';
-  const logoColorSelect = document.getElementById('logoColorSelect');
-  if (logoColorSelect && logoBtn?.dataset.logoValue) logoColorSelect.value = logoBtn.dataset.logoValue;
-  syncCurrentSelectionsFromSection('tshirt');
-  calculateTotalPrice();
-}
-
-function switchTshirtColor(button) {
-  const card = document.getElementById('tshirt-section');
-  if (!card) return;
-  const backImg = card.querySelector('.back-image');
-  const row = button.closest('.tshirt-color-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  if (backImg && button.dataset.backSrc) {
-    backImg.src = button.dataset.backSrc;
-    backImg.alt = (button.dataset.productName || 'Tシャツ') + ' 後ろ';
-  }
-  updateLogoButtonsForCard(card);
-}
-
-function switchTshirtLogoColor(button) {
-  if (!button || button.disabled) return;
-  const row = button.closest('.tshirt-logo-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  applyTshirtFrontBySelections();
-}
-
-function switchTshirtFrontOnly(button, frontSrc, productName, altFront) {
-  const card = document.getElementById('tshirt-section');
-  if (!card) return;
-  const frontImg = card.querySelector('.front-image');
-  const nameEl = card.querySelector('.product-name');
-  const row = button.closest('.color-chip-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  if (frontImg) {
-    frontImg.src = frontSrc;
-    frontImg.alt = altFront || productName + ' 前';
-  }
-  if (nameEl) nameEl.textContent = productName;
-  syncCurrentSelectionsFromSection('tshirt');
-}
-
-function switchColor(button, frontSrc, backSrc, productName, altFront, altBack, isSingle = false) {
-  const card = button.closest('.color-switch-card');
-  if (!card) return;
-  const frontImg = card.querySelector('.front-image');
-  const backImg = card.querySelector('.back-image');
-  const nameEl = card.querySelector('.product-name');
-
-  const row = button.closest('.color-chip-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-
-  if (frontImg) {
-    frontImg.src = frontSrc;
-    frontImg.alt = altFront || productName + ' 前';
-    frontImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
-  }
-
-  if (backImg && !isSingle) {
-    if (card.id !== 'tshirt-section') {
-      backImg.src = backSrc;
-      backImg.alt = altBack || productName + ' 後ろ';
-    }
-    backImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
-  }
-
-  if (nameEl) nameEl.textContent = productName;
-  updateLogoButtonsForCard(card);
-  syncCurrentSelectionsFromCard(card);
-}
-
-function setTshirtBackFullImage(src, alt) {
-  const backImg = document.querySelector('#tshirt-section .back-image');
-  if (!backImg) return;
-  backImg.src = src;
-  backImg.alt = alt || 'POPO Ballet Tシャツ 背面';
-  const selectedSilhouetteInput = document.getElementById('selectedSilhouetteInput');
-  if (selectedSilhouetteInput) selectedSilhouetteInput.value = alt || '';
-  syncCurrentSelectionsFromSection('tshirt');
-}
-
-function selectTshirtSilhouette(button, src, label) {
-  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
-  if (button) button.classList.add('active');
-  setTshirtBackFullImage(src, label || 'POPO Ballet Tシャツ 背面');
-}
-
-function clearTshirtSilhouette() {
-  setTshirtBackFullImage('images/T10.jpg', 'POPO Ballet Tシャツ ブラック 後ろ');
-  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
-  const selectedSilhouetteInput = document.getElementById('selectedSilhouetteInput');
-  if (selectedSilhouetteInput) selectedSilhouetteInput.value = '';
-}
-
-function selectTshirtText(type) {
-  document.querySelectorAll('#tshirt-section .text-select-btn').forEach(btn => btn.classList.remove('active'));
-  let src = 'images/tshirt-men-2.jpg';
-  let label = 'MEN 2';
-  if (type === 'art') {
-    src = 'images/tshirt-men-1.jpg';
-    label = 'MEN 1';
-  } else if (type === 'fr') {
-    src = 'images/tshirt-women-1.jpg';
-    label = 'WOMEN 1';
-  }
-  setTshirtBackFullImage(src, label);
-  const selectedBackTextInput = document.getElementById('selectedBackTextInput');
-  if (selectedBackTextInput) {
-    selectedBackTextInput.value = type === 'none' ? 'なし' : (type === 'art' ? 'Ballet is Art' : "L'AMOUR DU BALLET");
-  }
-  const activeBtn = document.querySelector(`#tshirt-section .text-select-btn[data-text="${type}"]`);
-  if (activeBtn) activeBtn.classList.add('active');
-}
-
-function switchSeriesFrontBack(button, frontSrc, backSrc, altFront, altBack) {
-  const card = button.closest('.series-card');
-  if (!card) return;
-  const frontImg = card.querySelector('.series-main-image');
-  const backImg = card.querySelector('.series-sub-image');
-  card.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  if (frontImg) {
-    frontImg.src = frontSrc;
-    frontImg.alt = altFront || '前面';
-    frontImg.onclick = () => openSeriesModal(card);
-  }
-  if (backImg) {
-    backImg.src = backSrc;
-    backImg.alt = altBack || '背面';
-    backImg.onclick = () => openSeriesModal(card);
-  }
-}
-
-function switchMachoMen(button, frontSrc, menBackSrc) {
-  const card = button.closest('.series-card');
-  if (!card) return;
-  const frontImg = card.querySelector('.series-main-image');
-  const subImgs = card.querySelectorAll('.series-sub-image');
-  if (frontImg) frontImg.src = frontSrc;
-  if (subImgs[0]) subImgs[0].src = menBackSrc;
-  const row = button.closest('.series-color-row');
-  if (row) row.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-}
-
-function switchMachoWomen(button, frontSrc, womenBackSrc) {
-  const card = button.closest('.series-card');
-  if (!card) return;
-  const frontImg = card.querySelector('.series-main-image');
-  const subImgs = card.querySelectorAll('.series-sub-image');
-  if (frontImg) frontImg.src = frontSrc;
-  if (subImgs[1]) subImgs[1].src = womenBackSrc;
-  const row = button.closest('.series-color-row');
-  if (row) row.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-}
-
-function openSeriesModal(card) {
-  const frontImg = card.querySelector('.series-main-image');
-  const backImg = card.querySelector('.series-sub-image');
-  openModal(frontImg ? frontImg.src : '', frontImg ? frontImg.alt : '', backImg ? backImg.src : '', backImg ? backImg.alt : '');
-}
-
-function toggleMoreSeries(button) {
-  const hiddenCards = document.querySelectorAll('#other-series .series-card.is-hidden');
-  const isOpen = button.getAttribute('data-open') === 'true';
-  hiddenCards.forEach(card => { card.style.display = isOpen ? 'none' : 'block'; });
-  button.setAttribute('data-open', isOpen ? 'false' : 'true');
-  button.textContent = isOpen ? 'もっと見る' : '表示を閉じる';
-}
-
-
-function getCurrentSelectionFromCard(card) {
-  if (!card) return null;
-  const productMap = {
-    'tshirt-section': { brand: 'popo_ballet', product: 'tshirt', productLabel: 'Tシャツ' },
-    'ziphoodie-section': { brand: 'popo_ballet', product: 'zip_hoodie', productLabel: 'ジップパーカー' },
-    'jerseyzip-section': { brand: 'popo_ballet', product: 'jersey_zip', productLabel: 'ジャージジップパーカー' },
-    'totebag-section': { brand: 'popo_ballet', product: 'bag', productLabel: 'バッグ' },
-    'kinchaku-m-section': { brand: 'popo_ballet', product: 'kinchaku_m', productLabel: '巾着M' },
-    'kinchaku-s-section': { brand: 'popo_ballet', product: 'kinchaku_s', productLabel: '巾着S' }
-  };
-  const base = productMap[card.id];
-  if (!base) return null;
-
-  const activeColorBtn = card.querySelector('.tshirt-color-row .color-chip-btn.active') || card.querySelector('.color-chip-btn.active');
-  const colorLabel = activeColorBtn ? (activeColorBtn.dataset.colorLabel || activeColorBtn.textContent.trim()) : '';
-  const colorValueMap = {
-    'ブラック':'black','ホワイト':'white',
-    'ピンク':'pink','ライトブルー':'light_blue','ライトピンク':'light_pink',
-    'レッド':'red','ネイビー':'navy','ブルー':'blue','グレー':'gray','ホットピンク':'hot_pink'
-  };
-  const colorValue = activeColorBtn?.dataset.colorValue || colorValueMap[colorLabel] || '';
-
-  const frontImg = card.querySelector('.front-image');
-  const previewSrc = frontImg ? frontImg.src : '';
-  const silhouettePreviewSrc = document.getElementById('selectedSilhouettePreviewImageInput')?.value || '';
-  const activeLogoBtn = card.querySelector('.tshirt-logo-row .color-chip-btn.active') || card.querySelector('.product-logo-row .color-chip-btn.active');
-  const logoColorLabel = activeLogoBtn ? (activeLogoBtn.dataset.logoLabel || activeLogoBtn.textContent.trim()) : (document.getElementById('logoColorSelect')?.selectedOptions[0]?.textContent || '');
-  const logoColorValue = activeLogoBtn?.dataset.logoValue || (document.getElementById('logoColorSelect')?.value || '');
-
-  const silhouette = document.getElementById('selectedSilhouetteInput')?.value || '';
-  const backText = document.getElementById('selectedBackTextInput')?.value || 'なし';
-
-  return { ...base, colorLabel, colorValue, previewSrc, silhouettePreviewSrc, silhouette, backText, logoColorLabel, logoColorValue };
-}
-
-function syncCurrentSelectionsFromCard(card) {
-  const data = getCurrentSelectionFromCard(card);
-  if (!data) return;
-  window.currentPreviewSelection = data;
-}
-
-function syncCurrentSelectionsFromSection(sectionKey) {
-  const map = {
-    tshirt: document.getElementById('tshirt-section'),
-    zip_hoodie: document.getElementById('ziphoodie-section'),
-    jersey_zip: document.getElementById('jerseyzip-section'),
-    bag: document.getElementById('totebag-section'),
-    kinchaku_m: document.getElementById('kinchaku-m-section'),
-    kinchaku_s: document.getElementById('kinchaku-s-section')
-  };
-  const card = map[sectionKey];
-  if (card) syncCurrentSelectionsFromCard(card);
-}
-
-function setSelectValueByText(selectEl, text) {
-  if (!selectEl || !text) return;
-  const normalized = text.trim();
-  const option = Array.from(selectEl.options).find(opt => opt.textContent.trim() === normalized);
-  if (option) selectEl.value = option.value;
-}
-
-function reflectCurrentProductToOrder(sectionKey) {
-  syncCurrentSelectionsFromSection(sectionKey);
-  const data = window.currentPreviewSelection;
-  if (!data) return;
-
-  const brandSelect = document.getElementById('brandSelect');
-  const productSelect = document.getElementById('productSelect');
-  const colorSelect = document.getElementById('colorSelect');
-  const selectedProductLabelInput = document.getElementById('selectedProductLabelInput');
-  const selectedColorLabelInput = document.getElementById('selectedColorLabelInput');
-  const selectedPreviewImageInput = document.getElementById('selectedPreviewImageInput');
-  const selectedFrontPreviewImageInput = document.getElementById('selectedFrontPreviewImageInput');
-  const selectedSilhouettePreviewImageInput = document.getElementById('selectedSilhouettePreviewImageInput');
-
-  if (brandSelect) {
-    brandSelect.value = data.brand;
-    updateProductOptions();
-  }
-  if (productSelect) {
-    productSelect.value = data.product;
-    updateColorOptions();
-  }
-  if (colorSelect && data.colorValue) colorSelect.value = data.colorValue;
-
-  if (selectedProductLabelInput) selectedProductLabelInput.value = data.productLabel || '';
-  if (selectedColorLabelInput) selectedColorLabelInput.value = data.colorLabel || '';
-  if (selectedPreviewImageInput) selectedPreviewImageInput.value = data.previewSrc || '';
-  if (selectedFrontPreviewImageInput) selectedFrontPreviewImageInput.value = data.previewSrc || '';
-  if (selectedSilhouettePreviewImageInput && data.silhouettePreviewSrc) selectedSilhouettePreviewImageInput.value = data.silhouettePreviewSrc || '';
-
-  const logoColorSelect = document.getElementById('logoColorSelect');
-  if (logoColorSelect && data.logoColorValue) logoColorSelect.value = data.logoColorValue;
-  syncSilhouetteColorFromLogo();
-  if (sectionKey === 'tshirt') {
-    syncTshirtSelectionsToOrder();
-  }
-
-  calculateTotalPrice();
-  const orderForm = document.getElementById('order-form');
-  if (orderForm) orderForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function selectFinalSilhouette(button, label, imageSrc) {
-  document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
-  if (button) button.classList.add('active');
-  const selectedSilhouetteInput = document.getElementById('selectedSilhouetteInput');
-  if (selectedSilhouetteInput) selectedSilhouetteInput.value = label || '';
-  if (imageSrc) {
-    const selectedPreviewImageInput = document.getElementById('selectedPreviewImageInput');
-  const selectedFrontPreviewImageInput = document.getElementById('selectedFrontPreviewImageInput');
-  const selectedSilhouettePreviewImageInput = document.getElementById('selectedSilhouettePreviewImageInput');
-    if (selectedPreviewImageInput) selectedPreviewImageInput.value = imageSrc;
-  }
-
-  if (logoColorSelect && activeLogoBtn?.dataset.logoValue) logoColorSelect.value = activeLogoBtn.dataset.logoValue;
-
-  const designSelect = document.getElementById('designTypeSelect');
-  const backText = document.getElementById('selectedBackTextInput')?.value || 'なし';
-  if (designSelect && designSelect.value !== 'custom_photo') {
-    designSelect.value = backText === 'なし' ? 'silhouette_only' : 'silhouette_text';
-  }
-  calculateTotalPrice();
-}
-
-function selectFinalBackText(button, type) {
-  document.querySelectorAll('#finalTextGrid .final-text-btn').forEach(btn => btn.classList.remove('active'));
-  if (button) button.classList.add('active');
-
-  const selectedBackTextInput = document.getElementById('selectedBackTextInput');
-  const designSelect = document.getElementById('designTypeSelect');
-
-  let label = 'なし';
-  let imageSrc = document.getElementById('selectedSilhouettePreviewImageInput')?.value || '';
-
-  if (type === 'art') {
-    label = 'Ballet is Art';
-    imageSrc = 'images/tshirt-men-1.jpg';
-    const silInput = document.getElementById('selectedSilhouetteInput');
-    if (silInput) silInput.value = 'MEN 1';
-    const silBtn = document.querySelector('#finalSilhouetteGrid .final-silhouette-card[data-silhouette="MEN 1"]');
-    if (silBtn) {
-      document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
-      silBtn.classList.add('active');
-    }
-  } else if (type === 'fr') {
-    label = "L'AMOUR DU BALLET";
-    imageSrc = 'images/tshirt-women-1.jpg';
-    const silInput = document.getElementById('selectedSilhouetteInput');
-    if (silInput) silInput.value = 'WOMEN 1';
-    const silBtn = document.querySelector('#finalSilhouetteGrid .final-silhouette-card[data-silhouette="WOMEN 1"]');
-    if (silBtn) {
-      document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
-      silBtn.classList.add('active');
-    }
-  }
-
-  if (selectedBackTextInput) selectedBackTextInput.value = label;
-  const selectedPreviewImageInput = document.getElementById('selectedPreviewImageInput');
-  const selectedFrontPreviewImageInput = document.getElementById('selectedFrontPreviewImageInput');
-  const selectedSilhouettePreviewImageInput = document.getElementById('selectedSilhouettePreviewImageInput');
-  if (selectedPreviewImageInput && imageSrc) selectedPreviewImageInput.value = imageSrc;
-
-  if (designSelect && designSelect.value !== 'custom_photo') {
-    designSelect.value = type === 'none' ? 'silhouette_only' : 'silhouette_text';
-  }
-  calculateTotalPrice();
-}
-
-function syncTshirtSelectionsToOrder() {
-  const silInput = document.getElementById('selectedSilhouetteInput');
-  const backTextInput = document.getElementById('selectedBackTextInput');
-  const previewInput = document.getElementById('selectedPreviewImageInput');
-  const frontPreviewInput = document.getElementById('selectedFrontPreviewImageInput');
-  const silhouettePreviewInput = document.getElementById('selectedSilhouettePreviewImageInput');
-
-  const currentSil = silInput ? silInput.value : '';
-  const currentBackText = backTextInput ? backTextInput.value : 'なし';
-  const backImg = document.querySelector('#tshirt-section .back-image');
-  const frontImg = document.querySelector('#tshirt-section .front-image');
-  const activeLogoBtn = document.querySelector('#tshirt-section .tshirt-logo-row .color-chip-btn.active');
-  const logoColorSelect = document.getElementById('logoColorSelect');
-
-  if (activeLogoBtn && logoColorSelect) {
-    logoColorSelect.value = activeLogoBtn.dataset.logoValue || 'white';
-    syncSilhouetteColorFromLogo();
-  }
-  if (frontImg && frontPreviewInput) frontPreviewInput.value = frontImg.src || '';
-  if (backImg && silhouettePreviewInput) silhouettePreviewInput.value = backImg.src || '';
-  if (previewInput && frontImg) previewInput.value = frontImg.src || '';
-
-  if (currentSil) {
-    const silBtn = document.querySelector(`#finalSilhouetteGrid .final-silhouette-card[data-silhouette="${currentSil}"]`);
-    if (silBtn) {
-      document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(btn => btn.classList.remove('active'));
-      silBtn.classList.add('active');
-    }
-  }
-
-  const textType = currentBackText === 'Ballet is Art' ? 'art' : (currentBackText === "L'AMOUR DU BALLET" ? 'fr' : 'none');
-  const textBtn = document.querySelector(`#finalTextGrid .final-text-btn[data-back-text="${textType}"]`);
-  if (textBtn) {
-    document.querySelectorAll('#finalTextGrid .final-text-btn').forEach(btn => btn.classList.remove('active'));
-    textBtn.classList.add('active');
-  }
-
-  const designSelect = document.getElementById('designTypeSelect');
-  if (designSelect && designSelect.value !== 'custom_photo') {
-    designSelect.value = textType === 'none' ? 'silhouette_only' : 'silhouette_text';
-  }
-}
-
-function updateOrderSummary(subtotal = 0, shipping = 0, total = 0) {
-  const summaryBrand = document.getElementById('summaryBrand');
-  const summaryProduct = document.getElementById('summaryProduct');
-  const summaryColor = document.getElementById('summaryColor');
-  const summaryLogoColor = document.getElementById('summaryLogoColor');
-  const summarySilhouetteColor = document.getElementById('summarySilhouetteColor');
-  const summarySize = document.getElementById('summarySize');
-  const summarySilhouette = document.getElementById('summarySilhouette');
-  const summaryBackText = document.getElementById('summaryBackText');
-  const summaryQuantity = document.getElementById('summaryQuantity');
-  const summarySubtotal = document.getElementById('summarySubtotal');
-  const summaryShipping = document.getElementById('summaryShipping');
-  const summaryTotal = document.getElementById('summaryTotal');
-  const summaryFrontPreviewImage = document.getElementById('summaryFrontPreviewImage');
-  const summarySilhouettePreviewImage = document.getElementById('summarySilhouettePreviewImage');
-  const summaryPreviewText = document.getElementById('summaryPreviewText');
-
-  const brandLabel = document.getElementById('brandSelect')?.selectedOptions[0]?.textContent || '未選択';
-  const productLabel = document.getElementById('selectedProductLabelInput')?.value || document.getElementById('productSelect')?.selectedOptions[0]?.textContent || '未選択';
-  const colorLabel = document.getElementById('selectedColorLabelInput')?.value || document.getElementById('colorSelect')?.selectedOptions[0]?.textContent || '未選択';
-  const logoColorLabel = document.getElementById('logoColorSelect')?.selectedOptions[0]?.textContent || 'ホワイト';
-  const silhouetteColorLabel = document.getElementById('silhouetteColorSelect')?.selectedOptions[0]?.textContent || 'ホワイト';
-  const sizeLabel = document.getElementById('sizeSelect')?.value || '未選択';
-  const silhouetteLabel = document.getElementById('selectedSilhouetteInput')?.value || '未選択';
-  const backTextLabel = document.getElementById('selectedBackTextInput')?.value || 'なし';
-  const qty = document.getElementById('quantityInput')?.value || '1';
-  const frontPreviewSrc = document.getElementById('selectedFrontPreviewImageInput')?.value || 'images/T1.jpg';
-  const silhouettePreviewSrc = document.getElementById('selectedSilhouettePreviewImageInput')?.value || 'images/tshirt-men-10.png';
-
-  if (summaryBrand) summaryBrand.textContent = brandLabel;
-  if (summaryProduct) summaryProduct.textContent = productLabel;
-  if (summaryColor) summaryColor.textContent = colorLabel;
-  if (summaryLogoColor) summaryLogoColor.textContent = logoColorLabel;
-  if (summarySilhouetteColor) summarySilhouetteColor.textContent = silhouetteColorLabel;
-  if (summarySize) summarySize.textContent = sizeLabel;
-  if (summarySilhouette) summarySilhouette.textContent = silhouetteLabel;
-  if (summaryBackText) summaryBackText.textContent = backTextLabel;
-  if (summaryQuantity) summaryQuantity.textContent = qty + '枚';
-  if (summarySubtotal) summarySubtotal.textContent = '¥' + Number(subtotal).toLocaleString();
-  if (summaryShipping) summaryShipping.textContent = shipping === 0 ? '送料無料' : '¥' + Number(shipping).toLocaleString();
-  if (summaryTotal) summaryTotal.textContent = '¥' + Number(total).toLocaleString();
-  if (summaryFrontPreviewImage) summaryFrontPreviewImage.src = frontPreviewSrc;
-  if (summarySilhouettePreviewImage) summarySilhouettePreviewImage.src = silhouettePreviewSrc;
-  if (summaryPreviewText) summaryPreviewText.textContent = `背面文字：${backTextLabel} / ロゴ色：${logoColorLabel} / シルエット色：${silhouetteColorLabel}`;
-}
-
-
-function updateProductOptions() {
-  const brandSelect = document.getElementById('brandSelect');
-  const productSelect = document.getElementById('productSelect');
-  const productGroup = document.getElementById('productGroup');
-  if (!brandSelect || !productSelect || !productGroup) return;
-
-  const brand = brandSelect.value;
-  productSelect.innerHTML = '';
-  if (brand === 'popo_ballet') {
-    productGroup.style.display = 'block';
-    productSelect.required = true;
-    productSelect.innerHTML = `
-      <option value="">商品を選択してください</option>
-      <option value="tshirt">Tシャツ</option>
-      <option value="zip_hoodie">ジップパーカー</option>
-      <option value="jersey_zip">ジャージジップパーカー</option>
-      <option value="bag">バッグ</option>
-      <option value="kinchaku_m">巾着M</option>
-      <option value="kinchaku_s">巾着S</option>
-    `;
-  } else if (brand === 'popo_series') {
-    productGroup.style.display = 'block';
-    productSelect.required = true;
-    productSelect.innerHTML = `
-      <option value="">商品を選択してください</option>
-      <option value="tshirt">POPOシリーズTシャツ</option>
-    `;
-  } else {
-    productGroup.style.display = 'none';
-    productSelect.required = false;
-    productSelect.innerHTML = `<option value="">先にブランドを選択してください</option>`;
-  }
-  updateColorOptions();
-  calculateTotalPrice();
-}
-
-function updateColorOptions() {
-  const brand = document.getElementById('brandSelect')?.value || '';
-  const product = document.getElementById('productSelect')?.value || '';
-  const colorGroup = document.getElementById('colorGroup');
-  const colorSelect = document.getElementById('colorSelect');
-  if (!colorGroup || !colorSelect) return;
-
-  let options = [];
-  if (product === 'tshirt') {
-    options = [
-      ['black','ブラック'],['white','ホワイト'],['pink','ピンク'],['light_blue','ライトブルー'],['red','レッド'],['navy','ネイビー'],['blue','ブルー']
-    ];
-  } else if (product === 'zip_hoodie') {
-    options = [
-      ['black','ブラック'],['light_pink','ライトピンク'],['light_blue','ライトブルー'],['red','レッド'],['blue','ブルー'],['gray','グレー'],['navy','ネイビー']
-    ];
-  } else if (product === 'jersey_zip') {
-    options = [
-      ['black','ブラック'],['pink','ピンク'],['gray','グレー'],['navy','ネイビー']
-    ];
-  } else if (['bag','kinchaku_m','kinchaku_s'].includes(product)) {
-    options = [
-      ['black','ブラック'],['light_pink','ライトピンク'],['blue','ブルー'],['hot_pink','ホットピンク'],['navy','ネイビー']
-    ];
-  }
-
-  if (!brand || !product || options.length === 0) {
-    colorGroup.style.display = 'none';
-    colorSelect.innerHTML = '<option value="">カラーを選択してください</option>';
-    updateLogoSelectOptions();
-    return;
-  }
-
-  colorGroup.style.display = 'block';
-  colorSelect.innerHTML = '<option value="">カラーを選択してください</option>' + options.map(([v,l]) => `<option value="${v}">${l}</option>`).join('');
-  updateLogoSelectOptions();
-}
-
-function getSelectedPriceKey() {
-  const logoType = document.getElementById('logoTypeSelect')?.value || '';
-  const designType = document.getElementById('designTypeSelect')?.value || '';
-  if (designType === 'custom_photo') return 'custom_photo';
-  if (logoType === 'custom_logo' && (designType === 'silhouette_only' || designType === 'silhouette_text')) return 'silhouette_text';
-  if (logoType === 'custom_logo') return 'custom_logo';
-  if (designType === 'silhouette_only') return 'silhouette_only';
-  if (designType === 'silhouette_text') return 'silhouette_text';
-  if (logoType === 'logo_none') return 'logo_none';
-  return 'logo_only';
-}
-
-function calculateTotalPrice() {
-  updateLogoSelectOptions();
-  syncSilhouetteColorFromLogo();
-  const product = document.getElementById('productSelect')?.value || '';
-  const color = document.getElementById('colorSelect')?.value || '';
-  const quantity = parseInt(document.getElementById('quantityInput')?.value || '1', 10) || 1;
-  const totalBox = document.getElementById('totalPriceBox');
-  const totalInput = document.getElementById('totalPriceInput');
-
-  let priceTableKey = product;
-  if (product === 'zip_hoodie' && ['light_pink','light_blue'].includes(color)) {
-    priceTableKey = 'zip_hoodie_light';
-  }
-
-  const priceKey = getSelectedPriceKey();
-  const unit = (PRICE_TABLE[priceTableKey] && PRICE_TABLE[priceTableKey][priceKey]) ? PRICE_TABLE[priceTableKey][priceKey] : 0;
-  const subtotal = unit * quantity;
-  let shipping = SHIPPING_TABLE[product] || 0;
-
-  if (product === 'tshirt') {
-    shipping = 0;
-  } else if (subtotal >= FREE_SHIPPING_THRESHOLD) {
-    shipping = 0;
-  }
-
-  const grandTotal = subtotal + shipping;
-  if (totalBox) totalBox.textContent = grandTotal > 0 ? '¥' + grandTotal.toLocaleString() : '価格調整中';
-  if (totalInput) totalInput.value = String(grandTotal);
-  updateOrderSummary(subtotal, shipping, grandTotal);
-}
-
-function buildLineOrderMessage() {
-  const brand = document.getElementById('brandSelect')?.selectedOptions[0]?.textContent || '';
-  const product = document.getElementById('selectedProductLabelInput')?.value || document.getElementById('productSelect')?.selectedOptions[0]?.textContent || '';
-  const color = document.getElementById('selectedColorLabelInput')?.value || document.getElementById('colorSelect')?.selectedOptions[0]?.textContent || '';
-  const logoType = document.getElementById('logoTypeSelect')?.selectedOptions[0]?.textContent || '';
-  const logoColor = document.getElementById('logoColorSelect')?.selectedOptions[0]?.textContent || '';
-  const designType = document.getElementById('designTypeSelect')?.selectedOptions[0]?.textContent || '';
-  const silhouetteColor = document.getElementById('silhouetteColorSelect')?.selectedOptions[0]?.textContent || '';
-  const size = document.getElementById('sizeSelect')?.value || '';
-  const silhouette = document.getElementById('selectedSilhouetteInput')?.value || '';
-  const backText = document.getElementById('selectedBackTextInput')?.value || 'なし';
-  const qty = document.getElementById('quantityInput')?.value || '1';
-  const total = document.getElementById('totalPriceBox')?.textContent || '';
-  const name = document.getElementById('customerNameInput')?.value || '';
-  const email = document.getElementById('customerEmailInput')?.value || '';
-  const message = document.getElementById('messageInput')?.value || '';
-  return `POPO Ballet 注文相談
-ブランド：${brand}
-商品：${product}
-カラー：${color}
-ロゴ指定：${logoType}
-ロゴ色：${logoColor}
-デザイン内容：${designType}
-背面シルエット：${silhouette}
-背面シルエット色：${silhouetteColor}
-背面文字：${backText}
-サイズ：${size}
-数量：${qty}
-合計：${total}
-お名前：${name}
-メール：${email}
-備考：${message}`;
-}
-
-function sendOrderToLine() {
-  calculateTotalPrice();
-  const text = buildLineOrderMessage();
-  window.open('https://line.me/R/msg/text/?' + encodeURIComponent(text), '_blank');
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.color-switch-card').forEach(card => {
-    const frontImg = card.querySelector('.front-image');
-    const backImg = card.querySelector('.back-image');
-    if (frontImg) frontImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
-    if (backImg) backImg.onclick = cardAllowsModal(card) ? (() => openProductModal(card)) : null;
-  });
-  document.querySelectorAll('.series-card').forEach(card => {
-    const frontImg = card.querySelector('.series-main-image');
-    const backImg = card.querySelector('.series-sub-image');
-    if (frontImg) frontImg.onclick = () => openSeriesModal(card);
-    if (backImg) backImg.onclick = () => openSeriesModal(card);
-  });
-  updateProductOptions();
-  calculateTotalPrice();
-  applyTshirtFrontBySelections();
-  syncCurrentSelectionsFromSection('tshirt');
-  syncTshirtSelectionsToOrder();
-  updateOrderSummary();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  ['tshirt-section','ziphoodie-section','jerseyzip-section','totebag-section','kinchaku-m-section','kinchaku-s-section'].forEach(id => {
-    const card = document.getElementById(id);
-    if (card) updateLogoButtonsForCard(card);
-  });
-  updateLogoSelectOptions();
-  syncSilhouetteColorFromLogo();
-});
-
-
-function getCardLogoColor(card) {
-  const active = card.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active');
-  return active ? (active.dataset.logoValue || 'white') : 'white';
-}
-
-function buildVariantImage(baseSrc, color) {
-  if (!baseSrc) return '';
-  if (!color || color === 'white') return baseSrc;
-  return baseSrc.replace(/\.(png|jpg|jpeg|webp)$/i, '-' + color + '.$1');
-}
-
-function updateTshirtBackBySelections() {
-  const card = document.getElementById('tshirt-section');
-  if (!card) return;
-  const backImg = document.getElementById('tshirtBackImage') || card.querySelector('.back-image');
-  if (!backImg) return;
-  const activeSil = card.querySelector('.silhouette-select-btn.active');
-  const logoColor = getCardLogoColor(card);
-  let baseSrc = activeSil ? activeSil.dataset.baseSrc : 'images/tshirt-men-1.jpg';
-  let label = activeSil ? (activeSil.dataset.label || activeSil.textContent.trim()) : 'MEN 1';
-  const textBtn = card.querySelector('.text-select-btn.active');
-  if (textBtn) {
-    const t = textBtn.dataset.text || 'none';
-    if (t === 'art') { baseSrc = 'images/tshirt-men-1.jpg'; label = 'Ballet is Art'; }
-    else if (t === 'fr') { baseSrc = 'images/tshirt-women-1.jpg'; label = "L'AMOUR DU BALLET"; }
-  }
-  backImg.src = buildVariantImage(baseSrc, logoColor);
-  backImg.alt = label;
-  const silhouetteInput = document.getElementById('selectedSilhouetteInput');
-  if (silhouetteInput) silhouetteInput.value = label;
-  const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
-  if (previewInput) previewInput.value = backImg.src;
-  syncCurrentSelectionsFromSection('tshirt');
-}
-
-function switchTshirtColor(button) {
-  const card = document.getElementById('tshirt-section');
-  if (!card) return;
-  const row = button.closest('.tshirt-color-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  updateLogoButtonsForCard(card);
-  applyTshirtFrontBySelections();
-  updateTshirtBackBySelections();
-}
-
-function switchTshirtLogoColor(button) {
-  if (!button || button.disabled) return;
-  const row = button.closest('.tshirt-logo-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  applyTshirtFrontBySelections();
-  updateTshirtBackBySelections();
-}
-
-function selectTshirtSilhouette(button, src, label) {
-  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
-  if (button) {
-    button.classList.add('active');
-    button.dataset.baseSrc = src;
-    button.dataset.label = label || button.textContent.trim();
-  }
-  const noneBtn = document.querySelector('#tshirt-section .text-select-btn[data-text="none"]');
-  if (noneBtn) {
-    document.querySelectorAll('#tshirt-section .text-select-btn').forEach(btn => btn.classList.remove('active'));
-    noneBtn.classList.add('active');
-  }
-  updateTshirtBackBySelections();
-}
-
-function clearTshirtSilhouette() {
-  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
-  updateTshirtBackBySelections();
-}
-
-function selectTshirtText(type) {
-  document.querySelectorAll('#tshirt-section .text-select-btn').forEach(btn => btn.classList.remove('active'));
-  const activeBtn = document.querySelector(`#tshirt-section .text-select-btn[data-text="${type}"]`);
-  if (activeBtn) activeBtn.classList.add('active');
-  const selectedBackTextInput = document.getElementById('selectedBackTextInput');
-  if (selectedBackTextInput) selectedBackTextInput.value = type === 'none' ? 'なし' : (type === 'art' ? 'Ballet is Art' : "L'AMOUR DU BALLET");
-  updateTshirtBackBySelections();
-}
-
-function selectProductSilhouette(sectionId, button, src, label) {
-  const card = document.getElementById(sectionId);
-  if (!card) return;
-  card.querySelectorAll('.silhouette-select-btn').forEach(btn => btn.classList.remove('active'));
-  if (button) {
-    button.classList.add('active');
-    button.dataset.baseSrc = src;
-    button.dataset.label = label || button.textContent.trim();
-  }
-  const backImg = card.querySelector('.back-image');
-  if (backImg) {
-    backImg.src = buildVariantImage(src, getCardLogoColor(card));
-    backImg.alt = label || '';
-  }
-  const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
-  if (previewInput) previewInput.value = backImg ? backImg.src : '';
-  syncCurrentSelectionsFromCard(card);
-}
-
-function switchProductLogoColor(button) {
-  if (!button || button.disabled) return;
-  const row = button.closest('.product-logo-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  const card = button.closest('.color-switch-card');
   if (card) {
+    const activeColorBtn = getActiveColorButtonForCard(card);
+    const frontImg = card.querySelector('.front-image');
+    const logoValue = button.dataset.logoValue || 'white';
+    if (frontImg && activeColorBtn) {
+      const key = `front${logoValue.charAt(0).toUpperCase()+logoValue.slice(1)}`;
+      const src = activeColorBtn.dataset[key] || activeColorBtn.dataset.frontWhite || activeColorBtn.dataset.frontSrc || frontImg.src;
+      frontImg.src = src;
+    }
     const activeSil = card.querySelector('.silhouette-select-btn.active');
     if (activeSil) {
       const backImg = card.querySelector('.back-image');
-      if (backImg) backImg.src = buildVariantImage(activeSil.dataset.baseSrc || activeSil.getAttribute('data-base-src') || '', button.dataset.logoValue || 'white');
+      if (backImg) backImg.src = buildVariantImage(activeSil.dataset.baseSrc || '', logoValue);
       const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
       if (previewInput && backImg) previewInput.value = backImg.src;
     }
@@ -4123,6 +3442,579 @@ document.addEventListener('DOMContentLoaded', function(){
   updateLogoButtonsForCard(document.getElementById('kinchaku-s-section'));
   updateTshirtBackBySelections();
 });
+
+
+document.addEventListener('DOMContentLoaded', function(){
+  const tshirtCard = document.getElementById('tshirt-section');
+  if (tshirtCard) {
+    updateLogoButtonsForCard(tshirtCard);
+    applyTshirtFrontBySelections();
+    updateTshirtBackBySelections();
+  }
+  ['ziphoodie-section','jerseyzip-section'].forEach(id=>{
+    const card=document.getElementById(id);
+    if(card){
+      updateLogoButtonsForCard(card);
+      const activeSil=card.querySelector('.silhouette-select-btn.active');
+      if(activeSil){
+        const backImg=card.querySelector('.back-image');
+        if(backImg) backImg.src = buildVariantImage(activeSil.dataset.baseSrc || '', getCardLogoColor(card));
+      }
+    }
+  });
+});
+
+
+
+// ===== override / repair block =====
+function extOf(path){ const m=(path||'').match(/(\.[a-zA-Z0-9]+)(?:\?.*)?$/); return m?m[1]:''; }
+function baseWithoutVariant(path){
+  if(!path) return '';
+  return path.replace(/-(white|gold|pink)(?=\.[a-zA-Z0-9]+$)/,'');
+}
+function resolveVariantCandidates(baseSrc, color){
+  if(!baseSrc) return [];
+  const cleaned = baseWithoutVariant(baseSrc);
+  const ext = extOf(cleaned);
+  if(!ext) return [cleaned];
+  const stem = cleaned.slice(0, -ext.length);
+  const normalized = color || 'white';
+  if(normalized === 'white') return [cleaned, stem + '-white' + ext];
+  return [stem + '-' + normalized + ext, cleaned, stem + '-white' + ext];
+}
+function setImageWithFallback(img, candidates){
+  if(!img || !candidates || !candidates.length) return;
+  const list = Array.from(new Set(candidates.filter(Boolean)));
+  let index = 0;
+  img.onerror = function(){
+    index += 1;
+    if(index < list.length){ img.src = list[index]; }
+    else { img.onerror = null; }
+  };
+  img.src = list[0];
+}
+function buildVariantImage(baseSrc, color){
+  const list = resolveVariantCandidates(baseSrc, color);
+  return list[0] || '';
+}
+function buildBackTextImage(type, color){
+  if(!type || type==='none') return '';
+  const suffix = type === 'art' ? 'art' : 'fr';
+  return 'images/back-text-' + suffix + '-' + (color||'white') + '.png';
+}
+function getCardLogoColor(card){
+  const btn = card?.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active');
+  return btn?.dataset.logoValue || 'white';
+}
+function getCardActiveColorValue(card){
+  const btn = card?.querySelector('.tshirt-color-row .color-chip-btn.active') || card?.querySelector('.color-chip-row .color-chip-btn.active');
+  const label = btn ? (btn.dataset.colorLabel || btn.textContent.trim()) : '';
+  return btn?.dataset.colorValue || COLOR_VALUE_MAP[label] || '';
+}
+function setHidden(id, value){ const el=document.getElementById(id); if(el) el.value=value; }
+function syncLogoColorToForm(color){ const el=document.getElementById('logoColorSelect'); if(el) el.value=color; }
+function applyTshirtFrontBySelections(){
+  const card=document.getElementById('tshirt-section'); if(!card) return;
+  const colorBtn=card.querySelector('.tshirt-color-row .color-chip-btn.active');
+  const logoValue=getCardLogoColor(card);
+  const frontImg=card.querySelector('.front-image');
+  const nameEl=card.querySelector('.product-name');
+  if(!colorBtn || !frontImg) return;
+  const key='front'+logoValue.charAt(0).toUpperCase()+logoValue.slice(1);
+  const src=colorBtn.dataset[key] || colorBtn.dataset.frontWhite || frontImg.src;
+  frontImg.src=src;
+  frontImg.alt=`POPO Ballet ${colorBtn.dataset.productName || 'Tシャツ'} 前`;
+  if(nameEl) nameEl.textContent=colorBtn.dataset.productName || 'Tシャツ';
+  syncLogoColorToForm(logoValue);
+  setHidden('selectedPreviewImageInput', src);
+  setHidden('selectedFrontPreviewImageInput', src);
+  setHidden('selectedProductLabelInput', nameEl ? nameEl.textContent : 'Tシャツ');
+  setHidden('selectedColorLabelInput', colorBtn.dataset.colorLabel || '');
+  if(typeof syncCurrentSelectionsFromSection==='function') syncCurrentSelectionsFromSection('tshirt');
+  if(typeof calculateTotalPrice==='function') calculateTotalPrice();
+}
+function updateTshirtBackBySelections(){
+  const card=document.getElementById('tshirt-section'); if(!card) return;
+  const backImg=document.getElementById('tshirtBackImage') || card.querySelector('.back-image');
+  const textPreview=document.getElementById('tshirtBackTextPreview');
+  const logoValue=getCardLogoColor(card);
+  const activeSil=card.querySelector('.silhouette-select-btn.active');
+  if(backImg && activeSil){
+    const candidates = resolveVariantCandidates(activeSil.dataset.baseSrc || '', logoValue);
+    setImageWithFallback(backImg, candidates);
+    backImg.alt=activeSil.dataset.label || activeSil.textContent.trim();
+    setHidden('selectedSilhouetteInput', backImg.alt);
+    setHidden('selectedSilhouettePreviewImageInput', candidates[0] || '');
+  }
+  const activeText=card.querySelector('.text-select-btn.active');
+  const type=activeText?.dataset.text || 'none';
+  const textSrc=buildBackTextImage(type, logoValue);
+  if(textPreview){
+    if(textSrc){
+      textPreview.src=textSrc;
+      textPreview.style.display='block';
+      textPreview.alt=activeText?.textContent.trim() || '';
+      textPreview.onerror = function(){
+        if(type !== 'none' && logoValue !== 'white'){
+          this.onerror = null;
+          this.src = buildBackTextImage(type, 'white');
+        } else {
+          this.style.display = 'none';
+        }
+      };
+    }
+    else { textPreview.removeAttribute('src'); textPreview.style.display='none'; textPreview.alt=''; }
+  }
+  setHidden('selectedBackTextInput', type==='none' ? 'なし' : (type==='art' ? 'Ballet is Art' : "L'AMOUR DU BALLET"));
+  if(typeof syncCurrentSelectionsFromSection==='function') syncCurrentSelectionsFromSection('tshirt');
+}
+function switchTshirtColor(button){
+  const row=button.closest('.tshirt-color-row'); if(row) row.querySelectorAll('.color-chip-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+  updateLogoButtonsForCard(document.getElementById('tshirt-section'));
+  applyTshirtFrontBySelections();
+  updateTshirtBackBySelections();
+}
+function switchTshirtLogoColor(button){
+  if(!button || button.disabled) return;
+  const row=button.closest('.tshirt-logo-row'); if(row) row.querySelectorAll('.color-chip-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+  applyTshirtFrontBySelections();
+  updateTshirtBackBySelections();
+}
+function selectTshirtSilhouette(button, src, label){
+  const scope=document.getElementById('tshirt-section');
+  scope.querySelectorAll('.silhouette-select-btn').forEach(btn=>btn.classList.remove('active'));
+  if(button){ button.classList.add('active'); button.dataset.baseSrc=src; button.dataset.label=label || button.textContent.trim(); }
+  updateTshirtBackBySelections();
+}
+function clearTshirtSilhouette(){
+  const scope=document.getElementById('tshirt-section');
+  scope.querySelectorAll('.silhouette-select-btn').forEach(btn=>btn.classList.remove('active'));
+  const backImg=document.getElementById('tshirtBackImage'); if(backImg){ backImg.removeAttribute('src'); backImg.alt=''; backImg.onerror = null; }
+  setHidden('selectedSilhouetteInput',''); setHidden('selectedSilhouettePreviewImageInput','');
+  if(typeof syncCurrentSelectionsFromSection==='function') syncCurrentSelectionsFromSection('tshirt');
+}
+function selectTshirtText(type){
+  const scope=document.getElementById('tshirt-section');
+  scope.querySelectorAll('.text-select-btn').forEach(btn=>btn.classList.remove('active'));
+  const btn=scope.querySelector(`.text-select-btn[data-text="${type}"]`); if(btn) btn.classList.add('active');
+  updateTshirtBackBySelections();
+}
+function switchColor(button, frontSrc, backSrc, productName, altFront, altBack, isSingle=false){
+  const card=button.closest('.color-switch-card'); if(!card) return;
+  const row=button.closest('.color-chip-row'); if(row) row.querySelectorAll('.color-chip-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+  const frontImg=card.querySelector('.front-image');
+  const backImg=card.querySelector('.back-image');
+  const nameEl=card.querySelector('.product-name');
+  if(frontImg){ frontImg.src=frontSrc; frontImg.alt=altFront || (productName+' 前'); if(cardAllowsModal(card)) frontImg.onclick=()=>openProductModal(card); }
+  if(nameEl) nameEl.textContent=productName;
+  if(!isSingle && !['ziphoodie-section','jerseyzip-section','tshirt-section'].includes(card.id) && backImg){
+    backImg.src=backSrc || backImg.src;
+    backImg.alt=altBack || (productName+' 後ろ');
+  }
+  updateLogoButtonsForCard(card);
+  if(['ziphoodie-section','jerseyzip-section'].includes(card.id)){
+    const activeSil=card.querySelector('.silhouette-select-btn.active');
+    if(activeSil){
+      selectProductSilhouette(card.id, activeSil, activeSil.dataset.baseSrc || '', activeSil.dataset.label || activeSil.textContent.trim());
+    }
+  }
+  if(typeof syncCurrentSelectionsFromCard==='function') syncCurrentSelectionsFromCard(card);
+  if(typeof calculateTotalPrice==='function') calculateTotalPrice();
+}
+function selectProductSilhouette(sectionId, button, src, label){
+  const card=document.getElementById(sectionId); if(!card) return;
+  card.querySelectorAll('.silhouette-select-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active'); button.dataset.baseSrc=src; button.dataset.label=label || button.textContent.trim();
+  const backImg=card.querySelector('.back-image');
+  const logoValue=getCardLogoColor(card);
+  const candidates = resolveVariantCandidates(src, logoValue);
+  if(backImg){
+    setImageWithFallback(backImg, candidates);
+    backImg.alt=label || button.textContent.trim();
+  }
+  setHidden('selectedSilhouetteInput', backImg?.alt || '');
+  setHidden('selectedSilhouettePreviewImageInput', candidates[0] || '');
+  if(typeof syncCurrentSelectionsFromCard==='function') syncCurrentSelectionsFromCard(card);
+}
+function switchMachoMen(button, frontSrc, menBackSrc){
+  const card=button.closest('.series-card'); if(!card) return;
+  const front=card.querySelector('.series-main-image'); if(front) front.src=frontSrc;
+  const row=button.closest('.series-color-row'); if(row) row.querySelectorAll('.series-color-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+}
+function switchMachoWomen(button, frontSrc, womenBackSrc){
+  const card=button.closest('.series-card'); if(!card) return;
+  const front=card.querySelector('.series-main-image'); if(front) front.src=frontSrc;
+  const row=button.closest('.series-color-row'); if(row) row.querySelectorAll('.series-color-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+}
+function switchSeriesFrontBack(button, frontSrc, backSrc, frontAlt, backAlt){
+  const card=button.closest('.series-card'); if(!card) return;
+  const front=card.querySelector('.series-main-image'); if(front){ front.src=frontSrc; if(frontAlt) front.alt=frontAlt; }
+  const row=button.closest('.series-color-row'); if(row) row.querySelectorAll('.series-color-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+}
+function toggleMoreSeries(button){
+  const hiddenCards = Array.from(document.querySelectorAll('#other-series .series-card.is-hidden'));
+  const isOpen = button?.dataset.open === 'true';
+  hiddenCards.forEach(card => { card.style.display = isOpen ? 'none' : 'block'; });
+  if(button){
+    button.dataset.open = isOpen ? 'false' : 'true';
+    button.textContent = isOpen ? 'もっと見る' : '閉じる';
+  }
+}
+(function(){
+  const prev=document.querySelectorAll('#ziphoodie-section .color-chip-row:first-child .color-chip-btn, #jerseyzip-section .color-chip-row:first-child .color-chip-btn');
+  prev.forEach(btn=>{
+    const card=btn.closest('.color-switch-card');
+    const front=btn.getAttribute('onclick');
+    const m=front && front.match(/switchColor\(this,'([^']*)','([^']*)','([^']*)','([^']*)','([^']*)'/);
+    if(m){
+      btn.dataset.frontSrc=m[1];
+      const label=(btn.textContent||'').trim();
+      btn.dataset.colorLabel=label;
+      btn.dataset.colorValue=COLOR_VALUE_MAP[label] || '';
+    }
+  });
+})();
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('#tshirt-section .silhouette-select-btn').forEach(btn=>{
+    const onclick=btn.getAttribute('onclick')||''; const m=onclick.match(/selectTshirtSilhouette\(this,'([^']+)','([^']+)'\)/); if(m){ btn.dataset.baseSrc=m[1]; btn.dataset.label=m[2]; }
+  });
+  document.querySelectorAll('#ziphoodie-section .silhouette-select-btn, #jerseyzip-section .silhouette-select-btn').forEach(btn=>{
+    const onclick=btn.getAttribute('onclick')||''; const m=onclick.match(/selectProductSilhouette\('[^']+',this,'([^']+)','([^']+)'\)/); if(m){ btn.dataset.baseSrc=m[1]; btn.dataset.label=m[2]; }
+  });
+  ['tshirt-section','ziphoodie-section','jerseyzip-section','totebag-section','kinchaku-m-section','kinchaku-s-section'].forEach(id=>updateLogoButtonsForCard(document.getElementById(id)));
+  applyTshirtFrontBySelections();
+  updateTshirtBackBySelections();
+  ['ziphoodie-section','jerseyzip-section'].forEach(id=>{
+    const card=document.getElementById(id); if(!card) return; const activeSil=card.querySelector('.silhouette-select-btn.active'); if(activeSil){ selectProductSilhouette(id, activeSil, activeSil.dataset.baseSrc || '', activeSil.dataset.label || activeSil.textContent.trim()); }
+  });
+  document.querySelectorAll('#other-series .series-card.is-hidden').forEach(card=>{ card.style.display='none'; });
+});
+// ===== end repair block =====
+
+
+
+// ===== v17 pricing + reflection override =====
+const APP_PRICE_TABLE = {
+  tshirt: { logo_only: 3980, logo_none: 3980, custom_logo: 3980, silhouette_only: 3980, silhouette_text: 4980, custom_photo: 7460 },
+  zip_hoodie: { logo_only: 5980, logo_none: 5980, custom_logo: 5980, silhouette_only: 5980, silhouette_text: 6980, custom_photo: 9460 },
+  jersey_zip: { logo_only: 6980, logo_none: 6980, custom_logo: 6980, silhouette_only: 6980, silhouette_text: 7980, custom_photo: 10460 },
+  bag: { logo_only: 0, logo_none: 0, custom_logo: 0, silhouette_only: 0, silhouette_text: 0, custom_photo: 2480 },
+  kinchaku_m: { logo_only: 0, logo_none: 0, custom_logo: 0, silhouette_only: 0, silhouette_text: 0, custom_photo: 2480 },
+  kinchaku_s: { logo_only: 0, logo_none: 0, custom_logo: 0, silhouette_only: 0, silhouette_text: 0, custom_photo: 2480 }
+};
+const APP_PRODUCTS = {
+  popo_ballet: [
+    {value:'tshirt', label:'Tシャツ'},
+    {value:'zip_hoodie', label:'ジップパーカー'},
+    {value:'jersey_zip', label:'ジャージジップパーカー'},
+    {value:'bag', label:'トートバッグ'}
+  ],
+  popo_series: [
+    {value:'tshirt', label:'POPOシリーズTシャツ'}
+  ]
+};
+const APP_COLORS = {
+  tshirt: ['ブラック','ホワイト','ピンク','ライトブルー','レッド','ネイビー','ブルー'],
+  zip_hoodie: ['ブラック','ライトピンク','ライトブルー','レッド','ブルー','グレー','ネイビー'],
+  jersey_zip: ['ブラック','ピンク','グレー','ネイビー'],
+  bag: ['ブラック','ライトピンク','ブルー','ホットピンク','ネイビー']
+};
+const SECTION_MAP = { tshirt:'tshirt-section', zip_hoodie:'ziphoodie-section', jersey_zip:'jerseyzip-section', bag:'totebag-section', kinchaku_m:'kinchaku-m-section', kinchaku_s:'kinchaku-s-section' };
+let currentSelections = {
+  brand:'popo_ballet', product:'tshirt', productLabel:'Tシャツ', colorLabel:'ブラック', logoColor:'white',
+  silhouette:'MEN 1', backText:'Ballet is Art', frontPreview:'images/T1.jpg', silhouettePreview:'images/tshirt-men-10-white.png'
+};
+function yen(v){ return '¥' + Number(v||0).toLocaleString('ja-JP'); }
+function getEl(id){ return document.getElementById(id); }
+function getBrandLabel(v){ return v==='popo_series' ? 'POPOシリーズ' : 'POPO Ballet（バレエ）'; }
+function syncSilhouetteColorFromLogo(){
+  const logo = getEl('logoColorSelect')?.value || currentSelections.logoColor || 'white';
+  const sil = getEl('silhouetteColorSelect');
+  if(sil) sil.value = logo;
+  currentSelections.logoColor = logo;
+}
+function updateProductOptions(){
+  const brand = getEl('brandSelect')?.value || '';
+  const productGroup = getEl('productGroup');
+  const productSelect = getEl('productSelect');
+  const colorGroup = getEl('colorGroup');
+  const colorSelect = getEl('colorSelect');
+  if(productGroup) productGroup.style.display = brand ? '' : 'none';
+  if(productSelect){
+    const items = APP_PRODUCTS[brand] || [];
+    productSelect.innerHTML = '<option value="">商品を選択してください</option>' + items.map(i=>`<option value="${i.value}">${i.label}</option>`).join('');
+  }
+  if(colorGroup) colorGroup.style.display = 'none';
+  if(colorSelect) colorSelect.innerHTML = '<option value="">カラーを選択してください</option>';
+}
+function updateColorOptions(){
+  const product = getEl('productSelect')?.value || '';
+  const colorGroup = getEl('colorGroup');
+  const colorSelect = getEl('colorSelect');
+  if(colorGroup) colorGroup.style.display = product ? '' : 'none';
+  if(colorSelect){
+    const colors = APP_COLORS[product] || [];
+    colorSelect.innerHTML = '<option value="">カラーを選択してください</option>' + colors.map(c=>`<option value="${c}">${c}</option>`).join('');
+  }
+}
+function priceKeyFromForm(){
+  const product = getEl('productSelect')?.value || currentSelections.product || '';
+  const logoType = getEl('logoTypeSelect')?.value || '';
+  const designType = getEl('designTypeSelect')?.value || '';
+  if(designType === 'custom_photo') return {product, key:'custom_photo'};
+  if(designType === 'silhouette_only') return {product, key:'silhouette_only'};
+  if(designType === 'silhouette_text') return {product, key:'silhouette_text'};
+  if(logoType === 'custom_logo') return {product, key:'custom_logo'};
+  if(logoType === 'logo_none') return {product, key:'logo_none'};
+  return {product, key:'logo_only'};
+}
+function calculateShipping(subtotal){
+  const product = getEl('productSelect')?.value || currentSelections.product || '';
+  const qty = Math.max(1, Number(getEl('quantityInput')?.value || 1));
+  if(subtotal >= 7000) return 0;
+  if(qty === 1 && (product === 'tshirt' || product === 'bag')) return 0;
+  if(product === 'zip_hoodie' || product === 'jersey_zip') return 700;
+  return 0;
+}
+function calculateTotalPrice(){
+  const {product, key} = priceKeyFromForm();
+  const qty = Math.max(1, Number(getEl('quantityInput')?.value || 1));
+  const unit = APP_PRICE_TABLE[product]?.[key] ?? 0;
+  const subtotal = unit * qty;
+  const shipping = calculateShipping(subtotal);
+  const total = subtotal + shipping;
+  const totalBox = getEl('totalPriceBox'); if(totalBox) totalBox.textContent = yen(total);
+  const totalInput = getEl('totalPriceInput'); if(totalInput) totalInput.value = String(total);
+  const note = getEl('shippingProgressNote');
+  if(note){
+    if(total >= 7000) note.textContent = '送料無料です';
+    else note.textContent = `送料無料まであと ${yen(7000-total)}`;
+  }
+  updateOrderSummary(subtotal, shipping, total);
+  return {unit, subtotal, shipping, total};
+}
+function setSelectValue(id, value){ const el=getEl(id); if(el){ el.value = value; el.dispatchEvent(new Event('change')); } }
+function reflectCurrentProductToOrder(productKey){
+  const sectionId = SECTION_MAP[productKey] || 'tshirt-section';
+  const card = getEl(sectionId); if(!card) return;
+  const brand = card.closest('#other-series') ? 'popo_series' : 'popo_ballet';
+  currentSelections.brand = brand;
+  currentSelections.product = productKey;
+  currentSelections.productLabel = card.querySelector('.product-name')?.textContent?.trim() || currentSelections.productLabel;
+  const colorBtn = card.querySelector('.tshirt-color-row .color-chip-btn.active') || card.querySelector('.color-chip-row .color-chip-btn.active');
+  currentSelections.colorLabel = colorBtn?.dataset.colorLabel || colorBtn?.textContent.trim() || currentSelections.colorLabel;
+  currentSelections.frontPreview = card.querySelector('.front-image')?.src || currentSelections.frontPreview;
+  currentSelections.silhouettePreview = card.querySelector('.back-image')?.src || currentSelections.silhouettePreview;
+  const logoBtn = card.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active');
+  currentSelections.logoColor = logoBtn?.dataset.logoValue || currentSelections.logoColor;
+  const silBtn = card.querySelector('.silhouette-select-btn.active');
+  if(silBtn) currentSelections.silhouette = silBtn.dataset.label || silBtn.textContent.trim();
+  const textBtn = card.querySelector('.text-select-btn.active');
+  if(textBtn){
+    const t = textBtn.dataset.text;
+    currentSelections.backText = t === 'none' ? 'なし' : (t === 'art' ? 'Ballet is Art' : "L'AMOUR DU BALLET");
+  } else if(productKey !== 'tshirt') {
+    const preview = card.querySelector('.product-text-preview-box img');
+    currentSelections.backText = preview?.alt || 'Ballet is Art';
+  }
+  setHidden('selectedProductLabelInput', currentSelections.productLabel);
+  setHidden('selectedColorLabelInput', currentSelections.colorLabel);
+  setHidden('selectedPreviewImageInput', currentSelections.frontPreview);
+  setHidden('selectedFrontPreviewImageInput', currentSelections.frontPreview);
+  setHidden('selectedSilhouettePreviewImageInput', currentSelections.silhouettePreview);
+  setHidden('selectedSilhouetteInput', currentSelections.silhouette);
+  setHidden('selectedBackTextInput', currentSelections.backText);
+  setSelectValue('brandSelect', brand);
+  setSelectValue('productSelect', productKey);
+  updateColorOptions();
+  setSelectValue('colorSelect', currentSelections.colorLabel);
+  setSelectValue('logoColorSelect', currentSelections.logoColor);
+  syncSilhouetteColorFromLogo();
+  // infer design + logo type
+  const hasText = currentSelections.backText && currentSelections.backText !== 'なし';
+  const hasSil = !!currentSelections.silhouette;
+  setSelectValue('designTypeSelect', hasSil ? (hasText ? 'silhouette_text' : 'silhouette_only') : 'none');
+  setSelectValue('logoTypeSelect', 'logo_only');
+  calculateTotalPrice();
+}
+function selectFinalSilhouette(button, label, image){
+  document.querySelectorAll('#finalSilhouetteGrid .final-silhouette-card').forEach(b=>b.classList.remove('active'));
+  if(button) button.classList.add('active');
+  currentSelections.silhouette = label;
+  setHidden('selectedSilhouetteInput', label);
+  setHidden('selectedSilhouettePreviewImageInput', image);
+  const img = getEl('summarySilhouettePreviewImage'); if(img) img.src = image;
+  calculateTotalPrice();
+}
+function selectFinalBackText(button, type){
+  document.querySelectorAll('#finalTextGrid .final-text-btn').forEach(b=>b.classList.remove('active'));
+  if(button) button.classList.add('active');
+  currentSelections.backText = type==='none' ? 'なし' : (type==='art' ? 'Ballet is Art' : "L'AMOUR DU BALLET");
+  setHidden('selectedBackTextInput', currentSelections.backText);
+  calculateTotalPrice();
+}
+function updateOrderSummary(subtotal=0, shipping=0, total=0){
+  const brand = getEl('brandSelect')?.value || currentSelections.brand || '';
+  const product = getEl('productSelect')?.value || currentSelections.product || '';
+  const productLabel = getEl('productSelect')?.selectedOptions?.[0]?.textContent || currentSelections.productLabel || '未選択';
+  const color = getEl('colorSelect')?.value || currentSelections.colorLabel || '未選択';
+  const size = getEl('sizeSelect')?.value || '未選択';
+  const qty = Math.max(1, Number(getEl('quantityInput')?.value || 1));
+  const logoColor = getEl('logoColorSelect')?.value || currentSelections.logoColor || 'white';
+  const silColor = getEl('silhouetteColorSelect')?.value || logoColor;
+  const backText = currentSelections.backText || getEl('selectedBackTextInput')?.value || 'なし';
+  const silhouette = currentSelections.silhouette || getEl('selectedSilhouetteInput')?.value || '未選択';
+  const frontSrc = currentSelections.frontPreview || getEl('selectedFrontPreviewImageInput')?.value || '';
+  const silSrc = currentSelections.silhouettePreview || getEl('selectedSilhouettePreviewImageInput')?.value || '';
+  const map = {
+    summaryBrand:getBrandLabel(brand), summaryProduct:productLabel, summaryColor:color,
+    summaryLogoColor:(logoColor==='white'?'ホワイト':logoColor==='gold'?'ゴールド':'ピンク'),
+    summarySilhouetteColor:(silColor==='white'?'ホワイト':silColor==='gold'?'ゴールド':'ピンク'),
+    summarySize:size, summarySilhouette:silhouette, summaryBackText:backText,
+    summaryQuantity: qty + '枚', summarySubtotal: yen(subtotal), summaryShipping: yen(shipping), summaryTotal: yen(total)
+  };
+  Object.entries(map).forEach(([id,val])=>{ const el=getEl(id); if(el) el.textContent = val; });
+  if(getEl('summaryFrontPreviewImage') && frontSrc) getEl('summaryFrontPreviewImage').src = frontSrc;
+  if(getEl('summarySilhouettePreviewImage') && silSrc) getEl('summarySilhouettePreviewImage').src = silSrc;
+  if(getEl('summaryPreviewText')) getEl('summaryPreviewText').textContent = backText === 'なし' ? '背面文字なし' : backText;
+}
+function buildLineOrderMessage(){
+  const total = getEl('totalPriceBox')?.textContent || '¥0';
+  return `POPO Ballet 注文相談\nブランド：${getBrandLabel(getEl('brandSelect')?.value || currentSelections.brand)}\n商品：${getEl('summaryProduct')?.textContent || ''}\nカラー：${getEl('summaryColor')?.textContent || ''}\nロゴ色：${getEl('summaryLogoColor')?.textContent || ''}\n背面シルエット：${getEl('summarySilhouette')?.textContent || ''}\n背面文字：${getEl('summaryBackText')?.textContent || ''}\nサイズ：${getEl('summarySize')?.textContent || ''}\n数量：${getEl('summaryQuantity')?.textContent || ''}\n合計：${total}`;
+}
+function sendOrderToLine(){
+  calculateTotalPrice();
+  window.open('https://line.me/R/msg/text/?' + encodeURIComponent(buildLineOrderMessage()), '_blank');
+}
+function selectProductText(sectionId, button, type){
+  const card = getEl(sectionId); if(!card) return;
+  card.querySelectorAll('.text-select-btn').forEach(btn=>btn.classList.remove('active'));
+  if(button) button.classList.add('active');
+  const preview = card.querySelector('.product-text-preview-box img');
+  const logoValue = getCardLogoColor(card);
+  const src = buildBackTextImage(type, logoValue);
+  if(preview){
+    if(type === 'none'){ preview.removeAttribute('src'); preview.alt=''; preview.style.display='none'; }
+    else { preview.src = src; preview.alt = type==='art' ? 'Ballet is Art' : "L'AMOUR DU BALLET"; preview.style.display='block'; }
+  }
+  if(sectionId === 'tshirt-section'){ currentSelections.backText = type==='none' ? 'なし' : (type==='art' ? 'Ballet is Art' : "L'AMOUR DU BALLET"); setHidden('selectedBackTextInput', currentSelections.backText); }
+}
+function updateProductTextPreview(sectionId){
+  const card = getEl(sectionId); if(!card) return;
+  const active = card.querySelector('.text-select-btn.active');
+  if(active) selectProductText(sectionId, active, active.dataset.text || 'none');
+}
+// override product logo color to also refresh text previews
+window.switchProductLogoColor = function(button){
+  if (!button || button.disabled) return;
+  const row = button.closest('.product-logo-row');
+  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+  button.classList.add('active');
+  const card = button.closest('.color-switch-card');
+  if (card) {
+    const activeColorBtn = getActiveColorButtonForCard(card);
+    const frontImg = card.querySelector('.front-image');
+    const logoValue = button.dataset.logoValue || 'white';
+    if (frontImg && activeColorBtn) {
+      const key = `front${logoValue.charAt(0).toUpperCase()+logoValue.slice(1)}`;
+      const src = activeColorBtn.dataset[key] || activeColorBtn.dataset.frontWhite || activeColorBtn.dataset.frontSrc || frontImg.src;
+      frontImg.src = src;
+    }
+    const activeSil = card.querySelector('.silhouette-select-btn.active');
+    if (activeSil) {
+      const backImg = card.querySelector('.back-image');
+      if (backImg) setImageWithFallback(backImg, resolveVariantCandidates(activeSil.dataset.baseSrc || '', logoValue));
+    }
+    updateProductTextPreview(card.id);
+    syncCurrentSelectionsFromCard?.(card);
+    syncLogoColorToForm(logoValue);
+    syncSilhouetteColorFromLogo();
+    calculateTotalPrice();
+  }
+};
+window.switchTshirtLogoColor = function(button){
+  if(!button || button.disabled) return;
+  const row=button.closest('.tshirt-logo-row'); if(row) row.querySelectorAll('.color-chip-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+  applyTshirtFrontBySelections();
+  updateTshirtBackBySelections();
+  syncLogoColorToForm(button.dataset.logoValue || 'white');
+  syncSilhouetteColorFromLogo();
+  calculateTotalPrice();
+};
+window.selectTshirtText = function(type){
+  const scope=getEl('tshirt-section');
+  scope.querySelectorAll('.text-select-btn').forEach(btn=>btn.classList.remove('active'));
+  const btn=scope.querySelector(`.text-select-btn[data-text="${type}"]`); if(btn) btn.classList.add('active');
+  updateTshirtBackBySelections();
+  calculateTotalPrice();
+};
+window.selectProductSilhouette = function(sectionId, button, src, label){
+  const card=getEl(sectionId); if(!card) return;
+  card.querySelectorAll('.silhouette-select-btn').forEach(btn=>btn.classList.remove('active'));
+  if(button){ button.classList.add('active'); button.dataset.baseSrc=src; button.dataset.label=label || button.textContent.trim(); }
+  const backImg=card.querySelector('.back-image');
+  const logoValue=getCardLogoColor(card);
+  if(backImg) setImageWithFallback(backImg, resolveVariantCandidates(src, logoValue));
+  if(sectionId==='tshirt-section') currentSelections.silhouette = label || button.textContent.trim();
+  calculateTotalPrice();
+};
+window.switchColor = function(button, frontSrc, backSrc, productName, altFront, altBack, isSingle=false){
+  const card=button.closest('.color-switch-card'); if(!card) return;
+  const row=button.closest('.color-chip-row'); if(row) row.querySelectorAll('.color-chip-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+  const frontImg=card.querySelector('.front-image');
+  const nameEl=card.querySelector('.product-name');
+  if(frontImg){ frontImg.src=frontSrc; frontImg.alt=altFront || (productName+' 前'); }
+  if(nameEl) nameEl.textContent=productName;
+  button.dataset.frontSrc = frontSrc;
+  button.dataset.colorLabel = button.dataset.colorLabel || button.textContent.trim();
+  button.dataset.colorValue = button.dataset.colorValue || (COLOR_VALUE_MAP[button.dataset.colorLabel] || '');
+  updateLogoButtonsForCard(card);
+  const activeSil=card.querySelector('.silhouette-select-btn.active');
+  if(activeSil && ['ziphoodie-section','jerseyzip-section'].includes(card.id)){
+    window.selectProductSilhouette(card.id, activeSil, activeSil.dataset.baseSrc || '', activeSil.dataset.label || activeSil.textContent.trim());
+  }
+  updateProductTextPreview(card.id);
+  calculateTotalPrice();
+};
+window.switchSeriesFrontBack = function(button, frontSrc, backSrc, frontAlt, backAlt){
+  const card=button.closest('.series-card'); if(!card) return;
+  const front=card.querySelector('.series-main-image');
+  if(front){ front.src=frontSrc; front.alt=frontAlt || '前面'; front.onclick=()=>openSimpleModal(front.src, front.alt); }
+  const row=button.closest('.series-color-row'); if(row) row.querySelectorAll('.series-color-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+};
+window.switchMachoMen = function(button, frontSrc){
+  const card=button.closest('.series-card'); if(!card) return;
+  const front=card.querySelector('.series-main-image'); if(front){ front.src=frontSrc; front.onclick=()=>openSimpleModal(front.src, front.alt||'前面'); }
+  const row=button.closest('.series-color-row'); if(row) row.querySelectorAll('.series-color-btn').forEach(btn=>btn.classList.remove('active'));
+  button.classList.add('active');
+};
+window.switchMachoWomen = window.switchMachoMen;
+function initializeV17(){
+  updateProductOptions();
+  updateColorOptions();
+  syncSilhouetteColorFromLogo();
+  updateProductTextPreview('ziphoodie-section');
+  updateProductTextPreview('jerseyzip-section');
+  document.querySelectorAll('.series-main-image,.series-sub-image').forEach(img=>{
+    img.onclick = ()=>openSimpleModal(img.src, img.alt || '画像');
+  });
+  const brand = getEl('brandSelect'); if(brand && !brand.value){ brand.value='popo_ballet'; updateProductOptions(); }
+  const product = getEl('productSelect'); if(product && !product.value){ product.value='tshirt'; updateColorOptions(); }
+  const color = getEl('colorSelect'); if(color && !color.value){ color.value='ブラック'; }
+  syncCurrentSelectionsFromSection?.('tshirt');
+  reflectCurrentProductToOrder('tshirt');
+}
+document.addEventListener('DOMContentLoaded', initializeV17);
+// ===== end v17 override =====
 
 </script>
 
