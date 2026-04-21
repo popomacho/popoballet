@@ -1720,6 +1720,19 @@ grid-template-columns: 1fr;
 
 .cart-add-row{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}.cart-qty-label{font-size:13px;font-weight:800;color:#444}.cart-qty-input{width:88px;padding:10px;border:1px solid #ddd;border-radius:10px}.floating-order-btn{position:fixed;left:16px;bottom:68px;z-index:9999;background:#d8b7b7;color:#fff;padding:10px 14px;border-radius:999px;font-size:13px;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.18)}.cart-box{background:#fff8f8;border:1px solid #f0e3e3;border-radius:14px;padding:14px;margin-bottom:16px}.cart-item{border:1px solid #f0e3e3;border-radius:12px;background:#fff;padding:12px;margin-top:10px}.cart-item-top{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:700}.cart-item-meta{font-size:12px;color:#666;line-height:1.7;margin-top:6px}.cart-item-controls{display:grid;grid-template-columns:1fr 90px auto;gap:8px;align-items:end;margin-top:10px}.cart-remove-btn{background:#fff;border:1px solid #eadede;border-radius:10px;padding:10px 12px;font-size:12px;font-weight:700;cursor:pointer}.cart-summary-line{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:14px}.is-hidden-order{display:none!important}
 </style>
+
+<style id="v34-fix-style">
+.cart-add-row,.reflect-order-btn{display:none !important;}
+.v34-stack{display:grid;gap:10px;margin-top:12px}
+.v34-label{font-size:13px;font-weight:800;color:#444}
+.v34-qty,.v34-size{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff;font-size:14px}
+.v34-cart-btn{width:100%}
+.v34-feedback{display:none;font-size:12px;color:#7a5; font-weight:700}
+.v34-feedback.show{display:block}
+.v34-hidden{display:none !important;}
+.oai-cart-item button{background:#fff;border:1px solid #eadede;border-radius:10px;padding:8px 10px;cursor:pointer}
+</style>
+
 </head>
 <body>
 <div class="container">
@@ -1827,6 +1840,7 @@ grid-template-columns: 1fr;
 <button type="button" class="color-chip-btn active" data-color-label="ブラック" data-color-value="black" data-front-white="images/T1.jpg" data-front-gold="images/T1-gold.jpg" data-front-pink="images/T1-pink.jpg" data-back-src="images/T10.jpg" data-product-name="Tシャツ（ブラック）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#1f1f1f;"></span>ブラック</button>
 <button type="button" class="color-chip-btn" data-color-label="ホワイト" data-color-value="white" data-front-white="images/T7.jpg" data-front-gold="images/T7-gold.jpg" data-front-pink="images/T7-pink.jpg" data-back-src="images/T70.jpg" data-product-name="Tシャツ（ホワイト）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
 <button type="button" class="color-chip-btn" data-color-label="ピンク" data-color-value="pink" data-front-white="images/T2.jpg" data-front-gold="images/T2-gold.jpg" data-front-pink="images/T2-pink.jpg" data-back-src="images/T20.jpg" data-product-name="Tシャツ（ピンク）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
+<button type="button" class="color-chip-btn" data-color-label="ライトパープル" data-color-value="light_purple" data-front-white="images/T2p.jpg" data-front-gold="images/T2p-gold.jpg" data-front-pink="images/T2p-pink.jpg" data-back-src="images/T2p0.jpg" data-product-name="Tシャツ（ライトパープル）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#c9b6ff;"></span>ライトパープル</button>
 <button type="button" class="color-chip-btn" data-color-label="ライトブルー" data-color-value="light_blue" data-front-white="images/T3.jpg" data-front-gold="images/T3-gold.jpg" data-front-pink="images/T3-pink.jpg" data-back-src="images/T30.jpg" data-product-name="Tシャツ（ライトブルー）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#a9d8ff;"></span>ライトブルー</button>
 <button type="button" class="color-chip-btn" data-color-label="レッド" data-color-value="red" data-front-white="images/T4.jpg" data-front-gold="images/T4-gold.jpg" data-front-pink="images/T4-pink.jpg" data-back-src="images/T40.jpg" data-product-name="Tシャツ（レッド）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#d62828;"></span>レッド</button>
 <button type="button" class="color-chip-btn" data-color-label="ネイビー" data-color-value="navy" data-front-white="images/T5.jpg" data-front-gold="images/T5-gold.jpg" data-front-pink="images/T5-pink.jpg" data-back-src="images/T50.jpg" data-product-name="Tシャツ（ネイビー）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#1f3563;"></span>ネイビー</button>
@@ -1834,6 +1848,7 @@ grid-template-columns: 1fr;
 </div>
 <div class="tshirt-suboption-title">ロゴ色選択</div>
 <div class="color-chip-row tshirt-logo-row">
+<button type="button" class="color-chip-btn" data-logo-label="持ち込みロゴ" data-logo-value="custom" onclick="switchTshirtLogoColor(this)">持ち込みロゴ</button>
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchTshirtLogoColor(this)">ロゴなし</button>
 <button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
 <button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
@@ -1879,7 +1894,6 @@ grid-template-columns: 1fr;
     </button>
   </div>
 </div>
-<div class="product-text-preview-box" id="tshirtTextPreviewBox"><img src="images/back-text-art-white.png" alt="Ballet is Art" id="tshirtBackTextPreview"></div>
 
 <div class="product-name">Tシャツ（ブラック）</div>
 <div class="product-desc">前面と背面のサンプル画像</div>
@@ -1996,6 +2010,7 @@ grid-template-columns: 1fr;
 </div>
 <div class="tshirt-suboption-title">ロゴ色選択</div>
 <div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn" data-logo-label="持ち込みロゴ" data-logo-value="custom" onclick="switchProductLogoColor(this)">持ち込みロゴ</button>
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
 <button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
 <button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
@@ -2023,7 +2038,6 @@ grid-template-columns: 1fr;
     <button type="button" class="text-select-btn" data-text="fr" onclick="selectProductText('ziphoodie-section', this, 'fr')">L'AMOUR DU BALLET</button>
   </div>
 </div>
-<div class="product-text-preview-box" id="zipTextPreviewBox"><img src="images/back-text-art-white.png" alt="Ballet is Art" id="zipBackTextPreview"></div>
 
 <div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプルを見る</a></div>
 <div class="product-name">ジップパーカー（ブラック）</div>
@@ -2089,6 +2103,7 @@ grid-template-columns: 1fr;
 </div>
 <div class="tshirt-suboption-title">ロゴ色選択</div>
 <div class="color-chip-row product-logo-row">
+<button type="button" class="color-chip-btn" data-logo-label="持ち込みロゴ" data-logo-value="custom" onclick="switchProductLogoColor(this)">持ち込みロゴ</button>
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
 <button type="button" class="color-chip-btn active" data-logo-label="ホワイト" data-logo-value="white" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
 <button type="button" class="color-chip-btn" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
@@ -2117,7 +2132,6 @@ grid-template-columns: 1fr;
     <button type="button" class="text-select-btn" data-text="fr" onclick="selectProductText('jerseyzip-section', this, 'fr')">L'AMOUR DU BALLET</button>
   </div>
 </div>
-<div class="product-text-preview-box" id="jerseyTextPreviewBox"><img src="images/back-text-art-white.png" alt="Ballet is Art" id="jerseyBackTextPreview"></div>
 <div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプルを見る</a></div>
 <div class="product-name">ジャージジップパーカー（ブラック）</div>
 <div class="product-desc">前面と背面のサンプル画像</div>
@@ -2144,7 +2158,7 @@ grid-template-columns: 1fr;
 
 <!-- バッグ -->
 <div style="margin-top:28px;">
-<h3 class="category-title">バッグ</h3>
+<h3 class="category-title">トートバッグ</h3>
 <div class="bag-grid">
 <div class="color-switch-card bag-card" id="totebag-section" data-product-key="bag" data-product-label="バッグ">
 <div class="color-switch-images single-image">
@@ -2166,8 +2180,8 @@ grid-template-columns: 1fr;
 <button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
 </div>
 <div class="suboption-note">※ ブラック / ライトピンクはホワイト / ゴールド、その他カラーはホワイトのみです。</div>
-<div class="product-name">バッグ（ブラック）</div>
-<div class="product-desc">バッグのサンプル画像</div>
+<div class="product-name">トートバッグ（ブラック）</div>
+<div class="product-desc">トートバッグのサンプル画像</div>
 <div class="cart-add-row"><label class="cart-qty-label">数量</label><input type="number" class="cart-qty-input" id="qty-totebag" min="1" value="1"><button type="button" class="btn btn-secondary reflect-order-btn" onclick="addToCartFromSection('totebag-section')">カゴへ</button></div>
 </div>
 </div>
@@ -2192,8 +2206,8 @@ grid-template-columns: 1fr;
 <button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
 </div>
 <div class="suboption-note">※ ブラック / ライトピンクはホワイト / ゴールド、その他カラーはホワイトのみです。</div>
-<div class="product-name">巾着M（ブラック）</div>
-<div class="product-desc">巾着Mのサンプル画像</div>
+<div class="product-name">巾着S（ブラック）</div>
+<div class="product-desc">巾着Sのサンプル画像</div>
 <div class="cart-add-row"><label class="cart-qty-label">数量</label><input type="number" class="cart-qty-input" id="qty-kinchaku-m" min="1" value="1"><button type="button" class="btn btn-secondary reflect-order-btn" onclick="addToCartFromSection('kinchaku-m-section')">カゴへ</button></div>
 </div>
 </div>
@@ -2218,8 +2232,8 @@ grid-template-columns: 1fr;
 <button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchProductLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
 </div>
 <div class="suboption-note">※ ブラック / ライトピンクはホワイト / ゴールド、その他カラーはホワイトのみです。</div>
-<div class="product-name">巾着S（ブラック）</div>
-<div class="product-desc">巾着Sのサンプル画像</div>
+<div class="product-name">巾着SS（ブラック）</div>
+<div class="product-desc">巾着SSのサンプル画像</div>
 <div class="cart-add-row"><label class="cart-qty-label">数量</label><input type="number" class="cart-qty-input" id="qty-kinchaku-s" min="1" value="1"><button type="button" class="btn btn-secondary reflect-order-btn" onclick="addToCartFromSection('kinchaku-s-section')">カゴへ</button></div>
 </div>
 </div>
@@ -2227,7 +2241,7 @@ grid-template-columns: 1fr;
 
 <div class="spec-box">
 <h4>バッグ・巾着 サイズ・素材</h4>
-<p>バッグ・巾着M・巾着S のサイズや素材は、後から実寸に合わせて更新してください。</p>
+<p>バッグ・巾着S・巾着SS のサイズや素材は、後から実寸に合わせて更新してください。</p>
 <p class="spec-note">※ 画像名は後で実データに合わせて変更できます。（例: km1.jpg / ks1.jpg など）</p>
 </div>
 </div>
@@ -2306,17 +2320,17 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 
 <div class="series-grid">
 <div class="series-macho">
-<div class="series-card" id="series-baseball">
+<div class="series-card" id="series-macho">
 <div class="series-image-stack">
-<img src="images/popo-macho-black-front.jpg" alt="POPO Macho ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-macho-black-back.jpg" alt="POPO Macho ブラック 背面" class="series-sub-image" onclick="event.preventDefault(); event.stopPropagation(); openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-macho-women-black.jpg" alt="POPO Macho レディース ブラック 背面" class="series-sub-image" onclick="openSimpleModal(this.src, this.alt)">
+<img src="images/popo-macho-black-front.jpg" alt="POPO Macho ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-macho-black-back.jpg" alt="POPO Macho ブラック 背面" class="series-sub-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-macho-women-black.jpg" alt="POPO Macho レディース ブラック 背面" class="series-sub-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 <div class="series-sub-label">前面 / メンズ背面 / レディース背面</div>
 </div>
 <div class="series-info">
 <div class="macho-gender-label">Men</div>
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-black-front.jpg','images/popo-macho-black-back.jpg')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-black-front.jpg','images/popo-macho-men-black-black.jpg')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
 <button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-white-front.jpg','images/popo-macho-white-back.jpg')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
 <button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-pink-front.jpg','images/popo-macho-pink-back.jpg')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
 <button type="button" class="series-color-btn" onclick="event.preventDefault(); event.stopPropagation(); switchMachoMen(this,'images/popo-macho-lightblue-front.jpg','images/popo-macho-lightblue-back.jpg')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
@@ -2340,7 +2354,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 </div>
-<div class="series-card" id="series-golf">
+<div class="series-card" id="series-baseball">
 <div class="series-image-stack">
 <img src="images/popo-baseball-black-front.jpg" alt="POPO Baseball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-baseball-black-back.jpg" alt="POPO Baseball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2360,7 +2374,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">野球の情熱や思い出を、POPOらしいロゴデザインで表現。</div>
 </div>
 </div>
-<div class="series-card" id="series-soccer">
+<div class="series-card" id="series-golf">
 <div class="series-image-stack">
 <img src="images/popo-golf-black-front.jpg" alt="POPO Golf ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-golf-black-back.jpg" alt="POPO Golf ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2380,7 +2394,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">静かな集中と洗練を感じる、ゴルフ向けロゴシリーズ。</div>
 </div>
 </div>
-<div class="series-card" id="series-rugby">
+<div class="series-card" id="series-soccer">
 <div class="series-image-stack">
 <img src="images/popo-soccer-black-front.jpg" alt="POPO Soccer ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-soccer-black-back.jpg" alt="POPO Soccer ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2400,7 +2414,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">躍動感とスピード感をイメージしたサッカーデザイン。</div>
 </div>
 </div>
-<div class="series-card" id="series-surfing">
+<div class="series-card" id="series-rugby">
 <div class="series-image-stack">
 <img src="images/popo-rugby-black-front.jpg" alt="POPO Rugby ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-rugby-black-back.jpg" alt="POPO Rugby ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2420,7 +2434,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">力強さとチームスピリットを表現したラグビーデザイン。</div>
 </div>
 </div>
-<div class="series-card" id="series-family">
+<div class="series-card" id="series-surfing">
 <div class="series-image-stack">
 <img src="images/popo-surfing-black-front.jpg" alt="POPO Surfing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-surfing-black-back.jpg" alt="POPO Surfing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2440,7 +2454,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">風と波の自由さを感じるサーフィンロゴ。</div>
 </div>
 </div>
-<div class="series-card" id="series-car">
+<div class="series-card" id="series-family">
 <div class="series-image-stack">
 <img src="images/popo-family-black-front.jpg" alt="POPO Family ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-family-black-back.jpg" alt="POPO Family ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2460,7 +2474,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">家族の思い出や絆をやさしく残せるシリーズ。</div>
 </div>
 </div>
-<div class="series-card" id="series-shodo">
+<div class="series-card" id="series-car">
 <div class="series-image-stack">
 <img src="images/popo-car-black-front.jpg" alt="POPO Car ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-car-black-back.jpg" alt="POPO Car ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2480,7 +2494,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">愛車との時間や思い出を形にするカーシリーズ。</div>
 </div>
 </div>
-<div class="series-card" id="series-tennis">
+<div class="series-card" id="series-shodo">
 <div class="series-image-stack">
 <img src="images/popo-shodo-black-front.jpg" alt="POPO Shodo ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-shodo-black-back.jpg" alt="POPO Shodo ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2520,7 +2534,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">しなやかさとスピード感を表現したテニスデザイン。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-camping">
 <div class="series-image-stack">
 <img src="images/popo-camping-black-front.jpg" alt="POPO Camping ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-camping-black-back.jpg" alt="POPO Camping ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2540,7 +2554,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">自然の中の時間や冒険心を表現するキャンピングシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-bike">
 <div class="series-image-stack">
 <img src="images/popo-bike-black-front.jpg" alt="POPO Bike ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-bike-black-back.jpg" alt="POPO Bike ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2560,7 +2574,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">風を切って走る楽しさを表現したバイクデザイン。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-fishing">
 <div class="series-image-stack">
 <img src="images/popo-fishing-black-front.jpg" alt="POPO Fishing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-fishing-black-back.jpg" alt="POPO Fishing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2580,7 +2594,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">静かな時間と大物を狙う高揚感を形にしたフィッシングシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-horse-riding">
 <div class="series-image-stack">
 <img src="images/popo-horse-riding-black-front.jpg" alt="POPO Horse Riding ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-horse-riding-black-back.jpg" alt="POPO Horse Riding ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2600,7 +2614,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">優雅さと信頼感を感じるホースライディングデザイン。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-music">
 <div class="series-image-stack">
 <img src="images/popo-music-black-front.jpg" alt="POPO Music ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-music-black-back.jpg" alt="POPO Music ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2620,7 +2634,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">音楽の楽しさや感性を形にしたロゴシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-boxing">
 <div class="series-image-stack">
 <img src="images/popo-boxing-black-front.jpg" alt="POPO Boxing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-boxing-black-back.jpg" alt="POPO Boxing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2640,7 +2654,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">強さと集中力をイメージしたボクシングシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-bowling">
 <div class="series-image-stack">
 <img src="images/popo-bowling-black-front.jpg" alt="POPO Bowling ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-bowling-black-back.jpg" alt="POPO Bowling ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2660,7 +2674,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">仲間との楽しい時間を表現したボウリングシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-basketball">
 <div class="series-image-stack">
 <img src="images/popo-basketball-black-front.jpg" alt="POPO Basketball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-basketball-black-back.jpg" alt="POPO Basketball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2680,7 +2694,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">躍動感と高さを感じるバスケットボールデザイン。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-karate">
 <div class="series-image-stack">
 <img src="images/popo-karate-black-front.jpg" alt="POPO Karate ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-karate-black-back.jpg" alt="POPO Karate ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2700,7 +2714,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">芯の強さと礼節を感じる空手デザイン。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-ski">
 <div class="series-image-stack">
 <img src="images/popo-ski-black-front.jpg" alt="POPO Ski ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-ski-black-back.jpg" alt="POPO Ski ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2720,7 +2734,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">雪山を駆け抜ける爽快感を形にしたスキーシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-snowboarding">
 <div class="series-image-stack">
 <img src="images/popo-snowboarding-black-front.jpg" alt="POPO Snowboarding ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-snowboarding-black-back.jpg" alt="POPO Snowboarding ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2740,7 +2754,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">自由なスタイルとスピード感を表現したスノーボードシリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-volleyball">
 <div class="series-image-stack">
 <img src="images/popo-volleyball-black-front.jpg" alt="POPO Volleyball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-volleyball-black-back.jpg" alt="POPO Volleyball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2760,7 +2774,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">チームワークと跳躍感をイメージしたバレーボールデザイン。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-kendo">
 <div class="series-image-stack">
 <img src="images/popo-kendo-black-front.jpg" alt="POPO Kendo ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-kendo-black-back.jpg" alt="POPO Kendo ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2780,7 +2794,7 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 <div class="series-desc">凛とした強さと礼節を表現した剣道シリーズ。</div>
 </div>
 </div>
-<div class="series-card is-hidden">
+<div class="series-card is-hidden" id="series-american-football">
 <div class="series-image-stack">
 <img src="images/popo-american-football-black-front.jpg" alt="POPO American Football ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
 <img src="images/popo-american-football-black-back.jpg" alt="POPO American Football ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
@@ -2897,10 +2911,10 @@ Soft outside. Strong inside.</p>
 <td>+2,480〜</td>
 </tr>
 <tr>
-<td>バッグ・巾着類</td>
-<td>1,980</td>
-<td>1.980</td>
-<td>2,980</td>
+<td>トートバッグ・巾着S,巾着SS</td>
+<td>¥1,980,1,680,1,380</td>
+<td>¥1.980,1,680,1,380</td>
+<td>¥2,980,2,680,2,380</td>
 <td>+2,480〜</td>
 </tr>
 </table>
@@ -2957,21 +2971,6 @@ Tシャツは現在、商品代金に送料を含めた想定で計算してい�
   <p class="order-summary-note">上の商品欄で選んで「カゴへ」を押すと、ここに追加されます。</p>
   <div id="cartItemsArea"></div>
 </div>
-<div class="form-group">
-<label class="form-label" for="customLogoCheck">持ち込みロゴ希望</label>
-<select id="customLogoCheck" name="custom_logo_request" class="form-control" onchange="updateCartSummary()">
-<option value="no">なし</option>
-<option value="yes">あり</option>
-</select>
-</div>
-<div class="form-group">
-<label class="form-label" for="customPhotoCheck">持ち込み画像からシルエット作成希望</label>
-<select id="customPhotoCheck" name="custom_photo_request" class="form-control" onchange="updateCartSummary()">
-<option value="no">なし</option>
-<option value="yes">あり（+¥2,480/対象商品）</option>
-</select>
-</div>
-
 
 <div class="is-hidden-order form-group">
 <label class="form-label" for="brandSelect">ブランド選択</label>
@@ -3341,6 +3340,20 @@ function openProductModal(card) {
   );
 }
 
+function openSeriesModal(card) {
+  if (!card) return;
+
+  const frontImg = card.querySelector('.series-main-image');
+  const backImg = card.querySelector('.series-sub-image');
+
+  openModal(
+    frontImg ? frontImg.src : '',
+    frontImg ? frontImg.alt : '',
+    backImg ? backImg.src : '',
+    backImg ? backImg.alt : ''
+  );
+}
+
 function cardAllowsModal(card) {
   if (!card) return false;
   return ['totebag-section', 'kinchaku-m-section', 'kinchaku-s-section'].includes(card.id);
@@ -3362,25 +3375,39 @@ const COLOR_VALUE_MAP = {
 
 function getAllowedLogoValuesForSection(sectionId, colorValue) {
   if (sectionId === 'tshirt-section') {
-    if (colorValue === 'black') return ['white','gold','pink'];
-    if (colorValue === 'white') return ['gold','pink'];
-    if (colorValue === 'pink') return ['white','gold'];
-    return ['white'];
+    if (colorValue === 'black') return ['custom','none', 'white', 'gold', 'pink'];
+    if (colorValue === 'white') return ['custom','none', 'gold', 'pink'];
+    if (['pink', 'light_purple','light_blue', 'red', 'navy', 'blue'].includes(colorValue)) {
+      return ['custom','none', 'white'];
+    }
+    return ['custom','none', 'white'];
   }
+
   if (sectionId === 'ziphoodie-section') {
-    if (['black','light_pink'].includes(colorValue)) return ['white','gold'];
-    return ['white'];
+    if (colorValue === 'black') return ['custom','none', 'white', 'gold', 'pink'];
+    if (['light_pink', 'light_blue', 'red', 'blue', 'gray', 'navy'].includes(colorValue)) {
+      return ['custom','none', 'white'];
+    }
+    return ['custom','none', 'white'];
   }
+
   if (sectionId === 'jerseyzip-section') {
-    if (colorValue === 'black') return ['white','gold','pink'];
-    if (colorValue === 'pink') return ['white','gold'];
-    return ['white'];
+    if (colorValue === 'black') return ['custom','none', 'white', 'gold', 'pink'];
+    if (['pink', 'gray', 'navy'].includes(colorValue)) {
+      return ['custom','none', 'white'];
+    }
+    return ['custom','none', 'white'];
   }
-  if (['totebag-section','kinchaku-m-section','kinchaku-s-section'].includes(sectionId)) {
-    if (['black','light_pink'].includes(colorValue)) return ['white','gold'];
-    return ['white'];
+
+  if (['totebag-section', 'kinchaku-m-section', 'kinchaku-s-section'].includes(sectionId)) {
+    if (colorValue === 'black') return ['custom','none', 'white', 'gold', 'pink'];
+    if (['light_pink', 'blue', 'hot_pink', 'navy'].includes(colorValue)) {
+      return ['custom','none', 'white'];
+    }
+    return ['custom','none', 'white'];
   }
-  return ['white'];
+
+  return ['custom','none', 'white'];
 }
 
 function getActiveColorButtonForCard(card) {
@@ -3391,20 +3418,26 @@ function getActiveColorButtonForCard(card) {
 
 function updateLogoButtonsForCard(card) {
   if (!card) return;
+
   const logoRow = card.querySelector('.tshirt-logo-row') || card.querySelector('.product-logo-row');
   if (!logoRow) return;
+
   const activeColorBtn = getActiveColorButtonForCard(card);
   const colorLabel = activeColorBtn ? (activeColorBtn.dataset.colorLabel || activeColorBtn.textContent.trim()) : '';
   const colorValue = activeColorBtn?.dataset.colorValue || COLOR_VALUE_MAP[colorLabel] || '';
   const allowed = getAllowedLogoValuesForSection(card.id, colorValue);
+
   let activeLogoBtn = logoRow.querySelector('.color-chip-btn.active');
+
   logoRow.querySelectorAll('.color-chip-btn').forEach(btn => {
     const allowedHere = allowed.includes(btn.dataset.logoValue);
-    btn.classList.toggle('is-hidden', !allowedHere);
+    btn.classList.remove('is-hidden');
     btn.disabled = !allowedHere;
     if (!allowedHere) btn.classList.remove('active');
   });
+
   activeLogoBtn = logoRow.querySelector('.color-chip-btn.active');
+
   if (!activeLogoBtn || activeLogoBtn.disabled) {
     const firstAllowed = Array.from(logoRow.querySelectorAll('.color-chip-btn')).find(btn => !btn.disabled);
     if (firstAllowed) {
@@ -3412,6 +3445,7 @@ function updateLogoButtonsForCard(card) {
       activeLogoBtn = firstAllowed;
     }
   }
+
   if (card.id === 'tshirt-section') {
     applyTshirtFrontBySelections();
   } else {
@@ -3421,27 +3455,48 @@ function updateLogoButtonsForCard(card) {
 
 function switchProductLogoColor(button) {
   if (!button || button.disabled) return;
+
   const row = button.closest('.product-logo-row');
   if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
+
   button.classList.add('active');
+
   const card = button.closest('.color-switch-card');
-  if (card) {
-    const activeColorBtn = getActiveColorButtonForCard(card);
-    const frontImg = card.querySelector('.front-image');
-    const logoValue = button.dataset.logoValue || 'white';
-    if (frontImg && activeColorBtn) {
-      const key = `front${logoValue.charAt(0).toUpperCase()+logoValue.slice(1)}`;
-      const src = activeColorBtn.dataset[key] || activeColorBtn.dataset.frontWhite || activeColorBtn.dataset.frontSrc || frontImg.src;
-      frontImg.src = src;
-    }
-    const activeSil = card.querySelector('.silhouette-select-btn.active');
-    if (activeSil) {
-      const backImg = card.querySelector('.back-image');
-      if (backImg) backImg.src = buildVariantImage(activeSil.dataset.baseSrc || '', logoValue);
-      const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
-      if (previewInput && backImg) previewInput.value = backImg.src;
-    }
+  if (!card) return;
+
+  // ★ここが超重要（これがないと色が戻される）
+  updateLogoButtonsForCard(card);
+
+  const activeColorBtn = getActiveColorButtonForCard(card);
+  const frontImg = card.querySelector('.front-image');
+  const logoValue = button.dataset.logoValue || 'white';
+
+  if (frontImg && activeColorBtn) {
+    const key = `front${logoValue.charAt(0).toUpperCase() + logoValue.slice(1)}`;
+    const src =
+      activeColorBtn.dataset[key] ||
+      activeColorBtn.dataset.frontWhite ||
+      activeColorBtn.dataset.frontSrc ||
+      frontImg.src;
+
+    frontImg.src = src;
+  }
+
+  const activeSil = card.querySelector('.silhouette-select-btn.active');
+  if (activeSil) {
+    const backImg = card.querySelector('.back-image');
+    if (backImg) backImg.src = buildVariantImage(activeSil.dataset.baseSrc || '', logoValue);
+
+    const previewInput = document.getElementById('selectedSilhouettePreviewImageInput');
+    if (previewInput && backImg) previewInput.value = backImg.src;
+  }
+
+  if (typeof syncCurrentSelectionsFromCard === 'function') {
     syncCurrentSelectionsFromCard(card);
+  }
+
+  if (typeof calculateTotalPrice === 'function') {
+    calculateTotalPrice();
   }
 }
 
@@ -3970,33 +4025,7 @@ function updateProductTextPreview(sectionId){
   if(active) selectProductText(sectionId, active, active.dataset.text || 'none');
 }
 // override product logo color to also refresh text previews
-window.switchProductLogoColor = function(button){
-  if (!button || button.disabled) return;
-  const row = button.closest('.product-logo-row');
-  if (row) row.querySelectorAll('.color-chip-btn').forEach(btn => btn.classList.remove('active'));
-  button.classList.add('active');
-  const card = button.closest('.color-switch-card');
-  if (card) {
-    const activeColorBtn = getActiveColorButtonForCard(card);
-    const frontImg = card.querySelector('.front-image');
-    const logoValue = button.dataset.logoValue || 'white';
-    if (frontImg && activeColorBtn) {
-      const key = `front${logoValue.charAt(0).toUpperCase()+logoValue.slice(1)}`;
-      const src = activeColorBtn.dataset[key] || activeColorBtn.dataset.frontWhite || activeColorBtn.dataset.frontSrc || frontImg.src;
-      frontImg.src = src;
-    }
-    const activeSil = card.querySelector('.silhouette-select-btn.active');
-    if (activeSil) {
-      const backImg = card.querySelector('.back-image');
-      if (backImg) setImageWithFallback(backImg, resolveVariantCandidates(activeSil.dataset.baseSrc || '', logoValue));
-    }
-    updateProductTextPreview(card.id);
-    syncCurrentSelectionsFromCard?.(card);
-    syncLogoColorToForm(logoValue);
-    syncSilhouetteColorFromLogo();
-    calculateTotalPrice();
-  }
-};
+
 window.switchTshirtLogoColor = function(button){
   if(!button || button.disabled) return;
   const row=button.closest('.tshirt-logo-row'); if(row) row.querySelectorAll('.color-chip-btn').forEach(btn=>btn.classList.remove('active'));
@@ -4086,26 +4115,96 @@ function getSilhouetteLabelFromCard(card){ const btn=card.querySelector('.silhou
 function getColorLabelFromCard(card){ const btn=card.querySelector('.tshirt-color-row .color-chip-btn.active') || card.querySelector('.color-chip-row .color-chip-btn.active'); return btn ? (btn.dataset.colorLabel || btn.textContent.trim()) : '未選択'; }
 function getLogoValueFromCard(card){ const btn=card.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active'); return btn?.dataset.logoValue || 'white'; }
 function getLogoLabelFromCard(card){ const btn=card.querySelector('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active'); return btn?.dataset.logoLabel || btn?.textContent.trim() || 'ホワイト'; }
-function priceForItem(item){ const customLogo=document.getElementById('customLogoCheck')?.value==='yes'; const customPhoto=document.getElementById('customPhotoCheck')?.value==='yes'; const product=item.product; let base=0; const hasLogo=item.logoValue!=='none'; const hasSil=item.silhouette!=='なし'; if(product==='tshirt'){ base=(hasLogo&&hasSil)?4980:((hasLogo||hasSil)?3980:0); } else if(product==='zip_hoodie'){ base=(hasLogo&&hasSil)?6980:((hasLogo||hasSil)?5980:0); } else if(product==='jersey_zip'){ base=(hasLogo&&hasSil)?7980:((hasLogo||hasSil)?6980:0); } else { base=0; } if(customPhoto && (product==='tshirt'||product==='zip_hoodie'||product==='jersey_zip')) base += 2480; return base; }
+function priceForItem(item){
+  const product = item.product;
+
+  const hasLogo = item.logoValue !== 'none';
+  const hasSilhouette = item.silhouette !== 'なし' && item.silhouette !== 'シルエットなし';
+  const isCustomPhoto = item.customPhoto === true || item.customPhoto === 'yes';
+
+  let base = 0;
+
+  if (product === 'tshirt') {
+    if (hasLogo && hasSilhouette) base = 4980;
+    else if (hasLogo || hasSilhouette) base = 3980;
+    else base = 0;
+  } else if (product === 'zip_hoodie') {
+    if (hasLogo && hasSilhouette) base = 6980;
+    else if (hasLogo || hasSilhouette) base = 5980;
+    else base = 0;
+  } else if (product === 'jersey_zip') {
+    if (hasLogo && hasSilhouette) base = 7980;
+    else if (hasLogo || hasSilhouette) base = 6980;
+    else base = 0;
+  } else if (product === 'bag') {
+    base = 1980;
+  } else if (product === 'kinchaku_m') {
+    base = 1680;
+  } else if (product === 'kinchaku_s') {
+    base = 1380;
+  } else {
+    base = 0;
+  }
+
+  if (isCustomPhoto && ['tshirt', 'zip_hoodie', 'jersey_zip'].includes(product)) {
+    base += 2480;
+  }
+
+  return base;
+}
 function calculateCartShipping(subtotal){ const totalQty=cartItems.reduce((s,it)=>s+Number(it.qty||1),0); if(subtotal>=7000) return 0; if(cartItems.length===1 && totalQty===1 && ['tshirt','bag'].includes(cartItems[0].product)) return 0; if(cartItems.some(it=>['zip_hoodie','jersey_zip'].includes(it.product))) return 700; return 0; }
-function addToCartFromSection(sectionId){ const card=document.getElementById(sectionId); if(!card) return; const item={ id: Date.now()+Math.random(), product:getSectionProductKey(sectionId), productLabel: card.querySelector('.product-name')?.textContent.trim() || sectionId, color:getColorLabelFromCard(card), logoValue:getLogoValueFromCard(card), logoLabel:getLogoLabelFromCard(card), silhouette:getSilhouetteLabelFromCard(card), backText:getTextLabelFromCard(card), qty: Math.max(1, Number(sectionQty(sectionId)||1)), size:(SIZE_OPTIONS[getSectionProductKey(sectionId)]||['FREE'])[0], silhouettePreview: card.querySelector('.back-image')?.src || '', frontPreview: card.querySelector('.front-image')?.src || '' }; cartItems.push(item); renderCart(); const q=document.getElementById({'tshirt-section':'qty-tshirt','ziphoodie-section':'qty-ziphoodie','jerseyzip-section':'qty-jerseyzip','totebag-section':'qty-totebag','kinchaku-m-section':'qty-kinchaku-m','kinchaku-s-section':'qty-kinchaku-s'}[sectionId]); if(q) q.value=1; }
+function addToCartFromSection(sectionId){
+  const card = document.getElementById(sectionId);
+  if (!card) return;
+
+  const silhouetteLabel = getSilhouetteLabelFromCard(card);
+  const customPhotoSelected =
+    card.dataset.customPhoto === 'yes' ||
+    silhouetteLabel === '写真からシルエット作成依頼';
+
+  const item = {
+    id: Date.now() + Math.random(),
+    product: getSectionProductKey(sectionId),
+    productLabel: card.querySelector('.product-name')?.textContent.trim() || sectionId,
+    color: getColorLabelFromCard(card),
+    logoValue: getLogoValueFromCard(card),
+    logoLabel: getLogoLabelFromCard(card),
+    silhouette: silhouetteLabel,
+    backText: getTextLabelFromCard(card),
+    qty: Math.max(1, Number(sectionQty(sectionId) || 1)),
+    size: (SIZE_OPTIONS[getSectionProductKey(sectionId)] || ['FREE'])[0],
+    silhouettePreview: card.querySelector('.back-image')?.src || '',
+    frontPreview: card.querySelector('.front-image')?.src || '',
+    customPhoto: customPhotoSelected
+  };
+
+  cartItems.push(item);
+  renderCart();
+
+  const q = document.getElementById({
+    'tshirt-section':'qty-tshirt',
+    'ziphoodie-section':'qty-ziphoodie',
+    'jerseyzip-section':'qty-jerseyzip',
+    'totebag-section':'qty-totebag',
+    'kinchaku-m-section':'qty-kinchaku-m',
+    'kinchaku-s-section':'qty-kinchaku-s'
+  }[sectionId]);
+
+  if (q) q.value = 1;
+}
 function removeCartItem(id){ const idx=cartItems.findIndex(x=>x.id===id); if(idx>=0){cartItems.splice(idx,1); renderCart();}}
 function updateCartItem(id, field, value){ const item=cartItems.find(x=>x.id===id); if(item){ item[field]= field==='qty'?Math.max(1, Number(value||1)):value; renderCart(false);} }
 function renderCart(resetScroll=true){ const area=document.getElementById('cartItemsArea'); if(!area) return; if(!cartItems.length){ area.innerHTML='<div class="order-summary-note">まだカゴに商品がありません。</div>'; updateCartSummary(); return; } area.innerHTML = cartItems.map(item=>`<div class="cart-item"><div class="cart-item-top"><div>${item.productLabel}</div><button type="button" class="cart-remove-btn" onclick="removeCartItem(${item.id})">削除</button></div><div class="cart-item-meta">本体色：${item.color}<br>ロゴ：${item.logoLabel}<br>背面：${item.silhouette}<br>背面文字：${item.backText}</div><div class="cart-item-controls"><select class="form-control" onchange="updateCartItem(${item.id},'size',this.value)">${(SIZE_OPTIONS[item.product]||['FREE']).map(s=>`<option value="${s}" ${s===item.size?'selected':''}>${s}</option>`).join('')}</select><input type="number" class="form-control" min="1" value="${item.qty}" onchange="updateCartItem(${item.id},'qty',this.value)"><div style="font-weight:800;align-self:center;">${yen(priceForItem(item)*item.qty)}</div></div></div>`).join(''); updateCartSummary(); }
-function updateCartSummary(){ const subtotal=cartItems.reduce((s,it)=>s+priceForItem(it)*Number(it.qty||1),0); const shipping=calculateCartShipping(subtotal); const total=subtotal+shipping; const totalBox=document.getElementById('totalPriceBox'); if(totalBox) totalBox.textContent=yen(total); const totalInput=document.getElementById('totalPriceInput'); if(totalInput) totalInput.value=String(total); const note=document.getElementById('shippingProgressNote'); if(note) note.textContent = total>=7000 ? '送料無料です' : `送料無料まであと ${yen(Math.max(0,7000-total))}`; document.getElementById('summaryBrand').textContent = cartItems.length ? 'カート選択済み' : '未選択'; document.getElementById('summaryProduct').textContent = cartItems.length ? `${cartItems.length}件` : '未選択'; document.getElementById('summaryColor').textContent = cartItems.length ? cartItems.map(i=>i.color).join(' / ') : '未選択'; document.getElementById('summaryLogoColor').textContent = cartItems.length ? cartItems.map(i=>i.logoLabel).join(' / ') : '未選択'; document.getElementById('summarySilhouetteColor').textContent = cartItems.length ? cartItems.map(i=>i.logoValue==='none'?'なし':i.logoLabel).join(' / ') : '未選択'; document.getElementById('summarySize').textContent = cartItems.length ? cartItems.map(i=>i.size).join(' / ') : '未選択'; document.getElementById('summarySilhouette').textContent = cartItems.length ? cartItems.map(i=>i.silhouette).join(' / ') : '未選択'; document.getElementById('summaryBackText').textContent = cartItems.length ? cartItems.map(i=>i.backText).join(' / ') : 'なし'; document.getElementById('summaryQuantity').textContent = cartItems.length ? cartItems.reduce((s,i)=>s+Number(i.qty||1),0)+'点' : '0点'; document.getElementById('summarySubtotal').textContent = yen(subtotal); document.getElementById('summaryShipping').textContent = yen(shipping); document.getElementById('summaryTotal').textContent = yen(total); const frontText=document.getElementById('summaryFrontColorText'); if(frontText) frontText.textContent = cartItems.length ? cartItems.map(i=>`${i.productLabel}：${i.color}`).join('
-') : '未選択'; const silImg=document.getElementById('summarySilhouettePreviewImage'); if(silImg && cartItems.length) silImg.src = cartItems[0].silhouettePreview || silImg.src; const previewText=document.getElementById('summaryPreviewText'); if(previewText) previewText.textContent = cartItems.length ? cartItems.map(i=>i.backText).join(' / ') : '商品選択後、ここに最終内容が表示されます。'; const hidden=document.getElementById('cartSummaryInput'); if(hidden) hidden.value = cartItems.map(i=>`${i.productLabel} / ${i.color} / ${i.logoLabel} / ${i.silhouette} / ${i.backText} / ${i.size} / ${i.qty}`).join(' || '); }
+function updateCartSummary(){ const subtotal=cartItems.reduce((s,it)=>s+priceForItem(it)*Number(it.qty||1),0); const shipping=calculateCartShipping(subtotal); const total=subtotal+shipping; const totalBox=document.getElementById('totalPriceBox'); if(totalBox) totalBox.textContent=yen(total); const totalInput=document.getElementById('totalPriceInput'); if(totalInput) totalInput.value=String(total); const note=document.getElementById('shippingProgressNote'); if(note) note.textContent = total>=7000 ? '送料無料です' : `送料無料まであと ${yen(Math.max(0,7000-total))}`; document.getElementById('summaryBrand').textContent = cartItems.length ? 'カート選択済み' : '未選択'; document.getElementById('summaryProduct').textContent = cartItems.length ? `${cartItems.length}件` : '未選択'; document.getElementById('summaryColor').textContent = cartItems.length ? cartItems.map(i=>i.color).join(' / ') : '未選択'; document.getElementById('summaryLogoColor').textContent = cartItems.length ? cartItems.map(i=>i.logoLabel).join(' / ') : '未選択'; document.getElementById('summarySilhouetteColor').textContent = cartItems.length ? cartItems.map(i=>i.logoValue==='none'?'なし':i.logoLabel).join(' / ') : '未選択'; document.getElementById('summarySize').textContent = cartItems.length ? cartItems.map(i=>i.size).join(' / ') : '未選択'; document.getElementById('summarySilhouette').textContent = cartItems.length ? cartItems.map(i=>i.silhouette).join(' / ') : '未選択'; document.getElementById('summaryBackText').textContent = cartItems.length ? cartItems.map(i=>i.backText).join(' / ') : 'なし'; document.getElementById('summaryQuantity').textContent = cartItems.length ? cartItems.reduce((s,i)=>s+Number(i.qty||1),0)+'点' : '0点'; document.getElementById('summarySubtotal').textContent = yen(subtotal); document.getElementById('summaryShipping').textContent = yen(shipping); document.getElementById('summaryTotal').textContent = yen(total); const frontText=document.getElementById('summaryFrontColorText'); if(frontText) frontText.textContent = cartItems.length ? cartItems.map(i=>`${i.productLabel}：${i.color}`).join('') : 
+'未選択'; const silImg=document.getElementById('summarySilhouettePreviewImage'); if(silImg && cartItems.length) silImg.src = cartItems[0].silhouettePreview || silImg.src; const previewText=document.getElementById('summaryPreviewText'); if(previewText) previewText.textContent = cartItems.length ? cartItems.map(i=>i.backText).join(' / ') : '商品選択後、ここに最終内容が表示されます。'; const hidden=document.getElementById('cartSummaryInput'); if(hidden) hidden.value = cartItems.map(i=>`${i.productLabel} / ${i.color} / ${i.logoLabel} / ${i.silhouette} / ${i.backText} / ${i.size} / ${i.qty}`).join(' || '); }
 function selectSilhouetteNone(btn){ const box=btn.closest('.silhouette-select-box'); box?.querySelectorAll('.silhouette-select-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const card=btn.closest('.color-switch-card'); const back=card?.querySelector('.back-image'); if(back){ back.src=''; back.alt='背面なし'; } }
-function switchTshirtLogoColor(btn){ const row=btn.closest('.tshirt-logo-row'); row.querySelectorAll('.color-chip-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); try{ applyTshirtFrontBySelections(); updateTshirtBackBySelections(); }catch(e){} }
-function switchProductLogoColor(btn){ const row=btn.closest('.product-logo-row'); row.querySelectorAll('.color-chip-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const card=btn.closest('.color-switch-card'); const preview=card?.querySelector('.product-text-preview-box img'); if(preview){ const txtBtn=card.querySelector('.text-select-btn.active'); const t=txtBtn?.dataset.text||'art'; const c=btn.dataset.logoValue||'white'; preview.src = t==='none' ? '' : `images/back-text-${t==='art'?'art':'fr'}-${c}.png`; } }
-function selectProductText(sectionId, btn, type){ const card=document.getElementById(sectionId); card?.querySelectorAll('.text-select-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const preview=card?.querySelector('.product-text-preview-box img'); const color=getLogoValueFromCard(card); if(preview){ if(type==='none'){ preview.src=''; preview.alt='文字なし'; } else { preview.src=`images/back-text-${type==='art'?'art':'fr'}-${color==='none'?'white':color}.png`; preview.alt= type==='art' ? 'Ballet is Art' : "L'AMOUR DU BALLET"; } } }
-function selectTshirtText(type){ const card=document.getElementById('tshirt-section'); card?.querySelectorAll('.text-select-btn').forEach(b=>b.classList.remove('active')); const btn=[...card.querySelectorAll('.text-select-btn')].find(b=>b.dataset.text===type); if(btn) btn.classList.add('active'); const preview=document.getElementById('tshirtBackTextPreview'); const color=getLogoValueFromCard(card); if(preview){ if(type==='none'){ preview.src=''; preview.alt='文字なし'; } else { preview.src=`images/back-text-${type==='art'?'art':'fr'}-${color==='none'?'white':color}.png`; preview.alt= type==='art' ? 'Ballet is Art' : "L'AMOUR DU BALLET"; } } }
-function sendOrderToLine(){ updateCartSummary(); const name=document.getElementById('customerNameInput')?.value||''; const email=document.getElementById('customerEmailInput')?.value||''; const msg=document.getElementById('messageInput')?.value||''; const total=document.getElementById('totalPriceBox')?.textContent||''; const lines=cartItems.map(i=>`${i.productLabel} / ${i.color} / ${i.logoLabel} / ${i.silhouette} / ${i.backText} / ${i.size} / ${i.qty}`).join('
-'); const text=`POPO Ballet 注文相談
+function sendOrderToLine(){ updateCartSummary(); const name=document.getElementById('customerNameInput')?.value||''; const email=document.getElementById('customerEmailInput')?.value||''; const msg=document.getElementById('messageInput')?.value||''; const total=document.getElementById('totalPriceBox')?.textContent||''; const lines=cartItems.map(i=>`${i.productLabel} / ${i.color} / ${i.logoLabel} / ${i.silhouette} / ${i.backText} / ${i.size} / ${i.qty}`).join('')
+; const text=`POPO Ballet 注文相談
 ${lines}
 合計：${total}
 お名前：${name}
 メール：${email}
-備考：${msg}`; window.open('https://line.me/R/msg/text/?' + encodeURIComponent(text), '_blank'); }
+備考：${msg}`; window.open('https://line.me/037wfrhk' + encodeURIComponent(text), '_blank'); }
 document.addEventListener('DOMContentLoaded', function(){ document.querySelectorAll('.product-price').forEach(el=>el.remove()); renderCart(); const hiddenOrderEls=document.querySelectorAll('.is-hidden-order'); hiddenOrderEls.forEach(el=>el.style.display='none'); // remove final redundant selectors but keep summary/size block visible? already hidden summary?
  ['brandSelect','productSelect','colorSelect','logoColorSelect','silhouetteColorSelect','logoTypeSelect','designTypeSelect'].forEach(id=>{ const el=document.getElementById(id); if(el){ const g=el.closest('.form-group'); if(g) g.style.display='none'; }}); const finalSil=document.getElementById('finalSilhouetteGrid')?.closest('.form-group'); if(finalSil) finalSil.style.display='none'; const finalTxt=document.getElementById('finalTextGrid')?.closest('.form-group'); if(finalTxt) finalTxt.style.display='none'; });
 
@@ -4552,6 +4651,679 @@ document.addEventListener('DOMContentLoaded', function(){ document.querySelector
 
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+})();
+</script>
+
+
+<script id="v34-final-fix">
+(function(){
+  const $=(s,r=document)=>r.querySelector(s);
+  const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  const txt=(n)=> (n?.textContent||'').replace(/\s+/g,' ').trim();
+  const SIZE_MAP={tshirt:['120','130','140','150','XS','S','M','L','XL'],zip_hoodie:['150','S','M','L','XL'],jersey_zip:['XS','S','M','L','XL'],series:['120','130','140','150','XS','S','M','L','XL']};
+  const SINGLE_FREE=new Set(['tshirt','bag']);
+  window.__v34cart = window.__v34cart || [];
+
+  function ensureOrderButton(){
+    let btn=$('.floating-order-btn');
+    if(!btn){ btn=document.createElement('a'); btn.className='floating-order-btn'; btn.textContent='注文へ'; document.body.appendChild(btn); }
+    btn.href='#cart-section';
+    btn.onclick=(e)=>{ e.preventDefault(); const t=$('#cart-section') || $('#order-form'); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); };
+  }
+
+  function ensureCartArea(){
+    const form=$('form#order-form'); if(!form) return;
+    let anchor=$('#cart-section');
+    if(!anchor){ anchor=document.createElement('div'); anchor.id='cart-section'; form.parentNode.insertBefore(anchor, form); }
+    let box=$('#oaiCartBox');
+    if(!box){
+      box=document.createElement('div'); box.id='oaiCartBox'; box.className='cart-box';
+      form.parentNode.insertBefore(box, form);
+    }
+    box.innerHTML=`<div class="order-summary-title">カート内容</div>
+      <div id="oaiCartItems"><div class="cart-empty">まだカゴに商品がありません。</div></div>
+      <div style="margin-top:12px;">
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#555;">
+          <input type="checkbox" id="oaiPhotoSilhouetteFee" style="margin-top:3px;">
+          <span>お写真からシルエット作成（+¥2,480）</span>
+        </label>
+        <div class="price-note">※ 複雑な加工は追加料金になる場合があります。</div>
+      </div>
+      <div style="margin-top:12px">
+        <div class="cart-summary-line"><span>商品小計</span><strong id="oaiCartSubtotal">¥0</strong></div>
+        <div class="cart-summary-line"><span>追加加工</span><strong id="oaiCartExtra">¥0</strong></div>
+        <div class="cart-summary-line"><span>送料</span><strong id="oaiCartShipping">¥0</strong></div>
+        <div class="cart-summary-line" style="font-size:16px;font-weight:800;"><span>送料を含めた合計金額</span><strong id="oaiCartTotal">¥0</strong></div>
+        <div class="shipping-progress-note" id="oaiShippingNote"></div>
+      </div>`;
+    $('#oaiPhotoSilhouetteFee', box).addEventListener('change', renderCart);
+    $$('#order-form .form-group, #order-form .logo-guide-box, .option-preview-box, .order-summary-box').forEach(g=>{
+      const t=txt(g);
+      const hide=['ブランド選択','ご希望の商品','ロゴ色','背面シルエット色','ロゴ指定','デザイン内容','背面シルエット最終選択','背面文字最終選択','ご注文内容の最終確認'];
+      if(hide.some(h=>t.includes(h))) g.classList.add('is-hidden-order');
+    });
+  }
+
+  function yen(v){ return '¥'+Number(v||0).toLocaleString('ja-JP'); }
+  function calcShipping(subtotal){
+    const items=window.__v34cart;
+    const qty=items.reduce((s,i)=>s+Number(i.qty||0),0);
+    if(subtotal>=7000) return 0;
+    if(items.length===1 && qty===1 && SINGLE_FREE.has(items[0].product)) return 0;
+    if(items.some(i=>['zip_hoodie','jersey_zip'].includes(i.product))) return 700;
+    return 700;
+  }
+  function priceFor(product, hasLogo, hasSil){
+    const faces=(hasLogo?1:0)+(hasSil?1:0);
+    if(product==='tshirt') return faces>=2?4980:(faces===1?3980:0);
+    if(product==='zip_hoodie') return faces>=2?6980:(faces===1?5980:0);
+    if(product==='jersey_zip') return faces>=2?7980:(faces===1?6980:0);
+    if(product==='series') return 4980;
+    if(['bag','kinchaku_m','kinchaku_s'].includes(product)) return 1980;
+    return 0;
+  }
+
+  function activeButton(sel, root){ return $(sel, root); }
+  function getColor(card){
+    const btn=$('.tshirt-color-row .color-chip-btn.active',card) || $('.color-chip-row .color-chip-btn.active',card) || $('.series-color-row .series-color-btn.active',card);
+    return txt(btn) || '-';
+  }
+  function getLogo(card){
+    const btn=$('.tshirt-logo-row .color-chip-btn.active, .product-logo-row .color-chip-btn.active',card);
+    const label=txt(btn) || 'ロゴあり';
+    const value=btn?.dataset.logoValue || (label==='ロゴなし'?'none':'white');
+    return {label,value};
+  }
+  function getSil(card){
+    const btn=$('.silhouette-select-box .silhouette-select-btn.active',card);
+    const label=txt(btn) || 'シルエットなし';
+    const value=(btn?.dataset.silhouetteValue)||card.dataset.silhouetteValue||(label.includes('なし')?'none':'');
+    return {label,value};
+  }
+  function getText(card){
+    const btn=$('.text-select-btn.active',card);
+    return txt(btn)||'文字なし';
+  }
+
+  function renderCart(){
+    const area=$('#oaiCartItems'); if(!area) return;
+    const items=window.__v34cart;
+    if(!items.length){ area.innerHTML='<div class="cart-empty">まだカゴに商品がありません。</div>'; }
+    else area.innerHTML=items.map(item=>`<div class="cart-item"><div class="cart-item-top"><div>${item.productLabel}</div><button type="button" onclick="window.__v34remove(${item.id})">削除</button></div><div class="cart-item-meta">本体色：${item.colorLabel}<br>ロゴ：${item.logoLabel}<br>背面シルエット：${item.silhouetteLabel}<br>背面文字：${item.backTextLabel}</div><div class="cart-item-controls">${item.size!=='FREE'?`<select onchange="window.__v34update(${item.id},'size',this.value)">${(SIZE_MAP[item.product]||[]).map(s=>`<option value="${s}" ${s===item.size?'selected':''}>${s}</option>`).join('')}</select>`:'<div></div>'}<input type="number" min="1" value="${item.qty}" onchange="window.__v34update(${item.id},'qty',this.value)"><div style="font-weight:800;align-self:center;">${yen(item.subtotal)}</div></div></div>`).join('');
+    const subtotal=items.reduce((s,i)=>s+Number(i.subtotal||0),0);
+    const extra=$('#oaiPhotoSilhouetteFee')?.checked?2480:0;
+    const shipping=calcShipping(subtotal+extra);
+    const total=subtotal+extra+shipping;
+    $('#oaiCartSubtotal').textContent=yen(subtotal); $('#oaiCartExtra').textContent=yen(extra); $('#oaiCartShipping').textContent=yen(shipping); $('#oaiCartTotal').textContent=yen(total);
+    const note=$('#oaiShippingNote'); if(note) note.textContent= total>=7000 ? '送料無料です' : `送料無料まであと ${yen(Math.max(0,7000-total))}`;
+    const totalBox=$('#totalPriceBox'); if(totalBox) totalBox.textContent=yen(total);
+  }
+  window.__v34remove=(id)=>{ window.__v34cart=window.__v34cart.filter(i=>i.id!==id); renderCart(); };
+  window.__v34update=(id,field,val)=>{ const item=window.__cart.find(i=>i.id===id); if(!item) return; if(field==='qty') item.qty=Math.max(1,Number(val||1)); if(field==='size') item.size=val; item.subtotal=item.unitPrice*item.qty; renderCart(); };
+
+  function toast(msg){ let t=$('#toastMessage'); if(!t){ t=document.createElement('div'); t.id='toastMessage'; t.className='toast-message'; document.body.appendChild(t);} t.textContent=msg; t.classList.add('show'); clearTimeout(t._tt); t._tt=setTimeout(()=>t.classList.remove('show'),1200); }
+
+  function addItemFromStack(card, product, label, wrap){
+    const qty=Math.max(0, Number($('.v34-qty',wrap)?.value||0));
+    if(qty<=0){ alert('数量を入力してください'); return; }
+    const sizeSel=$('.v34-size',wrap);
+    const size=sizeSel?sizeSel.value:'FREE';
+    if(sizeSel && !size){ alert('サイズを選択してください'); return; }
+    const logo=getLogo(card), sil=getSil(card);
+    const hasLogo=!['none','ロゴなし',''].includes(logo.value||logo.label);
+    const hasSil=!['none','なし','シルエットなし',''].includes(sil.value||sil.label);
+    const price=priceFor(product, hasLogo, hasSil);
+    if(price<=0 && product!=='series' && !['bag','kinchaku_m','kinchaku_s'].includes(product)){ alert('ロゴまたは背面シルエットを選択してください'); return; }
+    window.__v34cart.push({id:Date.now()+Math.floor(Math.random()*1000),product,productLabel:label,qty,size,colorLabel:getColor(card),logoLabel:logo.label||'ロゴなし',silhouetteLabel:hasSil?(sil.label||''): 'シルエットなし',backTextLabel:getText(card),unitPrice:price,subtotal:price*qty});
+    $('.v34-qty',wrap).value='0'; if(sizeSel) sizeSel.value='';
+    renderCart(); toast('カゴに追加しました');
+  }
+
+  function makeStack(product,label,sizes){
+    const wrap=document.createElement('div'); wrap.className='v34-stack';
+    wrap.innerHTML=`<div class="v34-label">数量</div><input type="number" min="0" value="0" class="v34-qty">${sizes?`<div class="v34-label">サイズ</div><select class="v34-size"><option value="">サイズを選択してください</option>${sizes.map(s=>`<option value="${s}">${s}</option>`).join('')}</select>`:''}<button type="button" class="btn btn-secondary v34-cart-btn">カゴへ</button><div class="v34-feedback">カゴに追加しました</div>`;
+    $('.v34-cart-btn',wrap).addEventListener('click',()=>{ const card=wrap.closest('.color-switch-card, .series-card'); addItemFromStack(card, product, label, wrap); const fb=$('.v34-feedback',wrap); fb.classList.add('show'); clearTimeout(fb._t); fb._t=setTimeout(()=>fb.classList.remove('show'),1200); });
+    return wrap;
+  }
+
+  function patchStack(sectionId, product, label, sizes){
+    const card=document.getElementById(sectionId); if(!card) return;
+    $$('.oai-cart-stack, .v34-stack',card).forEach(n=>n.remove());
+    const info=$('.color-switch-info',card); if(!info) return;
+    info.appendChild(makeStack(product, label || txt($('.product-name',card)) || sectionId, sizes));
+  }
+  function patchBag(sectionId, product, label){ patchStack(sectionId, product, label, null); }
+  function patchSeries(){
+    $$('#other-series .series-card').forEach(card=>{
+      card.classList.remove('is-hidden'); card.style.display='block';
+      $$('.v34-stack, .oai-cart-stack',card).forEach(n=>n.remove());
+      $('.series-info',card)?.appendChild(makeStack('series', txt($('.series-name',card))||'POPOシリーズTシャツ', SIZE_MAP.series));
+    });
+    $('.show-more-wrap')?.classList.add('v34-hidden');
+    $$('.series-nav a').forEach(a=>a.addEventListener('click',e=>{ e.preventDefault(); const t=$(a.getAttribute('href')); if(t){ t.classList.remove('is-hidden'); t.style.display='block'; t.scrollIntoView({behavior:'smooth',block:'start'});} }));
+  }
+
+  function simpleActivate(row, btn, selector='.color-chip-btn'){ $$(selector,row).forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+  window.openSimpleModal=function(src,alt){
+    let ov=document.getElementById('v34Overlay');
+    if(!ov){ ov=document.createElement('div'); ov.id='v34Overlay'; ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;z-index:20000;padding:16px'; ov.innerHTML='<img style="max-width:95vw;max-height:95vh;object-fit:contain;background:#fff;border-radius:10px"><div style="position:fixed;top:12px;right:16px;color:#fff;font-size:32px;cursor:pointer">×</div>'; document.body.appendChild(ov); ov.addEventListener('click',e=>{ if(e.target===ov||e.target.textContent==='×') ov.style.display='none';});}
+    $('img',ov).src=src; $('img',ov).alt=alt||'画像'; ov.style.display='flex';
+  };
+
+  window.switchTshirtColor=function(btn){
+    const row=btn.closest('.tshirt-color-row'); simpleActivate(row,btn);
+    const logo=$('.tshirt-logo-row .color-chip-btn.active')?.dataset.logoValue || 'white';
+    const key='front'+((logo==='none'?'White':logo).charAt(0).toUpperCase()+(logo==='none'?'White':logo).slice(1));
+    const img=$('#tshirt-section .front-image'); if(img) img.src=btn.dataset[key] || btn.dataset.frontWhite || img.src;
+    const name=$('#tshirt-section .product-name'); if(name) name.textContent=btn.dataset.productName || name.textContent;
+  };
+  window.switchTshirtLogoColor=function(btn){
+    const row=btn.closest('.tshirt-logo-row'); simpleActivate(row,btn);
+    const color=$('.tshirt-color-row .color-chip-btn.active'); if(color) window.switchTshirtColor(color);
+  };
+    window.switchColor=function(btn, front, back, name){
+    const row=btn.closest('.color-chip-row'); simpleActivate(row,btn);
+    const card=btn.closest('.color-switch-card');
+    const img=$('.front-image',card); if(img&&front) img.src=front;
+    const n=$('.product-name',card); if(n&&name) n.textContent=name;
+  };
+  window.selectSilhouetteNone=function(btn){
+    const box=btn.closest('.silhouette-select-box'); if(!box) return;
+    $$('.silhouette-select-btn',box).forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+    const card=btn.closest('.color-switch-card'); const img=$('.back-image',card); if(img){ img.style.opacity='0.15'; }
+    card.dataset.silhouetteValue='none'; card.dataset.silhouetteLabel='シルエットなし';
+  };
+  window.selectTshirtSilhouette=function(btn,src,label){ const card=$('#tshirt-section'); const box=$('.silhouette-select-box',card); $$('.silhouette-select-btn',box).forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const img=$('#tshirtBackImage'); if(img){ img.src=src; img.style.opacity='1'; } card.dataset.silhouetteValue=src; card.dataset.silhouetteLabel=label||txt(btn); };
+  window.selectProductSilhouette=function(sectionId,btn,src,label){ const card=document.getElementById(sectionId); const box=$('.silhouette-select-box',card); $$('.silhouette-select-btn',box).forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const img=$('.back-image',card); if(img){ img.src=src; img.style.opacity='1'; } card.dataset.silhouetteValue=src; card.dataset.silhouetteLabel=label||txt(btn); };
+  window.selectTshirtText=function(kind){ const card=$('#tshirt-section'); $$('.text-select-btn',card).forEach(b=>b.classList.remove('active')); const btn=$(`.text-select-btn[data-text="${kind}"]`,card); if(btn) btn.classList.add('active'); const img=$('#tshirtBackTextPreview'); if(!img) return; if(kind==='none'){ img.style.display='none'; } else { img.style.display='block'; img.src=(kind==='art'?'images/back-text-art-white.png':'images/back-text-fr-white.png'); } };
+  window.selectProductText=function(sectionId,btn,kind){ const card=document.getElementById(sectionId); $$('.text-select-btn',card).forEach(b=>b.classList.remove('active')); if(btn) btn.classList.add('active'); const img=$('.product-text-preview-box img',card); if(!img) return; if(kind==='none'){ img.style.display='none'; } else { img.style.display='block'; img.src=(kind==='art'?'images/back-text-art-white.png':'images/back-text-fr-white.png'); } };
+
+  function fixNoneButton(sectionId){
+    const box=$(`#${sectionId} .silhouette-select-box`); if(!box) return;
+    const title=$('.silhouette-select-title',box); if(!title) return;
+    $$('.silhouette-select-btn',title).forEach((b,i)=>{ if(i>0 || txt(b).includes('シルエット')) b.remove(); });
+    let btn=$('.v34-none-btn',title); if(!btn){ btn=document.createElement('button'); btn.type='button'; btn.className='silhouette-select-btn v34-none-btn'; btn.style.marginLeft='8px'; title.appendChild(btn);} btn.textContent='シルエットなし'; btn.onclick=()=>window.selectSilhouetteNone(btn);
+  }
+
+  function bindModalImages(){ $$('.featured-grid-6 img, .silhouette-card img, #back-design-samples .back-design-card img').forEach(img=>{ img.onclick=()=>window.openSimpleModal(img.src,img.alt||'画像'); }); }
+  function cleanupBackSamples(){ const sec=$('#back-design-samples'); if(!sec) return; $$('.back-design-card',sec).forEach((c,i)=>{ if(i>=6) c.classList.add('v34-hidden'); }); $$('.category-title, h3',sec).forEach(el=>{ const t=txt(el); if(t.includes('ジップパーカー')||t.includes('ジャージジップパーカー')) el.classList.add('v34-hidden'); }); }
+
+  function init(){
+    ensureOrderButton(); ensureCartArea();
+    $$('.cart-add-row').forEach(el=>el.remove());
+    fixNoneButton('tshirt-section'); fixNoneButton('ziphoodie-section'); fixNoneButton('jerseyzip-section');
+    patchStack('tshirt-section','tshirt',null,SIZE_MAP.tshirt);
+    patchStack('ziphoodie-section','zip_hoodie',null,SIZE_MAP.zip_hoodie);
+    patchStack('jerseyzip-section','jersey_zip',null,SIZE_MAP.jersey_zip);
+    patchBag('totebag-section','bag','トートバッグ'); patchBag('kinchaku-m-section','kinchaku_m','巾着M'); patchBag('kinchaku-s-section','kinchaku_s','巾着S');
+    patchSeries(); bindModalImages(); cleanupBackSamples(); renderCart();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>
+
+<script id="v35-final-override">
+(function () {
+  const COLOR_VALUE_MAP = {
+    'ブラック': 'black',
+    'ホワイト': 'white',
+    'ピンク': 'pink',
+    'ライトピンク': 'light_pink',
+    'ライトブルー': 'light_blue',
+    'レッド': 'red',
+    'ネイビー': 'navy',
+    'ブルー': 'blue',
+    'グレー': 'gray',
+    'ホットピンク': 'hot_pink'
+  };
+
+  function slugifySeriesName(name) {
+    const map = {
+      'baseball': 'series-baseball',
+      'golf': 'series-golf',
+      'soccer': 'series-soccer',
+      'rugby': 'series-rugby',
+      'surfing': 'series-surfing',
+      'family': 'series-family',
+      'camping': 'series-camping',
+      'bike': 'series-bike',
+      'fishing': 'series-fishing',
+      'horse riding': 'series-horse-riding',
+      'music': 'series-music',
+      'boxing': 'series-boxing',
+      'bowling': 'series-bowling',
+      'basketball': 'series-basketball',
+      'karate': 'series-karate',
+      'ski': 'series-ski',
+      'snowboarding': 'series-snowboarding',
+      'volleyball': 'series-volleyball',
+      'kendo': 'series-kendo',
+      'american football': 'series-american-football',
+      'macho': 'series-macho'
+    };
+
+    const lower = (name || '')
+      .replace(/^POPO\s+/i, '')
+      .trim()
+      .toLowerCase();
+
+    return map[lower] || ('series-' + lower.replace(/\s+/g, '-'));
+  }
+
+  function getActiveColorButtonForCard(card) {
+    if (!card) return null;
+
+    return (
+      card.querySelector('.tshirt-color-row .color-chip-btn.active') ||
+      Array.from(card.querySelectorAll('.color-chip-row .color-chip-btn'))
+        .find(btn => btn.classList.contains('active') && !btn.closest('.tshirt-logo-row') && !btn.closest('.product-logo-row'))
+    );
+  }
+
+  function getColorValueFromCard(card) {
+    const btn = getActiveColorButtonForCard(card);
+    if (!btn) return '';
+    const label = (btn.dataset.colorLabel || btn.textContent || '').trim();
+    return btn.dataset.colorValue || COLOR_VALUE_MAP[label] || '';
+  }
+
+  function updateLogoButtonsForCard(card) {
+    if (!card) return;
+
+    const logoRow = card.querySelector('.tshirt-logo-row') || card.querySelector('.product-logo-row');
+    if (!logoRow) return;
+
+    const colorValue = getColorValueFromCard(card);
+    const allowed = getAllowedLogoValuesForSection(card.id, colorValue);
+
+    let activeLogoBtn = logoRow.querySelector('.color-chip-btn.active');
+
+    logoRow.querySelectorAll('.color-chip-btn').forEach(btn => {
+      const allowedHere = allowed.includes(btn.dataset.logoValue);
+      btn.classList.remove('is-hidden');
+      btn.disabled = !allowedHere;
+      if (!allowedHere) btn.classList.remove('active');
+    });
+
+    activeLogoBtn = logoRow.querySelector('.color-chip-btn.active');
+
+    if (!activeLogoBtn || activeLogoBtn.disabled) {
+      const firstAllowed = Array.from(logoRow.querySelectorAll('.color-chip-btn')).find(btn => !btn.disabled);
+      if (firstAllowed) {
+        firstAllowed.classList.add('active');
+      }
+    }
+
+    if (card.id === 'tshirt-section') {
+      if (typeof applyTshirtFrontBySelections === 'function') applyTshirtFrontBySelections();
+      if (typeof updateTshirtBackBySelections === 'function') updateTshirtBackBySelections();
+    } else {
+      if (typeof syncCurrentSelectionsFromCard === 'function') syncCurrentSelectionsFromCard(card);
+    }
+  }
+
+  function refreshAllLogoRules() {
+    [
+      'tshirt-section',
+      'ziphoodie-section',
+      'jerseyzip-section',
+      'totebag-section',
+      'kinchaku-m-section',
+      'kinchaku-s-section'
+    ].forEach(id => {
+      const card = document.getElementById(id);
+      if (card) updateLogoButtonsForCard(card);
+    });
+  }
+
+  function wrapFunction(name, afterFn) {
+    const original = window[name];
+    if (typeof original !== 'function') return;
+
+    window[name] = function (...args) {
+      const result = original.apply(this, args);
+      try { afterFn.apply(this, args); } catch (e) {}
+      return result;
+    };
+  }
+
+  function bindSeriesImageModal() {
+    if (typeof window.openSeriesModal !== 'function' && typeof window.openModal === 'function') {
+      window.openSeriesModal = function (card) {
+        if (!card) return;
+
+        const frontImg = card.querySelector('.series-main-image');
+        const backImg = card.querySelector('.series-sub-image');
+
+        window.openModal(
+          frontImg ? frontImg.src : '',
+          frontImg ? frontImg.alt : '',
+          backImg ? backImg.src : '',
+          backImg ? backImg.alt : ''
+        );
+      };
+    }
+
+    document.querySelectorAll('.series-main-image, .series-sub-image').forEach(img => {
+      img.onclick = function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        const card = this.closest('.series-card');
+        if (typeof window.openSeriesModal === 'function') {
+          window.openSeriesModal(card);
+        } else if (typeof window.openSimpleModal === 'function') {
+          window.openSimpleModal(this.src, this.alt);
+        }
+      };
+      img.style.cursor = 'pointer';
+    });
+  }
+
+  function normalizeSeriesCards() {
+    const grid = document.querySelector('.series-grid');
+    if (!grid) return;
+
+    const cards = Array.from(document.querySelectorAll('.series-card'));
+    if (!cards.length) return;
+
+  
+
+    cards.forEach(card => {
+      const name = card.querySelector('.series-name')?.textContent?.trim() || '';
+      if (name) card.id = slugifySeriesName(name);
+    });
+  }
+
+  function addSeriesLayoutSafetyCSS() {
+    if (document.getElementById('v35-series-fix-style')) return;
+
+    const style = document.createElement('style');
+    style.id = 'v35-series-fix-style';
+    style.textContent = `
+      .series-grid > .series-card {
+        min-width: 0;
+        width: auto;
+      }
+      .series-grid > .series-card .series-main-image,
+      .series-grid > .series-card .series-sub-image {
+        width: 100%;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function initFinalFix() {
+    addSeriesLayoutSafetyCSS();
+    normalizeSeriesCards();
+    bindSeriesImageModal();
+    refreshAllLogoRules();
+
+    wrapFunction('switchTshirtColor', function () {
+      const card = document.getElementById('tshirt-section');
+      if (card) updateLogoButtonsForCard(card);
+    });
+
+    wrapFunction('switchTshirtLogoColor', function () {
+      const card = document.getElementById('tshirt-section');
+      if (card) updateLogoButtonsForCard(card);
+    });
+
+    wrapFunction('switchColor', function () {
+      const button = arguments[0];
+      const card = button?.closest?.('.color-switch-card');
+      if (card) updateLogoButtonsForCard(card);
+    });
+
+    
+    wrapFunction('switchSeriesFrontBack', function () {
+      bindSeriesImageModal();
+    });
+
+    setTimeout(function () {
+      normalizeSeriesCards();
+      bindSeriesImageModal();
+      refreshAllLogoRules();
+    }, 0);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFinalFix);
+  } else {
+    initFinalFix();
+  }
+})();
+</script>
+  
+<script id="v36-custom-silhouette-request">
+(function () {
+  const EXTRA_SILHOUETTE_FEE = 2480;
+
+  function ensureRequestButton(sectionId) {
+    const card = document.getElementById(sectionId);
+    if (!card) return;
+
+    const title = card.querySelector('.silhouette-select-title');
+    const grid = card.querySelector('.silhouette-select-grid');
+    if (!title || !grid) return;
+    if (card.querySelector('.oai-custom-sil-btn')) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'silhouette-select-btn oai-custom-sil-btn';
+    btn.style.marginLeft = '8px';
+    btn.textContent = '写真からシルエット作成依頼';
+
+    title.appendChild(btn);
+
+    btn.onclick = function (e) {
+      e.preventDefault();
+
+      card.querySelectorAll('.silhouette-select-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      card.dataset.silhouetteValue = 'custom_photo';
+      card.dataset.silhouetteLabel = '写真からシルエット作成依頼';
+      card.dataset.customPhoto = 'yes';
+
+      const img = card.querySelector('.back-image');
+      if (img) {
+        img.style.opacity = '1';
+      }
+
+      if (typeof updateCartSummary === 'function') {
+        updateCartSummary();
+      }
+    };
+  }
+
+  function bindNormalSilhouetteButtons(sectionId) {
+    const card = document.getElementById(sectionId);
+    if (!card) return;
+
+    card.querySelectorAll('.silhouette-select-btn').forEach(btn => {
+      if (btn.classList.contains('oai-custom-sil-btn')) return;
+
+      btn.addEventListener('click', function () {
+        const label = (btn.dataset.label || btn.textContent || '').trim();
+
+        if (
+          label === '写真からシルエット作成依頼'
+        ) return;
+
+        card.dataset.customPhoto = 'no';
+
+        if (
+          label === 'なし' ||
+          label === 'シルエットなし' ||
+          label === '選択をクリア'
+        ) {
+          card.dataset.silhouetteValue = 'none';
+          card.dataset.silhouetteLabel = 'シルエットなし';
+        } else {
+          card.dataset.silhouetteValue = 'normal';
+          card.dataset.silhouetteLabel = label;
+        }
+
+        if (typeof updateCartSummary === 'function') {
+          updateCartSummary();
+        }
+      }, true);
+    });
+  }
+
+  function patchGetSilhouetteLabelFromCard() {
+    const original = window.getSilhouetteLabelFromCard;
+    if (typeof original !== 'function') return;
+
+    window.getSilhouetteLabelFromCard = function (card) {
+      if (card?.dataset?.customPhoto === 'yes') {
+        return '写真からシルエット作成依頼';
+      }
+      if (card?.dataset?.silhouetteLabel) {
+        return card.dataset.silhouetteLabel;
+      }
+      return original(card);
+    };
+  }
+
+  function patchAddToCart() {
+    const original = window.addToCartFromSection;
+    if (typeof original !== 'function') return;
+
+    window.addToCartFromSection = function (sectionId) {
+      const card = document.getElementById(sectionId);
+      if (!card) return original(sectionId);
+
+      const beforeLength = Array.isArray(window.cartItems) ? window.cartItems.length : 0;
+      const result = original(sectionId);
+
+      if (Array.isArray(window.cartItems) && window.cartItems.length > beforeLength) {
+        const item = window.cartItems[window.cartItems.length - 1];
+        item.customPhoto = card.dataset.customPhoto === 'yes';
+        if (item.customPhoto) {
+          item.silhouette = '写真からシルエット作成依頼';
+        }
+      }
+
+      if (typeof renderCart === 'function') {
+        renderCart(false);
+      }
+
+      return result;
+    };
+  }
+
+  function patchPriceForItem() {
+    window.priceForItem = function (item) {
+      const product = item.product;
+      let base = 0;
+
+      const hasLogo = item.logoValue !== 'none';
+      const hasSil = item.silhouette !== 'なし' && item.silhouette !== 'シルエットなし';
+
+      if (product === 'tshirt') {
+        base = (hasLogo && hasSil) ? 4980 : ((hasLogo || hasSil) ? 3980 : 0);
+      } else if (product === 'zip_hoodie') {
+        base = (hasLogo && hasSil) ? 6980 : ((hasLogo || hasSil) ? 5980 : 0);
+      } else if (product === 'jersey_zip') {
+        base = (hasLogo && hasSil) ? 7980 : ((hasLogo || hasSil) ? 6980 : 0);
+      } else {
+        base = 0;
+      }
+
+      if (item.customPhoto && (product === 'tshirt' || product === 'zip_hoodie' || product === 'jersey_zip')) {
+        base += EXTRA_SILHOUETTE_FEE;
+      }
+
+      return base;
+    };
+  }
+
+  function initCustomSilhouetteRequest() {
+    ['tshirt-section', 'ziphoodie-section', 'jerseyzip-section'].forEach(sectionId => {
+      ensureRequestButton(sectionId);
+      bindNormalSilhouetteButtons(sectionId);
+    });
+
+    patchGetSilhouetteLabelFromCard();
+    patchAddToCart();
+    patchPriceForItem();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCustomSilhouetteRequest);
+  } else {
+    initCustomSilhouetteRequest();
+  }
+})();
+</script>
+
+<script id="v37-bag-price-shipping-fix">
+(function () {
+  const EXTRA_SILHOUETTE_FEE = 2480;
+
+  function hasCustomPhoto(item) {
+    return item.customPhoto === true || item.customPhoto === 'yes';
+  }
+
+  window.priceForItem = function (item) {
+    const product = item.product;
+    let base = 0;
+
+    const hasLogo = item.logoValue !== 'none';
+    const hasSil = item.silhouette !== 'なし' && item.silhouette !== 'シルエットなし';
+
+    if (product === 'tshirt') {
+      base = (hasLogo && hasSil) ? 4980 : ((hasLogo || hasSil) ? 3980 : 0);
+    } else if (product === 'zip_hoodie') {
+      base = (hasLogo && hasSil) ? 6980 : ((hasLogo || hasSil) ? 5980 : 0);
+    } else if (product === 'jersey_zip') {
+      base = (hasLogo && hasSil) ? 7980 : ((hasLogo || hasSil) ? 6980 : 0);
+    } else if (product === 'bag') {
+      base = 1980;       // トートバッグ
+    } else if (product === 'kinchaku_m') {
+      base = 1680;       // 巾着S
+    } else if (product === 'kinchaku_s') {
+      base = 1380;       // 巾着SS
+    } else {
+      base = 0;
+    }
+
+    if (hasCustomPhoto(item)) {
+      base += EXTRA_SILHOUETTE_FEE;
+    }
+
+    return base;
+  };
+
+  window.calculateCartShipping = function (subtotal) {
+  if (!Array.isArray(window.cartItems) || !window.cartItems.length) return 0;
+  if (subtotal >= 7000) return 0;
+
+  const hasHeavy = window.cartItems.some(it => ['zip_hoodie', 'jersey_zip'].includes(it.product));
+  if (hasHeavy) return 700;
+
+  const products = [...new Set(window.cartItems.map(it => it.product))];
+
+  // 商品が1種類だけのときの送料無料条件
+  if (products.length === 1) {
+    const product = products[0];
+    const totalQty = window.cartItems.reduce((s, it) => s + Number(it.qty || 1), 0);
+
+    if (product === 'tshirt' && totalQty <= 1) return 0;
+    if (product === 'bag' && totalQty <= 2) return 0;
+    if (product === 'kinchaku_m' && totalQty <= 4) return 0; // 巾着S
+    if (product === 'kinchaku_s' && totalQty <= 6) return 0; // 巾着SS
+  }
+
+  return 200;
+};
+
+if (typeof window.renderCart === 'function') {
+  window.renderCart(false);
+} else if (typeof window.updateCartSummary === 'function') {
+  window.updateCartSummary();
+}
 })();
 </script>
 
