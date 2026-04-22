@@ -1629,7 +1629,24 @@ grid-template-columns: 1fr;
   grid-template-columns: 1fr;
 }
 }
+.link-small{
+  font-size:12px;
+  margin-left:8px;
+  text-decoration:underline;
+  color:#555;
+}
 
+.back-links{
+  margin:12px 0;
+  text-align:right;
+}
+
+.back-links a{
+  display:inline-block;
+  margin-left:10px;
+  font-size:12px;
+  text-decoration:underline;
+}
 
 .featured-grid-6 {
   display:grid;
@@ -1681,6 +1698,24 @@ grid-template-columns: 1fr;
   font-weight:700;
   color:#555;
   text-align:center;
+}
+
+.size-details{
+  margin-top:10px;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:6px;
+  background:#fafafa;
+}
+
+.size-details summary{
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+}
+
+.size-details[open] summary{
+  margin-bottom:8px;
 }
 
 .tshirt-preview-right{
@@ -1873,7 +1908,6 @@ html {
   <div class="back-design-card"><img src="images/back-sample-t5.jpg" alt="Tシャツ 背面サンプル 5" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 5</div></div>
   <div class="back-design-card"><img src="images/back-sample-t6.jpg" alt="Tシャツ 背面サンプル 6" onclick="openSimpleModal(this.src,this.alt)"><div class="back-design-caption">Tシャツ 6</div></div>
 </div>
-　
 </div>
 
 <section class="section" id="categories">
@@ -1992,11 +2026,9 @@ html {
 </div>
 </div>
 
-<div class="spec-box">
-  <h4>Tシャツ サイズ・素材</h4>
-
-  <div class="spec-list">
-
+<details class="size-details">
+  <summary>サイズ表を見る</summary>
+  <div class="spec-box">
     <div class="spec-item"><strong>120</strong>
       身丈48 / 身幅35 / 肩幅31 / 袖丈14<br>
       身長目安：118cm
@@ -2044,7 +2076,9 @@ html {
   <p>グレー：綿80% / ポリエステル20%</p>
   <p>その他カラー：綿100%</p>
   <p class="spec-note">※ サイズ表記の単位はcmです。</p>
-</div>
+  </div>
+</details>
+
 
 <!-- 背面シルエット一覧 -->
 <div style="margin-top:32px;">
@@ -2056,6 +2090,11 @@ html {
 <section id="silhouette-list">
   <!-- ここにシルエット8枚の一覧 -->
 </section>
+<div class="back-links">
+  <a href="#totebag-section">トートバッグへ戻る</a>
+  <a href="#kinchaku-m-section">巾着Sへ戻る</a>
+  <a href="#kinchaku-s-section">巾着SSへ戻る</a>
+</div>
 <div class="silhouette-section">
 <div class="silhouette-group">
 <h4 class="silhouette-group-title">MEN シルエット</h4>
@@ -2139,8 +2178,10 @@ html {
 </div>
 </div>
 
-<div class="spec-box">
-<h4>ジップパーカー サイズ・素材</h4>
+<details class="size-details">
+  <summary>サイズ表を見る</summary>
+  <div class="spec-box">
+   <h4>ジップパーカー サイズ・素材</h4>
 <p><strong>ライトピンク / ライトブルー</strong></p>
 <div class="spec-list">
 <div class="spec-item"><strong>150</strong>
@@ -2173,7 +2214,7 @@ html {
 <p>素材：285g/㎡・8.4オンス・裏毛</p>
 <p>グレー：綿90% / ポリエステル10%</p>
 <p>その他カラー：綿100%</p>
-<p class="spec-note">※ サイズ表記の単位はcmです。</p>
+<p class="spec-note">※ サイズ表記の単位はcmです。</p>   
 </div>
 </div>
 
@@ -2232,8 +2273,10 @@ html {
 </div>
 </div>
 
-<div class="spec-box">
-<h4>ジャージジップパーカー サイズ・素材</h4>
+<details class="size-details">
+  <summary>サイズ表を見る</summary>
+  <div class="spec-box">
+    <h4>ジャージジップパーカー サイズ・素材</h4>
 <div class="spec-list">
 <div class="spec-item"><strong>XS</strong>
       身丈61 / 身幅42 / 肩幅36 / 袖丈61
@@ -3149,9 +3192,9 @@ Soft outside. Strong inside.</p>
 
 <div class="shipping-box">
 <strong>送料</strong>
-Tシャツは現在、商品代金に送料を含めた想定で計算しています。<br>
-その他の商品は、コード内の <strong>FREE_SHIPPING_THRESHOLD</strong> と <strong>SHIPPING_TABLE</strong> を変更すると自動計算を調整できます。<br>
-現在は <strong>7,000円以上で送料無料</strong> の仮設定です。
+<br>
+Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで送料無料。
+その他は7,000円以上で送料無料
 </div>
 
 <div class="order-cta">
