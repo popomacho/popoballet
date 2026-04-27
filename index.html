@@ -807,19 +807,8 @@ display: none;
 grid-column: 1 / -1;
 }
 
-.series-macho .series-image-stack {
-grid-template-columns: repeat(3, 1fr);
-}
-
 .series-macho .series-sub-label {
 grid-column: 1 / -1;
-}
-
-.series-image-stack {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 8px;
-padding: 10px 10px 0;
 }
 
 .series-main-image,
@@ -1898,23 +1887,6 @@ html {
 #kinchaku-s-section .product-text-preview-box{
   display:none !important;
 }
-.series-image-stack.series-triple-image{
-  display:grid !important;
-  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
-  gap:8px !important;
-}
-
-.series-image-stack.series-triple-image > img{
-  width:100% !important;
-  min-width:0 !important;
-  object-fit:contain;
-}
-
-@media (max-width:760px){
-  .series-image-stack.series-triple-image{
-    grid-template-columns:1fr !important;
-  }
-}
 
 .series-sub-label{
   margin-top:6px;
@@ -1944,16 +1916,9 @@ html {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.series-image-stack.series-triple-image{
-  display:grid !important;
-  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
-  gap:8px !important;
-}
-
 .series-main-image,
 .series-sub-image,
-.series-men-image,
-.series-women-image{
+.series-men-image{
   width:100%;
   aspect-ratio:1 / 1.05;
   object-fit:contain;
@@ -1961,6 +1926,33 @@ html {
   border-radius:12px;
   cursor:pointer;
 }
+.custom-logo-note{
+  font-weight: 800;
+  color: #c40000;
+  font-size: 0.9rem;
+}
+.series-image-stack.series-triple-image{
+  display:grid !important;
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  gap:8px !important;
+}
+
+@media (max-width:760px){
+  .series-image-stack.series-triple-image{
+    grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+.series-image-stack.series-triple-image > img{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  aspect-ratio:1 / 1.05 !important;
+  height:auto !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+
 </style>
 
 <body>
@@ -2717,6 +2709,11 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
       <span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク
     </button>
 
+     <button type="button" class="series-color-btn"
+      onclick="event.preventDefault(); event.stopPropagation(); switchMachoColor(this,'images/popo-macho-lightpurple-front.jpg','images/popo-macho-lightpurple-back.jpg','images/popo-macho-women-lightpurple.jpg')">
+      <span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル
+    </button>
+
     <button type="button" class="series-color-btn"
       onclick="event.preventDefault(); event.stopPropagation(); switchMachoColor(this,'images/popo-macho-lightblue-front.jpg','images/popo-macho-lightblue-back.jpg','images/popo-macho-women-lightblue.jpg')">
       <span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー
@@ -2817,20 +2814,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 <div class="series-card" id="series-baseball">
 <div class="series-image-stack series-triple-image">
-<img src="images/popo-baseball-black-front.jpg" alt="POPO Baseball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-baseball-black-back.jpg" alt="POPO Baseball ブラック MEN背面" class="series-men-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-baseball-women-back.jpg" alt="POPO Baseball ブラック WOMEN背面" class="series-women-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<img src="images/popo-baseball-black-front.jpg" alt="POPO Baseball ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-baseball-black-back.jpg" alt="POPO Baseball ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-baseball-women-back.jpg" alt="POPO Baseball ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
 <div class="series-sub-label">前面 / MEN背面/ WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-baseball-black-front.jpg','images/popo-baseball-black-back.jpg','images/popo-baseball-women-back.jpg','POPO Baseball ブラック 前面','POPO Baseball ブラック 背面','POPO Baseball ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','images/popo-baseball-white-back.jpg','POPO Baseball ホワイト 前面','POPO Baseball ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','images/popo-baseball-pink-back.jpg','POPO Baseball ピンク 前面','POPO Baseball ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','images/popo-baseball-lightblue-back.jpg','POPO Baseball ライトブルー 前面','POPO Baseball ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','images/popo-baseball-red-back.jpg','POPO Baseball レッド 前面','POPO Baseball レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','images/popo-baseball-navy-back.jpg','POPO Baseball ネイビー 前面','POPO Baseball ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','images/popo-baseball-blue-back.jpg','POPO Baseball ブルー 前面','POPO Baseball ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-baseball-black-front.jpg','','','POPO Baseball ブラック 前面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Baseball ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Baseball ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Baseball ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Baseball ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Baseball レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Baseball ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Baseball ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="color-chip-btn custom-logo-btn" onclick="toggleCustomLogoRequest(this)">
@@ -2879,20 +2878,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-golf">
-<div class="series-image-stack">
-<img src="images/popo-golf-black-front.jpg" alt="POPO Golf ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-golf-black-back.jpg" alt="POPO Golf ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-golf-black-front.jpg" alt="POPO Golf ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-golf-black-back.jpg" alt="POPO Golf ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-golf-women-back.jpg" alt="POPO Golf ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-golf-black-front.jpg','images/popo-golf-black-back.jpg','POPO Golf ブラック 前面','POPO Golf ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-white-front.jpg','images/popo-golf-white-back.jpg','POPO Golf ホワイト 前面','POPO Golf ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-pink-front.jpg','images/popo-golf-pink-back.jpg','POPO Golf ピンク 前面','POPO Golf ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-lightblue-front.jpg','images/popo-golf-lightblue-back.jpg','POPO Golf ライトブルー 前面','POPO Golf ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-red-front.jpg','images/popo-golf-red-back.jpg','POPO Golf レッド 前面','POPO Golf レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-navy-front.jpg','images/popo-golf-navy-back.jpg','POPO Golf ネイビー 前面','POPO Golf ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-golf-blue-front.jpg','images/popo-golf-blue-back.jpg','POPO Golf ブルー 前面','POPO Golf ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-golf-black-front.jpg','images/popo-golf-black-back.jpg','images/popo-golf-women-back.jpg','POPO Golf ブラック 前面','POPO Golf ブラック MEN背面','POPO Golf ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Golf ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Golf ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Golf ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Golf ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Golf レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Golf ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Golf ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -2932,20 +2933,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-soccer">
-<div class="series-image-stack">
-<img src="images/popo-soccer-black-front.jpg" alt="POPO Soccer ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-soccer-black-back.jpg" alt="POPO Soccer ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-soccer-black-front.jpg" alt="POPO Soccer ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-soccer-black-back.jpg" alt="POPO Soccer ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-soccer-women-back.jpg" alt="POPO Soccer ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-soccer-black-front.jpg','images/popo-soccer-black-back.jpg','POPO Soccer ブラック 前面','POPO Soccer ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-white-front.jpg','images/popo-soccer-white-back.jpg','POPO Soccer ホワイト 前面','POPO Soccer ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-pink-front.jpg','images/popo-soccer-pink-back.jpg','POPO Soccer ピンク 前面','POPO Soccer ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-lightblue-front.jpg','images/popo-soccer-lightblue-back.jpg','POPO Soccer ライトブルー 前面','POPO Soccer ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-red-front.jpg','images/popo-soccer-red-back.jpg','POPO Soccer レッド 前面','POPO Soccer レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-navy-front.jpg','images/popo-soccer-navy-back.jpg','POPO Soccer ネイビー 前面','POPO Soccer ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-soccer-blue-front.jpg','images/popo-soccer-blue-back.jpg','POPO Soccer ブルー 前面','POPO Soccer ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-soccer-black-front.jpg','images/popo-soccer-black-back.jpg','images/popo-soccer-women-back.jpg','POPO Soccer ブラック 前面','POPO Soccer ブラック MEN背面','POPO Soccer ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Soccer ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Soccer ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Soccer ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Soccer ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Soccer レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Soccer ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Soccer ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -2958,20 +2961,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-rugby">
-<div class="series-image-stack">
-<img src="images/popo-rugby-black-front.jpg" alt="POPO Rugby ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-rugby-black-back.jpg" alt="POPO Rugby ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-rugby-black-front.jpg" alt="POPO Rugby ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-rugby-black-back.jpg" alt="POPO Rugby ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-rugby-women-back.jpg" alt="POPO Rugby ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-rugby-black-front.jpg','images/popo-rugby-black-back.jpg','POPO Rugby ブラック 前面','POPO Rugby ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-white-front.jpg','images/popo-rugby-white-back.jpg','POPO Rugby ホワイト 前面','POPO Rugby ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-pink-front.jpg','images/popo-rugby-pink-back.jpg','POPO Rugby ピンク 前面','POPO Rugby ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-lightblue-front.jpg','images/popo-rugby-lightblue-back.jpg','POPO Rugby ライトブルー 前面','POPO Rugby ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-red-front.jpg','images/popo-rugby-red-back.jpg','POPO Rugby レッド 前面','POPO Rugby レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-navy-front.jpg','images/popo-rugby-navy-back.jpg','POPO Rugby ネイビー 前面','POPO Rugby ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-rugby-blue-front.jpg','images/popo-rugby-blue-back.jpg','POPO Rugby ブルー 前面','POPO Rugby ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-rugby-black-front.jpg','images/popo-rugby-black-back.jpg','images/popo-rugby-women-back.jpg','POPO Rugby ブラック 前面','POPO Rugby ブラック MEN背面','POPO Rugby ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Rugby ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Rugby ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Rugby ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Rugby ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Rugby レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Rugby ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Rugby ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3011,20 +3016,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-surfing">
-<div class="series-image-stack">
-<img src="images/popo-surfing-black-front.jpg" alt="POPO Surfing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-surfing-black-back.jpg" alt="POPO Surfing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-surfing-black-front.jpg" alt="POPO Surfing ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-surfing-black-back.jpg" alt="POPO Surfing ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-surfing-women-back.jpg" alt="POPO Surfing ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-surfing-black-front.jpg','images/popo-surfing-black-back.jpg','POPO Surfing ブラック 前面','POPO Surfing ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-white-front.jpg','images/popo-surfing-white-back.jpg','POPO Surfing ホワイト 前面','POPO Surfing ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-pink-front.jpg','images/popo-surfing-pink-back.jpg','POPO Surfing ピンク 前面','POPO Surfing ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-lightblue-front.jpg','images/popo-surfing-lightblue-back.jpg','POPO Surfing ライトブルー 前面','POPO Surfing ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-red-front.jpg','images/popo-surfing-red-back.jpg','POPO Surfing レッド 前面','POPO Surfing レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-navy-front.jpg','images/popo-surfing-navy-back.jpg','POPO Surfing ネイビー 前面','POPO Surfing ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-surfing-blue-front.jpg','images/popo-surfing-blue-back.jpg','POPO Surfing ブルー 前面','POPO Surfing ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-surfing-black-front.jpg','images/popo-surfing-black-back.jpg','images/popo-surfing-women-back.jpg','POPO Surfing ブラック 前面','POPO Surfing ブラック MEN背面','POPO Surfing ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Surfing ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Surfing ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Surfing ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Surfing ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Surfing レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Surfing ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Surfing ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3065,20 +3072,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-family">
-<div class="series-image-stack">
-<img src="images/popo-family-black-front.jpg" alt="POPO Family ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-family-black-back.jpg" alt="POPO Family ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-family-black-front.jpg" alt="POPO Family ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-family-black-back.jpg" alt="POPO Family ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-family-women-back.jpg" alt="POPO Family ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-family-black-front.jpg','images/popo-family-black-back.jpg','POPO Family ブラック 前面','POPO Family ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-white-front.jpg','images/popo-family-white-back.jpg','POPO Family ホワイト 前面','POPO Family ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-pink-front.jpg','images/popo-family-pink-back.jpg','POPO Family ピンク 前面','POPO Family ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-lightblue-front.jpg','images/popo-family-lightblue-back.jpg','POPO Family ライトブルー 前面','POPO Family ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-red-front.jpg','images/popo-family-red-back.jpg','POPO Family レッド 前面','POPO Family レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-navy-front.jpg','images/popo-family-navy-back.jpg','POPO Family ネイビー 前面','POPO Family ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-family-blue-front.jpg','images/popo-family-blue-back.jpg','POPO Family ブルー 前面','POPO Family ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-family-black-front.jpg','images/popo-family-black-back.jpg','images/popo-family-women-back.jpg','POPO Family ブラック 前面','POPO Family ブラック MEN背面','POPO Family ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Family ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Family ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Family ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Family ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Family レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Family ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Family ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3118,20 +3127,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-car">
-<div class="series-image-stack">
-<img src="images/popo-car-black-front.jpg" alt="POPO Car ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-car-black-back.jpg" alt="POPO Car ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-car-black-front.jpg" alt="POPO Car ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-car-black-back.jpg" alt="POPO Car ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-car-women-back.jpg" alt="POPO Car ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-car-black-front.jpg','images/popo-car-black-back.jpg','POPO Car ブラック 前面','POPO Car ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-white-front.jpg','images/popo-car-white-back.jpg','POPO Car ホワイト 前面','POPO Car ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-pink-front.jpg','images/popo-car-pink-back.jpg','POPO Car ピンク 前面','POPO Car ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-lightblue-front.jpg','images/popo-car-lightblue-back.jpg','POPO Car ライトブルー 前面','POPO Car ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-red-front.jpg','images/popo-car-red-back.jpg','POPO Car レッド 前面','POPO Car レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-navy-front.jpg','images/popo-car-navy-back.jpg','POPO Car ネイビー 前面','POPO Car ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-car-blue-front.jpg','images/popo-car-blue-back.jpg','POPO Car ブルー 前面','POPO Car ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-car-black-front.jpg','images/popo-car-black-back.jpg','images/popo-car-women-back.jpg','POPO Car ブラック 前面','POPO Car ブラック MEN背面','POPO Car ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Car ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Car ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Car ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Car ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Car レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Car ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Car ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3171,20 +3182,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-shodo">
-<div class="series-image-stack">
-<img src="images/popo-shodo-black-front.jpg" alt="POPO Shodo ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-shodo-black-back.jpg" alt="POPO Shodo ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-shodo-black-front.jpg" alt="POPO Shodo ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-shodo-black-back.jpg" alt="POPO Shodo ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-shodo-women-back.jpg" alt="POPO Shodo ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-shodo-black-front.jpg','images/popo-shodo-black-back.jpg','POPO Shodo ブラック 前面','POPO Shodo ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-white-front.jpg','images/popo-shodo-white-back.jpg','POPO Shodo ホワイト 前面','POPO Shodo ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-pink-front.jpg','images/popo-shodo-pink-back.jpg','POPO Shodo ピンク 前面','POPO Shodo ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-lightblue-front.jpg','images/popo-shodo-lightblue-back.jpg','POPO Shodo ライトブルー 前面','POPO Shodo ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-red-front.jpg','images/popo-shodo-red-back.jpg','POPO Shodo レッド 前面','POPO Shodo レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-navy-front.jpg','images/popo-shodo-navy-back.jpg','POPO Shodo ネイビー 前面','POPO Shodo ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-shodo-blue-front.jpg','images/popo-shodo-blue-back.jpg','POPO Shodo ブルー 前面','POPO Shodo ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-shodo-black-front.jpg','images/popo-shodo-black-back.jpg','images/popo-shodo-women-back.jpg','POPO Shodo ブラック 前面','POPO Shodo ブラック MEN背面','POPO Shodo ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Shodo ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Shodo ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Shodo ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Shodo ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Shodo レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Shodo ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Shodo ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3224,20 +3237,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-tennis">
-<div class="series-image-stack">
-<img src="images/popo-tennis-black-front.jpg" alt="POPO Tennis ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-tennis-black-back.jpg" alt="POPO Tennis ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-tennis-black-front.jpg" alt="POPO Tennis ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-tennis-black-back.jpg" alt="POPO Tennis ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-tennis-women-back.jpg" alt="POPO Tennis ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-tennis-black-front.jpg','images/popo-tennis-black-back.jpg','POPO Tennis ブラック 前面','POPO Tennis ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-white-front.jpg','images/popo-tennis-white-back.jpg','POPO Tennis ホワイト 前面','POPO Tennis ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-pink-front.jpg','images/popo-tennis-pink-back.jpg','POPO Tennis ピンク 前面','POPO Tennis ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-lightblue-front.jpg','images/popo-tennis-lightblue-back.jpg','POPO Tennis ライトブルー 前面','POPO Tennis ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-red-front.jpg','images/popo-tennis-red-back.jpg','POPO Tennis レッド 前面','POPO Tennis レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-navy-front.jpg','images/popo-tennis-navy-back.jpg','POPO Tennis ネイビー 前面','POPO Tennis ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-tennis-blue-front.jpg','images/popo-tennis-blue-back.jpg','POPO Tennis ブルー 前面','POPO Tennis ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-tennis-black-front.jpg','images/popo-tennis-black-back.jpg','images/popo-tennis-women-back.jpg','POPO Tennis ブラック 前面','POPO Tennis ブラック MEN背面','POPO Tennis ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Tennis ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Tennis ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Tennis ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Tennis ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Tennis レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Tennis ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Tennis ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3277,20 +3292,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-camping">
-<div class="series-image-stack">
-<img src="images/popo-camping-black-front.jpg" alt="POPO Camping ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-camping-black-back.jpg" alt="POPO Camping ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-camping-black-front.jpg" alt="POPO Camping ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-camping-black-back.jpg" alt="POPO Camping ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-camping-women-back.jpg" alt="POPO Camping ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-camping-black-front.jpg','images/popo-camping-black-back.jpg','POPO Camping ブラック 前面','POPO Camping ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-white-front.jpg','images/popo-camping-white-back.jpg','POPO Camping ホワイト 前面','POPO Camping ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-pink-front.jpg','images/popo-camping-pink-back.jpg','POPO Camping ピンク 前面','POPO Camping ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-lightblue-front.jpg','images/popo-camping-lightblue-back.jpg','POPO Camping ライトブルー 前面','POPO Camping ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-red-front.jpg','images/popo-camping-red-back.jpg','POPO Camping レッド 前面','POPO Camping レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-navy-front.jpg','images/popo-camping-navy-back.jpg','POPO Camping ネイビー 前面','POPO Camping ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-camping-blue-front.jpg','images/popo-camping-blue-back.jpg','POPO Camping ブルー 前面','POPO Camping ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-camping-black-front.jpg','images/popo-camping-black-back.jpg','images/popo-camping-women-back.jpg','POPO Camping ブラック 前面','POPO Camping ブラック MEN背面','POPO Camping ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Camping ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Camping ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Camping ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Camping ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Camping レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Camping ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Camping ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3330,20 +3347,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-bike">
-<div class="series-image-stack">
-<img src="images/popo-bike-black-front.jpg" alt="POPO Bike ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-bike-black-back.jpg" alt="POPO Bike ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-bike-black-front.jpg" alt="POPO Bike ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-bike-black-back.jpg" alt="POPO Bike ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-bike-women-back.jpg" alt="POPO Bike ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-bike-black-front.jpg','images/popo-bike-black-back.jpg','POPO Bike ブラック 前面','POPO Bike ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-white-front.jpg','images/popo-bike-white-back.jpg','POPO Bike ホワイト 前面','POPO Bike ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-pink-front.jpg','images/popo-bike-pink-back.jpg','POPO Bike ピンク 前面','POPO Bike ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-lightblue-front.jpg','images/popo-bike-lightblue-back.jpg','POPO Bike ライトブルー 前面','POPO Bike ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-red-front.jpg','images/popo-bike-red-back.jpg','POPO Bike レッド 前面','POPO Bike レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-navy-front.jpg','images/popo-bike-navy-back.jpg','POPO Bike ネイビー 前面','POPO Bike ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bike-blue-front.jpg','images/popo-bike-blue-back.jpg','POPO Bike ブルー 前面','POPO Bike ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-bike-black-front.jpg','images/popo-bike-black-back.jpg','images/popo-bike-women-back.jpg','POPO Bike ブラック 前面','POPO Bike ブラック MEN背面','POPO Bike ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Bike ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Bike ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Bike ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Bike ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Bike レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Bike ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Bike ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3383,20 +3402,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-fishing">
-<div class="series-image-stack">
-<img src="images/popo-fishing-black-front.jpg" alt="POPO Fishing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-fishing-black-back.jpg" alt="POPO Fishing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-fishing-black-front.jpg" alt="POPO Fishing ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-fishing-black-back.jpg" alt="POPO Fishing ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-fishing-women-back.jpg" alt="POPO Fishing ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-fishing-black-front.jpg','images/popo-fishing-black-back.jpg','POPO Fishing ブラック 前面','POPO Fishing ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-white-front.jpg','images/popo-fishing-white-back.jpg','POPO Fishing ホワイト 前面','POPO Fishing ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-pink-front.jpg','images/popo-fishing-pink-back.jpg','POPO Fishing ピンク 前面','POPO Fishing ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-lightblue-front.jpg','images/popo-fishing-lightblue-back.jpg','POPO Fishing ライトブルー 前面','POPO Fishing ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-red-front.jpg','images/popo-fishing-red-back.jpg','POPO Fishing レッド 前面','POPO Fishing レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-navy-front.jpg','images/popo-fishing-navy-back.jpg','POPO Fishing ネイビー 前面','POPO Fishing ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-fishing-blue-front.jpg','images/popo-fishing-blue-back.jpg','POPO Fishing ブルー 前面','POPO Fishing ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-fishing-black-front.jpg','images/popo-fishing-black-back.jpg','images/popo-fishing-women-back.jpg','POPO Fishing ブラック 前面','POPO Fishing ブラック MEN背面','POPO Fishing ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Fishing ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Fishing ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Fishing ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Fishing ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Fishing レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Fishing ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Fishing ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3436,20 +3457,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-horse-riding">
-<div class="series-image-stack">
-<img src="images/popo-horse-riding-black-front.jpg" alt="POPO Horse Riding ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-horse-riding-black-back.jpg" alt="POPO Horse Riding ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-horse-riding-black-front.jpg" alt="POPO Horse Riding ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-horse-riding-black-back.jpg" alt="POPO Horse Riding ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-horse-riding-women-back.jpg" alt="POPO Horse Riding ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-black-front.jpg','images/popo-horse-riding-black-back.jpg','POPO Horse Riding ブラック 前面','POPO Horse Riding ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-white-front.jpg','images/popo-horse-riding-white-back.jpg','POPO Horse Riding ホワイト 前面','POPO Horse Riding ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-pink-front.jpg','images/popo-horse-riding-pink-back.jpg','POPO Horse Riding ピンク 前面','POPO Horse Riding ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-lightblue-front.jpg','images/popo-horse-riding-lightblue-back.jpg','POPO Horse Riding ライトブルー 前面','POPO Horse Riding ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-red-front.jpg','images/popo-horse-riding-red-back.jpg','POPO Horse Riding レッド 前面','POPO Horse Riding レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-navy-front.jpg','images/popo-horse-riding-navy-back.jpg','POPO Horse Riding ネイビー 前面','POPO Horse Riding ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-blue-front.jpg','images/popo-horse-riding-blue-back.jpg','POPO Horse Riding ブルー 前面','POPO Horse Riding ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-horse-riding-black-front.jpg','images/popo-horse-riding-black-back.jpg','images/popo-horse-riding-women-back.jpg','POPO Horse Riding ブラック 前面','POPO Horse Riding ブラック MEN背面','POPO Horse Riding ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Horse Riding ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Horse Riding ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Horse Riding ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Horse Riding ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Horse Riding レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Horse Riding ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Horse Riding ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3489,20 +3512,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-music">
-<div class="series-image-stack">
-<img src="images/popo-music-black-front.jpg" alt="POPO Music ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-music-black-back.jpg" alt="POPO Music ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-music-black-front.jpg" alt="POPO Music ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-music-black-back.jpg" alt="POPO Music ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-music-women-back.jpg" alt="POPO Music ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-music-black-front.jpg','images/popo-music-black-back.jpg','POPO Music ブラック 前面','POPO Music ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-white-front.jpg','images/popo-music-white-back.jpg','POPO Music ホワイト 前面','POPO Music ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-pink-front.jpg','images/popo-music-pink-back.jpg','POPO Music ピンク 前面','POPO Music ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-lightblue-front.jpg','images/popo-music-lightblue-back.jpg','POPO Music ライトブルー 前面','POPO Music ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-red-front.jpg','images/popo-music-red-back.jpg','POPO Music レッド 前面','POPO Music レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-navy-front.jpg','images/popo-music-navy-back.jpg','POPO Music ネイビー 前面','POPO Music ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-music-blue-front.jpg','images/popo-music-blue-back.jpg','POPO Music ブルー 前面','POPO Music ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-music-black-front.jpg','images/popo-music-black-back.jpg','images/popo-music-women-back.jpg','POPO Music ブラック 前面','POPO Music ブラック MEN背面','POPO Music ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Music ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Music ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Music ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Music ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Music レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Music ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Music ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3542,20 +3567,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-boxing">
-<div class="series-image-stack">
-<img src="images/popo-boxing-black-front.jpg" alt="POPO Boxing ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-boxing-black-back.jpg" alt="POPO Boxing ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-boxing-black-front.jpg" alt="POPO Boxing ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-boxing-black-back.jpg" alt="POPO Boxing ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-boxing-women-back.jpg" alt="POPO Boxing ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-boxing-black-front.jpg','images/popo-boxing-black-back.jpg','POPO Boxing ブラック 前面','POPO Boxing ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-white-front.jpg','images/popo-boxing-white-back.jpg','POPO Boxing ホワイト 前面','POPO Boxing ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-pink-front.jpg','images/popo-boxing-pink-back.jpg','POPO Boxing ピンク 前面','POPO Boxing ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-lightblue-front.jpg','images/popo-boxing-lightblue-back.jpg','POPO Boxing ライトブルー 前面','POPO Boxing ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-red-front.jpg','images/popo-boxing-red-back.jpg','POPO Boxing レッド 前面','POPO Boxing レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-navy-front.jpg','images/popo-boxing-navy-back.jpg','POPO Boxing ネイビー 前面','POPO Boxing ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-boxing-blue-front.jpg','images/popo-boxing-blue-back.jpg','POPO Boxing ブルー 前面','POPO Boxing ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-boxing-black-front.jpg','images/popo-boxing-black-back.jpg','images/popo-boxing-women-back.jpg','POPO Boxing ブラック 前面','POPO Boxing ブラック MEN背面','POPO Boxing ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Boxing ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Boxing ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Boxing ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Boxing ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Boxing レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Boxing ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Boxing ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3595,20 +3622,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-bowling">
-<div class="series-image-stack">
-<img src="images/popo-bowling-black-front.jpg" alt="POPO Bowling ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-bowling-black-back.jpg" alt="POPO Bowling ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-bowling-black-front.jpg" alt="POPO Bowling ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-bowling-black-back.jpg" alt="POPO Bowling ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-bowling-women-back.jpg" alt="POPO Bowling ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-bowling-black-front.jpg','images/popo-bowling-black-back.jpg','POPO Bowling ブラック 前面','POPO Bowling ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-white-front.jpg','images/popo-bowling-white-back.jpg','POPO Bowling ホワイト 前面','POPO Bowling ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-pink-front.jpg','images/popo-bowling-pink-back.jpg','POPO Bowling ピンク 前面','POPO Bowling ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-lightblue-front.jpg','images/popo-bowling-lightblue-back.jpg','POPO Bowling ライトブルー 前面','POPO Bowling ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-red-front.jpg','images/popo-bowling-red-back.jpg','POPO Bowling レッド 前面','POPO Bowling レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-navy-front.jpg','images/popo-bowling-navy-back.jpg','POPO Bowling ネイビー 前面','POPO Bowling ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-bowling-blue-front.jpg','images/popo-bowling-blue-back.jpg','POPO Bowling ブルー 前面','POPO Bowling ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-bowling-black-front.jpg','images/popo-bowling-black-back.jpg','images/popo-bowling-women-back.jpg','POPO Bowling ブラック 前面','POPO Bowling ブラック MEN背面','POPO Bowling ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Bowling ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Bowling ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Bowling ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Bowling ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Bowling レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Bowling ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Bowling ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3648,20 +3677,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-basketball">
-<div class="series-image-stack">
-<img src="images/popo-basketball-black-front.jpg" alt="POPO Basketball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-basketball-black-back.jpg" alt="POPO Basketball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-basketball-black-front.jpg" alt="POPO Basketball ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-basketball-black-back.jpg" alt="POPO Basketball ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-basketball-women-back.jpg" alt="POPO Basketball ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-basketball-black-front.jpg','images/popo-basketball-black-back.jpg','POPO Basketball ブラック 前面','POPO Basketball ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-white-front.jpg','images/popo-basketball-white-back.jpg','POPO Basketball ホワイト 前面','POPO Basketball ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-pink-front.jpg','images/popo-basketball-pink-back.jpg','POPO Basketball ピンク 前面','POPO Basketball ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-lightblue-front.jpg','images/popo-basketball-lightblue-back.jpg','POPO Basketball ライトブルー 前面','POPO Basketball ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-red-front.jpg','images/popo-basketball-red-back.jpg','POPO Basketball レッド 前面','POPO Basketball レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-navy-front.jpg','images/popo-basketball-navy-back.jpg','POPO Basketball ネイビー 前面','POPO Basketball ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-basketball-blue-front.jpg','images/popo-basketball-blue-back.jpg','POPO Basketball ブルー 前面','POPO Basketball ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-basketball-black-front.jpg','images/popo-basketball-black-back.jpg','images/popo-basketball-women-back.jpg','POPO Basketball ブラック 前面','POPO Basketball ブラック MEN背面','POPO Basketball ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Basketball ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Basketball ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Basketball ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Basketball ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Basketball レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Basketball ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Basketball ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3701,20 +3732,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-karate">
-<div class="series-image-stack">
-<img src="images/popo-karate-black-front.jpg" alt="POPO Karate ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-karate-black-back.jpg" alt="POPO Karate ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-karate-black-front.jpg" alt="POPO Karate ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-karate-black-back.jpg" alt="POPO Karate ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-karate-women-back.jpg" alt="POPO Karate ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-karate-black-front.jpg','images/popo-karate-black-back.jpg','POPO Karate ブラック 前面','POPO Karate ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-white-front.jpg','images/popo-karate-white-back.jpg','POPO Karate ホワイト 前面','POPO Karate ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-pink-front.jpg','images/popo-karate-pink-back.jpg','POPO Karate ピンク 前面','POPO Karate ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-lightblue-front.jpg','images/popo-karate-lightblue-back.jpg','POPO Karate ライトブルー 前面','POPO Karate ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-red-front.jpg','images/popo-karate-red-back.jpg','POPO Karate レッド 前面','POPO Karate レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-navy-front.jpg','images/popo-karate-navy-back.jpg','POPO Karate ネイビー 前面','POPO Karate ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-karate-blue-front.jpg','images/popo-karate-blue-back.jpg','POPO Karate ブルー 前面','POPO Karate ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-karate-black-front.jpg','images/popo-karate-black-back.jpg','images/popo-karate-women-back.jpg','POPO Karate ブラック 前面','POPO Karate ブラック MEN背面','POPO Karate ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Karate ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Karate ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Karate ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Karate ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Karate レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Karate ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Karate ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3754,20 +3787,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-ski">
-<div class="series-image-stack">
-<img src="images/popo-ski-black-front.jpg" alt="POPO Ski ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-ski-black-back.jpg" alt="POPO Ski ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-ski-black-front.jpg" alt="POPO Ski ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-ski-black-back.jpg" alt="POPO Ski ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-ski-women-back.jpg" alt="POPO Ski ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-ski-black-front.jpg','images/popo-ski-black-back.jpg','POPO Ski ブラック 前面','POPO Ski ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-white-front.jpg','images/popo-ski-white-back.jpg','POPO Ski ホワイト 前面','POPO Ski ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-pink-front.jpg','images/popo-ski-pink-back.jpg','POPO Ski ピンク 前面','POPO Ski ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-lightblue-front.jpg','images/popo-ski-lightblue-back.jpg','POPO Ski ライトブルー 前面','POPO Ski ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-red-front.jpg','images/popo-ski-red-back.jpg','POPO Ski レッド 前面','POPO Ski レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-navy-front.jpg','images/popo-ski-navy-back.jpg','POPO Ski ネイビー 前面','POPO Ski ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-ski-blue-front.jpg','images/popo-ski-blue-back.jpg','POPO Ski ブルー 前面','POPO Ski ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-ski-black-front.jpg','images/popo-ski-black-back.jpg','images/popo-ski-women-back.jpg','POPO Ski ブラック 前面','POPO Ski ブラック MEN背面','POPO Ski ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Ski ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Ski ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Ski ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Ski ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Ski レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Ski ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Ski ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3807,20 +3842,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-snowboarding">
-<div class="series-image-stack">
-<img src="images/popo-snowboarding-black-front.jpg" alt="POPO Snowboarding ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-snowboarding-black-back.jpg" alt="POPO Snowboarding ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-snowboarding-black-front.jpg" alt="POPO Snowboarding ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-snowboarding-black-back.jpg" alt="POPO Snowboarding ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-snowboarding-women-back.jpg" alt="POPO Snowboarding ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-black-front.jpg','images/popo-snowboarding-black-back.jpg','POPO Snowboarding ブラック 前面','POPO Snowboarding ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-white-front.jpg','images/popo-snowboarding-white-back.jpg','POPO Snowboarding ホワイト 前面','POPO Snowboarding ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-pink-front.jpg','images/popo-snowboarding-pink-back.jpg','POPO Snowboarding ピンク 前面','POPO Snowboarding ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-lightblue-front.jpg','images/popo-snowboarding-lightblue-back.jpg','POPO Snowboarding ライトブルー 前面','POPO Snowboarding ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-red-front.jpg','images/popo-snowboarding-red-back.jpg','POPO Snowboarding レッド 前面','POPO Snowboarding レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-navy-front.jpg','images/popo-snowboarding-navy-back.jpg','POPO Snowboarding ネイビー 前面','POPO Snowboarding ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-blue-front.jpg','images/popo-snowboarding-blue-back.jpg','POPO Snowboarding ブルー 前面','POPO Snowboarding ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-snowboarding-black-front.jpg','images/popo-snowboarding-black-back.jpg','images/popo-snowboarding-women-back.jpg','POPO Snowboarding ブラック 前面','POPO Snowboarding ブラック MEN背面','POPO Snowboarding ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Snowboarding ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Snowboarding ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Snowboarding ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Snowboarding ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Snowboarding レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Snowboarding ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Snowboarding ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3860,20 +3897,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-volleyball">
-<div class="series-image-stack">
-<img src="images/popo-volleyball-black-front.jpg" alt="POPO Volleyball ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-volleyball-black-back.jpg" alt="POPO Volleyball ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-volleyball-black-front.jpg" alt="POPO Volleyball ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-volleyball-black-back.jpg" alt="POPO Volleyball ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-volleyball-women-back.jpg" alt="POPO Volleyball ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-black-front.jpg','images/popo-volleyball-black-back.jpg','POPO Volleyball ブラック 前面','POPO Volleyball ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-white-front.jpg','images/popo-volleyball-white-back.jpg','POPO Volleyball ホワイト 前面','POPO Volleyball ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-pink-front.jpg','images/popo-volleyball-pink-back.jpg','POPO Volleyball ピンク 前面','POPO Volleyball ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-lightblue-front.jpg','images/popo-volleyball-lightblue-back.jpg','POPO Volleyball ライトブルー 前面','POPO Volleyball ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-red-front.jpg','images/popo-volleyball-red-back.jpg','POPO Volleyball レッド 前面','POPO Volleyball レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-navy-front.jpg','images/popo-volleyball-navy-back.jpg','POPO Volleyball ネイビー 前面','POPO Volleyball ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-blue-front.jpg','images/popo-volleyball-blue-back.jpg','POPO Volleyball ブルー 前面','POPO Volleyball ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-volleyball-black-front.jpg','images/popo-volleyball-black-back.jpg','images/popo-volleyball-women-back.jpg','POPO Volleyball ブラック 前面','POPO Volleyball ブラック MEN背面','POPO Volleyball ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Volleyball ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Volleyball ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Volleyball ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Volleyball ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Volleyball レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Volleyball ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Volleyball ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3913,20 +3952,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-kendo">
-<div class="series-image-stack">
-<img src="images/popo-kendo-black-front.jpg" alt="POPO Kendo ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-kendo-black-back.jpg" alt="POPO Kendo ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-kendo-black-front.jpg" alt="POPO Kendo ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-kendo-black-back.jpg" alt="POPO Kendo ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-kendo-women-back.jpg" alt="POPO Kendo ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-kendo-black-front.jpg','images/popo-kendo-black-back.jpg','POPO Kendo ブラック 前面','POPO Kendo ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-white-front.jpg','images/popo-kendo-white-back.jpg','POPO Kendo ホワイト 前面','POPO Kendo ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-pink-front.jpg','images/popo-kendo-pink-back.jpg','POPO Kendo ピンク 前面','POPO Kendo ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-lightblue-front.jpg','images/popo-kendo-lightblue-back.jpg','POPO Kendo ライトブルー 前面','POPO Kendo ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-red-front.jpg','images/popo-kendo-red-back.jpg','POPO Kendo レッド 前面','POPO Kendo レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-navy-front.jpg','images/popo-kendo-navy-back.jpg','POPO Kendo ネイビー 前面','POPO Kendo ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-kendo-blue-front.jpg','images/popo-kendo-blue-back.jpg','POPO Kendo ブルー 前面','POPO Kendo ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-kendo-black-front.jpg','images/popo-kendo-black-back.jpg','images/popo-kendo-women-back.jpg','POPO Kendo ブラック 前面','POPO Kendo ブラック MEN背面','POPO Kendo ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO Kendo ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO Kendo ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO Kendo ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO Kendo ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO Kendo レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO Kendo ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO Kendo ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -3966,20 +4007,22 @@ POPOは、バレエだけでなく、さまざまなスポーツや趣味、家�
 </div>
 </div>
 <div class="series-card" id="series-american-football">
-<div class="series-image-stack">
-<img src="images/popo-american-football-black-front.jpg" alt="POPO American Football ブラック 前面" class="series-main-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<img src="images/popo-american-football-black-back.jpg" alt="POPO American Football ブラック 背面" class="series-sub-image" onclick="openSeriesModal(this.closest('.series-card'))">
-<div class="series-sub-label">前面 / 背面</div>
+<div class="series-image-stack series-triple-image">
+<img src="images/popo-american-football-black-front.jpg" alt="POPO American Football ブラック 前面" class="series-main-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-american-football-black-back.jpg" alt="POPO American Football ブラック MEN背面" class="series-men-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
+<img src="images/popo-american-football-women-back.jpg" alt="POPO American Football ブラック WOMEN背面" class="series-women-image" onclick="event.preventDefault(); event.stopPropagation(); openSimpleModal(this.src, this.alt)">
 </div>
+<div class="series-sub-label">前面 / MEN背面 / WOMEN背面</div>
 <div class="series-info">
 <div class="series-color-row">
-<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-american-football-black-front.jpg','images/popo-american-football-black-back.jpg','POPO American Football ブラック 前面','POPO American Football ブラック 背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-white-front.jpg','images/popo-american-football-white-back.jpg','POPO American Football ホワイト 前面','POPO American Football ホワイト 背面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-pink-front.jpg','images/popo-american-football-pink-back.jpg','POPO American Football ピンク 前面','POPO American Football ピンク 背面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-lightblue-front.jpg','images/popo-american-football-lightblue-back.jpg','POPO American Football ライトブルー 前面','POPO American Football ライトブルー 背面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-red-front.jpg','images/popo-american-football-red-back.jpg','POPO American Football レッド 前面','POPO American Football レッド 背面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-navy-front.jpg','images/popo-american-football-navy-back.jpg','POPO American Football ネイビー 前面','POPO American Football ネイビー 背面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
-<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-american-football-blue-front.jpg','images/popo-american-football-blue-back.jpg','POPO American Football ブルー 前面','POPO American Football ブルー 背面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
+<button type="button" class="series-color-btn active" onclick="switchSeriesFrontBack(this,'images/popo-american-football-black-front.jpg','images/popo-american-football-black-back.jpg','images/popo-american-football-women-back.jpg','POPO American Football ブラック 前面','POPO American Football ブラック MEN背面','POPO American Football ブラック WOMEN背面')"><span class="series-color-dot" style="background:#1f1f1f;"></span>ブラック</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-white-front.jpg','','','POPO American Football ホワイト 前面')"><span class="series-color-dot" style="background:#ffffff;"></span>ホワイト</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-pink-front.jpg','','','POPO American Football ピンク 前面')"><span class="series-color-dot" style="background:#f7c6d8;"></span>ピンク</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightpurple-front.jpg','','','POPO American Football ライトパープル 前面')"><span class="series-color-dot" style="background:#cbb7ff;"></span>ライトパープル</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-lightblue-front.jpg','','','POPO American Football ライトブルー 前面')"><span class="series-color-dot" style="background:#a9d8ff;"></span>ライトブルー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-red-front.jpg','','','POPO American Football レッド 前面')"><span class="series-color-dot" style="background:#d62828;"></span>レッド</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-navy-front.jpg','','','POPO American Football ネイビー 前面')"><span class="series-color-dot" style="background:#1f3563;"></span>ネイビー</button>
+<button type="button" class="series-color-btn" onclick="switchSeriesFrontBack(this,'images/popo-baseball-blue-front.jpg','','','POPO American Football ブルー 前面')"><span class="series-color-dot" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="custom-logo-request-row">
   <button type="button" class="series-color-btn custom-logo-btn" onclick="toggleSeriesCustomLogo(this)">
@@ -5247,13 +5290,54 @@ window.switchColor = function(button, frontSrc, backSrc, productName, altFront, 
   updateProductTextPreview(card.id);
   calculateTotalPrice();
 };
-window.switchSeriesFrontBack = function(button, frontSrc, backSrc, frontAlt, backAlt){
-  const card=button.closest('.series-card'); if(!card) return;
-  const front=card.querySelector('.series-main-image');
-  if(front){ front.src=frontSrc; front.alt=frontAlt || '前面'; front.onclick=()=>openSimpleModal(front.src, front.alt); }
-  const row=button.closest('.series-color-row'); if(row) row.querySelectorAll('.series-color-btn').forEach(btn=>btn.classList.remove('active'));
+window.switchSeriesFrontBack = function(button, frontSrc, backSrc, womenSrc, frontAlt, backAlt, womenAlt){
+  const card = button.closest('.series-card');
+  if(!card) return;
+
+  const front = card.querySelector('.series-main-image');
+  const menBack = card.querySelector('.series-men-image, .series-sub-image');
+  const womenBack = card.querySelector('.series-women-image');
+
+  if(front && frontSrc){
+    front.src = frontSrc;
+    front.alt = frontAlt || '前面';
+    front.onclick = function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      openSimpleModal(this.src, this.alt);
+    };
+  }
+
+  if(menBack && backSrc){
+    menBack.src = backSrc;
+    menBack.alt = backAlt || 'MEN背面';
+    menBack.onclick = function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      openSimpleModal(this.src, this.alt);
+    };
+  }
+
+  if(womenBack && womenSrc){
+    womenBack.src = womenSrc;
+    womenBack.alt = womenAlt || 'WOMEN背面';
+    womenBack.onclick = function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      openSimpleModal(this.src, this.alt);
+    };
+  }
+
+  const row = button.closest('.series-color-row');
+  if(row){
+    row.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
+  }
+
   button.classList.add('active');
-  updateSeriesLogoButtons(card);
+
+  if(typeof updateSeriesLogoButtons === 'function'){
+    updateSeriesLogoButtons(card);
+  }
 };
 window.switchMachoMen = function(button, frontSrc){
   const card=button.closest('.series-card'); if(!card) return;
@@ -5559,11 +5643,32 @@ function gatherCommon(card){
 
   const backTextLabel = getText(card) || '文字なし';
 
-  // ▼ POPO Macho専用：Tシャツ色
-  const machoColorBtn = card.querySelector('.series-color-row:not(.macho-silhouette-row) .series-color-btn.active:not(.custom-logo-btn)');
-  if(machoColorBtn){
-    color = machoColorBtn.textContent.trim();
+  // ▼ POPO Series共通：Tシャツ色
+  const seriesColorBtn = card.querySelector('.series-color-row:not(.series-custom-silhouette-row):not(.macho-silhouette-row) .series-color-btn.active:not(.custom-logo-btn)');
+  if(seriesColorBtn){
+    color = seriesColorBtn.textContent.trim();
   }
+
+  // ▼ POPO Series共通：ロゴ色
+  const seriesLogoBtn = card.querySelector('.series-logo-row .color-chip-btn.active');
+  if(seriesLogoBtn){
+    logoLabel = seriesLogoBtn.dataset.logoLabel || seriesLogoBtn.textContent.trim() || 'ロゴなし';
+    logoValue = seriesLogoBtn.dataset.logoValue || 'none';
+  }
+
+  // ▼ POPO Series共通：背面シルエット選択
+const seriesSilBtn = card.querySelector('.series-silhouette-row .series-color-btn.active');
+if(seriesSilBtn){
+  silhouetteLabel = seriesSilBtn.textContent.trim();
+
+  if(silhouetteLabel === 'Women'){
+    silhouetteValue = 'women';
+  } else if(silhouetteLabel === '写真からシルエット作成依頼'){
+    silhouetteValue = 'custom_photo';
+  } else {
+    silhouetteValue = 'men';
+  }
+}
 
   // ▼ POPO Macho専用：ロゴ色
   const machoLogoBtn = card.querySelector('.macho-logo-row .color-chip-btn.active');
@@ -5580,23 +5685,7 @@ function gatherCommon(card){
       : silhouetteLabel === '写真からシルエット作成依頼' ? 'custom_photo'
       : 'men';
   }
-if (card.classList.contains('series-card')) {
-  logoValue = card.dataset.logoValue || logoValue || 'none';
-  logoLabel = card.dataset.logoLabel || logoLabel || 'ロゴなし';
 
-  if (card.dataset.customLogo === 'yes') {
-    logoValue = 'custom';
-    logoLabel = '持ち込みロゴ希望';
-  }
-
-  silhouetteValue = card.dataset.silhouetteValue || silhouetteValue || 'none';
-  silhouetteLabel = card.dataset.silhouetteLabel || silhouetteLabel || 'シルエットなし';
-
-  if (card.dataset.customPhoto === 'yes') {
-    silhouetteValue = 'custom_photo';
-    silhouetteLabel = '写真からシルエット作成依頼';
-  }
-}
   return {
     color,
     logoLabel,
@@ -5695,7 +5784,6 @@ if(note){
 
   if(unitPrice <= 0 && product !== 'series' && !['bag','kinchaku_m','kinchaku_s'].includes(product)){
     alert('ロゴまたは背面シルエットを選択してください');
-    
     return;
   }
 
@@ -6047,36 +6135,19 @@ function switchProductLogoColor(button) {
   }
 
   function bindSeriesImageModal() {
-    if (typeof window.openSeriesModal !== 'function' && typeof window.openModal === 'function') {
-      window.openSeriesModal = function (card) {
-        if (!card) return;
+  document.querySelectorAll('.series-main-image, .series-sub-image').forEach(img => {
+    img.onclick = function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-        const frontImg = card.querySelector('.series-main-image');
-        const backImg = card.querySelector('.series-sub-image');
+      if (typeof window.openSimpleModal === 'function') {
+        window.openSimpleModal(this.src, this.alt || '画像');
+      }
+    };
 
-        window.openModal(
-          frontImg ? frontImg.src : '',
-          frontImg ? frontImg.alt : '',
-          backImg ? backImg.src : '',
-          backImg ? backImg.alt : ''
-        );
-      };
-    }
-
-    document.querySelectorAll('.series-main-image, .series-sub-image').forEach(img => {
-      img.onclick = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        const card = this.closest('.series-card');
-        if (typeof window.openSeriesModal === 'function') {
-          window.openSeriesModal(card);
-        } else if (typeof window.openSimpleModal === 'function') {
-          window.openSimpleModal(this.src, this.alt);
-        }
-      };
-      img.style.cursor = 'pointer';
-    });
-  }
+    img.style.cursor = 'pointer';
+  });
+}
 
   function normalizeSeriesCards() {
     const grid = document.querySelector('.series-grid');
@@ -6486,13 +6557,36 @@ window.toggleSeriesCustomLogo = function(btn){
   if(!card) return;
 
   const isOn = !btn.classList.contains('active');
-  btn.classList.toggle('active', isOn);
-  card.dataset.customLogo = isOn ? 'yes' : 'no';
+
+  // 通常ロゴ色・ロゴなしを解除
+  card.querySelectorAll('.color-chip-btn, .logo-none-btn').forEach(b => {
+    b.classList.remove('active');
+  });
+
+  // 持ち込みロゴボタンを整理
+  card.querySelectorAll('.custom-logo-btn').forEach(b => {
+    b.classList.remove('active');
+    b.textContent = '持ち込みロゴ';
+  });
 
   if (isOn) {
+    btn.classList.add('active');
     btn.textContent = '持ち込みロゴ 希望';
+    card.dataset.customLogo = 'yes';
+    card.dataset.logoValue = 'custom';
+    card.dataset.logoLabel = '持ち込みロゴ希望';
   } else {
-    btn.textContent = '持ち込みロゴ';
+    card.dataset.customLogo = 'no';
+    card.dataset.logoValue = 'none';
+    card.dataset.logoLabel = 'ロゴなし';
+  }
+
+  if (typeof syncCurrentSelectionsFromCard === 'function') {
+    syncCurrentSelectionsFromCard(card);
+  }
+
+  if (typeof calculateTotalPrice === 'function') {
+    calculateTotalPrice();
   }
 };
 
@@ -6529,27 +6623,21 @@ window.switchMachoColor = function(btn, menFrontSrc, menBackSrc, womenBackSrc){
     btn.classList.add('active');
   }
 
+  const colorName = btn.textContent.trim();
+
   card.dataset.machoMenFront = menFrontSrc || '';
   card.dataset.machoMenBack = menBackSrc || '';
   card.dataset.machoWomenBack = womenBackSrc || '';
 
   const mainImg = card.querySelector('.series-main-image');
-  const subImgs = card.querySelectorAll('.series-sub-image');
 
+  // 色ボタンでは左の前面画像だけ変更する
   if (mainImg && menFrontSrc) {
     mainImg.src = menFrontSrc;
+    mainImg.alt = 'POPO Macho ' + colorName + ' 前面';
   }
 
-  const activeSilBtn = card.querySelector('.macho-silhouette-row .series-color-btn.active');
-  const activeMode = activeSilBtn?.dataset?.silhouetteMode || 'men';
-
-  if (subImgs.length >= 2) {
-    if (activeMode === 'women') {
-      if (womenBackSrc) subImgs[1].src = womenBackSrc;
-    } else {
-      if (menBackSrc) subImgs[0].src = menBackSrc;
-    }
-  }
+  // 真ん中・右の背面画像は変更しない
 
   if (typeof updateMachoLogoButtons === 'function') {
     updateMachoLogoButtons(card);
@@ -6750,43 +6838,29 @@ window.switchSeriesLogoColor = function(button){
   const customBtn = card.querySelector('.custom-logo-btn');
   if (customBtn) customBtn.classList.remove('active');
   card.dataset.customLogo = 'no';
-  if (typeof syncCurrentSelectionsFromCard === 'function') {
-    syncCurrentSelectionsFromCard(card);
-  }
-
-  if (typeof calculateTotalPrice === 'function') {
-    calculateTotalPrice();
-  }
-
-  if (typeof renderCart === 'function') {
-    renderCart();
-  }
 };
 
-window.selectSeriesCustomSilhouette = function(button){
+window.selectSeriesSilhouette = function(button, value){
   const card = button.closest('.series-card');
   if (!card) return;
 
-  const row = button.closest('.series-custom-silhouette-row');
+  const row = button.closest('.series-silhouette-row');
   if (row) {
     row.querySelectorAll('.series-color-btn').forEach(btn => btn.classList.remove('active'));
   }
 
   button.classList.add('active');
 
-  card.dataset.customPhoto = 'yes';
-  card.dataset.silhouetteValue = 'custom_photo';
-  card.dataset.silhouetteLabel = '写真からシルエット作成依頼';
-  refreshSeriesCart(card);
-};
+  let label = button.textContent.trim();
 
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('.series-card').forEach(card => {
-    if (card.id !== 'series-macho') {
-      updateSeriesLogoButtons(card);
-    }
-  });
-});
+  if (value === 'men') label = 'Men';
+  if (value === 'women') label = 'Women';
+  if (value === 'custom_photo') label = '写真からシルエット作成依頼';
+
+  card.dataset.customPhoto = value === 'custom_photo' ? 'yes' : 'no';
+  card.dataset.silhouetteValue = value || 'men';
+  card.dataset.silhouetteLabel = label;
+};
 </script>
 <script>
 function setOnlyActiveInBox(btn, selector){
@@ -6858,7 +6932,6 @@ window.selectSeriesSilhouette = function(btn, mode){
     card.dataset.customPhoto = 'no';
     card.dataset.silhouetteValue = '';
     card.dataset.silhouetteLabel = '';
-    refreshSeriesCart(card);
     return;
   }
 
@@ -6877,21 +6950,7 @@ window.selectSeriesSilhouette = function(btn, mode){
     card.dataset.silhouetteValue = 'men';
     card.dataset.silhouetteLabel = 'Men';
   }
-  refreshSeriesCart(card);
 };
-function refreshSeriesCart(card){
-  if (typeof syncCurrentSelectionsFromCard === 'function') {
-    syncCurrentSelectionsFromCard(card);
-  }
-
-  if (typeof calculateTotalPrice === 'function') {
-    calculateTotalPrice();
-  }
-
-  if (typeof renderCart === 'function') {
-    renderCart();
-  }
-}
 </script>
 
 
