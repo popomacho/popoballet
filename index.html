@@ -7599,6 +7599,23 @@ ${message}`;
   const lineUrl = 'https://line.me/R/msg/text/?' + encodeURIComponent(text);
   window.location.href = lineUrl;
 }
+document.getElementById('order-form').addEventListener('submit', function(){
+
+  const cartText =
+    document.getElementById('oaiCartItems')?.innerText ||
+    document.getElementById('cartItemsArea')?.innerText ||
+    '';
+
+  const total =
+    document.getElementById('oaiCartTotal')?.innerText ||
+    document.getElementById('summaryTotal')?.innerText ||
+    '';
+
+  document.getElementById('cartSummaryInput').value =
+    cartText + "\n\n合計：" + total;
+
+  document.getElementById('totalPriceInput').value = total;
+});
 </script>
 
 </body>
