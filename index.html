@@ -4639,7 +4639,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <p class="spec-note">※ 下の PRICE_TABLE を編集すると自動計算の金額を変更できます。</p>
 </div>
 
-<form id="order-form" class="form-box" name="popo-ballet-order" method="GET" action="thanks.html" data-netlify="true">
+<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://formspree.io/f/xkoywvak">
 <input type="hidden" name="form-name" value="popo-ballet-order">
 <input type="hidden" name="selected_silhouette" id="selectedSilhouetteInput" value="">
 <input type="hidden" name="selected_back_text" id="selectedBackTextInput" value="なし">
@@ -4650,6 +4650,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <input type="hidden" name="selected_silhouette_preview_image" id="selectedSilhouettePreviewImageInput" value="">
 <input type="hidden" name="total_price" id="totalPriceInput" value="0">
 <input type="hidden" name="cart_summary" id="cartSummaryInput" value="">
+<input type="hidden" name="_next" value="https://popomacho.github.io/popoballet/thanks.html">
 <div class="cart-box" id="cartBox">
   <div class="order-summary-title">カート内容</div>
   <p class="order-summary-note">上の商品欄で選んで「カゴへ」を押すと、ここに追加されます。</p>
@@ -7561,6 +7562,43 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 });
+function sendOrderToLine() {
+  const name = document.getElementById('customerNameInput')?.value || '';
+  const email = document.getElementById('customerEmailInput')?.value || '';
+  const message = document.getElementById('messageInput')?.value || '';
+
+  const cartText =
+    document.getElementById('oaiCartItems')?.innerText ||
+    document.getElementById('cartItemsArea')?.innerText ||
+    'カート内容なし';
+
+  const total =
+    document.getElementById('oaiCartTotal')?.innerText ||
+    document.getElementById('summaryTotal')?.innerText ||
+    document.getElementById('totalPriceBox')?.innerText ||
+    '未計算';
+
+  const text =
+`【POPO Ballet 注文内容】
+
+■お名前
+${name}
+
+■メールアドレス
+${email}
+
+■カート内容
+${cartText}
+
+■合計金額
+${total}
+
+■備考
+${message}`;
+
+  const lineUrl = 'https://line.me/R/msg/text/?' + encodeURIComponent(text);
+  window.location.href = lineUrl;
+}
 </script>
 
 </body>
