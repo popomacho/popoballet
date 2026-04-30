@@ -7624,6 +7624,36 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 });
+function submitOrderForm() {
+  const form = document.getElementById('order-form');
+  if (!form) {
+    alert('注文フォームが見つかりません。');
+    return;
+  }
+
+  const cartText =
+    document.getElementById('oaiCartItems')?.innerText ||
+    document.getElementById('cartItemsArea')?.innerText ||
+    '';
+
+  const total =
+    document.getElementById('oaiCartTotal')?.innerText ||
+    document.getElementById('summaryTotal')?.innerText ||
+    document.getElementById('totalPriceBox')?.innerText ||
+    '';
+
+  const cartInput = document.getElementById('cartSummaryInput');
+  if (cartInput) {
+    cartInput.value = cartText + "\n\n合計：" + total;
+  }
+
+  const totalInput = document.getElementById('totalPriceInput');
+  if (totalInput) {
+    totalInput.value = total;
+  }
+
+  form.submit();
+}
 </script>
 
 </body>
