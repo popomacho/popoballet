@@ -4692,7 +4692,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 
 <div class="is-hidden-order form-group">
 <label class="form-label" for="brandSelect">ブランド選択</label>
-<select id="brandSelect" name="brand" class="form-control" onchange="updateProductOptions(); calculateTotalPrice();">
+<select id="brandSelect" name="brand" class="form-control" onchange="updateProductOptions(); calculateTotalPrice();"></select>
 <option value="">ブランドを選択してください</option>
 <option value="popo_ballet">POPO Ballet（バレエ）</option>
 <option value="popo_series">POPOシリーズ</option>
@@ -4734,14 +4734,14 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 </div>
 
 <div class="form-group">
-<a href="https://popomacho.github.io/" target="_blank" class="btn">
+<a href="https://https://popomacho.github.io/" target="_blank" class="btn">
 POPO Macho パーソナルジムはこちら
 </a>
 </div>
 
 <div class="is-hidden-order form-group">
 <label class="form-label" for="logoTypeSelect">ロゴ指定</label>
-<select id="logoTypeSelect" name="logo_type" class="form-control" onchange="calculateTotalPrice()">
+<select id="logoTypeSelect" name="logo_type" class="form-control" onchange="calculateTotalPrice()"></select>
 <option value="">ロゴの種類を選択してください</option>
 <option value="logo_only">POPO Balletなどロゴあり</option>
 <option value="logo_none">POPO Balletなどロゴなし</option>
@@ -4865,7 +4865,11 @@ POPO Macho パーソナルジムはこちら
 <label class="form-label">備考・ご質問</label>
 <textarea id="messageInput" name="message" class="form-control" placeholder="カラー希望、質問など"></textarea>
 </div>
-
+<div class="form-group" style="margin-top:10px;">
+  <button type="button" class="btn btn-line" onclick="sendOrderToLine()">
+    LINEに注文内容を送る
+  </button>
+</div>
 
 <div class="form-group" style="margin-top:10px;">
 <button type="button" class="btn" onclick="submitOrderForm()">
@@ -4873,6 +4877,12 @@ POPO Macho パーソナルジムはこちら
 </button>
 
 </div>
+</form>
+<form action="https://formspree.io/f/xkoywvak" method="POST">
+  <input type="text" name="test_name" value="テスト太郎">
+  <input type="email" name="email" value="test@example.com">
+  <input type="hidden" name="cart_summary" value="テスト注文です">
+  <button type="submit">Formspreeテスト送信</button>
 </form>
 </div>
 </section>
@@ -4927,6 +4937,7 @@ Instagramを見る
 <img id="modalBackOverlay" src="" alt="">
 <img id="modalBackText" src="" alt="">
 <div class="modal-image-caption" id="modalCaptionBack">背面</div>
+
 </div>
 </div>
 </div>
@@ -7667,17 +7678,21 @@ document.addEventListener('DOMContentLoaded', function(){
 
 });
 function submitOrderForm() {
+  alert('1：submitOrderForm が動きました');
+
   const form = document.getElementById('order-form');
   if (!form) {
-    alert('注文フォームが見つかりません。');
+    alert('2：注文フォームが見つかりません。');
     return;
   }
 
-  // 先に必須入力チェック
   if (!form.checkValidity()) {
+    alert('3：必須入力で止まっています');
     form.reportValidity();
     return;
   }
+
+  alert('4：必須入力OK');
 
   const cartText =
     document.getElementById('oaiCartItems')?.innerText ||
@@ -7690,8 +7705,10 @@ function submitOrderForm() {
     document.getElementById('totalPriceBox')?.innerText ||
     '';
 
+  alert('5：カート内容=' + cartText.substring(0, 80));
+
   if (!cartText.trim() || cartText.includes('まだカゴに商品がありません')) {
-    alert('カゴに商品がありません。商品を選択してから送信してください。');
+    alert('6：カゴに商品がありません。商品を選択してから送信してください。');
     return;
   }
 
@@ -7704,6 +7721,8 @@ function submitOrderForm() {
   if (totalInput) {
     totalInput.value = total;
   }
+
+  alert('7：Formspreeへ送信します');
 
   form.submit();
 }
