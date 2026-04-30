@@ -4865,14 +4865,16 @@ POPO Macho パーソナルジムはこちら
 <label class="form-label">備考・ご質問</label>
 <textarea id="messageInput" name="message" class="form-control" placeholder="カラー希望、質問など"></textarea>
 </div>
+
 <div class="form-group" style="margin-top:10px;">
-  <button type="submit" class="btn">
-  注文内容を送信する
+<button type="button" class="btn btn-line" onclick="sendOrderToLine()">
+    LINEで注文内容を送る
 </button>
+</div>
 </div>
 
 <div class="form-group" style="margin-top:10px;">
-<button type="button" class="btn" onclick="submitOrderForm()">
+<button type="submit" class="btn">
   注文内容を送信する
 </button>
 
