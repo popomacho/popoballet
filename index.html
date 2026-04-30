@@ -115,7 +115,7 @@ padding: 22px 16px 18px;
 border-radius: 24px;
 background:
 linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.35)),
-url("images/top.jpg") center/cover no-repeat;
+
 border: 1px solid rgba(255,255,255,0.65);
 backdrop-filter: blur(6px);
 box-shadow: 0 12px 30px rgba(0,0,0,0.06);
@@ -134,7 +134,7 @@ position: absolute;
 inset: 0;
 background:
 linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
-opacity: 0.7;
+opacity: 0.85;
 pointer-events: none;
 }
 
@@ -145,6 +145,19 @@ inset: 12px;
 border-radius: 18px;
 border: 1px dashed rgba(200,150,150,0.4);
 pointer-events: none;
+}
+.hero-logo-panel {
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .hero-logo-text {
@@ -1775,7 +1788,11 @@ grid-template-columns: 1fr;
 .v34-hidden{display:none !important;}
 .oai-cart-item button{background:#fff;border:1px solid #eadede;border-radius:10px;padding:8px 10px;cursor:pointer}
 </style>
-
+  <link rel="preload" as="image" href="images/top.jpg">
+  <link rel="preload" as="image" href="images/shoa.jpg">
+  <link rel="preload" as="image" href="images/koa.jpg">
+  
+  
 </head>
 
 <style>
@@ -1964,17 +1981,22 @@ html {
 </div>
 
 <div class="hero-logo-panel">
+  <!-- 背景画像として使う -->
+  <img src="images/top.jpg"
+       class="hero-bg"
+       loading="eager"
+       fetchpriority="high">
 <div class="hero-logo-text">POPO Ballet</div>
 <div class="hero-logo-sub">Ballet Apparel Collection</div>
 </div>
 
 <div class="hero-gallery-4">
 <div class="hero-column">
-<img src="images/shoa.jpg" alt="POPO Ballet 実物写真 左上" class="hero-image" />
+<img src="images/shoa.jpg" loading="eager" fetchpriority="high" alt="POPO Ballet 実物写真 左上" class="hero-image" />
 <img src="images/shoa10.png" alt="POPO Ballet シルエット 左下" class="hero-image" />
 </div>
 <div class="hero-column">
-<img src="images/koa.jpg" alt="POPO Ballet 実物写真 右上" class="hero-image" />
+<img src="images/koa.jpg" loading="eager" fetchpriority="high" alt="POPO Ballet 実物写真 右上" class="hero-image" />
 <img src="images/koa10.jpg" alt="POPO Ballet シルエット 右下" class="hero-image" />
 </div>
 </div>
