@@ -4871,21 +4871,14 @@ POPO Macho パーソナルジムはこちら
     LINEで注文内容を送る
 </button>
 </div>
-</div>
-
 <div class="form-group" style="margin-top:10px;">
 <button type="submit" class="btn">
   注文内容を送信する
 </button>
-
 </div>
+
 </form>
-<form action="https://formspree.io/f/xkoywvak" method="POST">
-  <input type="text" name="test_name" value="テスト太郎">
-  <input type="email" name="email" value="test@example.com">
-  <input type="hidden" name="cart_summary" value="テスト注文です">
-  <button type="submit">Formspreeテスト送信</button>
-</form>
+
 </div>
 </section>
 <section class="section" id="contact">
@@ -7681,17 +7674,40 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 function prepareOrderForm() {
   try {
-    const cartBox = document.getElementById('cartBox');
-    const cartItemsArea = document.getElementById('cartItemsArea');
-    const totalBox = document.getElementById('totalPriceBox');
+    const cart = window.__v34cart || [];
 
-    const cartText =
-      (cartItemsArea && cartItemsArea.innerText) ||
-      (cartBox && cartBox.innerText) ||
-      '';
+    let cartText = '';
+
+    if (cart.length > 0) {
+      cartText = cart.map((item, index) => {
+        return [
+          `【商品${index + 1}】`,
+          `商品：${item.productLabel || ''}`,
+          `本体色：${item.colorLabel || ''}`,
+          `ロゴ：${item.logoLabel || ''}`,
+          `背面シルエット：${item.silhouetteLabel || ''}`,
+          `背面文字：${item.backTextLabel || ''}`,
+          `サイズ：${item.size || ''}`,
+          `数量：${item.qty || 1}`,
+          `単価：${item.unitPrice || 0}円`
+        ].join('\n');
+      }).join('\n\n');
+    } else {
+      const cartItemsArea = document.getElementById('cartItemsArea');
+      const cartBox = document.getElementById('cartBox');
+
+      cartText =
+        (cartItemsArea && cartItemsArea.innerText.trim()) ||
+        (cartBox && cartBox.innerText.trim()) ||
+        '';
+    }
+
+    const totalBox = document.getElementById('totalPriceBox');
+    const summaryTotal = document.getElementById('summaryTotal');
 
     const total =
-      (totalBox && totalBox.innerText) ||
+      (summaryTotal && summaryTotal.innerText.trim()) ||
+      (totalBox && totalBox.innerText.trim()) ||
       '';
 
     if (!cartText.trim() || cartText.includes('まだカゴに商品がありません')) {
