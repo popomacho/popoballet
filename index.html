@@ -7599,22 +7599,30 @@ ${message}`;
   const lineUrl = 'https://line.me/R/msg/text/?' + encodeURIComponent(text);
   window.location.href = lineUrl;
 }
-document.getElementById('order-form').addEventListener('submit', function(){
+// ←ここを新しく置き換え
+document.addEventListener('DOMContentLoaded', function(){
 
-  const cartText =
-    document.getElementById('oaiCartItems')?.innerText ||
-    document.getElementById('cartItemsArea')?.innerText ||
-    '';
+  const form = document.getElementById('order-form');
+  if(!form) return;
 
-  const total =
-    document.getElementById('oaiCartTotal')?.innerText ||
-    document.getElementById('summaryTotal')?.innerText ||
-    '';
+  form.addEventListener('submit', function(){
 
-  document.getElementById('cartSummaryInput').value =
-    cartText + "\n\n合計：" + total;
+    const cartText =
+      document.getElementById('oaiCartItems')?.innerText ||
+      document.getElementById('cartItemsArea')?.innerText ||
+      '';
 
-  document.getElementById('totalPriceInput').value = total;
+    const total =
+      document.getElementById('oaiCartTotal')?.innerText ||
+      document.getElementById('summaryTotal')?.innerText ||
+      '';
+
+    document.getElementById('cartSummaryInput').value =
+      cartText + "\n\n合計：" + total;
+
+    document.getElementById('totalPriceInput').value = total;
+  });
+
 });
 </script>
 
