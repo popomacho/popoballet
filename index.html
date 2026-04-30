@@ -4671,7 +4671,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <p class="spec-note">※ 下の PRICE_TABLE を編集すると自動計算の金額を変更できます。</p>
 </div>
 
-<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://formspree.io/f/xkoywvak">
+<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://formspree.io/f/xkoywvak" onsubmit="return prepareOrderForm();">
 <input type="hidden" name="form-name" value="popo-ballet-order">
 <input type="hidden" name="selected_silhouette" id="selectedSilhouetteInput" value="">
 <input type="hidden" name="selected_back_text" id="selectedBackTextInput" value="なし">
@@ -4866,9 +4866,9 @@ POPO Macho パーソナルジムはこちら
 <textarea id="messageInput" name="message" class="form-control" placeholder="カラー希望、質問など"></textarea>
 </div>
 <div class="form-group" style="margin-top:10px;">
-  <button type="button" class="btn btn-line" onclick="sendOrderToLine()">
-    LINEに注文内容を送る
-  </button>
+  <button type="submit" class="btn">
+  注文内容を送信する
+</button>
 </div>
 
 <div class="form-group" style="margin-top:10px;">
@@ -7677,52 +7677,25 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 });
-function submitOrderForm() {
-  alert('1：submitOrderForm が動きました');
-
+function prepareOrderForm() {
   try {
-    const form = document.getElementById('order-form');
-
-    if (!form) {
-      alert('注文フォームが見つかりません。');
-      return;
-    }
-
-    alert('2：フォームは見つかりました');
-
-    const nameInput = document.getElementById('customerNameInput');
-    const emailInput = document.getElementById('customerEmailInput');
-    const paymentSelect = form.querySelector('select[name="payment"]');
-
-    if (!nameInput || !nameInput.value.trim()) {
-      alert('お名前を入力してください。');
-      return;
-    }
-
-    if (!emailInput || !emailInput.value.trim()) {
-      alert('メールアドレスを入力してください。');
-      return;
-    }
-
-    if (!paymentSelect || !paymentSelect.value) {
-      alert('お支払い方法を選択してください。');
-      return;
-    }
-
-    alert('3：必須入力OK');
-
     const cartBox = document.getElementById('cartBox');
     const cartItemsArea = document.getElementById('cartItemsArea');
     const totalBox = document.getElementById('totalPriceBox');
 
     const cartText =
-      (cartBox && cartBox.innerText) ||
       (cartItemsArea && cartItemsArea.innerText) ||
-      'カート内容取得なし';
+      (cartBox && cartBox.innerText) ||
+      '';
 
     const total =
       (totalBox && totalBox.innerText) ||
-      '合計金額取得なし';
+      '';
+
+    if (!cartText.trim() || cartText.includes('まだカゴに商品がありません')) {
+      alert('カゴに商品がありません。商品を選択してから送信してください。');
+      return false;
+    }
 
     const cartInput = document.getElementById('cartSummaryInput');
     if (cartInput) {
@@ -7734,12 +7707,11 @@ function submitOrderForm() {
       totalInput.value = total;
     }
 
-    alert('4：Formspreeへ送信します');
-
-    HTMLFormElement.prototype.submit.call(form);
+    return true;
 
   } catch (error) {
-    alert('エラーが出ました：' + error.message);
+    alert('送信準備中にエラーが出ました：' + error.message);
+    return false;
   }
 }
 </script>
