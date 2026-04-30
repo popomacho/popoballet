@@ -7680,51 +7680,67 @@ document.addEventListener('DOMContentLoaded', function(){
 function submitOrderForm() {
   alert('1：submitOrderForm が動きました');
 
-  const form = document.getElementById('order-form');
-  if (!form) {
-    alert('2：注文フォームが見つかりません。');
-    return;
+  try {
+    const form = document.getElementById('order-form');
+
+    if (!form) {
+      alert('注文フォームが見つかりません。');
+      return;
+    }
+
+    alert('2：フォームは見つかりました');
+
+    const nameInput = document.getElementById('customerNameInput');
+    const emailInput = document.getElementById('customerEmailInput');
+    const paymentSelect = form.querySelector('select[name="payment"]');
+
+    if (!nameInput || !nameInput.value.trim()) {
+      alert('お名前を入力してください。');
+      return;
+    }
+
+    if (!emailInput || !emailInput.value.trim()) {
+      alert('メールアドレスを入力してください。');
+      return;
+    }
+
+    if (!paymentSelect || !paymentSelect.value) {
+      alert('お支払い方法を選択してください。');
+      return;
+    }
+
+    alert('3：必須入力OK');
+
+    const cartBox = document.getElementById('cartBox');
+    const cartItemsArea = document.getElementById('cartItemsArea');
+    const totalBox = document.getElementById('totalPriceBox');
+
+    const cartText =
+      (cartBox && cartBox.innerText) ||
+      (cartItemsArea && cartItemsArea.innerText) ||
+      'カート内容取得なし';
+
+    const total =
+      (totalBox && totalBox.innerText) ||
+      '合計金額取得なし';
+
+    const cartInput = document.getElementById('cartSummaryInput');
+    if (cartInput) {
+      cartInput.value = cartText + "\n\n合計：" + total;
+    }
+
+    const totalInput = document.getElementById('totalPriceInput');
+    if (totalInput) {
+      totalInput.value = total;
+    }
+
+    alert('4：Formspreeへ送信します');
+
+    HTMLFormElement.prototype.submit.call(form);
+
+  } catch (error) {
+    alert('エラーが出ました：' + error.message);
   }
-
-  if (!form.checkValidity()) {
-    alert('3：必須入力で止まっています');
-    form.reportValidity();
-    return;
-  }
-
-  alert('4：必須入力OK');
-
-  const cartText =
-    document.getElementById('oaiCartItems')?.innerText ||
-    document.getElementById('cartItemsArea')?.innerText ||
-    '';
-
-  const total =
-    document.getElementById('oaiCartTotal')?.innerText ||
-    document.getElementById('summaryTotal')?.innerText ||
-    document.getElementById('totalPriceBox')?.innerText ||
-    '';
-
-  alert('5：カート内容=' + cartText.substring(0, 80));
-
-  if (!cartText.trim() || cartText.includes('まだカゴに商品がありません')) {
-    alert('6：カゴに商品がありません。商品を選択してから送信してください。');
-    return;
-  }
-
-  const cartInput = document.getElementById('cartSummaryInput');
-  if (cartInput) {
-    cartInput.value = cartText + "\n\n合計：" + total;
-  }
-
-  const totalInput = document.getElementById('totalPriceInput');
-  if (totalInput) {
-    totalInput.value = total;
-  }
-
-  alert('7：Formspreeへ送信します');
-
-  form.submit();
 }
 </script>
 
