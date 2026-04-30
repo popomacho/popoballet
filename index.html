@@ -7676,53 +7676,47 @@ function prepareOrderForm() {
   try {
     const cart = window.__v34cart || [];
 
-    let cartText = '';
-
-    if (cart.length > 0) {
-      cartText = cart.map((item, index) => {
-        return [
-          `【商品${index + 1}】`,
-          `商品：${item.productLabel || ''}`,
-          `本体色：${item.colorLabel || ''}`,
-          `ロゴ：${item.logoLabel || ''}`,
-          `背面シルエット：${item.silhouetteLabel || ''}`,
-          `背面文字：${item.backTextLabel || ''}`,
-          `サイズ：${item.size || ''}`,
-          `数量：${item.qty || 1}`,
-          `単価：${item.unitPrice || 0}円`
-        ].join('\n');
-      }).join('\n\n');
-    } else {
-      const cartItemsArea = document.getElementById('cartItemsArea');
-      const cartBox = document.getElementById('cartBox');
-
-      cartText =
-        (cartItemsArea && cartItemsArea.innerText.trim()) ||
-        (cartBox && cartBox.innerText.trim()) ||
-        '';
-    }
-
-    const totalBox = document.getElementById('totalPriceBox');
-    const summaryTotal = document.getElementById('summaryTotal');
-
-    const total =
-      (summaryTotal && summaryTotal.innerText.trim()) ||
-      (totalBox && totalBox.innerText.trim()) ||
-      '';
-
-    if (!cartText.trim() || cartText.includes('まだカゴに商品がありません')) {
+    if (!cart.length) {
       alert('カゴに商品がありません。商品を選択してから送信してください。');
       return false;
     }
 
+    const cartText = cart.map((item, index) => {
+      return [
+        `【商品${index + 1}】`,
+        `商品：${item.productLabel || ''}`,
+        `本体色：${item.colorLabel || ''}`,
+        `ロゴ色：${item.logoLabel || ''}`,
+        `背面シルエット：${item.silhouetteLabel || ''}`,
+        `背面文字：${item.backTextLabel || ''}`,
+        `サイズ：${item.size || '未選択'}`,
+        `数量：${item.qty || item.quantity || 1}`,
+        `単価：${item.unitPrice || 0}円`
+      ].join('\n');
+    }).join('\n\n');
+
+    const subtotal = cart.reduce((sum, item) => {
+      const price = Number(item.unitPrice || 0);
+      const qty = Number(item.qty || item.quantity || 1);
+      return sum + price * qty;
+    }, 0);
+
+    let shipping = 0;
+    if (typeof window.calculateCartShipping === 'function') {
+      shipping = Number(window.calculateCartShipping(subtotal) || 0);
+    }
+
+    const total = subtotal + shipping;
+
     const cartInput = document.getElementById('cartSummaryInput');
     if (cartInput) {
-      cartInput.value = cartText + "\n\n合計：" + total;
+      cartInput.value = cartText;
     }
 
     const totalInput = document.getElementById('totalPriceInput');
     if (totalInput) {
-      totalInput.value = total;
+      totalInput.value =
+        `小計：${subtotal}円 / 送料：${shipping}円 / 合計：${total}円`;
     }
 
     return true;
