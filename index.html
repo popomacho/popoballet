@@ -4671,7 +4671,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <p class="spec-note">※ 下の PRICE_TABLE を編集すると自動計算の金額を変更できます。</p>
 </div>
 
-<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://formspree.io/f/xkoywvak" onsubmit="return prepareOrderForm();">
+<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://formspree.io/f/xkoywvak" onsubmit="return prepareOrderFormFinal();">
 <input type="hidden" name="form-name" value="popo-ballet-order">
 <input type="hidden" name="selected_silhouette" id="selectedSilhouetteInput" value="">
 <input type="hidden" name="selected_back_text" id="selectedBackTextInput" value="なし">
@@ -4683,7 +4683,6 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <input type="hidden" name="total_price" id="totalPriceInput" value="0">
 <input type="hidden" name="cart_summary" id="cartSummaryInput" value="">
 <input type="hidden" name="_next" value="https://popomacho.github.io/popoballet/thanks.html">
-<input type="hidden" name="_redirect" value="https://popomacho.github.io/popoballet/thanks.html">
 
 <div class="cart-box" id="cartBox">
   <div class="order-summary-title">カート内容</div>
@@ -7673,7 +7672,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
 });
-function prepareOrderForm() {
+function prepareOrderFormFinal() {
   try {
     const cart = window.__v34cart || [];
 
