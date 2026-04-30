@@ -4683,6 +4683,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <input type="hidden" name="total_price" id="totalPriceInput" value="0">
 <input type="hidden" name="cart_summary" id="cartSummaryInput" value="">
 <input type="hidden" name="_next" value="https://popomacho.github.io/popoballet/thanks.html?v=2">
+<input type="hidden" name="order_items" id="orderItemsInput" value="">
 
 <div class="cart-box" id="cartBox">
   <div class="order-summary-title">カート内容</div>
@@ -7730,6 +7731,33 @@ if (submitBtn) {
     return false;
   }
 }
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('order-form');
+  const orderItemsInput = document.getElementById('orderItemsInput');
+
+  if (!form || !orderItemsInput) return;
+
+  form.addEventListener('submit', function () {
+    const items = window.__v34cart || [];
+
+    const text = items.map((item, index) => {
+      return [
+        `【${index + 1}】`,
+        `商品：${item.productLabel || ''}`,
+        `本体色：${item.colorLabel || ''}`,
+        `ロゴ：${item.logoLabel || ''}`,
+        `背面シルエット：${item.silhouetteLabel || ''}`,
+        `背面文字：${item.backTextLabel || ''}`,
+        `サイズ：${item.size || ''}`,
+        `数量：${item.qty || ''}`,
+        `単価：${item.unitPrice || ''}円`,
+        `小計：${(item.unitPrice || 0) * (item.qty || 1)}円`
+      ].join('\n');
+    }).join('\n\n');
+
+    orderItemsInput.value = text;
+  });
+});
 </script>
 
 </body>
