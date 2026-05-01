@@ -1971,6 +1971,7 @@ html {
 }
 
 </style>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
 
 <body>
 <div class="container">
@@ -4671,7 +4672,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <p class="spec-note">※ 下の PRICE_TABLE を編集すると自動計算の金額を変更できます。</p>
 </div>
 
-<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://formspree.io/f/xkoywvak" >
+<form id="order-form" class="form-box" name="popo-ballet-order" method="POST" action="https://script.google.com/macros/s/AKfycbz3IWnlIVZRx3wQHVkRD56683u5XR2PaTGRilmr78T1ftnimesl_55nklBSPbhh" >
 <input type="hidden" name="form-name" value="popo-ballet-order">
 <input type="hidden" name="selected_silhouette" id="selectedSilhouetteInput" value="">
 <input type="hidden" name="selected_back_text" id="selectedBackTextInput" value="なし">
@@ -4682,10 +4683,8 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <input type="hidden" name="selected_silhouette_preview_image" id="selectedSilhouettePreviewImageInput" value="">
 <input type="hidden" name="total_price" id="totalPriceInput" value="0">
 <input type="hidden" name="cart_summary" id="cartSummaryInput" value="">
-<input type="hidden" name="_next" value="https://popomacho.github.io/popoballet/thanks.html">
 <input type="hidden" name="order_items" id="orderItemsInput" value="">
-
-
+ 
 <div class="cart-box" id="cartBox">
   <div class="order-summary-title">カート内容</div>
   <p class="order-summary-note">上の商品欄で選んで「カゴへ」を押すと、ここに追加されます。</p>
@@ -4840,17 +4839,37 @@ POPO Macho パーソナルジムはこちら
 
 <div class="form-group">
 <label class="form-label">お名前</label>
-<input type="text" id="customerNameInput" name="name" class="form-control" placeholder="お名前" required>
+<input type="text" id="customerNameInput" name="customer_name" class="form-control" placeholder="" required>
 </div>
 
 <div class="form-group">
 <label class="form-label">メールアドレス</label>
-<input type="email" id="customerEmailInput" name="email" class="form-control" placeholder="メールアドレス" required>
+<input type="email" id="customerEmailInput" name="customer_email" class="form-control" placeholder="" required>
+</div>
+
+<div class="form-group">
+  <label class="form-label">電話番号</label>
+  <input type="tel" id="customerPhoneInput" name="customer_phone" class="form-control" placeholder="" required>
+</div>
+
+<div class="form-group">
+  <label class="form-label">郵便番号</label>
+  <input type="text"
+    name="customer_postcode"
+    class="form-control"
+    placeholder="1234567"
+    inputmode="numeric"
+    required
+    onKeyUp="AjaxZip3.zip2addr(this,'','customer_address','customer_address');">
 </div>
 
 <div class="form-group">
 <label class="form-label">ご住所</label>
-<textarea name="address" class="form-control" placeholder="郵便番号・住所・マンション名など"></textarea>
+  <textarea name="customer_address"
+    id="customer_address"
+    class="form-control"
+    placeholder="都道府県・市区町村・番地・建物名までご記入ください"
+    required></textarea>
 </div>
 
 <div class="form-group">
@@ -7739,9 +7758,6 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-      window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
-  return;
-
     if (typeof prepareOrderFormFinal === 'function') {
       const ok = prepareOrderFormFinal();
       if (ok === false) return;
@@ -7759,44 +7775,37 @@ document.addEventListener('DOMContentLoaded', function () {
           `ロゴ：${item.logoLabel || ''}`,
           `背面シルエット：${item.silhouetteLabel || ''}`,
           `背面文字：${item.backTextLabel || ''}`,
-          `サイズ：${item.size || ''}`,
-          `数量：${item.qty || ''}`,
+          `サイズ：${item.size || item.sizeLabel || item.selectedSize || ''}`,
+          `数量：${item.qty || item.quantity || 1}`,
           `単価：${item.unitPrice || 0}円`,
-          `小計：${(item.unitPrice || 0) * (item.qty || 1)}円`
+          `小計：${(item.unitPrice || 0) * (item.qty || item.quantity || 1)}円`
         ].join('\n');
       }).join('\n\n');
     }
 
-  try {
-  const response = await fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  });
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      });
 
-  if (response.ok) {
-    window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
-    return;
-  }
+      if (response.ok) {
+        window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
+        return;
+      }
 
-  const errorText = await response.text();
-  alert('送信に失敗しました。Formspreeエラー：' + errorText);
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
 
-  const submitBtn = document.getElementById('orderSubmitBtn');
-  if (submitBtn) {
-    submitBtn.disabled = false;
-    submitBtn.textContent = '注文内容を送信する';
-  }
+    } catch (error) {
+      alert('通信エラーです：' + error.message);
 
-} catch (error) {
-  alert('通信エラーです：' + error.message);
-
-  const submitBtn = document.getElementById('orderSubmitBtn');
-  if (submitBtn) {
-    submitBtn.disabled = false;
-    submitBtn.textContent = '注文内容を送信する';
-  }
-}
+    } finally {
+      const submitBtn = document.getElementById('orderSubmitBtn');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '注文内容を送信する';
+      }
+    }
   });
 });
 
