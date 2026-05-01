@@ -6378,7 +6378,7 @@ if(note){
   wrap.innerHTML = `
     <div class="v34-label">数量</div>
     <input type="number" min="0" value="0" onfocus="if(this.value==='0') this.value='';"
-  onblur="if(this.value==='') this.value='0';">class="v34-qty">
+  onblur="if(this.value==='') this.value='0';" class="v34-qty">
       
     ${sizes ? `<div class="v34-label">サイズ</div><select class="v34-size"><option value="">サイズを選択してください</option>${sizes.map(s=>`<option value="${s}">${s}</option>`).join('')}</select>` : ''}
     <button type="button" class="btn btn-secondary v34-cart-btn">カゴへ</button>
