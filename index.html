@@ -4893,7 +4893,7 @@ POPO Macho パーソナルジムはこちら
 </button>
 </div>
 <div class="form-group" style="margin-top:10px;">
-<button type="submit".  id="orderSubmitBtn" class="btn">
+<button type="submit"  id="orderSubmitBtn" class="btn">
   注文内容を送信する
 </button>
 </div>
@@ -7784,26 +7784,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
  try {
-  await fetch(realForm.action, {
+  const form = document.getElementById('order-form');
+
+  await fetch(form.action, {
     method: 'POST',
-    body: new FormData(realForm),
+    body: new FormData(form),
     mode: 'no-cors'
   });
 
-  // 成功扱いでサンクスページへ
   window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
   return;
 
-    } catch (error) {
-      alert('通信エラーです：' + error.message);
+} catch (error) {
+  alert('通信エラーです：' + error.message);
 
-    } finally {
-      const submitBtn = document.getElementById('orderSubmitBtn');
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = '注文内容を送信する';
-      }
-    }
+} finally {
+  const submitBtn = document.getElementById('orderSubmitBtn');
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = '注文内容を送信する';
+  }
+}
   });
 });
 
