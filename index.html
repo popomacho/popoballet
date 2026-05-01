@@ -7783,18 +7783,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }).join('\n\n');
     }
 
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form)
-      });
+ try {
+  await fetch(realForm.action, {
+    method: 'POST',
+    body: new FormData(realForm),
+    mode: 'no-cors'
+  });
 
-      if (response.ok) {
-        window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
-        return;
-      }
-
-      alert('送信に失敗しました。時間をおいて再度お試しください。');
+  // 成功扱いでサンクスページへ
+  window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
+  return;
 
     } catch (error) {
       alert('通信エラーです：' + error.message);
