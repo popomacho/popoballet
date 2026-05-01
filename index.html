@@ -1969,7 +1969,24 @@ html {
   object-fit:contain !important;
   display:block !important;
 }
+.cart-pop {
+  animation: cartPop 0.45s ease;
+}
 
+@keyframes cartPop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 </style>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
 
@@ -4849,7 +4866,7 @@ POPO Macho パーソナルジムはこちら
 
 <div class="form-group">
   <label class="form-label">電話番号</label>
-  <input type="tel" id="customerPhoneInput" name="customer_phone" class="form-control" placeholder="" required>
+  <input type="tel" id="customerPhoneInput" inputmode="numeric" name="customer_phone" class="form-control" placeholder="" required>
 </div>
 
 <div class="form-group">
@@ -6361,6 +6378,8 @@ if(note){
   wrap.innerHTML = `
     <div class="v34-label">数量</div>
     <input type="number" min="0" value="0" class="v34-qty">
+      onfocus="if(this.value==='0') this.value='';"
+  onblur="if(this.value==='') this.value='0';">
     ${sizes ? `<div class="v34-label">サイズ</div><select class="v34-size"><option value="">サイズを選択してください</option>${sizes.map(s=>`<option value="${s}">${s}</option>`).join('')}</select>` : ''}
     <button type="button" class="btn btn-secondary v34-cart-btn">カゴへ</button>
     <div class="v34-feedback">カゴに追加しました</div>
@@ -7824,6 +7843,32 @@ window.addEventListener('pageshow', function () {
     }
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.__v34cart || !window.__v34cart.length) {
+    const totalInput = document.getElementById('totalPriceInput');
+    if (totalInput) totalInput.value = '';
+
+    const cartSummaryInput = document.getElementById('cartSummaryInput');
+    if (cartSummaryInput) cartSummaryInput.value = '';
+
+    const orderItemsInput = document.getElementById('orderItemsInput');
+    if (orderItemsInput) orderItemsInput.value = '';
+
+    const totalText =
+      document.getElementById('oaiCartTotal') ||
+      document.getElementById('summaryTotal') ||
+      document.getElementById('totalPriceBox');
+
+    if (totalText) totalText.textContent = '0円';
+  }
+});
+const cartArea = document.getElementById('cart-section') || document.getElementById('oaiCartItems');
+
+if (cartArea) {
+  cartArea.classList.remove('cart-pop');
+  void cartArea.offsetWidth;
+  cartArea.classList.add('cart-pop');
+}
 </script>
 
 </body>
