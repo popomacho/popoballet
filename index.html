@@ -1969,24 +1969,6 @@ html {
   object-fit:contain !important;
   display:block !important;
 }
-.cart-pop {
-  animation: cartPop 0.45s ease;
-}
-
-@keyframes cartPop {
-  0% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.15);
-  }
-  70% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 </style>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
 
@@ -5627,6 +5609,19 @@ function calculateShipping(subtotal){
   return 0;
 }
 function calculateTotalPrice(){
+  const cart = window.__v34cart || [];
+  if (!cart.length) {
+    const totalBox = getEl('totalPriceBox');
+    if (totalBox) totalBox.textContent = 'カートに商品がありません';
+
+    const totalInput = getEl('totalPriceInput');
+    if (totalInput) totalInput.value = '';
+
+    const note = getEl('shippingProgressNote');
+    if (note) note.textContent = '';
+
+    return {unit:0, subtotal:0, shipping:0, total:0};
+  }
   const {product, key} = priceKeyFromForm();
   const qty = Math.max(1, Number(getEl('quantityInput')?.value || 1));
   const unit = APP_PRICE_TABLE[product]?.[key] ?? 0;
@@ -6368,6 +6363,13 @@ if(note){
   qtyInput.value = '0';
   if(sizeInput) sizeInput.value = '';
   renderCart();
+
+const cartArea = document.getElementById('cart-section') || document.getElementById('oaiCartItems');
+if (cartArea) {
+  cartArea.classList.remove('cart-pop');
+  void cartArea.offsetWidth;
+  cartArea.classList.add('cart-pop');
+}
   toast('カゴに追加しました');
 }
 
