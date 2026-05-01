@@ -1969,6 +1969,10 @@ html {
   object-fit:contain !important;
   display:block !important;
 }
+.order-summary-note{
+  font-weight: bold;
+  font-size: 18px; /* 好きな大きさに調整OK */
+}
 </style>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
 
@@ -4685,8 +4689,8 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <input type="hidden" name="order_items" id="orderItemsInput" value="">
  
 <div class="cart-box" id="cartBox">
-  <div class="order-summary-title">カート内容</div>
-  <p class="order-summary-note">上の商品欄で選んで「カゴへ」を押すと、ここに追加されます。</p>
+  
+  <p class="order-summary-note">お客様情報の入力</p>
   <div id="cartItemsArea"></div>
 </div>
 
@@ -4731,12 +4735,6 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <option value="pink">ピンク</option>
 </select>
 <div class="price-note">※ ロゴ色を選ぶと、背面シルエット・背面文字も同色で仕上がります。</div>
-</div>
-
-<div class="form-group">
-<a href="https://popomacho.github.io/" target="_blank" class="btn">
-POPO Macho パーソナルジムはこちら
-</a>
 </div>
 
 <div class="is-hidden-order form-group">
@@ -6019,7 +6017,7 @@ function addToCartFromSection(sectionId){
 }
 function removeCartItem(id){ const idx=cartItems.findIndex(x=>x.id===id); if(idx>=0){cartItems.splice(idx,1); renderCart();}}
 function updateCartItem(id, field, value){ const item=cartItems.find(x=>x.id===id); if(item){ item[field]= field==='qty'?Math.max(1, Number(value||1)):value; renderCart(false);} }
-function renderCart(resetScroll=true){ const area=document.getElementById('cartItemsArea'); if(!area) return; if(!cartItems.length){ area.innerHTML='<div class="order-summary-note">まだカゴに商品がありません。</div>'; updateCartSummary(); return; } area.innerHTML = cartItems.map(item=>`<div class="cart-item"><div class="cart-item-top"><div>${item.productLabel}</div><button type="button" class="cart-remove-btn" onclick="removeCartItem(${item.id})">削除</button></div><div class="cart-item-meta">本体色：${item.color}<br>ロゴ：${item.logoLabel}<br>背面：${item.silhouette}<br>背面文字：${item.backText}</div><div class="cart-item-controls"><select class="form-control" onchange="updateCartItem(${item.id},'size',this.value)">${(SIZE_OPTIONS[item.product]||['FREE']).map(s=>`<option value="${s}" ${s===item.size?'selected':''}>${s}</option>`).join('')}</select><input type="number" class="form-control" min="1" value="${item.qty}" onchange="updateCartItem(${item.id},'qty',this.value)"><div style="font-weight:800;align-self:center;">${yen(priceForItem(item)*item.qty)}</div></div></div>`).join(''); updateCartSummary(); }
+function renderCart(resetScroll=true){ const area=document.getElementById('cartItemsArea'); if(!area) return; if(!cartItems.length){ area.innerHTML=''; updateCartSummary(); return; } area.innerHTML = cartItems.map(item=>`<div class="cart-item"><div class="cart-item-top"><div>${item.productLabel}</div><button type="button" class="cart-remove-btn" onclick="removeCartItem(${item.id})">削除</button></div><div class="cart-item-meta">本体色：${item.color}<br>ロゴ：${item.logoLabel}<br>背面：${item.silhouette}<br>背面文字：${item.backText}</div><div class="cart-item-controls"><select class="form-control" onchange="updateCartItem(${item.id},'size',this.value)">${(SIZE_OPTIONS[item.product]||['FREE']).map(s=>`<option value="${s}" ${s===item.size?'selected':''}>${s}</option>`).join('')}</select><input type="number" class="form-control" min="1" value="${item.qty}" onchange="updateCartItem(${item.id},'qty',this.value)"><div style="font-weight:800;align-self:center;">${yen(priceForItem(item)*item.qty)}</div></div></div>`).join(''); updateCartSummary(); }
 function updateCartSummary(){ const subtotal=cartItems.reduce((s,it)=>s+priceForItem(it)*Number(it.qty||1),0); const shipping=window.calculateCartShipping(subtotal); const total=subtotal+shipping; const totalBox=document.getElementById('totalPriceBox'); if(totalBox) totalBox.textContent=yen(total); const totalInput=document.getElementById('totalPriceInput'); if(totalInput) totalInput.value=String(total); const note=document.getElementById('shippingProgressNote'); if(note) note.textContent = shipping === 0 ? '送料無料です' : `送料無料まであと ${yen(Math.max(0,7000-total))}`; document.getElementById('summaryBrand').textContent = cartItems.length ? 'カート選択済み' : '未選択'; document.getElementById('summaryProduct').textContent = cartItems.length ? `${cartItems.length}件` : '未選択'; document.getElementById('summaryColor').textContent = cartItems.length ? cartItems.map(i=>i.color).join(' / ') : '未選択'; document.getElementById('summaryLogoColor').textContent = cartItems.length ? cartItems.map(i=>i.logoLabel).join(' / ') : '未選択'; document.getElementById('summarySilhouetteColor').textContent = cartItems.length ? cartItems.map(i=>i.logoValue==='none'?'なし':i.logoLabel).join(' / ') : '未選択'; document.getElementById('summarySize').textContent = cartItems.length ? cartItems.map(i=>i.size).join(' / ') : '未選択'; document.getElementById('summarySilhouette').textContent = cartItems.length ? cartItems.map(i=>i.silhouette).join(' / ') : '未選択'; document.getElementById('summaryBackText').textContent = cartItems.length ? cartItems.map(i=>i.backText).join(' / ') : 'なし'; document.getElementById('summaryQuantity').textContent = cartItems.length ? cartItems.reduce((s,i)=>s+Number(i.qty||1),0)+'点' : '0点'; document.getElementById('summarySubtotal').textContent = yen(subtotal); document.getElementById('summaryShipping').textContent = yen(shipping); document.getElementById('summaryTotal').textContent = yen(total); const frontText=document.getElementById('summaryFrontColorText'); if(frontText) frontText.textContent = cartItems.length ? cartItems.map(i=>`${i.productLabel}：${i.color}`).join('') : 
 '未選択'; const silImg=document.getElementById('summarySilhouettePreviewImage'); if(silImg && cartItems.length) silImg.src = cartItems[0].silhouettePreview || silImg.src; const previewText=document.getElementById('summaryPreviewText'); if(previewText) previewText.textContent = cartItems.length ? cartItems.map(i=>i.backText).join(' / ') : '商品選択後、ここに最終内容が表示されます。'; const hidden=document.getElementById('cartSummaryInput'); if(hidden) hidden.value = cartItems.map(i=>`${i.productLabel} / ${i.color} / ${i.logoLabel} / ${i.silhouette} / ${i.backText} / ${i.size} / ${i.qty}`).join(' || '); }
 function selectSilhouetteNone(btn){ const box=btn.closest('.silhouette-select-box'); box?.querySelectorAll('.silhouette-select-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const card=btn.closest('.color-switch-card'); const back=card?.querySelector('.back-image'); if(back){ back.src=''; back.alt='背面なし'; } }
