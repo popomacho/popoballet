@@ -7852,6 +7852,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
  try {
   const form = document.getElementById('order-form');
+  const paymentSelect = form.querySelector('select[name="payment"]');
+const paymentMethodInput = document.getElementById('paymentMethodInput');
+
+if (paymentSelect && paymentMethodInput) {
+  paymentMethodInput.value = paymentSelect.value;
+}
 
   await fetch(form.action, {
     method: 'POST',
@@ -7975,7 +7981,10 @@ async function sendOrderToLine() {
   }).join('\n\n');
 
  
-
+const totalText =
+  document.getElementById('totalPriceBox')?.innerText ||
+  document.getElementById('summaryTotal')?.innerText ||
+  '未計算';
   const lineText =
 `【POPO Ballet LINE注文】
 
@@ -7997,14 +8006,16 @@ ${orderItems}
 【商品小計】
 ${subtotal}円
 
+【合計金額】
+${totalText}
+
 【送料】
 ${shipping === 0 ? '無料' : shipping + '円'}
 
 【お支払い方法】
 ${paymentMethod || '未選択'}
 
-【合計金額】
-${total}円
+
 
 【備考】
 ${message || 'なし'}`;
