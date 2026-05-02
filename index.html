@@ -7968,21 +7968,23 @@ if (lineBtn) {
   const total = subtotal + shipping;
 
   const orderItems = cart.map((item, index) => {
-    const qty = Number(item.qty || item.quantity || 1);
-    const unitPrice = priceForItem(item);
+  const qty = Number(item.qty || item.quantity || 1);
+  const unitPrice = Number(item.unitPrice || 0);
+  const itemSubtotal = Number(item.subtotal || unitPrice * qty || 0);
 
-    return [
-      `【商品${index + 1}】`,
-      `商品：${item.productLabel || ''}`,
-      `本体色：${item.colorLabel || ''}`,
-      `ロゴ色：${item.logoLabel || ''}`,
-      `背面シルエット：${item.silhouetteLabel || ''}`,
-      `背面文字：${item.backTextLabel || ''}`,
-      `サイズ：${item.size || item.sizeLabel || item.selectedSize || '未選択'}`,
-      `数量：${qty}`,
-      
-    ].join('\n');
-  }).join('\n\n');
+  return [
+    `【商品${index + 1}】`,
+    `商品：${item.productLabel || ''}`,
+    `本体色：${item.colorLabel || ''}`,
+    `ロゴ色：${item.logoLabel || ''}`,
+    `背面シルエット：${item.silhouetteLabel || ''}`,
+    `背面文字：${item.backTextLabel || ''}`,
+    `サイズ：${item.size || item.sizeLabel || item.selectedSize || '未選択'}`,
+    `数量：${qty}`,
+    `単価：${yen(unitPrice)}`,
+    `小計：${yen(itemSubtotal)}`
+  ].join('\n');
+}).join('\n\n');
 
  
 const totalText =
@@ -7993,6 +7995,15 @@ const totalText =
   document.getElementById('oaiCartItems')?.innerText ||
   document.getElementById('cartItemsArea')?.innerText ||
   orderItems;
+  const subtotalText =
+  document.getElementById('oaiCartSubtotal')?.innerText ||
+  document.getElementById('summarySubtotal')?.innerText ||
+  '';
+
+const shippingText =
+  document.getElementById('oaiCartShipping')?.innerText ||
+  document.getElementById('summaryShipping')?.innerText ||
+  '';
   const lineText =
 `【POPO Ballet LINE注文】
 
@@ -8009,7 +8020,13 @@ ${phone}
 ${address}
 
 【ご注文内容】
-${cartText}
+${orderItems}
+
+【商品小計】
+${subtotalText}
+
+【送料】
+${shippingText}
 
 【合計金額】
 ${totalText}
@@ -8019,6 +8036,7 @@ ${paymentMethod || '未選択'}
 
 【備考】
 ${message || 'なし'}`;
+
 
   // hidden input にも入れてGASへ送る
   const cartSummaryInput = document.getElementById('cartSummaryInput');
