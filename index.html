@@ -7937,7 +7937,7 @@ async function sendOrderToLine() {
   const address = form.querySelector('[name="customer_address"]')?.value || '';
   const message = form.querySelector('[name="message"]')?.value || '';
 
-  const paymentMethod = form.querySelector('[name="payment"]')?.value || '';
+  const paymentMethod = form.querySelector('select[name="payment"]')?.value || '';
 
   if (!name || !email || !phone || !address) {
     alert('お名前・メールアドレス・電話番号・ご住所を入力してからLINE注文してください。');
@@ -7969,6 +7969,7 @@ async function sendOrderToLine() {
       `サイズ：${item.size || item.sizeLabel || item.selectedSize || '未選択'}`,
       `数量：${qty}`,
       `単価：${unitPrice}円`,
+     
       `小計：${unitPrice * qty}円`
     ].join('\n');
   }).join('\n\n');
@@ -7990,9 +7991,6 @@ ${phone}
 【ご住所】
 ${address}
 
-【お支払い方法】
-${paymentMethod || '未選択'}
-
 【ご注文内容】
 ${orderItems}
 
@@ -8001,6 +7999,9 @@ ${subtotal}円
 
 【送料】
 ${shipping === 0 ? '無料' : shipping + '円'}
+
+【お支払い方法】
+${paymentMethod || '未選択'}
 
 【合計金額】
 ${total}円
