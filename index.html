@@ -4911,13 +4911,13 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 </div>
 
 <div class="form-group" style="margin-top:10px;">
-<button type="button" class="btn btn-line" onclick="sendOrderToLine()">
-      LINEで注文する
+<button type="button" id="lineOrderBtn" class="btn btn-line" onclick="sendOrderToLine()">
+      LINEで注文
 </button>
 </div>
 <div class="form-group" style="margin-top:10px;">
 <button type="submit"  id="orderSubmitBtn" class="btn">
-  注文内容を送信する
+  フォームで注文
 </button>
 </div>
 
@@ -7851,6 +7851,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
  try {
+ 
   const form = document.getElementById('order-form');
   const paymentSelect = form.querySelector('select[name="payment"]');
 const paymentMethodInput = document.getElementById('paymentMethodInput');
@@ -7864,7 +7865,7 @@ if (paymentSelect && paymentMethodInput) {
     body: new FormData(form),
     mode: 'no-cors'
   });
-
+ 
   window.location.href = 'https://popomacho.github.io/popoballet/thanks.html';
   return;
 
@@ -7875,7 +7876,7 @@ if (paymentSelect && paymentMethodInput) {
   const submitBtn = document.getElementById('orderSubmitBtn');
   if (submitBtn) {
     submitBtn.disabled = false;
-    submitBtn.textContent = '注文内容を送信する';
+    submitBtn.textContent = 'フォームで注文';
   }
 }
   });
@@ -7949,6 +7950,11 @@ async function sendOrderToLine() {
     alert('お名前・メールアドレス・電話番号・ご住所を入力してからLINE注文してください。');
     return;
   }
+const lineBtn = document.getElementById('lineOrderBtn');
+if (lineBtn) {
+  lineBtn.disabled = true;
+  lineBtn.textContent = 'LINEを開いています...';
+}
 
   const subtotal = cart.reduce((sum, item) => {
     const qty = Number(item.qty || item.quantity || 1);
