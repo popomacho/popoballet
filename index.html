@@ -4907,8 +4907,8 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 </div>
 
 <div class="form-group" style="margin-top:10px;">
-<button type="button" class="btn btn-line" onclick="sendOrderToLine()">
-      LINEで注文内容を送る
+<button type="button" class="btn" onclick="sendOrderToLine()">
+      LINEで注文する
 </button>
 </div>
 <div class="form-group" style="margin-top:10px;">
@@ -7912,6 +7912,115 @@ if (cartArea) {
   cartArea.classList.remove('cart-pop');
   void cartArea.offsetWidth;
   cartArea.classList.add('cart-pop');
+}
+async function sendOrderByLine() {
+  const form = document.getElementById('order-form');
+  const cart = window.__v34cart || [];
+
+  if (!form) {
+    alert('注文フォームが見つかりません。');
+    return;
+  }
+
+  if (!cart.length) {
+    alert('カゴに商品がありません。商品を選択してからLINE注文してください。');
+    return;
+  }
+
+  const name = form.querySelector('[name="customer_name"]')?.value || '';
+  const email = form.querySelector('[name="customer_email"]')?.value || '';
+  const phone = form.querySelector('[name="customer_phone"]')?.value || '';
+  const address = form.querySelector('[name="customer_address"]')?.value || '';
+  const message = form.querySelector('[name="message"]')?.value || '';
+
+  if (!name || !email || !phone || !address) {
+    alert('お名前・メールアドレス・電話番号・ご住所を入力してからLINE注文してください。');
+    return;
+  }
+
+  const subtotal = cart.reduce((sum, item) => {
+    const qty = Number(item.qty || item.quantity || 1);
+    return sum + priceForItem(item) * qty;
+  }, 0);
+
+  const shipping = window.calculateCartShipping
+    ? window.calculateCartShipping(subtotal)
+    : 0;
+
+  const total = subtotal + shipping;
+
+  const orderItems = cart.map((item, index) => {
+    const qty = Number(item.qty || item.quantity || 1);
+    const unitPrice = priceForItem(item);
+
+    return [
+      `【商品${index + 1}】`,
+      `商品：${item.productLabel || ''}`,
+      `本体色：${item.colorLabel || ''}`,
+      `ロゴ色：${item.logoLabel || ''}`,
+      `背面シルエット：${item.silhouetteLabel || ''}`,
+      `背面文字：${item.backTextLabel || ''}`,
+      `サイズ：${item.size || item.sizeLabel || item.selectedSize || '未選択'}`,
+      `数量：${qty}`,
+      `単価：${unitPrice}円`,
+      `小計：${unitPrice * qty}円`
+    ].join('\n');
+  }).join('\n\n');
+
+  const lineText =
+`【POPO Ballet LINE注文】
+
+【お名前】
+${name}
+
+【メールアドレス】
+${email}
+
+【電話番号】
+${phone}
+
+【ご住所】
+${address}
+
+【ご注文内容】
+${orderItems}
+
+【商品小計】
+${subtotal}円
+
+【送料】
+${shipping === 0 ? '無料' : shipping + '円'}
+
+【合計金額】
+${total}円
+
+【備考】
+${message || 'なし'}`;
+
+  // hidden input にも入れてGASへ送る
+  const cartSummaryInput = document.getElementById('cartSummaryInput');
+  if (cartSummaryInput) cartSummaryInput.value = orderItems;
+
+  const orderItemsInput = document.getElementById('orderItemsInput');
+  if (orderItemsInput) orderItemsInput.value = orderItems;
+
+  const totalPriceInput = document.getElementById('totalPriceInput');
+  if (totalPriceInput) totalPriceInput.value = String(total);
+
+  // GASへ送信
+  try {
+    await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      mode: 'no-cors'
+    });
+  } catch (error) {
+    console.log('GAS送信エラー:', error);
+  }
+
+  // LINEを開く
+  const lineUrl = 'https://line.me/R/msg/text/?' + encodeURIComponent(lineText);
+  window.location.href = lineUrl;
 }
 </script>
 
