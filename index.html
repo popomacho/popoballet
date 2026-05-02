@@ -4712,6 +4712,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 <input type="hidden" name="total_price" id="totalPriceInput" value="0">
 <input type="hidden" name="cart_summary" id="cartSummaryInput" value="">
 <input type="hidden" name="order_items" id="orderItemsInput" value="">
+<input type="hidden" name="payment" id="paymentMethodInput" >
  
 <div class="cart-box" id="cartBox">
   
@@ -7936,6 +7937,8 @@ async function sendOrderToLine() {
   const address = form.querySelector('[name="customer_address"]')?.value || '';
   const message = form.querySelector('[name="message"]')?.value || '';
 
+  const paymentMethod = form.querySelector('[name="payment"]')?.value || '';
+
   if (!name || !email || !phone || !address) {
     alert('お名前・メールアドレス・電話番号・ご住所を入力してからLINE注文してください。');
     return;
@@ -7970,6 +7973,8 @@ async function sendOrderToLine() {
     ].join('\n');
   }).join('\n\n');
 
+ 
+
   const lineText =
 `【POPO Ballet LINE注文】
 
@@ -7984,6 +7989,9 @@ ${phone}
 
 【ご住所】
 ${address}
+
+【お支払い方法】
+${paymentMethod || '未選択'}
 
 【ご注文内容】
 ${orderItems}
@@ -8010,7 +8018,10 @@ ${message || 'なし'}`;
   const totalPriceInput = document.getElementById('totalPriceInput');
   if (totalPriceInput) totalPriceInput.value = String(total);
 
-  // GASへ送信
+  const paymentMethodInput = document.getElementById('paymentMethodInput');
+if (paymentMethodInput) paymentMethodInput.value = paymentMethod;
+
+    // GASへ送信
   try {
     await fetch(form.action, {
       method: 'POST',
