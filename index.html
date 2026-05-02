@@ -7989,6 +7989,10 @@ const totalText =
   document.getElementById('totalPriceBox')?.innerText ||
   document.getElementById('summaryTotal')?.innerText ||
   '未計算';
+  const cartText =
+  document.getElementById('oaiCartItems')?.innerText ||
+  document.getElementById('cartItemsArea')?.innerText ||
+  orderItems;
   const lineText =
 `【POPO Ballet LINE注文】
 
@@ -8005,7 +8009,7 @@ ${phone}
 ${address}
 
 【ご注文内容】
-${orderItems}
+${cartText}
 
 【合計金額】
 ${totalText}
