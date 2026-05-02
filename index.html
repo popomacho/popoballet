@@ -7974,9 +7974,7 @@ async function sendOrderToLine() {
       `背面文字：${item.backTextLabel || ''}`,
       `サイズ：${item.size || item.sizeLabel || item.selectedSize || '未選択'}`,
       `数量：${qty}`,
-      `単価：${unitPrice}円`,
-     
-      `小計：${unitPrice * qty}円`
+      
     ].join('\n');
   }).join('\n\n');
 
@@ -8003,19 +8001,11 @@ ${address}
 【ご注文内容】
 ${orderItems}
 
-【商品小計】
-${subtotal}円
-
 【合計金額】
 ${totalText}
 
-【送料】
-${shipping === 0 ? '無料' : shipping + '円'}
-
 【お支払い方法】
 ${paymentMethod || '未選択'}
-
-
 
 【備考】
 ${message || 'なし'}`;
@@ -8028,7 +8018,7 @@ ${message || 'なし'}`;
   if (orderItemsInput) orderItemsInput.value = orderItems;
 
   const totalPriceInput = document.getElementById('totalPriceInput');
-  if (totalPriceInput) totalPriceInput.value = String(total);
+  if (totalPriceInput) totalPriceInput.value = totalText;
 
   const paymentMethodInput = document.getElementById('paymentMethodInput');
 if (paymentMethodInput) paymentMethodInput.value = paymentMethod;
