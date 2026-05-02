@@ -4908,7 +4908,7 @@ Tシャツ1枚、トートバッグ2個、巾着Sは4個、巾着SSは6個まで
 
 <div class="form-group" style="margin-top:10px;">
 <button type="button" class="btn btn-line" onclick="sendOrderToLine()">
-    LINEで注文内容を送る
+      LINEで注文内容を送る
 </button>
 </div>
 <div class="form-group" style="margin-top:10px;">
@@ -7728,7 +7728,7 @@ ${total}
 ■備考
 ${message}`;
 
-  const lineUrl = 'https://line.me/R/msg/text/?' + encodeURIComponent(text);
+  const lineUrl = 'https://line.me/R/oaMessage/@037wfrhk/?' + encodeURIComponent(text);
   window.location.href = lineUrl;
 }
 // ←ここを新しく置き換え
