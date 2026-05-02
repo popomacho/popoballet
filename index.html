@@ -1973,6 +1973,10 @@ html {
   font-weight: bold;
   font-size: 18px; /* 好きな大きさに調整OK */
 }
+.v34-cart-btn.added {
+  transform: scale(1.03);
+  opacity: 0.85;
+}
 </style>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
 
@@ -6104,24 +6108,29 @@ document.addEventListener('DOMContentLoaded', function(){ document.querySelector
   function calcShipping(subtotal){
   const items = window.__v34cart || [];
 
-  if(!items.length) return 0;
+  if(!items.length || subtotal <= 0) return 0;
+
+  // 7000円以上は送料無料
   if(subtotal >= 7000) return 0;
 
-  const products = [...new Set(items.map(it => it.product))];
+  const freeProducts = [
+    'tshirt',
+    'series',
+    'series-macho',
+    'bag',
+    'kinchaku_m',
+    'kinchaku_s'
+  ];
 
-  if(products.length === 1){
-    const product = products[0];
+  // 全部が無料対象なら送料無料
+  const allFree = items.every(item => freeProducts.includes(item.product));
+  if (allFree) return 0;
 
-    if(['tshirt','series','series-macho'].includes(product)) return 0;
-    if(product === 'bag') return 0;
-    if(product === 'kinchaku_m') return 0;
-    if(product === 'kinchaku_s') return 0;
-  }
-
+  // ジップ系だけ送料700円
   if(items.some(it => ['zip_hoodie','jersey_zip'].includes(it.product))) return 700;
 
-  return 200;
-}
+  return 700;
+  }
 function priceFor(product, hasLogo, hasSilhouette, isCustomPhoto){
   let base = 0;
 
@@ -6392,6 +6401,15 @@ if (cartArea) {
     fb.classList.add('show');
     clearTimeout(fb._t);
     fb._t = setTimeout(()=>fb.classList.remove('show'),1200);
+     const btn = $('.v34-cart-btn', wrap);
+  btn.textContent = '✓ カゴに入りました';
+  btn.classList.add('added');
+
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => {
+    btn.textContent = 'カゴへ';
+    btn.classList.remove('added');
+  }, 1200);
   });
 
   return wrap;
@@ -7012,27 +7030,35 @@ const logoValue = button.dataset.logoValue || 'white'; if (frontImg && activeCol
     return base;
   };
 
-  window.calculateCartShipping = function (subtotal) {console.log('この送料関数が動いています');
-  if (!Array.isArray(window.cartItems) || !window.cartItems.length) return 0;
+  window.calculateCartShipping = function (subtotal) {
+  const items = window.__v34cart || [];
+  if (!items.length || subtotal <= 0) return 0;
+
+  // 7000円以上は送料無料
   if (subtotal >= 7000) return 0;
 
-  const products = [...new Set(window.cartItems.map(it => it.product))];
+  const freeProducts = [
+    'tshirt',
+    'series',
+    'series-macho',
+    'bag',
+    'kinchaku_m',
+    'kinchaku_s'
+  ];
 
-  // 商品が1種類だけのときの送料無料条件
-  if (products.length === 1) {
-    const product = products[0];
-    const totalQty = window.cartItems.reduce((s, it) => s + Number(it.qty || 1), 0);
+  // 全部が無料対象なら送料無料
+  const allFree = items.every(item => freeProducts.includes(item.product));
+  if (allFree) return 0;
 
-    if (['tshirt','series','series-macho'].includes(product)) return 0;
-    if (product === 'bag' && totalQty <= 2) return 0;
-    if (product === 'kinchaku_m' && totalQty <= 4) return 0;
-    if (product === 'kinchaku_s' && totalQty <= 6) return 0;
-  }
+  // ジップ系が含まれていたら送料700円
+  const hasHeavy = items.some(item =>
+    ['zip_hoodie', 'jersey_zip'].includes(item.product)
+  );
 
-  const hasHeavy = window.cartItems.some(it => ['zip_hoodie', 'jersey_zip'].includes(it.product));
   if (hasHeavy) return 700;
 
-  return 200;
+  // その他（保険）
+  return 700;
 };
 
 if (typeof window.renderCart === 'function') {
