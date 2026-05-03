@@ -2080,12 +2080,12 @@ html {
 <div class="featured-box">
 <div class="featured-badge">FLAGSHIP ITEM</div>
 <div class="featured-grid-6">
-  <img src="images/featured-1.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 1" onclick="openSimpleModal(this.src, this.alt)">
-  <img src="images/featured-2.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 2" onclick="openSimpleModal(this.src, this.alt)">
-  <img src="images/featured-3.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 3" onclick="openSimpleModal(this.src, this.alt)">
-  <img src="images/featured-4.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 4" onclick="openSimpleModal(this.src, this.alt)">
-  <img src="images/featured-5.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 5" onclick="openSimpleModal(this.src, this.alt)">
-  <img src="images/featured-6.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 6" onclick="openSimpleModal(this.src, this.alt)">
+  <a href="#jerseyzip-section"><img class="featured-link-img" src="images/featured-1.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 1" ></a>
+  <a href="#tshirt-section"> <img class="featured-link-img" src="images/featured-2.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 2" ></a>
+  <a href="#totebag-section"><img class="featured-link-img" src="images/featured-3.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 3" ></a>
+  <a href="#tshirt-section"><img class="featured-link-img" src="images/featured-4.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 4" ></a>
+  <a href="#jerseyzip-section"><img class="featured-link-img" src="images/featured-5.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 5" ></a>
+  <a href="#tshirt-section"><img class="featured-link-img" src="images/featured-6.jpg" loading="lazy" alt="POPO Ballet おすすめTシャツ 6" ></a>
 </div>
 <div style="margin-top:14px; text-align:center;">
 <a href="#categories" class="btn">商品を見る</a>
@@ -2160,25 +2160,25 @@ html {
 <button type="button" class="color-chip-btn" data-color-label="ブルー" data-color-value="blue" data-front-white="images/T6.jpg" data-front-gold="images/T6-gold.jpg" data-front-pink="images/T6-pink.jpg" data-back-src="images/T60.jpg" data-product-name="Tシャツ（ブルー）" onclick="switchTshirtColor(this)"><span class="color-chip" style="background:#4a78c9;"></span>ブルー</button>
 </div>
 <div class="option-title-row logo-title-row">
-  <div class="tshirt-suboption-title">ロゴ色選択</div>
+  <div class="tshirt-suboption-title">ロゴ色選択<span class="same-color-note">※ ロゴ色=背面シルエット・背面文字色</span></div>
 
   <button type="button" class="color-chip-btn custom-logo-btn"
-    onclick="toggleCustomLogoRequest(this)">
-    持ち込みロゴ
-  </button>
+    onclick="toggleCustomLogoRequest(this)">持ち込みロゴ </button>
+    
+ <div class="custom-logo-note">
+  ← 持ち込みロゴの場合、色選択はカゴ入れ後カート内で選択
+</div>
 
 </div>
 
-<div class="custom-logo-note">
-  ※ 持ち込みロゴ色選択はカゴ入れ後、カート内で選択
-</div>
+
 
 <div class="color-chip-row tshirt-logo-row">
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchTshirtLogoColor(this)">ロゴなし</button>
 <button type="button" class="color-chip-btn" data-logo-label="ホワイト" data-logo-value="white" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#ffffff;"></span>ホワイト</button>
 <button type="button" class="color-chip-btn active" data-logo-label="ゴールド" data-logo-value="gold" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#d4af37;"></span>ゴールド</button>
 <button type="button" class="color-chip-btn" data-logo-label="ピンク" data-logo-value="pink" onclick="switchTshirtLogoColor(this)"><span class="color-chip" style="background:#ff8fb1;"></span>ピンク</button>
-  <span class="same-color-note">※ ロゴ色=背面シルエット・背面文字色</span><div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプルを見る</a></div></div>
+  <div class="back-design-link-wrap"><a href="#back-design-samples" class="back-design-link">背面デザインサンプルを見る</a></div></div>
 
 
 <div class="silhouette-select-box">
@@ -2412,7 +2412,7 @@ html {
   <button type="button" class="color-chip-btn custom-logo-btn" onclick="toggleCustomLogoRequest(this)">
   持ち込みロゴ
 </button>
-  <span class="custom-logo-note">※ 持ち込みロゴ色選択はカゴ入れ後カート内で選択</span>
+  <span class="custom-logo-note">← 持ち込みロゴの場合、色選択はカゴ入れ後カート内で選択</span>
 </div>
 <div class="color-chip-row product-logo-row">
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
@@ -2549,7 +2549,7 @@ html {
   <button type="button" class="color-chip-btn custom-logo-btn" onclick="toggleCustomLogoRequest(this)">
   持ち込みロゴ
 </button>
-  <span class="custom-logo-note">※ 持ち込みロゴ色選択はカゴ入れ後カート内で選択</span>
+  <span class="custom-logo-note">← 持ち込みロゴの場合、色選択はカゴ入れ後カート内で選択</span>
 </div>
 <div class="color-chip-row product-logo-row">
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
@@ -2675,7 +2675,7 @@ html {
   <button type="button" class="color-chip-btn custom-logo-btn" onclick="toggleCustomLogoRequest(this)">
   持ち込みロゴ
 </button>
-  <span class="custom-logo-note">※ 持ち込みロゴ色選択はカゴ入れ後カート内で選択</span>
+  <span class="custom-logo-note">※ 持ち込みロゴの場合、色選択はカゴ入れ後カート内で選択</span>
 </div>
 <div class="color-chip-row product-logo-row">
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
@@ -2767,7 +2767,7 @@ html {
   <button type="button" class="color-chip-btn custom-logo-btn" onclick="toggleCustomLogoRequest(this)">
   持ち込みロゴ
 </button>
-  <span class="custom-logo-note">※ 持ち込みロゴ色選択はカゴ入れ後カート内で選択</span>
+  <span class="custom-logo-note">※ 持ち込みロゴの場合、色選択はカゴ入れ後カート内で選択</span>
 </div>
 <div class="color-chip-row product-logo-row">
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
@@ -2860,7 +2860,7 @@ html {
   <button type="button" class="color-chip-btn custom-logo-btn" onclick="toggleCustomLogoRequest(this)">
   持ち込みロゴ
 </button>
-  <span class="custom-logo-note">※ 持ち込みロゴ色選択はカゴ入れ後カート内で選択</span>
+  <span class="custom-logo-note">※ 持ち込みロゴの場合、色選択はカゴ入れ後カート内で選択</span>
 </div>
 <div class="color-chip-row product-logo-row">
 <button type="button" class="color-chip-btn" data-logo-label="ロゴなし" data-logo-value="none" onclick="switchProductLogoColor(this)">ロゴなし</button>
